@@ -1,12 +1,37 @@
 
 <style>
 
-	button {
-	display: block;
-	margin: 1em 0;
+	body {
+	margin: 0;
 	}
 
+	#video-wrapper {
+	position: relative;
+	overflow: hidden;
+	}
+	
+	#video-wrapper video {
+	width: 100vw;
+	height: 100vh;
+	}
+	
+	#pause-button[disabled] {
+	opacity: 0.5;
+	}
+	
+	#pause-button {
+	display: block;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	opacity: 1;
+	}
+	
 </style>
+
+<main>
+
+<div id="video-wrapper">
 
 <video id="video" preload="auto" controls="controls" width="960" height="540" poster="video.png">
 
@@ -15,17 +40,25 @@
 
 </video>
 
-<audio id="audio" preload="auto">
+<audio aria-hidden="true" id="audio" preload="auto">
 
 	<source src="audio.mp3" type="audio/mp3">
 
 </audio>
 
-<button id="pause-button">Toggle Audio Description</button>
+</div>
+
+</main>
 
 <script>
 
 (function(){
+
+var videoWrapper = document.getElementById("video-wrapper");
+var pauseDescription = document.createElement("button");
+pauseDescription.setAttribute("id", "pause-button");
+pauseDescription.textContent = "Toggle Audio Description";
+videoWrapper.appendChild(pauseDescription);
 
 //get references to the video and audio elements
 
