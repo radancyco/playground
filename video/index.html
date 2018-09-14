@@ -9,14 +9,14 @@
 </style>
 
 <video id="video" preload="auto" controls="controls" width="960" height="540" poster="video.png">
-		
+
 	<source src="video.mp4" type="video/mp4">
 	<track kind="captions" label="English" src="video.vtt" srclang="en" default>
 
 </video>
 
 <audio id="audio" preload="auto">
-	
+
 	<source src="audio.mp3" type="audio/mp3">
 
 </audio>
@@ -33,7 +33,7 @@ var video = document.getElementById('video');
 var audio = document.getElementById('audio');
 
 
-//if media controllers are supported, 
+//if media controllers are supported,
 //create a controller instance for the video and audio
 
 if(typeof(window.MediaController) === 'function') {
@@ -59,7 +59,7 @@ video.volume = 0.8;
 
 video.addEventListener('play', function() {
 
-	//if we have audio but no controller 
+	//if we have audio but no controller
 	//and the audio is paused, play that too
 
 	if(!controller && audio.paused) {
@@ -74,7 +74,7 @@ video.addEventListener('play', function() {
 
 video.addEventListener('pause', function() {
 
-	//if we have audio but no controller 
+	//if we have audio but no controller
 	//and the audio isn't paused, pause that too
 
 	if(!controller && !audio.paused) {
@@ -96,13 +96,13 @@ video.addEventListener('ended', function() {
 		controller.pause();
 
 	} else {
-	
+
 	//otherwise pause the video and audio separately
-	
+
 		video.pause();
 		audio.pause();
 
-	}	
+	}
 
 }, false);
 
@@ -111,7 +111,7 @@ video.addEventListener('ended', function() {
 
 video.addEventListener('timeupdate', function(){
 
-	//if we have audio but no controller, 
+	//if we have audio but no controller,
 	//and the audio has sufficiently loaded
 
 	if(!controller && audio.readyState >= 4) {
@@ -147,25 +147,25 @@ pauseButton.addEventListener('click', function() {
 
 video.addEventListener('ended', setAttr, false);
 video.addEventListener('pause', setAttr, false);
-    
+
 function setAttr(e) {
-    
+
     pauseButton.setAttribute("disabled", "disabled");
 
 }
 
 video.addEventListener('play', removeAttr,false);
-    
+
 function removeAttr(e) {
-	
+
 	if(video.muted) {
-	
+
 		pauseButton.setAttribute("disabled", "disabled");
-	
+
 	} else {
-	
+
 		pauseButton.removeAttribute("disabled");
-	
+
 	}
 
 }
@@ -175,21 +175,19 @@ video.addEventListener('volumechange', detectVolume, false);
 function detectVolume(e) {
 
 	if(video.muted) {
-	
+
 		pauseButton.setAttribute("disabled", "disabled");
 		audio.muted = true;
-	
+
 	} else {
-	
+
 		pauseButton.removeAttribute("disabled");
 		audio.muted = false;
-	
+
 	}
 
 }
 
-
-
-})();
+})();   
 
 </script>
