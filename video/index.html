@@ -21,7 +21,7 @@
 
 </audio>
 
-<button id="pause-button" disabled>Toggle Audio Description</button>
+<button id="pause-button">Toggle Audio Description</button>
 
 <script>
 
@@ -185,6 +185,14 @@ function detectVolume(e) {
 		audio.muted = false;
 
 	}
+
+}
+
+video.addEventListener('loadstart', loadUp, false);
+
+function loadUp(e) {
+
+	pauseButton.setAttribute("disabled", "disabled");
 
 }
 
