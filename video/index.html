@@ -21,7 +21,7 @@
 
 </audio>
 
-<button id="pause-button">Toggle Audio Description</button>
+<button id="pause-button" disabled>Toggle Audio Description</button>
 
 <script>
 
@@ -144,6 +144,51 @@ pauseButton.addEventListener('click', function() {
 	togglePlay();
 
 });
+
+video.addEventListener('ended', setAttr, false);
+video.addEventListener('pause', setAttr, false);
+    
+function setAttr(e) {
+    
+    pauseButton.setAttribute("disabled", "disabled");
+
+}
+
+video.addEventListener('play', removeAttr,false);
+    
+function removeAttr(e) {
+	
+	if(video.muted) {
+	
+		pauseButton.setAttribute("disabled", "disabled");
+	
+	} else {
+	
+		pauseButton.removeAttribute("disabled");
+	
+	}
+
+}
+
+video.addEventListener('volumechange', detectVolume, false);
+
+function detectVolume(e) {
+
+	if(video.muted) {
+	
+		pauseButton.setAttribute("disabled", "disabled");
+		audio.muted = true;
+	
+	} else {
+	
+		pauseButton.removeAttribute("disabled");
+		audio.muted = false;
+	
+	}
+
+}
+
+
 
 })();
 
