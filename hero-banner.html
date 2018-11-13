@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hero Banner</title>
+
+
+
+</head>
+<body>
+
+<div class="hero-banner">
+
+	<div class="hero-content">
+
+		<h2>Test 1</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+	<div class="hero-content" hidden>
+
+		<h2>Test 2</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+	<div class="hero-content" hidden>
+
+		<h2>Test 3</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+	<div class="hero-content" hidden>
+
+		<h2>Test 4</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+</div>
+
+
+<div class="hero-banner">
+
+	<div class="hero-content" hidden>
+
+		<h2>Test 1</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+	<div class="hero-content">
+
+		<h2>Test 2</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+	<div class="hero-content" hidden>
+
+		<h2>Test 3</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+	<div class="hero-content" hidden>
+
+		<h2>Test 4</h2>
+
+		<p>Now is the time for all good developers to get down and boogie.</p>
+
+	</div>
+
+</div>
+
+
+<script>
+
+var heroBanner = document.getElementsByClassName("hero-banner");
+
+var bannerContent = document.getElementsByClassName("hero-content");
+
+
+for (var i = 0; i < heroBanner.length; i++) {
+
+	var randomNumber = Math.floor(Math.random() * heroBanner[i].children.length);
+
+	for (var j = 0; j < bannerContent.length; j++) {
+
+		bannerContent[j].setAttribute("hidden", "");
+
+	}
+
+	// Remove "hidden" from selected element.
+
+	bannerContent[randomNumber].removeAttribute("hidden");
+
+
+}
+
+
+for (var x = 0; x < heroBanner.length; x++) {
+
+	// Build Navigation
+
+	var nav = document.createElement('nav');
+	nav.setAttribute("class", "hero-banner-nav");
+	nav.setAttribute("aria-label", "banner");
+
+	heroBanner[x].appendChild(nav);
+
+}
+
+var heroBannerNav = document.getElementsByClassName("hero-banner-nav");
+
+for (var x = 0; x < heroBannerNav.length; x++) {
+
+	var ul = document.createElement("ul");
+
+	heroBannerNav[x].appendChild(ul);
+
+}
+
+
+
+
+//var children = tableFields.children;
+//for (var i = 0; i < children.length; i++) {
+  //var tableChild = children[i];
+  // Do stuff
+//}
+
+/* for (var x = 0; x < bannerContent.length; x++) {
+
+	var number = x + 1;
+            
+	var li = document.createElement('li');
+
+    var button = document.createElement("button");
+
+    ul.appendChild(li);
+
+	li.appendChild(button);
+
+	button.innerHTML = "View Banner " + number;
+
+	(function(number){
+	
+		button.onclick = function(){
+
+        	alert(number);
+
+    	}
+
+	})(number);
+    
+} */
+
+
+
+</script>
+
+</body>
+</html>
