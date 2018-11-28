@@ -20,6 +20,8 @@
 	position: relative;
 	border: 1px #000 solid;
 	margin-bottom: 1em;
+	overflow: hidden;
+	background-color: #eee;
 	}
 
 	@media(min-width: 778px){
@@ -32,10 +34,32 @@
 
 	}
 
+	.hero-content {
+	transition: opacity 300ms linear;
+	opacity: 1;
+	visibility: show ;
+	position: relative;
+	}
+
+	.hero-content > img, .hero-content > picture {
+	display: block;
+	}
+
+	.hero-content > div {
+	padding: 1em 1em 2em;
+	}
+
+	.hero-content.hidden {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	}
+
 	.hero-banner-nav {
 	position: absolute;
-	bottom: 2em;
+	bottom: 0.6em;
 	width: 100%;
+	z-index: 20;
 	}
 
 	.hero-banner-nav ul {
@@ -56,8 +80,12 @@
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 0;
-	background-color: tomato;
+	border: 3px #fff solid;
+	background-color: #fff;
+	}
+
+	.hero-banner-nav button:focus, .hero-banner-nav button:hover, .hero-banner-nav button.selected {
+	background-color: red;
 	}
 
 	</style>
@@ -73,73 +101,89 @@
 
 		<div class="hero-content">
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-1" alt="">
+			<picture>
+    			<source srcset="https://via.placeholder.com/320x280.png?text=Image%201-1%20Mobile" media="(max-width: 778px)">
+    			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-1%20Desktop" alt="">
+			</picture>
 
 		</div>
 
 		<div class="hero-content" hidden>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-2" alt="">
+			<picture>
+    			<source srcset="https://via.placeholder.com/320x280.png?text=Image%201-2%20Mobile" media="(max-width: 778px)">
+    			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-2%20Desktop" alt="">
+			</picture>
 
 		</div>
 
 		<div class="hero-content" hidden>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-3" alt="">
+			<picture>
+    			<source srcset="https://via.placeholder.com/320x280.png?text=Image%201-3%20Mobile" media="(max-width: 778px)">
+    			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-3%20Desktop" alt="">
+			</picture>
 
 		</div>
 
 		<div class="hero-content" hidden>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-4" alt="">
+			<picture>
+    			<source srcset="https://via.placeholder.com/320x280.png?text=Image%201-4%20Mobile" media="(max-width: 778px)">
+    			<img src="https://via.placeholder.com/1400x778.png?text=Image%201-4%20Desktop" alt="">
+			</picture>
 
 		</div>
 
 	</div>
 
-	<!-- divider -->
-
 	<div class="hero-banner">
 
 		<div class="hero-content" hidden>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-1" alt="">
+			<div>
+
+				<h2>Heading 2.1</h2>
+
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+			</div>
 
 		</div>
 
 		<div class="hero-content" hidden>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-2" alt="">
+			<div>
+
+				<h2>Heading 2.2</h2>
+
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+
+			</div>
 
 		</div>
 
 		<div class="hero-content">
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-3" alt="">
+			<div>
+
+				<h2>Heading 2.3</h2>
+
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p>
+
+			</div>
 
 		</div>
 
 		<div class="hero-content" hidden>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-4" alt="">
+			<div>
 
-		</div>
+				<h2>Heading 2.4</h2>
 
-		<div class="hero-content" hidden>
+				<p>Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
 
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-5" alt="">
-
-		</div>
-
-		<div class="hero-content" hidden>
-
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-6" alt="">
-
-		</div>
-
-		<div class="hero-content" hidden>
-
-			<img src="https://via.placeholder.com/1400x778.png?text=Image%202-7" alt="">
+			</div>
 
 		</div>
 
@@ -157,25 +201,26 @@ for (var i = 0; i < heroBanner.length; i++) {
 
 	var heroContent = heroBanner[i].querySelectorAll(".hero-content"); // count of items in ech banner
 	var randomNumber = Math.floor(Math.random() * heroContent.length); // Random * count of items in ech banner
-	var bannerNumber = i; // total number of banners
+	var bannerNumber = i; // total number of banners (starts at zero)
 
 	// Hide all items in each banner...
 
 	for (var x = 0; x < heroContent.length; x++) {
 
-		heroContent[x].setAttribute("hidden", "");
+		heroContent[x].classList.add("hidden");
+		heroContent[x].removeAttribute("hidden");
 
 	}
 
 	// Remove "hidden" attribute from selected banner item(s)
 
-	heroContent[randomNumber].removeAttribute("hidden");
+	heroContent[randomNumber].classList.remove("hidden");
 
 	// Create banner navigation...
 
-	var bannerNavigation = document.createElement("nav");
-	bannerNavigation.setAttribute("class", "hero-banner-nav");
-	bannerNavigation.setAttribute("aria-label", "banner " + (bannerNumber + 1));
+	var heroNavigation = document.createElement("nav");
+	heroNavigation.setAttribute("class", "hero-banner-nav");
+	heroNavigation.setAttribute("aria-label", "banner " + (bannerNumber + 1));
 
 	// Create banner list
 
@@ -183,11 +228,11 @@ for (var i = 0; i < heroBanner.length; i++) {
 
 	// Append navigation to banner
 
-	heroBanner[i].appendChild(bannerNavigation);
+	heroBanner[i].appendChild(heroNavigation);
 
 	// Append banner list to navigation
 
-	bannerNavigation.appendChild(bannerList);
+	heroNavigation.appendChild(bannerList);
 
 	// Create/append list items and buttons to navigation
 
@@ -207,19 +252,32 @@ for (var i = 0; i < heroBanner.length; i++) {
 	
 			bannerItemButton.onclick = function(){
 
+				// Navigation to be selected
+
+				var heroNavSelected = heroBanner[bannerNumber].querySelectorAll(".selected");
+
+				for (var x = 0; x < heroNavSelected.length; x++) {
+
+					heroNavSelected[x].classList.remove("selected");
+
+				}
+
+				this.classList.add("selected");
+
 				// Item to be hidden
 
 				var heroTarget = heroBanner[bannerNumber].querySelectorAll(".hero-content");
 
-        		for (var z = 0; z < heroTarget.length; z++) {
+        		for (var x = 0; x < heroTarget.length; x++) {
 
         			// Hide all item elements within selected banner
 
-        			heroTarget[z].setAttribute("hidden", "");
+        			heroTarget[x].classList.add("hidden");
+        			heroTarget[x].removeAttribute("tabindex");
 
         			// Show selected item within banner
 
-        			heroTarget[bannerListItemCount].removeAttribute("hidden");
+        			heroTarget[bannerListItemCount].classList.remove("hidden");
         			heroTarget[bannerListItemCount].setAttribute("tabindex", -1)
         			heroTarget[bannerListItemCount].focus();
 
