@@ -387,6 +387,8 @@ for (var i = 0; i < heroBanner.length; i++) {
         			heroContentHide[z].setAttribute("hidden", "");
 
         			heroContentHide[bannerListItemCount].removeAttribute("hidden");
+        			heroContentHide[bannerListItemCount].setAttribute("tabindex", -1)
+        			heroContentHide[bannerListItemCount].focus();
 
         		}
 	
