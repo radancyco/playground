@@ -42,19 +42,32 @@
 
 
 .creative-banner:before {
-animation: creative-banner-angle-top 1s linear;
+animation: creative-banner-angle-top 1s 2.5s ease-in-out forwards;
 }
 
 @keyframes creative-banner-angle-top {
-0% { transform: translatex(1px) translatey(200px); }
+100% { 
+
+    top: 10%;
+    right: 5%;
+
+    }
+
 }
 
 .creative-banner:after {
-animation: creative-banner-angle-btm 1s linear;
+animation: creative-banner-angle-btm 1s 2.5s ease-in-out forwards;
 }
 
 @keyframes creative-banner-angle-btm {
-0% { transform: translatex(-200px) translatey(0); }
+
+100% { 
+
+    bottom: 15%;
+    right: 30%;
+
+    }
+
 }
 
 
