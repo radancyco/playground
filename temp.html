@@ -1,0 +1,235 @@
+@model dynamic
+@using System.Web.Optimization
+@using Tmp.TalentBrew.Core.HtmlHelpers
+@using Tmp.TalentBrew.Core.Utilities
+
+@{
+    var site = Model as ISite;
+    var faviconUrl = site != null ? site.FaviconUrl : string.Empty;
+    var faviconContentType = site != null ? site.FaviconContentType : string.Empty;
+    var faviconCdnUrl = string.IsNullOrEmpty(faviconUrl) ? string.Empty : Url.CdnUrl(faviconUrl, "TBCDN");
+    var pageModel = Model as PublishedPageModel;
+    var homePageModel = Model as PublishedHomeModel;
+
+    // Generate class for styles based on Primary category
+    // Updated by Jorge 05/04/2018: Added missing null checks that could cause search results pages from
+    // not loading.
+
+    // Setting variables needed to pull in data per page type that has Category information
+
+    var jobPageModel = Html.ViewData != null ? Html.ViewData.Model as PublishedJobModel : null;
+    var contentPageModel =  Html.ViewData != null ? Html.ViewData.Model as PublishedContentModel : null;
+    var searchResultsPageModel = Html.ViewData != null ? Html.ViewData.Model as PublishedSearchModel : null;
+
+    // Empty global variable ready to be filled based on page type
+
+    var cd = "";
+    var catClass = "";
+
+    // Get data based on Page types 
+
+    if (jobPageModel != null) {
+
+        var catString = jobPageModel.Job.CategoryDimensions();
+
+        if(catString != null) {
+
+            string[] catArray = catString.Split(' ');
+            cd = catArray[0].Replace(" ", "-").Replace("/", "-").ToLower();
+
+        }
+
+    }
+
+    if (contentPageModel != null && contentPageModel.AdminCategoryDimensions != null) {
+
+        cd = contentPageModel.AdminCategoryDimensions.ToLower();
+
+    }
+
+    if (searchResultsPageModel != null && searchResultsPageModel.CategoryDimensions != null) {
+
+        cd = searchResultsPageModel.CategoryDimensions.Replace(" ", "-").Replace("/", "-").ToLower();
+
+    }
+
+    // create class
+
+    if (!string.IsNullOrWhiteSpace(cd)) {
+
+        catClass = "cat-" + cd;
+
+    }
+
+    // End Generate class for styles based on category 
+
+}<!DOCTYPE html>
+<html lang="@Html.GetLanguageAttribute(site)" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if ((pageModel != null && !Extensions.IsTrackedPage(pageModel)) || (ViewBag.NoIndex == "true")) {
+    <meta name="robots" content="noindex, nofollow">
+    }
+    @if (@Html.Tokenize((string)ViewBag.MetaDescription) != "IGNORE") {
+    <meta name="description" content="@Html.Tokenize((string)ViewBag.MetaDescription)">
+    }
+    @if (homePageModel != null && homePageModel.BingAnalyticsId != null){ 
+    <meta name="msvalidate.01" content="@homePageModel.BingAnalyticsId">
+    }
+    <meta name="format-detection" content="telephone=no">
+<title>@Html.Tokenize((string)ViewBag.Title)</title>
+@Html.Partial("_ThemeCSS")
+@RenderSection("Head", false)
+<link rel="icon" href="https:@faviconCdnUrl" type="@faviconContentType">
+  <link rel="alternate" type="application/rss+xml" title="New York Presbyterian : Job Feed" href="/rss/">
+    @if (ViewBag.BodyId != "job") {
+  <link rel="canonical" href="@Request.Url.AbsoluteUri.Replace("http://", "https://")">
+  }
+@Html.Partial("_Plumrnizr")
+@Html.Partial("_GoogleAnalytics")
+</head>
+
+<body id="@ViewBag.BodyId" class="@catClass" @Html.PageAttributes()>
+
+@Html.Partial("_GoogleTagManager")
+
+@Html.Hidden("no-default-searchresults-scroll", true)
+
+<div id="page">
+
+<a id="skip-nav" class="access-link" href="#content">Skip to main content</a>
+
+@RenderSection("AccessLinks", false)
+
+<header id="banner">
+
+@Html.Partial("_Header")       
+
+<div class="header-content" data-handle="menu-toggle" data-expandable="false" data-speed="0">
+
+<button class="menu-toggle">Menu</button>
+
+<div>
+
+@*<!-- hide nav until phase2 - per dpm
+@Html.Partial("_ThemePartial1")-->*@
+
+<div class="header-modules">
+
+@Html.Partial("_ThemePartial2")
+
+</div>
+
+</div>
+
+</div>
+
+<button class="search-toggle expandable-toggle">Search Jobs</button>
+
+<div class="search-wrapper">
+
+@Html.Partial("_ThemePartial3")
+
+</div>
+
+</header>
+
+<main id="content">
+
+@Html.Partial("_ThemePartial4")
+
+@RenderBody()
+
+</main>
+
+<footer>
+
+<div class="master-container">
+
+@Html.Partial("_Footer")
+
+<p class="footer-eoe">It is the policy of NewYork-Presbyterian to provide equal opportunity to all employees and applicants for employment without regard to race, color, religion, creed, sex, sexual orientation, gender (including gender identity and expression), national origin, citizenship status, marital status, veteran status, employment status, age, disability (including pregnancy), predisposing genetic characteristics, and any other protected characteristics, within the meaning and subject to the conditions of applicable federal, state and city laws.</p>
+
+</div>           
+
+</footer>
+
+</div>
+
+@Scripts.Render(Url.CdnUrl(Tmp.TalentBrew.Core.Constants.CoreJavascript, "TBCDN"))
+@Html.Partial("_ThemeJavascript")
+@*<!-- Slick Slider Information - (Must initialize on page level to work ViewBag.Slider = "true";)--> *@
+@if (ViewBag.Slider == "true") {
+<link rel="stylesheet" type="text/css" href="https://tbcdn.talentbrew.com/company/19715/v1_0/slick/slick-min.css" media="screen">
+<script type="text/javascript" src="https://tbcdn.talentbrew.com/company/19715/v1_0/slick/slick-min.js"></script>
+<script>
+$('.award-slider').slick({
+infinite: true,
+adaptiveHeight: true,
+autoplaySpeed: 6000,
+autoplay: true,
+pauseOnHover:false
+});
+$('.award-slider').on('init',function(slick){
+$('.award-slider .slick-next').click(function(){
+if(location.host == "careers.nyp.org"){
+ga('send', 'event', 'Custom Event', 'Click', 'Homepage Awards - Next Button');
+}
+});
+
+$('.award-slider .slick-prev').click(function(){
+if(location.host == "careers.nyp.org"){
+ga('send', 'event', 'Custom Event', 'Click', 'Homepage Awards - Previous Button');
+}
+});
+});
+</script>
+}
+@*<!-- Fancybox Information - (Must initialize on page level to work ViewBag.Lightbox = "true";)--> *@
+@if (ViewBag.Lightbox == "true") {
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/css/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js"></script>
+<script>
+$(".video-popup").fancybox({
+'width'         : 851,
+'height'        : 533,
+'autoScale'     : true,
+'type'          : 'iframe'
+});
+</script>
+}
+@*<!-- Slick Slider Information - (Must initialize on page level to work ViewBag.bannerSlider = "true";)--> *@
+@if (ViewBag.bannerSlider == "true") {
+<link rel="stylesheet" type="text/css" href="https://tbcdn.talentbrew.com/company/19715/v1_0/css/slick-min.css" media="screen">
+<script type="text/javascript" src="https://tbcdn.talentbrew.com/company/19715/v1_0/js/slick-min.js"></script>
+<script>
+$('.banner-slider').slick({
+infinite: true,
+arrows: false,
+autoplay: true,
+autoplaySpeed: 6000,
+easing: 'ease-in-out',
+adaptiveHeight: true,
+pauseOnHover:false,
+dots: true
+});
+</script>
+}
+@Html.RenderScripts()
+@RenderSection("EndScripts", false)
+
+@if(ViewBag.BodyId == "home")
+{
+
+<script src="https://services1-tmpwebeng-com.tmpqa.com/nyp/nyp.js"></script>
+
+}
+
+@(pageModel != null && Extensions.IsTrackedPage(pageModel) ? Html.Raw(pageModel.TrackingTag) : MvcHtmlString.Empty)
+@Html.Partial("_SiteTrackingTag")
+
+<script id="tmp-magic-bullet" data-a11y="true" src="https://services.tmpwebeng.com/magicbullet/"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+function filterToggleSpaceBar() {
+
+
+	$("#search-filters .expandable-parent").on("keydown", function(e) {
+
+		if(e.keyCode == 32){
+
+       			$(this).trigger("click");
+			
+			return false;
+   
+		}
+		
+	
+	});
+
+}
+
+
+if($("#search").length) {
+
+	filterToggleSpaceBar();
+
+	$(document).ajaxStop(function() {
+
+		filterToggleSpaceBar();
+
+	});
+
+}
