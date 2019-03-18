@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+
+<div id="customTint">
+    <ul>
+        <li v-for="tintItem in tintData">
+            <a v-bind:href="tintItem.url" target="_blank">
+                <img v-bind:src="tintItem.image" />
+            </a>
+            <div class="tint-copy-wrap">
+                <p class="tint-title">
+                    <a v-bind:href="tintItem.url" target="_blank">
+                        {{ tintItem.title }}
+                    </a>
+                </p>
+                <a class="tint-external-link" v-if="tintItem.tweet_urls[0]" v-bind:href="tintItem.tweet_urls[0].expanded_url" target="_blank">{{ tintItem.tweet_urls[0].display_url }}</a>           
+            </div>
+            
+            <a class="tint-social" v-bind:href="tintItem.url" target="_blank">
+                <i class="fab fa-facebook-f" v-if="tintItem.source === 1"></i>
+                <i class="fab fa-twitter" v-if="tintItem.source === 2"></i>
+                <i class="fab fa-instagram" v-if="tintItem.source === 3"></i>
+                <i class="fab fa-youtube" v-if="tintItem.source === 4"></i>
+                <i class="fab fa-pinterest-p" v-if="tintItem.source === 5"></i>
+                <i class="fab fa-rss" v-if="tintItem.source === 6"></i>
+                <i class="fab fa-google-plus-g" v-if="tintItem.source === 7"></i>
+                <i class="fab fa-linkedin-in" v-if="tintItem.source === 8"></i>
+                <i class="fab fa-tumblr" v-if="tintItem.source === 10"></i>
+                <i class="fab fa-paperclip" v-if="tintItem.source === 11"></i>
+            </a>
+            
+        </li>
+    </ul>
+    <button class="tint-load-more" v-on:click="getNextPage()">Load More</button>
+    
+</div>
