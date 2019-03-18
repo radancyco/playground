@@ -12,9 +12,9 @@
                         {{ tintItem.title }}
                     </a>
                 </p>
-                <a class="tint-external-link" v-if="tintItem.tweet_urls[0]" v-bind:href="tintItem.tweet_urls[0].expanded_url" target="_blank">{{ tintItem.tweet_urls[0].display_url }}</a>           
+                <a class="tint-external-link" v-if="tintItem.tweet_urls[0]" v-bind:href="tintItem.tweet_urls[0].expanded_url" target="_blank">{{ tintItem.tweet_urls[0].display_url }}</a>
             </div>
-            
+
             <a class="tint-social" v-bind:href="tintItem.url" target="_blank">
                 <i class="fab fa-facebook-f" v-if="tintItem.source === 1"></i>
                 <i class="fab fa-twitter" v-if="tintItem.source === 2"></i>
@@ -27,11 +27,11 @@
                 <i class="fab fa-tumblr" v-if="tintItem.source === 10"></i>
                 <i class="fab fa-paperclip" v-if="tintItem.source === 11"></i>
             </a>
-            
+
         </li>
     </ul>
     <button class="tint-load-more" v-on:click="getNextPage()">Load More</button>
-    
+
 </div>
 
 
@@ -47,8 +47,8 @@
 
 
 $(window).load(function(){
-    feedUrl = "https://api.tintup.com/v1/feed/TINT_NAME?api_token=TINT_TOKEN";
-        
+    feedUrl = "https://api.tintup.com/v1/feed/gccommunity?api_token=927985";
+
     if(typeof Vue != "undefined"){
         var tint = new Vue({
         el: '#customTint',
