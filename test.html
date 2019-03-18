@@ -9,21 +9,13 @@
 
         <img v-bind:src="tintItem.image" alt="">
 
+        <p class="tint-title">{{ tintItem.title }}</p>
+
       </a>
 
-      <div class="tint-copy-wrap">
+      <a class="tint-external-link" v-if="tintItem.tweet_urls[0]" v-bind:href="tintItem.tweet_urls[0].expanded_url" target="_blank" rel="noopener">{{ tintItem.tweet_urls[0].display_url }}</a>
 
-        <p class="tint-title">
-
-          <a v-bind:href="tintItem.url" target="_blank" rel="noopener">{{ tintItem.title }}</a>
-
-        </p>
-
-        <a class="tint-external-link" v-if="tintItem.tweet_urls[0]" v-bind:href="tintItem.tweet_urls[0].expanded_url" target="_blank" rel="noopener">{{ tintItem.tweet_urls[0].display_url }}</a>
-
-      </div>
-
-      <a class="tint-social" v-bind:href="tintItem.url" target="_blank">
+      <a class="tint-social" v-bind:href="tintItem.url" target="_blank" rel="noopener">
         <i class="fab fa-facebook-f" v-if="tintItem.source === 1"></i>
         <i class="fab fa-twitter" v-if="tintItem.source === 2"></i>
         <i class="fab fa-instagram" v-if="tintItem.source === 3"></i>

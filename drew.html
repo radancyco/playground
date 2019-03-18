@@ -1,30 +1,29 @@
-<style class="cp-pen-styles">h2 {
-  color: blue;
-  font-size: 40px;
-  line-height: 40px;
-  max-width: 300px;
-  position: relative;
-  text-transform: uppercase;
+<style>
+
+h2 {
+color: blue;
+font-size: 40px;
+line-height: 40px;
+max-width: 300px;
+position: relative;
+text-transform: uppercase;
 }
-h2:after {
-  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-  color: red;
-  content: attr(data-text);
-  display: block;
-  left: 0;
-  position: absolute;
-  top: 0;
+
+h2 span:after {
+clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+-webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+color: red;
+content: attr(data-text);
+display: block;
+left: 0;
+position: absolute;
+top: 0;
 }
+
 </style>
 
-
-<a href="https://www.google.com/">
-
-<h2>Diversity Up In Here Because Here Could Be Longer <span data-text="Diversity Up In Here Because Here Could Be Longer"></span></h2>
-
-</a>
+<h2>Diversity Up In Here Because Here Could Be Longer <span aria-hidden="true" data-text="Diversity Up In Here Because Here Could Be Longer"></span></h2>
 
 <h2>Diversity Up In Here <span aria-hidden="true" data-text="Diversity Up In Here"></span></h2>
 
-<h2>Job Details <span data-text="Job Details"></span></h2>
+<h2>Job Details <span aria-hidden="true" data-text="Job Details"></span></h2>
