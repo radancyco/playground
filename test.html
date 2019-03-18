@@ -33,3 +33,58 @@
     <button class="tint-load-more" v-on:click="getNextPage()">Load More</button>
     
 </div>
+
+
+
+
+<script>
+
+
+$(window).load(function(){
+    feedUrl = "https://api.tintup.com/v1/feed/TINT_NAME?api_token=TINT_TOKEN";
+        
+    if(typeof Vue != "undefined"){
+        var tint = new Vue({
+        el: '#customTint',
+        data: {
+            feedUrl: feedUrl,
+            tintData: [],
+            nextPage: ""
+        },
+        methods: {
+            getTint: function(){
+                $.ajax({ url: this.feedUrl, dataType: 'jsonp'}).done(function(response){
+                    tint.nextPage = response.next_page;
+                    tint.tintData = tint.tintData.concat(response.data);
+                });
+            },
+            getNextPage: function(){
+                $.ajax({ url: this.nextPage, dataType: 'jsonp'}).done(function(response){
+                    tint.nextPage = response.next_page;
+                    tint.tintData = tint.tintData.concat(response.data);
+                });
+            }
+        },
+        created: function(){
+            this.getTint();
+        },
+        watch: {
+            tintData: function(){
+                setTimeout(function(){
+                    if($('#customTint ul li').length <= 20){
+                        $('#customTint ul').masonry({
+                          itemSelector: 'li',
+                          columnWidth: 25,
+                            percentPosition: true
+                        });
+                    } else {
+                        $('#customTint ul').masonry('reloadItems').masonry();
+                    }
+                }, 500);
+            }
+        }
+    });
+}
+});
+
+</script>
