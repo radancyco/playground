@@ -1,0 +1,372 @@
+Wells Fargo
+
+
+Skip Link is missing
+
+The navigation items that contain a dropdown item are inaccessible to keyboard users. 
+
+
+
+"Browse by function" and "Browser by location" dropdowns are inaccessible to keyboard users
+
+https://www.screencast.com/t/o6oqyBQH0UF
+
+--- 
+
+
+Working at Wells Fargo - Why Wells Fargo video is inaccessible to keyboard users. 
+
+https://www.screencast.com/t/mAV3dehyJG
+
+
+--- 
+
+Career Arc map looks liek it may have a keyboard trap. Update: No keyboard trap, just an exceedinly long list of links. 
+
+--- 
+
+This UI is not keyboard friendly - https://www.screencast.com/t/F1zBpZEgGO2
+
+--- 
+
+
+Remove navigation headingings - make these buttons instead
+
+
+---
+
+
+Social Link missing discernable text. See https://www.screencast.com/t/2kzRgCrNu
+
+
+---
+
+Ensures all page content is contained by landmarks
+
+Impact: moderate
+
+Move .search-wrapper and .site-maintenance
+
+
+---
+
+Please update slick slider to most current version (add version number)
+
+
+---
+
+Please add null alt (alt="") to all the following images. Images that do not require alternative text, still must have a blank or null alt included.
+
+https://www.screencast.com/t/qZiJN4qKO2B6
+
+
+===
+
+
+https://www.screencast.com/t/j9HsvUHkwJF
+
+
+https://www.screencast.com/t/CBTsy1yjNro     fgfgfgffgf
+
+
+25% of your audience *has* a disability
+
+75% will
+
+100% have an access need
+
+
+
+Wells Fargo - Keyboard
+
+Home
+
+1. Portions of primary navigation are inaccessible. Please ensure that portions of the navigation that contain sub-navigation are accessible. 
+
+For example, the About Us, Career Areas and Working Here portions of the navigation would be better served with <button> instead of <h2>. 
+
+ 
+2. In the "Browse Opportunities" section of the page the "Browse by function" and "Browse by location" buttons are inaccessible to keyboard users. 
+
+3. "Working at Wells Fargo – Why Wells Fargo?" video is not keyboard friendly. Look to the patterns found in https://codedrive.io/#/snippets/14, for the correct way to handle this kind of interface. There are some some other accessibility issues present in this module as well, like a missing title attribute on the iframe, etc. Using the recommended code will alleviate all of these issues. 
+
+be sure to update for all video used across the site. Also ensure the images contain the proper alternative text, which in this case the title of the actual video. 
+
+---
+
+3a. When this module is updated with working code, please add the following alt text to the image: Working at Wells Fargo – Why Wells Fargo? (Video)
+
+3.b The "Find jobs near you you compontent has accessibility issues - tmp will need to conduct a seperate audit of this compontent and reach out to Carrer Arc 
+
+4.  The diversity statement, which expands when clicked on via mouse, is not accessible to keyboard users.
+
+5. Please make "Search our Jobs" a <button> instead of a heading (Remove: <a href="#advanced-search-form-fields" class="advanced-search-toggle expandable-toggle"><h2>Search our jobs</h2></a> entirely). Be sure to include aria-expanded and toggle true/false value on click. https://www.screencast.com/t/lAjCMScghtV 
+
+6. Remove hidden <h1> element from page and make the logo the <h1>: 
+
+<h1><img src="https://tbcdn.talentbrew.com/company/1251-preview-site/img/logo/logo-6963-7773.png" alt="Wells Fargo Careers"></h1>
+
+7. The "Muse" social icon is missing discernable text. Please add. https://www.screencast.com/t/tnlnjLLY 
+
+8: Update alt text in "Together we'll go far" image. https://www.screencast.com/t/IipIKEQYh
+
+9: Please add "null alt" to following images: https://www.screencast.com/t/Wn9yv9CE2wWq
+
+10. Upgrade slick carousel
+
+11. Move the entire .search-wrapper block into <header>. Adjust CSS as needed. No 
+
+
+12. Mobile Menu Button. Do foloowing: 
+
+Remove aria-hidden and hide/show with CSS only.
+aria-expanded is toggling between viewport sizes. this behavior is incorrect. Ensure this value only toggles when clicked on. 
+The buttons label is set as a css pseudo-element. Please ensure this value is set within HTML instead. Replace ::after with <span>Menu</span>
+
+13. Make this a relative link - keeps bringing user to production from QA - https://www.screencast.com/t/MrL57hXS
+
+
+
+
+
+
+
+Sitemap: https://refresh-wf.runmytests.com/sitemap
+
+1. Browse by location, Browse by function and Browse Job Groups are all inaccessible via keyboard
+
+
+https://refresh-wf.runmytests.com/search-jobs
+
+
+
+Sync down latest changes from Search Filter and Search Resulst modules. Restyle as needed. Some links in Search Filters are now buttons, etc. 
+
+Add following script to main JS (Filter search focus bug)
+
+
+In related content section, please remove all alternative text values. these images are decorative and sometimes even repeat the same text used below them. Ensure button and link text is not repeated as image alternative. Only ensre that all images contain a null alt. 
+
+
+
+
+
+
+Include magic bullet on all templates. 
+
+
+
+----
+
+https://refresh-wf.runmytests.com/career-areas 
+
+Remove this alt text value
+
+https://www.screencast.com/t/HqZW1oP7
+
+
+----
+
+https://refresh-wf.runmytests.com/Community-Banking
+
+
+Accordions are inaccessible to keyboard users. 
+
+https://www.screencast.com/t/gi4FFZXPm
+
+
+The <article> element should not be used here. Please remove. 
+
+https://www.screencast.com/t/6PYjmT0o
+
+---
+
+Color contrast violation. https://www.screencast.com/t/J6YeJFHl
+
+Consider using #0080A7 for background color
+
+
+---
+
+https://refresh-wf.runmytests.com/enterprise-functions 
+
+
+Heading used where is should not be. Please adjust. 
+
+When this headins removed, you will need to update the headings below them to be h2s etc. 
+ 
+
+https://www.screencast.com/t/085GrSbqk
+
+
+
+
+Images with text in them must contain verbatium alternative text.  
+
+https://www.screencast.com/t/t9ynNGK4My94
+
+First Image: The Muse: Meet Wells Fargo's Lauren Shea, Audit Manager
+
+Second Image: The Muse: Meet Wells Fargo's Gabrielle Duccini
+
+
+---
+
+
+https://refresh-wf.runmytests.com/international 
+
+
+https://www.screencast.com/t/wxgfSugx 
+
+Heading level skipped.
+
+
+Remove the alt text values from the foloowing images, leaving just a "null alt". These images are decorative. The text is also repeated in the headings below them. 
+
+https://www.screencast.com/t/DxlpmcgfI3Lv
+
+--- 
+
+Same as above
+
+https://www.screencast.com/t/h5X7qvmr
+
+---
+
+https://refresh-wf.runmytests.com/consumer-lending
+ 
+
+heading used where it should not be. 
+
+https://www.screencast.com/t/glWcSRH0UX7x
+
+When this headins removed, you will need to update the headings below them to be h2s etc. 
+
+--
+
+color contrast
+
+https://www.screencast.com/t/Mj0cRYCVxaQ
+
+use 0080A7 for background color. 
+
+--- 
+
+
+https://refresh-wf.runmytests.com/info-tech 
+
+https://www.screencast.com/t/UNjRfHAy
+
+
+
+
+-------
+
+https://refresh-wf.runmytests.com/military
+
+
+Military Skills Translator
+
+third-party bullshit
+
+military.com
+
+
+---
+
+
+AJD Page
+
+https://refresh-wf.runmytests.com/job/new-brunswick/teller-30-hour-new-brunswick/1251/11246343
+
+
+Use inline images here and be sure that text used in alt is verbatium. Hyperlinks must text or images with descriptive alternative text - https://www.screencast.com/t/HGt3kcBQ
+
+--
+
+use cite https://www.screencast.com/t/R2HUkSUIhIm
+
+
+--- 
+
+
+Early Careers
+
+https://refresh-wf.runmytests.com/early-careers
+
+
+Step 1 drodowns are not keyboard friendly. 
+
+https://www.screencast.com/t/m3O0Swdf2n
+
+--- 
+
+
+
+look at events more closely
+
+https://refresh-wf.runmytests.com/events
+
+
+
+
+=====
+
+https://refresh-wf.runmytests.com/diversity 
+
+
+Use <cite> element to quote speaker properly. 
+
+https://www.screencast.com/t/YS2ksAXmtj1Y
+
+
+===
+
+https://refresh-wf.runmytests.com/social-media
+
+
+h2 should not be used here. use <p> instead
+
+https://www.screencast.com/t/2QJJYUbiSU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
