@@ -9,6 +9,7 @@
 	html {
   box-sizing: border-box;
 	}
+
 	*, *:before, *:after {
   box-sizing: inherit;
 	}
@@ -19,12 +20,20 @@
 	}
 
 	video {
-	height: 100vh;
-	left: 0;
-	object-fit: cover;
-	position: fixed;
-	top: 0;
-	width: 100vw;
+	width: 100%;
+	}
+
+	@media(min-width: 778px) {
+
+		video {
+		height: 100vh;
+		left: 0;
+		object-fit: cover;
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		}
+
 	}
 
 	#track-display {
