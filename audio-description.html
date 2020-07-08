@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+
+	<style>
+
+	html {
+  box-sizing: border-box;
+	}
+	*, *:before, *:after {
+  box-sizing: inherit;
+	}
+
+	body {
+	margin: 0;
+	font: 1.6rem/1.5 Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+
+	video {
+	height: 100vh;
+	left: 0;
+	object-fit: cover;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	}
+
+	#track-display {
+	position: absolute;
+	bottom: 20px;
+	background-color: #006631;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	padding: 1em;
+	}
+
+	</style>
+
+	<title>This is Cargill (Audio Description) - Cargill</title>
+</head>
+
+<body>
+
+<video id="video-1" muted autoplay>
+	<source type="video/mp4" src="this-is-cargill.mp4">
+	<track kind="descriptions" src="this-is-cargill.vtt" srclang="en" default>
+</video>
+
+<div id="track-display" aria-live="polite"></div>
+
+<script>
+
+var video = document.getElementById("video-1");
+var trackDisplay = document.getElementById("track-display");
+
+if (video.textTracks) {
+
+	var track = video.textTracks[0];
+	track.mode = 'hidden';
+
+	track.oncuechange = function(e) {
+
+		var cue = this.activeCues[0];
+
+		if (cue) {
+
+			trackDisplay.innerHTML = '';
+			trackDisplay.appendChild(cue.getCueAsHTML());
+
+		}
+
+	}
+
+}
+
+</script>
+
+</body>
+</html>
