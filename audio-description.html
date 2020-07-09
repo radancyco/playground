@@ -53,6 +53,8 @@
 	right: 20px;
 	width: 50px;
 	height: 50px;
+	border: 0;
+	border-radius: 5px;
 	}
 
 	#btn-audio img {
@@ -86,7 +88,7 @@
 
 	<script>
 
-	var btnAudio = document.getElementById("btn-audio");
+	const btnAudio = document.getElementById("btn-audio");
 
 	btnAudio.onclick = function() {
 
@@ -94,17 +96,17 @@
 
 	}
 
-	var video = document.getElementById("video-1");
-	var trackDisplay = document.getElementById("track-display");
+	const video = document.getElementById("video-1");
+	const trackDisplay = document.getElementById("track-display");
 
 	if (video.textTracks) {
 
-		var track = video.textTracks[0];
+		const track = video.textTracks[0];
 		track.mode = 'hidden';
 
 		track.oncuechange = function(e) {
 
-			var cue = this.activeCues[0];
+			const cue = this.activeCues[0];
 
 			if (cue) {
 
