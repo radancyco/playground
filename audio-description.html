@@ -37,6 +37,7 @@
 	}
 
 	#track-display {
+	display: none;
 	background-color: #006631;
 	bottom: 20px;
 	color: #fff;
@@ -46,6 +47,23 @@
 	width: 100%;
 	}
 
+	#btn-audio {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	}
+
+	#btn-audio img {
+	display: block;
+	max-width: 100%;
+	}
+
+	#btn-audio.on + #track-display {
+	display: block;
+	}
+
 	</style>
 
 	<title>Custom Displayed Audio Descriptions</title>
@@ -53,39 +71,53 @@
 
 <body>
 
-<video id="video-1" muted autoplay loop playsinline disableremoteplayback>
-	<source src="this-is-cargill.mp4" type="video/mp4">
-	<track kind="descriptions" src="this-is-cargill.vtt">
-</video>
+	<main>
 
-<div id="track-display" aria-live="polite"></div>
+		<video id="video-1" muted autoplay loop playsinline disableremoteplayback>
+			<source src="this-is-cargill.mp4" type="video/mp4">
+			<track kind="descriptions" src="this-is-cargill.vtt">
+		</video>
 
-<script>
+		<button id="btn-audio" aria-label="Audio Description"><img src="btn-audio.png" alt=""></button>
 
-var video = document.getElementById("video-1");
-var trackDisplay = document.getElementById("track-display");
+		<div id="track-display" aria-live="polite"></div>
 
-if (video.textTracks) {
+	</main>
 
-	var track = video.textTracks[0];
-	track.mode = 'hidden';
+	<script>
 
-	track.oncuechange = function(e) {
+	var btnAudio = document.getElementById("btn-audio");
 
-		var cue = this.activeCues[0];
+	btnAudio.onclick = function() {
 
-		if (cue) {
+	  btnAudio.classList.toggle("on");
 
-			trackDisplay.innerHTML = '';
-			trackDisplay.appendChild(cue.getCueAsHTML());
+	}
+
+	var video = document.getElementById("video-1");
+	var trackDisplay = document.getElementById("track-display");
+
+	if (video.textTracks) {
+
+		var track = video.textTracks[0];
+		track.mode = 'hidden';
+
+		track.oncuechange = function(e) {
+
+			var cue = this.activeCues[0];
+
+			if (cue) {
+
+				trackDisplay.innerHTML = '';
+				trackDisplay.appendChild(cue.getCueAsHTML());
+
+			}
 
 		}
 
 	}
 
-}
-
-</script>
+	</script>
 
 </body>
 </html>
