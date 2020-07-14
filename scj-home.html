@@ -54,9 +54,10 @@
 	
 	.custom-controls {
 	position: absolute;
-	bottom: 10px;
+	bottom: -100px;
 	right: 10px;
 	z-index: 2;
+	opacity: 0;
 	}
 	
 	#hero-video[controls] + .custom-controls {
@@ -71,12 +72,19 @@
 	vertical-align: bottom;
 	margin-right: 5px;
 	background-color: #000;
-	opacity: 0.7;
 	}
 	
-	#video-player:hover button, .custom-controls button:focus {
-	transition: 800ms;
+	#video-player:hover .custom-controls {
+	transition: all 600ms ease-in-out;
+	}
+	
+	#video-player:hover .custom-controls, #video-player:focus-within .custom-controls {
+	bottom: 10px;
 	opacity: 1;
+	}
+	
+	#video-player-wrapper {
+	overflow: hidden;
 	}
 	
 	.custom-controls button img {
