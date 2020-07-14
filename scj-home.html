@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+
+	<style>
+
+	html {
+	box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+	box-sizing: inherit;
+	}
+
+	body {
+	margin: 0;
+	padding: 20px;
+	font: 1.4rem/1.5 Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+
+	video {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	}
+	
+	#video-player {
+	margin: 0 -20px;
+	}
+
+	
+	#video-player-wrapper {
+	position: relative;
+	}
+
+	#audio-description {
+	display: none;
+	background-color: #000;
+	bottom: 9px;
+	color: #fff;
+	padding: 1em;
+	text-align: center;
+	font-size: 18px;
+	}
+	
+	#audio-description.active {
+	display: block;
+	}
+	
+	.custom-controls {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	z-index: 2;
+	}
+	
+	#hero-video[controls] + .custom-controls {
+	display: none;
+	}
+	
+	.custom-controls button {
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 5px;
+	vertical-align: bottom;
+	margin-right: 5px;
+	background-color: #000;
+	opacity: 0.7;
+	}
+	
+	#video-player:hover button, .custom-controls button:focus {
+	transition: 800ms;
+	opacity: 1;
+	}
+	
+	.custom-controls button img {
+	display: block;
+	max-width: 100%;
+	filter: invert(1);
+	}
+
+	</style>
+
+	<title>Hero Banner Video (Audio Descriptions)</title>
+</head>
+
+<body>
+
+	<main>
+	
+		<h1>Hero Banner Video (Audio Descriptions)</h1>
+	
+		<div id="video-player">
+		
+			<div id="video-player-wrapper">
+
+				<video id="hero-video" aria-label="Hero Banner" muted autoplay loop playsinline disableremoteplayback>
+					<source src="scj-home.mp4" type="video/mp4">
+					<track kind="descriptions" src="scj-home.vtt">
+				</video>
+				
+				<div class="custom-controls">
+
+					<button id="btn-play-pause"><img src="btn-play.png" alt="Toggle Play/Pause"></button>
+			
+					<button id="btn-audio-description"><img src="btn-audio.png" alt="Toggle Audio Description"></button>
+					
+				</div>
+
+			</div>
+			
+			<div id="audio-description" aria-live="polite"></div>
+		
+		</div>
+	
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+		<h2>Aenean Fermentum</h2>
+		
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	
+	</main>
+
+	<script>
+	
+	const heroVideo = document.getElementById("hero-video");
+	const audioDescription = document.getElementById("audio-description");
+
+	if (heroVideo.textTracks) {
+
+		const track = heroVideo.textTracks[0];
+		track.mode = "hidden";
+
+		track.oncuechange = function(e) {
+
+			const cue = this.activeCues[0];
+
+			if (cue) {
+
+				audioDescription.innerHTML = "";
+				audioDescription.appendChild(cue.getCueAsHTML());
+
+			}
+
+		}
+
+	}
+	
+	const btnAudioDescription = document.getElementById("btn-audio-description");
+	const btnPlayToggle = document.getElementById("btn-play-pause");
+
+	btnAudioDescription.onclick = function() {
+
+	  this.classList.toggle("on");
+	  audioDescription.classList.toggle("active");
+
+	}
+	
+	btnPlayToggle.onclick = function() {
+
+	  this.classList.toggle("on");
+	  heroVideo.paused ? heroVideo.play() : heroVideo.pause();
+
+	}
+
+	</script>
+
+</body>
+</html>
