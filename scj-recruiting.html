@@ -108,7 +108,7 @@
 		
 			<div id="video-player-wrapper">
 
-				<video id="hero-video" preload="none" aria-label="SCJ Recruiting" poster="scj-recruiting.jpg">
+				<video id="hero-video" preload="none" aria-label="SCJ Recruiting" mute poster="scj-recruiting.jpg">
 					<source src="scj-recruiting.mp4" type="video/mp4">
 					<track kind="descriptions" src="scj-recruiting.vtt">
 				</video>
@@ -140,7 +140,15 @@
 	const heroVideo = document.getElementById("hero-video");
 	const audioDescription = document.getElementById("audio-description");
 
-	if (heroVideo.textTracks) {
+	const btnAudioDescription = document.getElementById("btn-audio-description");
+	const btnPlayToggle = document.getElementById("btn-play-pause");
+
+	btnAudioDescription.onclick = function() {
+
+	  this.classList.toggle("on");
+	  audioDescription.classList.toggle("active");
+	  
+	  	if (heroVideo.textTracks) {
 
 		const track = heroVideo.textTracks[0];
 		track.mode = "hidden";
@@ -153,20 +161,18 @@
 
 				audioDescription.innerHTML = "";
 				audioDescription.appendChild(cue.getCueAsHTML());
+				
+				var Message = audioDescription.textContent;
+				var msg = new SpeechSynthesisUtterance(Message);
+				window.speechSynthesis.speak(msg);
 
 			}
 
 		}
 
 	}
-	
-	const btnAudioDescription = document.getElementById("btn-audio-description");
-	const btnPlayToggle = document.getElementById("btn-play-pause");
-
-	btnAudioDescription.onclick = function() {
-
-	  this.classList.toggle("on");
-	  audioDescription.classList.toggle("active");
+	  
+	  heroVideo.volume = 0.1;
 
 	}
 	
@@ -176,7 +182,7 @@
 	  heroVideo.paused ? heroVideo.play() : heroVideo.pause();
 
 	}
-
+	
 	</script>
 
 </body>
