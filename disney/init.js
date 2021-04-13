@@ -21,11 +21,11 @@ $(".top-bar .advanced-search-toggle").on("keypress", function() {
 
 var $SlickSliderList = $(".one-time");
 
-$SlickSliderList.on("afterChange", function(event, slick, currentSlide){
+$(".one-time").on("afterChange", function(event, slick, currentSlide){
 
-	$(this).append("<button class='slick-carousel-pause' aria-pressed='false'>Pause</button>");
+	$SlickSliderList.append("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
 
-});
+}, 3000);
 
 $(".slick-carousel-pause").on("click", function() {
 
