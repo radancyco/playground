@@ -23,9 +23,9 @@ var $SlickSliderList = $(".one-time");
 
 setTimeout(function(){
 
-	$SlickSliderList.after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
+	$(".slick-dots").after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
 
-}, 500);
+}, 3000);
 
 $(".slick-carousel-pause").on("click", function() {
 
