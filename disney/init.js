@@ -2,7 +2,7 @@
 
 // Append CSS
 
-$("head").append("<link rel='stylesheet' href='https://radancy.dev/playground/disney/init.css'>"");
+$("head").append("<link href='https://radancy.dev/playground/disney/init.css' rel='stylesheet'>");
 
 // Add button role to Advanced Search Jobs toggle
 
