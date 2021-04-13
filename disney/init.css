@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 18 | /     @include breakpoint(900px) {
+ * 19 | |         bottom: 1.5vw;
+ * 20 | \     }
+ *    '
+ *   init.scss 18:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 18 \2502  \250c      @include breakpoint(900px) {\a 19 \2502  \2502          bottom: 1.5vw;\a 20 \2502  \2514      }\a    \2575 \a   init.scss 18:5  root stylesheet";
+}
