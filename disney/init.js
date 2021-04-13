@@ -23,7 +23,7 @@ var $SlickSliderList = $(".one-time");
 
 setTimeout(function(){
 
-	$SlickSliderList.append("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
+	$SlickSliderList.after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
 
 }, 500);
 
