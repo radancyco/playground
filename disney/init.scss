@@ -15,9 +15,11 @@ transition: all 350ms ease-in-out;
 width: 30px;
 z-index: 2;
 
-    @include breakpoint(900px) {
-        bottom: 1.5vw;
-    }
+  @media(min-width: 900px) {
+
+    bottom: 1.5vw;
+
+  }
 
 	&[aria-pressed="true"] {
 
