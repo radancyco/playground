@@ -29,7 +29,7 @@ setTimeout(function(){
 
 $(".slick-carousel-pause").on("click", function() {
 
-  if ($(this).attr("aria-pressed") == "pause"){
+  if ($(this).attr("aria-pressed") == "false"){
 
     $SlickSliderList.slick("slickPause");
     $(this).attr("aria-pressed", "true");
