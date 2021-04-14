@@ -27,7 +27,7 @@ setTimeout(function(){
 
 }, 3000);
 
-$(".slick-carousel-pause").on("click", function() {
+$(".slick-carousel-pause").on("click", function(e) {
 
   if ($(this).html() == "Pause"){
 
@@ -41,6 +41,6 @@ $(".slick-carousel-pause").on("click", function() {
 
   }
 
-	return;
+	e.stopPropagation();
 
 });
