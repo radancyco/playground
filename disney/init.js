@@ -17,11 +17,12 @@ $(".top-bar .advanced-search-toggle").on("keypress", function() {
 
 });
 
-// Carousel Fixes
-
-var $SlickSliderList = $(".one-time");
 
 setTimeout(function(){
+
+	// Carousel Fixes
+
+	var $SlickSliderList = $(".one-time");
 
 	$(".slick-dots").after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
 
@@ -38,6 +39,19 @@ setTimeout(function(){
 	    $(this).attr("aria-pressed", "false");
 
 	  }
+
+	});
+
+	// Fancy Box Close Button
+
+	$(".fancybox-close").removeAttribute("title").attr({
+
+    "role":"button",
+    "aria-label": "Close"
+
+	}).on("keypress", function() {
+
+			$.fancybox.close();
 
 	});
 
