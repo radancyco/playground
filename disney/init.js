@@ -4,6 +4,25 @@
 
 $("head").append("<link href='https://radancy.dev/playground/disney/init.css' rel='stylesheet'>");
 
+// Enhance Primary Navigation links so AT users understand where they are within the site.
+
+// Enahnce Primary Navigation
+
+var navHref = window.location.pathname;
+
+// console.log(navHref);
+
+if( $("#primary-nav a[href='" + navHref + "']").length ) {
+
+	$("#primary-nava[href='" + navHref + "']").attr({
+
+		'aria-current': 'page',
+		'href': '#content'
+
+	});
+
+}
+
 // Add button role to Advanced Search Jobs toggle
 
 $(".advanced-search-toggle").attr("role", "button");
@@ -44,7 +63,7 @@ setTimeout(function(){
 
 	// Fancy Box Close Button
 
-	$(".fancybox-close").removeAttribute("title href").attr({
+	$(".fancybox-close").removeAttribute("title").attr({
 
     "role":"button",
     "aria-label": "Close"
