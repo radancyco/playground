@@ -23,24 +23,22 @@ var $SlickSliderList = $(".one-time");
 
 setTimeout(function(){
 
-	$(".slick-dots").after("<button class='slick-carousel-pause' aria-pressed='false'>Pause</button>");
+	$(".slick-dots").after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
+
+	$(".slick-carousel-pause").on("click", function() {
+
+	  if ($(this).attr("aria-pressed") === "false"){
+
+	    $SlickSliderList.slick("slickPause");
+	    $(this).attr("aria-pressed", "true");
+
+	  } else {
+
+	    $SlickSliderList.slick("slickPlay");
+	    $(this).attr("aria-pressed", "false");
+
+	  }
+
+	});
 
 }, 3000);
-
-$(".slick-carousel-pause").on("click", function(e) {
-
-  if ($(this).html() == "Pause"){
-
-    $SlickSliderList.slick("slickPause");
-    $(this).attr("aria-pressed", "true");
-
-  } else {
-
-    $SlickSliderList.slick("slickPlay");
-    $(this).attr("aria-pressed", "false");
-
-  }
-
-	e.stopPropagation();
-
-});
