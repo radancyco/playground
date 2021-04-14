@@ -39,9 +39,9 @@ setTimeout(function(){
 
 	// Carousel Fixes
 
-	var $SlickSliderList = $(".one-time, .espn-banner");
+	var $SlickSliderList = $(".one-time, .espn-banner, .quote-slider");
 
-	$(".slick-dots, .slick-next").after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
+	$SlickSliderList.find(".slick-dots, .slick-next").after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
 
 	$(".slick-carousel-pause").on("click", function() {
 
