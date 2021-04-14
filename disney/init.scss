@@ -1,3 +1,12 @@
+#primary-nav {
+
+  a[aria-current="page"] {
+  font-weight: bold;
+  }
+
+}
+
+
 .slick-carousel-pause {
 background-color: black;
 background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAABQAQMAAACDEa/aAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAABFJREFUKM9j+P//xygexQOFAVmQ2dAaCQcwAAAAAElFTkSuQmCC");
