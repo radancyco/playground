@@ -41,4 +41,6 @@ $(".slick-carousel-pause").on("click", function() {
 
   }
 
+	return;
+
 });
