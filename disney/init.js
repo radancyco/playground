@@ -6,15 +6,13 @@ $("head").append("<link href='https://radancy.dev/playground/disney/init.css' re
 
 // Enhance Primary Navigation links so AT users understand where they are within the site.
 
-// Enahnce Primary Navigation
-
 var navHref = window.location.pathname;
 
 // console.log(navHref);
 
 if( $("#primary-nav a[href='" + navHref + "']").length ) {
 
-	$("#primary-nava[href='" + navHref + "']").attr({
+	$("#primary-nav a[href='" + navHref + "']").attr({
 
 		'aria-current': 'page',
 		'href': '#content'
