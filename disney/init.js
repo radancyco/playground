@@ -61,7 +61,7 @@ setTimeout(function(){
 
 	// Fancy Box Close Button
 
-	$(".fancybox-close").removeAttribute("title").attr({
+	$(".fancybox-close").removeAttr("title").attr({
 
     "role":"button",
     "aria-label": "Close"
