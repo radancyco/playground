@@ -34,7 +34,6 @@ $(".top-bar .advanced-search-toggle").on("keypress", function() {
 
 });
 
-
 setTimeout(function(){
 
 	// Carousel Fixes
@@ -68,7 +67,64 @@ setTimeout(function(){
 
 	}).on("keypress", function() {
 
-			$.fancybox.close();
+			//$.fancybox.close();
+
+	});
+
+	// Video Module Fixes
+
+	$(".videos").each(function(index) {
+
+		var thisVideoContainer = $(this).find(".vid-container");
+		var thisVideoList = $(this).find(".vid-list");
+		var thisVideoIframe = thisVideoContainer.find("iframe");
+
+		// Prepend Return to Video Nav link
+
+		thisVideoContainer.prepend("<a class='btn-video-nav' href='#video-nav-0" + index + "'>Go to Video Nav</a>");
+
+		// Add ID to Video Navigation List
+
+		thisVideoList.attr("id", "video-nav-0" + index);
+
+		// Add title to default video and update src
+
+		var $InitVideoSelect = thisVideoList.find(".selected");
+		var $InitVideoText =  $InitVideoSelect.find(".desc").text();
+		var $InitVideoLink = $InitVideoSelect.find("a");
+		var $InitVideoID = $InitVideoLink.data("video");
+		var $InitVideoURL = "https://www.youtube.com/embed/" + $InitVideoID + "?rel=0&cc_load_policy=1&modestbranding=1&showinfo=0&enablejsapi=1&";
+		thisVideoIframe.attr({
+
+	    "title":  $InitVideoText,
+			"src": $InitVideoURL
+
+		});
+
+		// List Link Action
+
+		var $ListLinks = thisVideoList.find("a");
+
+		$ListLinks.each(function() {
+
+			$(this).on("click", function() {
+
+				var $SelectedVideoText = $(this).find(".desc").text();
+				var YouTubeID = $(this).data("video");
+				var NewURL = "https://www.youtube.com/embed/" + YouTubeID + "?rel=0&cc_load_policy=1&modestbranding=1&autoplay=1&showinfo=0";
+
+				thisVideoIframe.attr({
+
+			    "title":  $SelectedVideoText,
+					"src": NewURL
+
+				}).parent().attr("tabindex", "-1").focus();
+
+				return false;
+
+			});
+
+		});
 
 	});
 
