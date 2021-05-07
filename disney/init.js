@@ -34,6 +34,18 @@ $(".top-bar .advanced-search-toggle").on("keypress", function() {
 
 });
 
+// Some toggle buttons missing aria-expanded
+
+$(".form-toggle").attr("aria-expanded", "false").on("click", function() {
+
+	$(this).attr("aria-expanded", function (i, attr) {
+
+		 return attr == "true" ? "false" : "true"
+
+	 })
+
+});
+
 setTimeout(function(){
 
 	// Carousel Fixes
