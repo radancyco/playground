@@ -42,7 +42,7 @@ $(".form-expand, button[data-toggle-type='parent']").attr("aria-expanded", "fals
 
 		 return attr == "true" ? "false" : "true"
 
-	 })
+	 });
 
 });
 
