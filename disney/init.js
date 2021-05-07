@@ -34,9 +34,9 @@ $(".top-bar .advanced-search-toggle").on("keypress", function() {
 
 });
 
-// Some toggle buttons missing aria-expanded
+// Some toggle buttons missing aria-expanded state
 
-$(".form-expand").attr("aria-expanded", "false").on("click", function() {
+$(".form-expand, button[data-toggle-type='parent']").attr("aria-expanded", "false").on("click", function() {
 
 	$(this).attr("aria-expanded", function (i, attr) {
 
