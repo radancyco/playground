@@ -6,9 +6,13 @@
 
 }
 
-.home .keyword-search .search-form-fields button:focus {
-background-color: #fff !important;
-color: #0384af !important;
+.home .keyword-search .search-form-fields button {
+
+  &:focus, &:hover {
+  background-color: #fff !important;
+  color: #0384af !important;
+  }
+
 }
 
 
