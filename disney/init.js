@@ -27,7 +27,16 @@ $("iframe").attr("title", "Video or form content.");
 
 // Some inline videos are not keyboard friendly.
 
-$("img.play,.yt-video,.foreign-trainer-vid img").attr("tabindex", "0");
+$("img.play,.yt-video,.foreign-trainer-vid img").attr("tabindex", "0").click(function () {
+
+	$.fancybox({
+
+		'type': 'iframe',
+		'href': $(this).attr('data-source')
+
+	});
+
+});
 
 // Add button role to Advanced Search Jobs toggle
 
