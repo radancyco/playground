@@ -21,6 +21,14 @@ if( $("#primary-nav a[href='" + navHref + "']").length ) {
 
 }
 
+// Iframe need a title attribute. Hate to do this, but fixing every iframe on site is not practial.
+
+$("iframe").attr("title", "Video or form content.");
+
+// Some inline videos are not keyboard friendly.
+
+$("img.play,.yt-video,.foreign-trainer-vid img").attr("tabindex", "0");
+
 // Add button role to Advanced Search Jobs toggle
 
 $(".advanced-search-toggle").attr("role", "button");
