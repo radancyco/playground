@@ -190,7 +190,7 @@ $(".play").on("keypress", function(event){
 
 $(".event-filters").removeAttr("tabindex");
 
-// Advanced Search Fixes
+// Advanced Search Fixes - Category Section - I know it's not pretty, but gets job done across entire site. 
 
 $("#audition-alert").attr("role", "none").removeAttr("aria-label");
 $("#audition-alert #category-toggle").attr("role", "button");
