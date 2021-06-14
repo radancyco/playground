@@ -100,6 +100,13 @@ setTimeout(function(){
 
 	});
 
+	// Get Help Link in wrong area
+
+	var $getHelpLink = $(".advanced-search-form + .contact-us");
+	var $primaryNav = $("#primary-nav");
+
+	$getHelpLink.insertBefore($primaryNav);
+
 	// Video Module Fixes
 
 	$(".videos").each(function(index) {
