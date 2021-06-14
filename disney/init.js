@@ -98,6 +98,8 @@ $(".video-placeholder").on("keypress", function(event){
 
 		$(this).trigger("click");
 
+		return false;
+
 	}
 
 });
