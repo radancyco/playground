@@ -89,6 +89,15 @@ $(".form-expand, button[data-toggle-type='parent'], .faq__question").attr("aria-
 
 });
 
+// Video Placeholder has poor alt text.
+
+$(".video-placeholder").each(function(index) {
+
+	var VideoPlaceholderText = $(this).parent().find("h2, h3, h4").text();
+	$(this).attr("alt", VideoPlaceholderText + " (Video)");
+
+});
+
 // Some video placeholders have a tabindex with only a click event on them. That won't work with Keyboard enter and spacebar.
 // Add keybress event and trigger click event when key pressed on.
 
@@ -96,7 +105,12 @@ $(".video-placeholder").on("keypress", function(event){
 
 	if(a11yClick(event) === true){
 
-		$(this).trigger("click");
+		$(this).click();
+
+		var thisAltText = $(this).attr("alt");
+		var thisiFrame = $(this).parent().find("iframe");
+
+		thisiFrame.attr("title", thisAltText);
 
 		return false;
 
