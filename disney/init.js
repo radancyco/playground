@@ -175,6 +175,17 @@ $(".video-placeholder").on("keypress", function(event){
 
 });
 
+$(".play").on("keypress", function(event){
+
+	if(a11yClick(event) === true){
+
+		$(this).click();
+		return false;
+
+	}
+
+});
+
 setTimeout(function(){
 
 	// Carousel Fixes
@@ -196,19 +207,6 @@ setTimeout(function(){
 	    $(this).attr("aria-pressed", "false");
 
 	  }
-
-	});
-
-	// Fancy Box Close Button
-
-	$(".fancybox-close").removeAttr("title").attr({
-
-    "role":"button",
-    "aria-label": "Close"
-
-	}).on("keypress", function() {
-
-			//$.fancybox.close();
 
 	});
 
@@ -278,8 +276,22 @@ setTimeout(function(){
 
 	// Fancybox A11y Issues
 
+	// Fancy Box Close Button
+
+	$(".fancybox-close").removeAttr("title").attr({
+
+		"role":"button",
+		"aria-label": "Close"
+
+	}).on("keypress", function() {
+
+			//$.fancybox.close();
+
+	});
+
 	var $fancyBox = $(".fancybox-wrap");
 	$fancyBox .attr("role", "dialog").focus();
 	trapFocus($fancyBox);
+
 
 }, 3000);
