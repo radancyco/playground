@@ -190,6 +190,26 @@ $(".play").on("keypress", function(event){
 
 $(".event-filters").removeAttr("tabindex");
 
+// Advanced Search Fixes
+
+$("#audition-alert").attr("role", "none").removeAttr("aria-label");
+$("#audition-alert #category-toggle").attr("role", "button");
+$("#audition-alert #category-toggle label").wrap('<span />').contents().unwrap();
+$("#audition-alert #category-toggle .alert-dropdown").attr("aria-hidden", "true");
+$("#audition-alert .search-filter-list").removeAttr("aria-expanded");
+
+$("#audition-alert #category-toggle").on("keypress", function(event){
+
+	if(a11yClick(event) === true){
+
+		$(this).click();
+		$(this).next().removeAttr("aria-expanded");
+		return false;
+
+	}
+
+});
+
 setTimeout(function(){
 
 	// Carousel Fixes
