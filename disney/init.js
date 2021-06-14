@@ -4,6 +4,32 @@
 
 $("head").append("<link href='https://radancy.dev/playground/disney/init.css' rel='stylesheet'>");
 
+// Global Keypress function
+
+function a11yClick(event){
+
+	if(event.type === "click"){
+
+		return true;
+
+	} else if(event.type === "keypress"){
+
+		var code = event.charCode || event.keyCode;
+
+		if((code === 32)|| (code === 13)){
+
+			return true;
+
+		}
+
+	} else{
+
+		return false;
+
+	}
+
+}
+
 // Enhance Primary Navigation links so AT users understand where they are within the site.
 
 var navHref = window.location.pathname;
