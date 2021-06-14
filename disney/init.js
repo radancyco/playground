@@ -94,7 +94,7 @@ $(".form-expand, button[data-toggle-type='parent'], .faq__question").attr("aria-
 $(".video-placeholder").each(function(index) {
 
 	var VideoPlaceholderHeading = $(this).parent().find("h2, h3, h4").text();
-	var VideoPlaceholderAlt = VideoPlaceholderText + " (Video)";
+	var VideoPlaceholderAlt = VideoPlaceholderHeading + " (Video)";
 	$(this).attr("alt", VideoPlaceholderAlt);
 	$(this).parent().attr("data-video-desc", VideoPlaceholderAlt);
 
