@@ -22,7 +22,7 @@ function a11yClick(event){
 
 		}
 
-	} else{
+	} else {
 
 		return false;
 
@@ -86,6 +86,19 @@ $(".form-expand, button[data-toggle-type='parent'], .faq__question").attr("aria-
 		 return attr == "true" ? "false" : "true"
 
 	 });
+
+});
+
+// Some video placeholders have a tabindex with only a click event on them. That won't work with Keyboard enter and spacebar.
+// Add keybress event and trigger click event when key pressed on.
+
+$(".video-placeholder").on("keypress", function(event){
+
+	if(a11yClick(event) === true){
+
+		$(this).trigger("click");
+
+	}
 
 });
 
