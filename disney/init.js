@@ -105,9 +105,10 @@ $(".video-placeholder").on("keypress", function(event){
 
 	if(a11yClick(event) === true){
 
+		var thisAltText = $(this).attr("alt");
+
 		$(this).click();
 
-		var thisAltText = $(this).attr("alt");
 		var thisiFrame = $(this).parent().find("iframe");
 
 		thisiFrame.attr("title", thisAltText);
