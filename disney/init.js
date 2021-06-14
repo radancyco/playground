@@ -223,4 +223,8 @@ setTimeout(function(){
 
 	});
 
+	// Fancybox A11y Issues
+
+	$(".fancybox-wrap").attr("role", "dialog").focus();
+
 }, 3000);
