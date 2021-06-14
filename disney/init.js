@@ -190,7 +190,7 @@ $(".play").on("keypress", function(event){
 
 $(".event-filters").removeAttr("tabindex");
 
-// Advanced Search Fixes - Category Section - I know it's not pretty, but gets job done across entire site. 
+// Advanced Search Fixes - Category Section - I know it's not pretty, but gets job done across entire site.
 
 $("#audition-alert").attr("role", "none").removeAttr("aria-label");
 $("#audition-alert #category-toggle").attr("role", "button");
@@ -209,6 +209,10 @@ $("#audition-alert #category-toggle").on("keypress", function(event){
 	}
 
 });
+
+// An old video modal is throwing complaints about an SVG not being titled. Quick fix.
+
+$(".close-video-modal").attr("aria-label", "Close");
 
 setTimeout(function(){
 
