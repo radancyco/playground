@@ -186,6 +186,10 @@ $(".play").on("keypress", function(event){
 
 });
 
+// Auditions Page
+
+$(".event-filters").removeAttr("tabindex");
+
 setTimeout(function(){
 
 	// Carousel Fixes
