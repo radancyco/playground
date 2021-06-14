@@ -167,7 +167,7 @@ $(".video-placeholder").on("keypress", function(event){
 
 		var thisiFrame = thisParent.find("iframe");
 
-		thisiFrame.attr("title", thisParentDesc).focus();
+		thisiFrame.attr("title", thisParentDesc);
 
 		return false;
 
