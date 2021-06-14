@@ -30,6 +30,59 @@ function a11yClick(event){
 
 }
 
+// Function: Trap Focus (Accessibility)
+
+var trapFocus = function(elem) {
+
+  var tabbable = elem.find("select, input, textarea, div[tabindex=0], button, a").filter(":visible");
+  var firstTabbable = tabbable.first();
+  var lastTabbable = tabbable.last();
+
+  /*set focus on first input*/
+
+  firstTabbable.focus();
+
+  /*redirect last tab to first input*/
+
+  lastTabbable.on('keydown', function (e) {
+
+    if ((e.which === 9 && !e.shiftKey)) {
+
+      e.preventDefault();
+      firstTabbable.focus();
+
+    }
+
+  });
+
+  /*redirect first shift+tab to last input*/
+
+  firstTabbable.on('keydown', function (e) {
+
+    if ((e.which === 9 && e.shiftKey)) {
+
+      e.preventDefault();
+      lastTabbable.focus();
+
+    }
+
+  });
+
+  /* allow escape key to close insiders div */
+
+  elem.on('keyup', function(e){
+
+    if (e.keyCode === 27 ) {
+
+      elem.hide();
+
+    };
+
+  });
+
+};
+
+
 // Enhance Primary Navigation links so AT users understand where they are within the site.
 
 var navHref = window.location.pathname;
@@ -225,6 +278,8 @@ setTimeout(function(){
 
 	// Fancybox A11y Issues
 
-	$(".fancybox-wrap").attr("role", "dialog").focus();
+	var $fancyBox = $(".fancybox-wrap");
+	$fancyBox .attr("role", "dialog").focus();
+	trapFocus($fancyBox);
 
 }, 3000);
