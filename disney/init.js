@@ -93,8 +93,10 @@ $(".form-expand, button[data-toggle-type='parent'], .faq__question").attr("aria-
 
 $(".video-placeholder").each(function(index) {
 
-	var VideoPlaceholderText = $(this).parent().find("h2, h3, h4").text();
-	$(this).attr("alt", VideoPlaceholderText + " (Video)");
+	var VideoPlaceholderHeading = $(this).parent().find("h2, h3, h4").text();
+	var VideoPlaceholderAlt = VideoPlaceholderText + " (Video)";
+	$(this).attr("alt", VideoPlaceholderAlt);
+	$(this).parent().attr("data-video-desc", VideoPlaceholderAlt);
 
 });
 
@@ -105,13 +107,14 @@ $(".video-placeholder").on("keypress", function(event){
 
 	if(a11yClick(event) === true){
 
-		var thisAltText = $(this).attr("alt");
+		var thisParent = $(this).parent();
+		var thisParentDesc = thisParent.data("video-desc");
 
 		$(this).click();
 
-		var thisiFrame = $(this).parent().find("iframe");
+		var thisiFrame = thisParent.find("iframe");
 
-		thisiFrame.attr("title", thisAltText);
+		thisiFrame.attr("title", thisParentDesc).focus();
 
 		return false;
 
