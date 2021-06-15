@@ -213,6 +213,7 @@ $("#audition-alert #category-toggle").on("keypress", function(event){
 // An old video modal is throwing complaints about an SVG not being titled. Quick fix.
 
 $(".close-video-modal").attr("aria-label", "Close");
+$(".close-video-modal svg").attr("aria-hidden", "true");
 
 setTimeout(function(){
 
@@ -318,7 +319,12 @@ setTimeout(function(){
 	});
 
 	var $fancyBox = $(".fancybox-wrap");
-	$fancyBox .attr("role", "dialog").focus();
+	$fancyBox .attr({
+
+		"role" : "dialog",
+		"aria-label" : "Message"
+
+	});
 	trapFocus($fancyBox);
 
 
