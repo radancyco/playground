@@ -215,6 +215,11 @@ $("#audition-alert #category-toggle").on("keypress", function(event){
 $(".close-video-modal").attr("aria-label", "Close");
 $(".close-video-modal svg").attr("aria-hidden", "true");
 
+// More Job Description Stuff
+
+$(".ats-description li").removeAttr("aria-level");
+$(".ats-description iframe").attr("title", "Video or form");
+
 setTimeout(function(){
 
 	// Carousel Fixes
@@ -325,7 +330,11 @@ setTimeout(function(){
 		"aria-label" : "Message"
 
 	});
+
 	trapFocus($fancyBox);
 
+	// ThisMoment Job Description image
+
+	$(".JD-related__img").attr("alt", "");
 
 }, 3000);
