@@ -220,6 +220,19 @@ $(".close-video-modal svg").attr("aria-hidden", "true");
 $(".ats-description li").removeAttr("aria-level");
 $(".ats-description iframe").attr("title", "Video or form");
 
+// Job Alert has a link with a role of button that contains no tabindex.
+
+$(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(event){
+
+	if(a11yClick(event) === true){
+
+		$(this).click();
+		return false;
+
+	}
+
+});
+
 setTimeout(function(){
 
 	// Carousel Fixes
