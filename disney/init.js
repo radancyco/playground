@@ -233,6 +233,23 @@ $(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(
 
 });
 
+// Home: What Career Area Interests You?
+
+$(".tab-parent .career-dot").removeAttr("aria-expanded").on("click", function(event){
+
+	$(this).parent().parent().find("button").removeAttr("aria-expanded").removeClass("focus-active");
+	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
+	$(this).addClass("focus-active");
+
+});
+
+
+$(".basic-tabcordion-panels .tabcordion-close").on("click", function(event){
+
+	$(".tab-parent").find(".focus-active").focus();
+
+});
+
 setTimeout(function(){
 
 	// Carousel Fixes
