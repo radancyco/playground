@@ -238,17 +238,44 @@ $(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(
 $(".tab-parent .career-dot").removeAttr("aria-expanded").on("click", function(event){
 
 	$(this).parent().parent().find("button").removeAttr("aria-expanded").removeClass("focus-active");
-	$("basic-tabcordion-content.active .tabcordion-close").focus();
+	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
+	$(".custom-checklist a").attr("role", "button").removeAttr("disabled href");
 	$(this).addClass("focus-active");
 
 });
-
 
 $(".basic-tabcordion-panels .tabcordion-close").on("click", function(event){
 
 	$(".tab-parent").find(".focus-active").focus();
 
 });
+
+$(".custom-checklist input").on("click", function(event) {
+
+	if ($(".custom-checklist input:checkbox:checked").length > 0) {
+
+		$(".custom-checklist a").attr("href", "/search-jobs?acm=")
+
+	} else {
+
+		$(".custom-checklist a").removeAttr("disabled href");
+
+	}
+
+});
+
+$(".custom-checklist a").on("keypress", function(event){
+
+	if(a11yClick(event) === true){
+
+		$(this).click();
+		return false;
+
+	}
+
+});
+
+// End Careers Fixes.
 
 setTimeout(function(){
 
