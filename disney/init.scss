@@ -111,3 +111,14 @@ line-height: normal;
 .advanced-search-form #audition-alert > span {
 display: none !important;
 }
+
+// Sitemap
+
+#sitemap #content a.expandable-parent{
+font-weight: bold;
+
+  &::after {
+  content: " +";
+  }
+
+}

@@ -277,6 +277,21 @@ $(".custom-checklist a").on("keypress", function(event){
 
 // End Careers Fixes.
 
+// Sitemap Page Fixes
+
+$("#sitemap #content h2.expandable-parent").removeAttr("tabindex aria-expanded");
+
+$("#sitemap #content a.expandable-parent").attr("role", "button").on("keypress", function(event){
+
+	if(a11yClick(event) === true){
+
+		$(this).click();
+		return false;
+
+	}
+
+});
+
 setTimeout(function(){
 
 	// Carousel Fixes
