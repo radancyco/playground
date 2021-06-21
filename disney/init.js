@@ -238,7 +238,7 @@ $(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(
 $(".tab-parent .career-dot").removeAttr("aria-expanded").on("click", function(event){
 
 	$(this).parent().parent().find("button").removeAttr("aria-expanded").removeClass("focus-active");
-	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
+	$("basic-tabcordion-content.active .tabcordion-close").focus();
 	$(this).addClass("focus-active");
 
 });
