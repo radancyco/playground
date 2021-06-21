@@ -394,4 +394,8 @@ setTimeout(function(){
 
 	$(".JD-related__img").attr("alt", "");
 
+	// Personalization modules has tabindexs on them. Removing.
+
+	$("section.personalization").removeAttr("tabindex");
+
 }, 3000);
