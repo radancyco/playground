@@ -194,7 +194,7 @@ $(".event-filters").removeAttr("tabindex");
 
 $("#audition-alert").attr("role", "none").removeAttr("aria-label");
 $("#audition-alert #category-toggle").attr("role", "button");
-$("#audition-alert #category-toggle label").wrap('<span />').contents().unwrap();
+$("#audition-alert #category-toggle label").wrap('<span class="label" />').contents().unwrap();
 $("#audition-alert #category-toggle .alert-dropdown").attr("aria-hidden", "true");
 $("#audition-alert .search-filter-list").removeAttr("aria-expanded");
 
