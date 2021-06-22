@@ -309,10 +309,6 @@ if($("#advanced-job").length) {
 $("#hero-banner video[src='null']").next().remove();
 $("#hero-banner video[src='null']").remove();
 
-// Search Results
-
-$("#search-results h1").removeAttr("role");
-
 // Sitemap Page Fixes
 
 $("#sitemap #content h2.expandable-parent").removeAttr("tabindex aria-expanded");
