@@ -277,6 +277,38 @@ $(".custom-checklist a").on("keypress", function(event){
 
 // End Careers Fixes.
 
+// Home: Where will your story begin?
+
+$(".fit-options button").on("click", function(event){
+
+
+
+});
+
+// Advanced Job: Success Profile
+// How are blind individuals to know how they rate from a purely graphical representation of ratings?
+
+if($("#advanced-job").length) {
+
+	$(".ajd_graph__percent.one").html("<span class='wai'>1/10 Stars</span>");
+	$(".ajd_graph__percent.two").html("<span class='wai'>2/10 Stars</span>");
+	$(".ajd_graph__percent.three").html("<span class='wai'>3/10 Stars</span>");
+	$(".ajd_graph__percent.four").html("<span class='wai'>4/10 Stars</span>");
+	$(".ajd_graph__percent.five").html("<span class='wai'>5/10 Stars</span>");
+	$(".ajd_graph__percent.six").html("<span class='wai'>6/10 Stars</span>");
+	$(".ajd_graph__percent.seven").html("<span class='wai'>7/10 Stars</span>");
+	$(".ajd_graph__percent.eight").html("<span class='wai'>8/10 Stars</span>");
+	$(".ajd_graph__percent.nine").html("<span class='wai'>9/10 Stars</span>");
+	$(".ajd_graph__percent.10").html("<span class='wai'>10/10 Stars</span>");
+
+}
+
+// Global: Hero video not needed on page still loaded on page and present in markup. May be implemented incorrectly.
+// For now, simply removing video (and puse button), with a src value of null .
+
+$("#hero-banner video[src='null']").next().remove();
+$("#hero-banner video[src='null']").remove();
+
 // Sitemap Page Fixes
 
 $("#sitemap #content h2.expandable-parent").removeAttr("tabindex aria-expanded");

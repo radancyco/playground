@@ -88,14 +88,6 @@ z-index: 0;
 
 }
 
-.job-match .aside-inbox {
-
-  h3 {
-  color: #fff !important;
-  }
-
-}
-
 // Advanced Search
 
 .top-bar .advanced-search-form span.label {
@@ -114,7 +106,7 @@ display: none !important;
 
 // Sitemap
 
-#sitemap #content a.expandable-parent{
+#sitemap #content a.expandable-parent {
 font-weight: bold;
 
   &::after {
