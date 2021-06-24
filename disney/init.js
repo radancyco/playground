@@ -279,11 +279,11 @@ $(".custom-checklist a").on("keypress", function(event){
 
 // Home: Where will your story begin?
 
-$(".fit-options button").on("click", function(event){
+// $(".fit-options button").on("click", function(event){
 
 
 
-});
+// });
 
 // Advanced Job: Success Profile
 // How are blind individuals to know how they rate from a purely graphical representation of ratings?
@@ -308,6 +308,23 @@ if($("#advanced-job").length) {
 
 $("#hero-banner video[src='null']").next().remove();
 $("#hero-banner video[src='null']").remove();
+$("#hero-banner video").removeAttr("aria-label").attr("title", "Background Animation");
+
+// Weird empty iframes on site
+
+//if($("#videoIframe[src='']")) {
+
+	//$(this).parent().remove();
+
+//}
+
+// Empty aside that development should be REMOVING from DOM. If it has no content, WHY keep it on the page at all?
+
+if ($("aside").children().length == 0){
+
+  $("aside").remove()
+
+}
 
 // Sitemap Page Fixes
 
