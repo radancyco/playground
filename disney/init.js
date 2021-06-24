@@ -476,4 +476,8 @@ setTimeout(function(){
 
 	$("section.personalization").removeAttr("tabindex");
 
+	// Remove random goofy old-school Stuff
+
+	$("script, link").removeAttr("type");
+
 }, 3000);
