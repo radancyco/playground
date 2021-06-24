@@ -118,3 +118,7 @@ font-weight: bold;
 .social-media ul.social-media__wrap a {
 color: #fff;
 }
+
+aside:empty {
+display: none;
+}
