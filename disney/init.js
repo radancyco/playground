@@ -254,17 +254,17 @@ $(".custom-checklist input").on("click", function(event) {
 
 	if ($(".custom-checklist input:checkbox:checked").length > 0) {
 
-		$(".custom-checklist a").attr("href", "/search-jobs?acm=")
+		$(".custom-checklist a").removeAttr("style").attr("href", "/search-jobs?acm=")
 
 	} else {
 
-		$(".custom-checklist a").removeAttr("disabled href");
+		$(".custom-checklist a").css("pointer-events", "none").removeAttr("disabled href");
 
 	}
 
 });
 
-$(".custom-checklist a").on("keypress", function(event){
+$(".custom-checklist a").css("pointer-events", "none").on("keypress", function(event){
 
 	if(a11yClick(event) === true){
 
