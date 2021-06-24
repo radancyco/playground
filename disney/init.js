@@ -275,6 +275,12 @@ $(".custom-checklist a").css("pointer-events", "none").on("keypress", function(e
 
 });
 
+$(".custom-checklist .reset-button").on("click", function(event){
+
+	$(".custom-checklist a").removeAttr("href");
+
+});
+
 // End Careers Fixes.
 
 // Home: Where will your story begin?
