@@ -312,19 +312,33 @@ $("#hero-banner video").removeAttr("aria-label").attr("title", "Background Anima
 
 // Weird empty iframes on site
 
-//if($("#videoIframe[src='']")) {
+$(".video-modal .video-modal-content #videoIframe").each(function() {
 
-	//$(this).parent().remove();
+  if($(this).attr("src") == "") {
 
-//}
+		$(this).parent().parent().remove();
+
+	}
+
+});
+
+if($("#videoIframe[src='']")) {
+
+	$(this).parent().remove();
+
+}
 
 // Empty aside that development should be REMOVING from DOM. If it has no content, WHY keep it on the page at all?
 
-if ($("aside").children().length == 0){
+$("aside").each(function() {
 
-  $("aside").remove()
+	if ($(this).children().length == 0){
 
-}
+	  $(this).remove();
+
+	}
+
+});
 
 // Sitemap Page Fixes
 
