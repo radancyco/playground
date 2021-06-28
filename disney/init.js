@@ -394,7 +394,7 @@ setTimeout(function(){
 
 	// Video Module Fixes
 
-	$(".videos").each(function(index) {
+	$(".videos, .vid-main-wrapper").each(function(index) {
 
 		var thisVideoContainer = $(this).find(".vid-container");
 		var thisVideoList = $(this).find(".vid-list");
@@ -484,6 +484,6 @@ setTimeout(function(){
 
 	// Remove random goofy old-school Stuff
 
-	$("script, link").removeAttr("type");
+	$("script, link, style").removeAttr("type charset");
 
 }, 3000);
