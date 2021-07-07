@@ -357,6 +357,15 @@ $("#sitemap #content a.expandable-parent").attr("role", "button").on("keypress",
 
 });
 
+// Goofy (no pun intended) issue. This is global and may move to magic bullet script:
+// The "Advanced Search" link point to a refrence that does not exist on the page, so let's add an ID to it.
+
+$(".advanced-search-form-fields").attr("id", "advanced-search-form-fields");
+
+// Remove noscript tags.
+
+$("noscript").remove();
+
 setTimeout(function(){
 
 	// Carousel Fixes
