@@ -1,9 +1,5 @@
 // Spell's Disney Accessibility Fixes - I never said it would be pretty.
 
-// Append CSS
-
-$("head").append("<link href='https://radancy.dev/playground/disney/init.css' rel='stylesheet'>");
-
 // Global Keypress function
 
 function a11yClick(event){
