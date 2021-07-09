@@ -399,7 +399,7 @@ setTimeout(function(){
 
 	// Video Module Fixes
 
-	$(".videos, .vid-main-wrapper").each(function(index) {
+	$(".videos").each(function(index) {
 
 		var thisVideoContainer = $(this).find(".vid-container");
 		var thisVideoList = $(this).find(".vid-list");
