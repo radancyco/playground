@@ -435,7 +435,8 @@ setTimeout(function(){
 		thisVideoIframe.attr({
 
 	    "title":  $InitVideoText,
-			"src": $InitVideoURL
+			"src": $InitVideoURL,
+			"allow": "fullscreen"
 
 		});
 
