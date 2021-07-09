@@ -407,7 +407,11 @@ setTimeout(function(){
 
 		// Prepend Return to Video Nav link
 
-		thisVideoContainer.prepend("<a class='btn-video-nav' href='#video-nav-0" + index + "'>Go to Video Nav</a>");
+		if(!$(".btn-video-nav").length) {
+
+			thisVideoContainer.prepend("<a class='btn-video-nav' href='#video-nav-0" + index + "'>Go to Video Nav</a>");
+
+		}
 
 		// Add ID to Video Navigation List
 
