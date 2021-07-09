@@ -1,4 +1,4 @@
-// Spell's Disney Accessibility Fixes - I never said it would be pretty.
+// Spell's Disney Accessibility Fixes
 
 // Global Keypress function
 

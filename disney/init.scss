@@ -61,8 +61,14 @@ z-index: 2;
 
 }
 
-ol.vid-list li a:focus {
-background-color: #666666;
+ol.vid-list {
+outline-offset: -5px;
+
+  li a:focus {
+  background-color: #666666;
+  outline-offset: -5px;
+  }
+
 }
 
 .btn-video-nav {
