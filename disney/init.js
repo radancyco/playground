@@ -98,7 +98,12 @@ if( $("#primary-nav a[href='" + navHref + "']").length ) {
 
 // Iframe need a title attribute. Hate to do this, but fixing every iframe on site is not practial.
 
-$("iframe").attr("title", "Video or form content.");
+$("iframe").attr({
+
+	"title":  "Video or form content.",
+	"loading": "lazy"
+
+});
 
 // Some inline videos are not keyboard friendly.
 
