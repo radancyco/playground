@@ -507,6 +507,6 @@ setTimeout(function(){
 
 	// Remove random goofy old-school Stuff
 
-	$("script, link, style").removeAttr("type charset");
+//	$("script, link, style").removeAttr("type charset");
 
 }, 3000);
