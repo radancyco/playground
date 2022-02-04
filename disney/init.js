@@ -319,7 +319,7 @@ $("#hero-banner video").removeAttr("aria-label").attr("title", "Background Anima
 
 // Weird empty iframes on site
 
-$(".video-modal .video-modal-content #videoIframe").each(function() {
+/* $(".video-modal .video-modal-content #videoIframe").each(function() {
 
   if($(this).attr("src") == "") {
 
@@ -333,7 +333,7 @@ if($("#videoIframe[src='']")) {
 
 	$(this).parent().remove();
 
-}
+} */
 
 // Empty aside that development should be REMOVING from DOM. If it has no content, WHY keep it on the page at all?
 
