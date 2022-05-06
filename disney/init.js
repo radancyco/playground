@@ -507,6 +507,11 @@ setTimeout(function(){
 
 	// Remove random goofy old-school Stuff
 
-//	$("script, link, style").removeAttr("type charset");
+	//$("script, link, style").removeAttr("type charset");
+
+	// Annoying redundant placeholder text
+
+	$('input[placeholder="First Name"], input[placeholder="Last Name"]').removeAttr("placeholder");
+
 
 }, 3000);
