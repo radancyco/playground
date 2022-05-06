@@ -72,6 +72,14 @@ var trapFocus = function(elem) {
 
       elem.hide();
 
+			// also close other stuff
+
+			// What Career Interest You? (Home Page)
+			// Yes, I know it is lazy and firing EVERY TIME esc key pressed.
+
+			$(".basic-tabcordion-content").removeClass("active").attr("aria-hidden", "true");
+			$(".tab-parent").find(".focus-active").focus();
+			
     };
 
   });
@@ -150,7 +158,7 @@ $(".video-placeholder").each(function(index) {
 	var VideoPlaceholderHeading = $(this).parent().find("h2, h3, h4").text();
 	var VideoPlaceholderAlt = VideoPlaceholderHeading + " (Video)";
 	$(this).attr("alt", VideoPlaceholderAlt);
-	$(this).parent().attr("data-video-desc", VideoPlaceholderAlt);
+	$(this).parent().attr("data-video-dclose", VideoPlaceholderAlt);
 
 });
 
