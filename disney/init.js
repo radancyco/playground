@@ -513,5 +513,4 @@ setTimeout(function(){
 
 	$('input[placeholder="First Name"], input[placeholder="Last Name"]').removeAttr("placeholder");
 
-
 }, 3000);
