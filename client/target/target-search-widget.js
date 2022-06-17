@@ -6,7 +6,7 @@ var link  = document.createElement('link');
 
 link.rel  = 'stylesheet';
 // link.href = 'https://services1-tmpwebeng-com.tmpqa.com/js/target-search-widget.css';
-link.href = 'http://localhost:4000/target-search-widget.css';
+link.href = 'target-search-widget.css';
 head.appendChild(link);
 
 window.onload = function () { // same as window.addEventListener('load', (event) => {
