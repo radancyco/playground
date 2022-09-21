@@ -1,3 +1,12 @@
+
+@model PublishedContentModel
+
+@{
+
+    Response.ContentType = "text/javascript";
+
+}
+
 // Spell's Disney Accessibility Fixes
 
 // Global Keypress function
@@ -79,7 +88,7 @@ var trapFocus = function(elem) {
 
 			$(".basic-tabcordion-content").removeClass("active").attr("aria-hidden", "true");
 			$(".tab-parent").find(".focus-active").focus();
-			
+
     };
 
   });
@@ -287,6 +296,90 @@ $(".custom-checklist a").css("pointer-events", "none").on("keypress", function(e
 $(".custom-checklist .reset-button").on("click", function(event){
 
 	$(".custom-checklist a").removeAttr("href");
+
+});
+
+// Home: Fit finder
+
+$(".fitfinder-two").attr({
+
+	"role":  "tablist",
+	"aria-labelledby": "our-business-heading"
+
+});
+
+$(".fitfinder-two .our-business-heading").attr("id", "our-business-heading");
+$(".fit-finder-nav__list, .fit-finder-nav__list-item").attr("role", "presentation");
+$(".column-wrapper").attr("role", "tabpanel");
+
+$(".fit-finder-nav__list-item a").each(function() {
+
+	var thisHref = $(this).attr("href").replace("#", "");
+
+	$(this).attr({
+
+		"role":  "tab",
+		"aria-selected": "false",
+		"aria-controls": thisHref
+
+	});
+
+	if($(this).hasClass("active")) {
+
+		$(this).attr("aria-selected", "true");
+
+	}
+
+});
+
+$(".toggle-column-wrapper").each(function() {
+
+	var thisHref = $(this).attr("href").replace("#", "");
+
+	$(this).attr({
+
+		"role":  "button",
+		"aria-expanded": "false",
+		"aria-controls": thisHref
+
+	});
+
+	if($(this).next().hasClass("open")) {
+
+		$(this).attr("aria-expanded", "true");
+
+	}
+
+});
+
+var $tabElements = $("a[href='#direct-to-consumer'], a[href='#media-network'], a[href='#parks-experince'], a[href='#the-walt-disney-company']");
+
+$tabElements.on("click", function() {
+
+	$(this).parents(".fitfinder-two").find("a[role='tab']").attr("aria-selected", "false");
+	$(this).parents(".fitfinder-two").find("a[role='button']").attr("aria-expanded", "false");
+
+	setTimeout(function(){
+
+		$(".fitfinder-two").find(".active").attr("aria-selected", "true");
+
+		$(".fitfinder-two").find(".open").prev().attr("aria-expanded", "true");
+
+	}, 300);
+
+});
+
+// General Escape Key Functionality
+
+$(document).on('keyup', function(e){
+
+	if (e.keyCode === 27 ) {
+
+		$(".tabcordion-close").trigger("click");
+
+		// Homepage "tabcordions" - https://www.screencast.com/t/bLxTaxly
+
+	};
 
 });
 
