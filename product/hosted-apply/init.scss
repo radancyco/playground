@@ -1,0 +1,205 @@
+/*!
+
+  Radancy: Hosted Apply
+
+  Contributor(s):
+  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
+
+  Dependencies: Sass
+  Instructions: To run locally, install Sass (https://sass-lang.com/install), CL to directory this file in and run:
+  sass --watch init.scss:init.css --style compressed
+
+*/
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.eot");
+  src: url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.woff2") format("woff2"),
+  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.woff") format("woff"),
+  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+clip-path: inset(50%);
+clip: rect(0 0 0 0);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+width: 1px;
+}
+
+.hosted-apply {
+counter-reset: progress;
+
+  // Back Link
+
+  &__back {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  }
+
+  // Progress Bar
+
+  &__progress-bar {
+  clear: both;
+  display:flex;
+  list-style:none;
+  margin: 0;
+  padding:0;
+  position: relative;
+
+    &::before {
+    background-color: #ccc;
+    content: "";
+    height: 2px;
+    left: 10%;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    width: 80%;
+    z-index: -1;
+    }
+
+    li {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 1em;
+    }
+
+    button {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 0;
+    color: #767676;
+    display: flex;
+    font-weight: 700;
+    padding: 1em;
+
+      &::before {
+      align-items: center;
+      background-color: #767676;
+      border-radius: 50%;
+      color: #fff;
+      content: counter(progress);
+      counter-increment: progress;
+      display: flex;
+      font-family: "FontAwesome";
+      height: 30px;
+      justify-content: center;
+      margin-right: 1em;
+      min-width: 30px;
+      }
+
+      &[aria-current] {
+      color: #000;
+      cursor: pointer;
+
+        &:focus, &:hover {
+        background-color: #ccc;
+        }
+
+        &::before {
+        background-color: #6F00EF;
+        content: "\f040";
+        }
+
+      }
+
+    }
+
+  }
+
+  // Fieldsets
+
+  &__group {
+  border-radius: 5px;
+  border: 1px #ccc solid;
+  margin: 1em 0;
+  padding: 1em;
+
+    input:not([type="checkbox"]):not([type="radio"]), select {
+    border: 1px #ccc solid;
+    font-size: inherit;
+    padding: .7em;
+    width: 100%;
+    }
+
+  }
+
+  // Label
+
+  &__label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1em;
+
+    // Some "legends" need to be styled like labels.
+
+    &:not(label) {
+    margin-top: 0;
+    }
+
+  }
+
+  // Required
+
+  &__required {
+
+    &::after {
+    content: "*";
+    vertical-align: middle;
+    color: #ff0000;
+    }
+
+    span {
+    @extend .visually-hidden;
+    }
+
+  }
+
+  // Legend
+
+  &__legend {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: normal;
+  }
+
+  &__error, &__desc {
+  display: block;
+  margin-top: .5em;
+  }
+
+  &__desc {
+  font-style: italic;
+  }
+
+  &__error {
+  color: #FF0000;
+  }
+
+
+  &__button {
+  text-align: center;
+
+    button {
+    background-color: #6F00EF;
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: inherit;
+    padding: 1em;
+    }
+
+  }
+
+
+}
