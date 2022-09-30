@@ -1,0 +1,13 @@
+/*!
+
+  Radancy: Hosted Apply - Custom Radio Group
+
+  Contributor(s):
+  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
+
+  Dependencies: Sass
+  Instructions: To run locally, install Sass (https://sass-lang.com/install), CL to directory this file in and run:
+  sass --watch init.scss:init.css --style compressed
+
+*/.group-legend{margin:2em 0;font-weight:bold}[role="radiogroup"]{list-style:none;margin:0;padding:0}[role="radiogroup"]:focus{outline:none}[role="radio"]{border-radius:5px;border:0 solid transparent;color:black;cursor:default;display:inline-block;outline:none;padding:4px 8px;position:relative}[role="radio"]+[role="radio"]{margin-left:1em}[role="radio"]::before{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='14' width='14' style='forced-color-adjust: auto;'%3E%3Ccircle cx='7' cy='7' r='6' stroke='rgb(0, 90, 156)' stroke-width='2' fill-opacity='0' /%3E%3C/svg%3E");position:relative;top:1px;margin-right:10px}[role="radio"][aria-checked="true"]::before{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='14' width='14' style='forced-color-adjust: auto;'%3E%3Ccircle cx='7' cy='7' r='6' stroke='rgb(0, 90, 156)' stroke-width='2' fill-opacity='0' /%3E%3Ccircle cx='7' cy='7' r='3' fill='rgb(0, 90, 156)' stroke-opacity='0' /%3E%3C/svg%3E");position:relative;top:1px}[role="radio"].focus{background-color:#def;border:2px solid #005a9c;cursor:pointer;padding:2px 6px}
+/*# sourceMappingURL=init.css.map */
