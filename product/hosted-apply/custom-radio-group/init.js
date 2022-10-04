@@ -2,133 +2,151 @@
 
   Radancy: Hosted Apply - Custom Radio Group
 
-  Contributor(s):
-  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
-  Dependencies: None
-
 */
 
 'use strict';
 
 class RadioGroupActiveDescendant {
 
-constructor(groupNode) {
+  constructor(groupNode) {
 
-this.groupNode = groupNode;
-this.radioButtons = [];
-this.firstRadioButton = null;
-this.lastRadioButton = null;
-this.groupNode.addEventListener('keydown', this.handleKeydown.bind(this));
-this.groupNode.addEventListener('focus', this.handleFocus.bind(this));
-this.groupNode.addEventListener('blur', this.handleBlur.bind(this));
+    this.groupNode = groupNode;
+    this.radioButtons = [];
+    this.firstRadioButton = null;
+    this.lastRadioButton = null;
+    this.groupNode.addEventListener('keydown', this.handleKeydown.bind(this));
+    this.groupNode.addEventListener('focus', this.handleFocus.bind(this));
+    this.groupNode.addEventListener('blur', this.handleBlur.bind(this));
 
-// initialize
+    // initialize
 
-if (!this.groupNode.getAttribute('role')) {
+    if (!this.groupNode.getAttribute('role')) {
 
-  this.groupNode.setAttribute('role', 'radiogroup');
+      this.groupNode.setAttribute('role', 'radiogroup');
 
-}
+    }
 
-var rbs = this.groupNode.querySelectorAll('[role=radio]');
+    var rbs = this.groupNode.querySelectorAll('[role=radio]');
 
-for (var i = 0; i < rbs.length; i++) {
+    for (var i = 0; i < rbs.length; i++) {
 
-  var rb = rbs[i];
-  rb.addEventListener('click', this.handleClick.bind(this));
-  this.radioButtons.push(rb);
+      var rb = rbs[i];
+      rb.addEventListener('click', this.handleClick.bind(this));
+      this.radioButtons.push(rb);
 
-  if (!this.firstRadioButton) {
+      if (!this.firstRadioButton) {
 
-    this.firstRadioButton = rb;
+        this.firstRadioButton = rb;
 
-  }
+      }
 
-    this.lastRadioButton = rb;
+      this.lastRadioButton = rb;
 
-  }
+    }
 
-  this.groupNode.tabIndex = 0;
-
-}
-
-isRadioInView(radio) {
-
-  var bounding = radio.getBoundingClientRect();
-
-  return (
-
-    bounding.top >= 0 &&
-    bounding.left >= 0 &&
-    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-
-  );
-
-}
-
-setChecked(currentItem) {
-
-  for (var i = 0; i < this.radioButtons.length; i++) {
-
-    var rb = this.radioButtons[i];
-    rb.setAttribute('aria-checked', 'false');
-    rb.classList.remove('focus');
+    this.groupNode.tabIndex = 0;
 
   }
 
-  currentItem.setAttribute('aria-checked', 'true');
-  currentItem.classList.add('focus');
-  this.groupNode.setAttribute('aria-activedescendant', currentItem.id);
+  isRadioInView(radio) {
 
-  if (!this.isRadioInView(currentItem)) {
+    var bounding = radio.getBoundingClientRect();
 
-    currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return (
 
-  }
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
 
-  this.groupNode.focus();
-
-}
-
-setCheckedToPreviousItem(currentItem) {
-
-  var index;
-
-  if (currentItem === this.firstRadioButton) {
-
-    this.setChecked(this.lastRadioButton);
-
-  } else {
-
-    index = this.radioButtons.indexOf(currentItem);
-    this.setChecked(this.radioButtons[index - 1]);
+    );
 
   }
 
-}
+  setChecked(currentItem) {
 
-setCheckedToNextItem(currentItem) {
+    for (var i = 0; i < this.radioButtons.length; i++) {
 
-  var index;
+      var rb = this.radioButtons[i];
+      rb.setAttribute('aria-checked', 'false');
+      rb.classList.remove('focus');
 
-  if (currentItem === this.lastRadioButton) {
+    }
 
-    this.setChecked(this.firstRadioButton);
+    currentItem.setAttribute('aria-checked', 'true');
+    currentItem.classList.add('focus');
+    this.groupNode.setAttribute('aria-activedescendant', currentItem.id);
 
-  } else {
+    if (!this.isRadioInView(currentItem)) {
 
-    index = this.radioButtons.indexOf(currentItem);
-    this.setChecked(this.radioButtons[index + 1]);
+      currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    }
+
+    this.groupNode.focus();
 
   }
 
-}
+  setCheckedToPreviousItem(currentItem) {
 
-getCurrentRadioButton() {
+    var index;
 
-  var id = this.groupNode.getAttribute('aria-activedescendant');
+    if (currentItem === this.firstRadioButton) {
 
-  if (!id) {
+      this.setChecked(this.lastRadioButton);
+
+    } else {
+
+      index = this.radioButtons.indexOf(currentItem);
+      this.setChecked(this.radioButtons[index - 1]);
+
+    }
+
+  }
+
+  setCheckedToNextItem(currentItem) {
+
+    var index;
+
+    if (currentItem === this.lastRadioButton) {
+
+      this.setChecked(this.firstRadioButton);
+
+    } else {
+
+      index = this.radioButtons.indexOf(currentItem);
+      this.setChecked(this.radioButtons[index + 1]);
+
+    }
+
+  }
+
+  getCurrentRadioButton() {
+
+    var id = this.groupNode.getAttribute('aria-activedescendant');
+
+    if (!id) {
+
+      this.groupNode.setAttribute(
+
+        'aria-activedescendant', this.firstRadioButton.id
+
+      );
+
+      return this.firstRadioButton;
+
+    }
+
+    for (var i = 0; i < this.radioButtons.length; i++) {
+
+      var rb = this.radioButtons[i];
+
+      if (rb.id === id) {
+
+        return rb;
+
+      }
+
+    }
 
     this.groupNode.setAttribute(
 
@@ -140,99 +158,81 @@ getCurrentRadioButton() {
 
   }
 
-  for (var i = 0; i < this.radioButtons.length; i++) {
+  // Event Handlers
 
-    var rb = this.radioButtons[i];
+  handleKeydown(event) {
 
-    if (rb.id === id) {
+    var flag = false;
+    var currentItem = this.getCurrentRadioButton();
 
-      return rb;
+    switch (event.key) {
+
+      case ' ':
+      case 'Enter': this.setChecked(currentItem);
+
+      flag = true;
+
+      break;
+
+      case 'Up':
+      case 'ArrowUp':
+      case 'Left':
+      case 'ArrowLeft': this.setCheckedToPreviousItem(currentItem);
+
+      flag = true;
+
+      break;
+
+      case 'Down':
+      case 'ArrowDown':
+      case 'Right':
+      case 'ArrowRight': this.setCheckedToNextItem(currentItem);
+
+      flag = true;
+
+      break;
+
+      default:
+      break;
+
+    }
+
+    if (flag) {
+
+      event.stopPropagation();
+      event.preventDefault();
 
     }
 
   }
 
-  this.groupNode.setAttribute(
+  handleClick(event) {
 
-    'aria-activedescendant', this.firstRadioButton.id
+    this.setChecked(event.currentTarget);
 
-  );
+  }
 
-  return this.firstRadioButton;
+  handleFocus() {
 
-}
+    var currentItem = this.getCurrentRadioButton();
 
-// Event Handlers
+    if (!this.isRadioInView(currentItem)) {
 
-handleKeydown(event) {
+      currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-  var flag = false;
-  var currentItem = this.getCurrentRadioButton();
+    }
 
-  switch (event.key) {
+    currentItem.classList.add('focus');
 
-    case ' ':
-    case 'Enter': this.setChecked(currentItem);
-    flag = true;
+  }
 
-    break;
+  handleBlur() {
 
-    case 'Up':
-    case 'ArrowUp':
-    case 'Left':
-    case 'ArrowLeft': this.setCheckedToPreviousItem(currentItem);
-    flag = true;
+    var currentItem = this.getCurrentRadioButton();
 
-    break;
+    currentItem.classList.remove('focus');
 
-    case 'Down':
-    case 'ArrowDown':
-    case 'Right':
-    case 'ArrowRight': this.setCheckedToNextItem(currentItem);
-    flag = true;
-
-    break;
-
-  default:
-  break;
-
-}
-
-if (flag) {
-
-  event.stopPropagation();
-  event.preventDefault();
-
-}
-
-}
-
-handleClick(event) {
-
-this.setChecked(event.currentTarget);
-
-}
-
-handleFocus() {
-
-var currentItem = this.getCurrentRadioButton();
-
-if (!this.isRadioInView(currentItem)) {
-
-  currentItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-}
-
-currentItem.classList.add('focus');
-
-}
-
-handleBlur() {
-
-var currentItem = this.getCurrentRadioButton();
-currentItem.classList.remove('focus');
-
-}
+  }
 
 }
 
@@ -240,12 +240,12 @@ currentItem.classList.remove('focus');
 
 window.addEventListener('load', function () {
 
-var radios = document.querySelectorAll('.radiogroup-activedescendant');
+  var radios = document.querySelectorAll('.radiogroup-activedescendant');
 
-for (var i = 0; i < radios.length; i++) {
+  for (var i = 0; i < radios.length; i++) {
 
-new RadioGroupActiveDescendant(radios[i]);
+    new RadioGroupActiveDescendant(radios[i]);
 
-}
+  }
 
 });
