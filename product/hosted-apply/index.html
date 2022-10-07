@@ -14,25 +14,25 @@ title: "Business Development Manager"
 
   <p class="hosted-apply__back"><a href="#">Back to Job Posting</a></p>
 
-  <ol class="hosted-apply__progress-bar">
-    <li><a class="hosted-apply__page complete" href="#ha-my-information" id="ha-my-information-btn"><span>My Information</span></a></li>
-    <li><a aria-current="page" class="hosted-apply__page" href="#ha-my-experience" id="ha-my-experience-btn"><span>My Experience</span></a></li>
-    <li><a class="hosted-apply__page" id="ha-voluntary-disclosure-btn"><span>Voluntary Disclosure</span></a></li>
-    <li><a class="hosted-apply__page" id="ha-self-identify-btn"><span>Self Identify</span></a></li>
-    <li><a class="hosted-apply__page" id="ha-review-btn"><span>Review</span></a></li>
+  <ol class="hosted-apply__progress">
+    <li><a class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-information" href="#ha-my-information" id="ha-my-information-btn"><span>My Information</span> <span class="visually-hidden">(Completed)</span></a></li>
+    <li><a aria-current="page" class="hosted-apply__page" data-button-id="ha-my-experience" href="#ha-my-experience" id="ha-my-experience-btn"><span>My Experience</span></a></li>
+    <li><a class="hosted-apply__page" data-button-id="ha-voluntary-disclosure" id="ha-voluntary-disclosure-btn"><span>Voluntary Disclosure</span></a></li>
+    <li><a class="hosted-apply__page" data-button-id="ha-self-identify" id="ha-self-identify-btn"><span>Self Identify</span></a></li>
+    <li><a class="hosted-apply__page" data-button-id="ha-review" id="ha-review-btn"><span>Review</span></a></li>
   </ol>
 
   <form novalidate>
 
-    <button aria-controls="ha-my-information" aria-expanded="false" class="hosted-apply__page complete" type="button"><span>My Information</span></button>
+    <button aria-controls="ha-my-information" aria-expanded="false" class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-information" type="button"><span>My Information</span> <span class="visually-hidden">(Completed)</span></button>
 
     <section class="hosted-apply__section" id="ha-my-information">
 
-      <h2 class="hosted-apply__heading">My Information</h2>
+      <h2 class="hosted-apply__section__heading">My Information</h2>
 
-      <div class="hosted-apply__erroroverview">
+      <div class="hosted-apply__review">
 
-        <h3 class="hosted-apply__erroroverview--heading">This section contains errors</h3>
+        <h3 class="hosted-apply__review__heading">This section contains errors</h3>
 
         <ol>
           <li><a href="#ha-previous-work-yes">Please select if you have previously worked for this organization</a></li>
@@ -46,13 +46,13 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">General</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">General</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">General</div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-referred-by">How did you hear about us? <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-referred-by">How did you hear about us? <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" aria-describedby="ha-referred-by-error" id="ha-referred-by" required>
+          <select id="ha-referred-by" required>
             <option value="">Please Select</option>
             <option>Corporate Website</option>
             <option>Employee Referral</option>
@@ -60,15 +60,15 @@ title: "Business Development Manager"
             <option>Friend's Facebook Feed</option>
           </select>
 
-          <span class="hosted-apply__error" id="ha-referred-by-error">Plese enter how you heard about us</span>
+          <span class="hosted-apply__field__error" id="ha-referred-by-error">Plese enter how you heard about us</span>
 
         </div>
 
         <fieldset class="hosted-apply__group">
 
-          <legend class="visually-hidden">Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next section. <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span class="hosted-apply__required--message">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></legend>
+          <legend class="visually-hidden">Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next section. <span class="hosted-apply__required"><span class="hosted-apply__field__required">(Required)</span> <span class="hosted-apply__field__required">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></legend>
 
-          <div aria-hidden="true" class="hosted-apply__label">Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next section. <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span class="hosted-apply__required--message">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></div>
+          <div aria-hidden="true" class="hosted-apply__field__label">Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next section. <span class="hosted-apply__required"><span class="hosted-apply__field__required">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></div>
 
           <div class="hosted-apply__field invalid">
 
@@ -76,7 +76,7 @@ title: "Business Development Manager"
 
               <input id="ha-previous-work-yes" name="previous-work" type="radio" value="Yes">
 
-              <label class="hosted-apply__label" for="ha-previous-work-yes">Yes</label>
+              <label class="hosted-apply__field__label" for="ha-previous-work-yes">Yes</label>
 
             </div>
 
@@ -84,11 +84,11 @@ title: "Business Development Manager"
 
               <input id="ha-previous-work-no" name="previous-work" type="radio" value="No">
 
-              <label class="hosted-apply__label" for="ha-previous-work-no">No</label>
+              <label class="hosted-apply__field__label" for="ha-previous-work-no">No</label>
 
             </div>
 
-            <span aria-hidden="true" class="hosted-apply__error">Please select if you have previously worked for this organization</span>
+            <span aria-hidden="true" class="hosted-apply__field__error">Please select if you have previously worked for this organization</span>
 
           </div>
 
@@ -96,7 +96,7 @@ title: "Business Development Manager"
 
             <div class="hosted-apply__field">
 
-              <label class="hosted-apply__label" for="ha-previous-work-email">What was your email address?</label>
+              <label class="hosted-apply__field__label" for="ha-previous-work-email">What was your email address?</label>
 
               <input id="ha-previous-work-email" type="email">
 
@@ -104,7 +104,7 @@ title: "Business Development Manager"
 
             <div class="hosted-apply__field">
 
-              <label class="hosted-apply__label" for="ha-previous-work-manager">Who was your manager?</label>
+              <label class="hosted-apply__field__label" for="ha-previous-work-manager">Who was your manager?</label>
 
               <input id="ha-previous-work-manager" type="text">
 
@@ -112,7 +112,7 @@ title: "Business Development Manager"
 
             <div class="hosted-apply__field">
 
-              <label class="hosted-apply__label" for="ha-previous-work-location">What was your location?</label>
+              <label class="hosted-apply__field__label" for="ha-previous-work-location">What was your location?</label>
 
               <input id="ha-previous-work-location" type="text">
 
@@ -120,7 +120,7 @@ title: "Business Development Manager"
 
             <div class="hosted-apply__field">
 
-              <label class="hosted-apply__label" for="ha-previous-work-employee-id">What was your employee ID?</label>
+              <label class="hosted-apply__field__label" for="ha-previous-work-employee-id">What was your employee ID?</label>
 
               <input id="ha-previous-work-employee-id" type="text">
 
@@ -132,9 +132,9 @@ title: "Business Development Manager"
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-country">Country <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-country">Country <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" aria-describedby="ha-country-error" id="ha-country" required>
+          <select aria-invalid="false" id="ha-country" required>
             <option value="">Please Select</option>
             <option>Afghanistan</option>
             <option>Åland Islands</option>
@@ -383,7 +383,7 @@ title: "Business Development Manager"
             <option>Zimbabwe</option>
           </select>
 
-          <span class="hosted-apply__error" id="ha-country-error">Plese enter a country</span>
+          <span class="hosted-apply__field__error" id="ha-country-error">Plese enter a country</span>
 
         </div>
 
@@ -393,31 +393,31 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Legal Name</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Legal Name</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Legal Name</div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-legal-first-name">Legal First Name <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-legal-first-name">Legal First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-legal-first-name-error" id="ha-legal-first-name" required type="text">
+          <input aria-invalid="false" id="ha-legal-first-name" required type="text">
 
-          <span class="hosted-apply__error" id="ha-legal-first-name-error">Plese enter legal first name</span>
+          <span class="hosted-apply__field__error" id="ha-legal-first-name-error">Plese enter legal first name</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-legal-last-name">Legal Last Name <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-legal-last-name">Legal Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-legal-last-name-error" id="ha-legal-last-name" required type="text">
+          <input aria-invalid="false" id="ha-legal-last-name" required type="text">
 
-          <span class="hosted-apply__error" id="ha-legal-last-name-error">Plese enter legal last name</span>
+          <span class="hosted-apply__field__error" id="ha-legal-last-name-error">Plese enter legal last name</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-preferred-name">I have a preferred name</label>
+          <label class="hosted-apply__field__label" for="ha-preferred-name">I have a preferred name</label>
 
           <input id="ha-preferred-name" type="checkbox">
 
@@ -425,21 +425,21 @@ title: "Business Development Manager"
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-preferred-first-name">Preferred First Name <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-preferred-first-name">Preferred First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-preferred-first-name-error" id="ha-preferred-first-name" required type="text">
+          <input aria-invalid="false" id="ha-preferred-first-name" required type="text">
 
-          <span class="hosted-apply__error" id="ha-preferred-first-name-error">Plese enter preferred first name</span>
+          <span class="hosted-apply__field__error" id="ha-preferred-first-name-error">Plese enter preferred first name</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-preferred-last-name">Preferred Last Name <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-preferred-last-name">Preferred Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-preferred-last-name-error" id="ha-preferred-last-name" required type="text">
+          <input aria-invalid="false" id="ha-preferred-last-name" required type="text">
 
-          <span class="hosted-apply__error" id="ha-preferred-last-name-error">Plese enter preferred last name</span>
+          <span class="hosted-apply__field__error" id="ha-preferred-last-name-error">Plese enter preferred last name</span>
 
         </div>
 
@@ -449,31 +449,31 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Address</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Address</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Address</div>
 
         <div class="hosted-apply__field invalid">
 
-          <label class="hosted-apply__label" for="ha-address">Address <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-address">Address <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
           <input aria-invalid="true" aria-describedby="ha-address-error" id="ha-address" required type="text">
 
-          <span class="hosted-apply__error" id="ha-address-error">Plese enter address</span>
+          <span class="hosted-apply__field__error" id="ha-address-error">Plese enter address</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-city">City <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-city">City <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-city-error" id="ha-city" required type="text">
+          <input aria-invalid="false" id="ha-city" required type="text">
 
-          <span class="hosted-apply__error" id="ha-city-error">Plese enter a city</span>
+          <span class="hosted-apply__field__error" id="ha-city-error">Plese enter a city</span>
 
         </div>
 
         <div class="hosted-apply__field invalid">
 
-          <label class="hosted-apply__label" for="ha-state">State <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-state">State <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
           <select aria-invalid="true" aria-describedby="ha-state-error" id="ha-state" required>
             <option value="">Please Select</option>
@@ -539,17 +539,17 @@ title: "Business Development Manager"
             <option>Washington</option>
           </select>
 
-          <span class="hosted-apply__error" id="ha-state-error">Plese select a state</span>
+          <span class="hosted-apply__field__error" id="ha-state-error">Plese select a state</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-postal-code">Postal Code <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-postal-code">Postal Code <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-postal-code-error" id="ha-postal-code" required type="text">
+          <input aria-invalid="false" id="ha-postal-code" required type="text">
 
-          <span class="hosted-apply__error" id="ha-postal-code-error">Plese enter postal code</span>
+          <span class="hosted-apply__field__error" id="ha-postal-code-error">Plese enter postal code</span>
 
         </div>
 
@@ -559,15 +559,15 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Email Address</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Email Address</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Email Address</div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-email-address">Email <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-email-address">Email <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-email-address-error" id="ha-email-address" required type="email">
+          <input aria-invalid="false" id="ha-email-address" required type="email">
 
-          <span class="hosted-apply__error" id="ha-email-address-error">Plese enter a valid email address</span>
+          <span class="hosted-apply__field__error" id="ha-email-address-error">Plese enter a valid email address</span>
 
         </div>
 
@@ -577,13 +577,13 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Phone</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Phone</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Phone</div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-phone-type">Phone Type <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-phone-type">Phone Type <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" aria-describedby="ha-phone-type-error" id="ha-phone-type" required>
+          <select aria-invalid="false" id="ha-phone-type" required>
             <option value="">Please Select</option>
             <option>Fax</option>
             <option>Landline</option>
@@ -591,15 +591,15 @@ title: "Business Development Manager"
             <option>Pager</option>
           </select>
 
-          <span class="hosted-apply__error" id="ha-phone-type-error">Plese enter a phone type</span>
+          <span class="hosted-apply__field__error" id="ha-phone-type-error">Plese enter a phone type</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-country-phone-code">Country Phone Code <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-country-phone-code">Country Phone Code <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" aria-describedby="ha-country-phone-code-error" id="ha-country-phone-code" required>
+          <select aria-invalid="false" id="ha-country-phone-code" required>
             <option value="">Please Select</option>
             <option>Afghanistan (+93)</option>
             <option>Åland Islands (+358)</option>
@@ -852,23 +852,23 @@ title: "Business Development Manager"
             <option>Zimbabwe (+263)</option>
           </select>
 
-          <span class="hosted-apply__error" id="ha-country-phone-code-error">Plese select a country phone code</span>
+          <span class="hosted-apply__field__error" id="ha-country-phone-code-error">Plese select a country phone code</span>
 
         </div>
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__label" for="ha-phone-number">Phone Number <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-phone-number">Phone Number <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" aria-describedby="ha-phone-number-error" id="ha-phone-number" required type="text">
+          <input aria-invalid="false" id="ha-phone-number" required type="text">
 
-          <span class="hosted-apply__error" id="ha-phone-number-error">Plese enter a phone number</span>
+          <span class="hosted-apply__field__error" id="ha-phone-number-error">Plese enter a phone number</span>
 
         </div>
 
       </fieldset>
 
-      <div class="hosted-apply__buttons">
+      <div class="hosted-apply__section__buttons">
 
         <button class="hosted-apply__button next" type="button">Next</button>
 
@@ -876,20 +876,20 @@ title: "Business Development Manager"
 
     </section>
 
-    <button aria-controls="ha-my-experience" aria-expanded="true" class="hosted-apply__page" type="button"><span>My Experience</span></button>
+    <button aria-controls="ha-my-experience" aria-expanded="true" class="hosted-apply__page" data-button-id="ha-my-experience" type="button"><span>My Experience</span></button>
 
-    <section class="hosted-apply__section" id="ha-my-experience">
+    <section class="hosted-apply__section active" id="ha-my-experience">
 
-      <h2 class="hosted-apply__heading">My Experience</h2>
+      <h2 class="hosted-apply__section__heading">My Experience</h2>
 
-      <div class="hosted-apply__erroroverview">
+      <div class="hosted-apply__review">
 
-        <h3 class="hosted-apply__erroroverview--heading">This section contains errors</h3>
+        <h3 class="hosted-apply__review__heading">This section contains errors</h3>
 
         <ol>
           <li><a href="#ha-work-experience-1-start-date">Please enter a start date</a></li>
           <li><a href="#ha-work-experience-1-end-date">Please select a end date</a></li>
-          <li><a href="#ha-resume">Please select your resume</a></li>
+          <li><a href="#ha-resume">The field Resume/CV is required and must have a value</a></li>
         </ol>
 
       </div>
@@ -898,41 +898,41 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Work Experience</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Work Experience</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience</div>
 
         <button class="hosted-apply__button" type="button">Add</button>
 
         <fieldset class="hosted-apply__group">
 
-          <button class="hosted-apply__delete" type="button"><span class="visually-hidden">Delete Job</span></button>
-
           <legend class="visually-hidden">Work Experience 1</legend>
 
-          <div aria-hidden="true" class="hosted-apply__legend">Work Experience 1</div>
+          <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 1</div>
+
+          <button class="hosted-apply__group__delete" type="button"><span class="visually-hidden">Delete Job</span></button>
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-job-title">Job Tilte <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-job-title">Job Tilte <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" aria-describedby="ha-work-experience-1-job-title-error" id="ha-work-experience-1-job-title" required type="text">
+            <input aria-invalid="false" id="ha-work-experience-1-job-title" required type="text">
 
-            <span class="hosted-apply__error" id="ha-work-experience-1-job-title-error">Plese enter job title</span>
+            <span class="hosted-apply__field__error" id="ha-work-experience-1-job-title-error">Plese enter job title</span>
 
           </div>
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-company">Company <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-company">Company <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" aria-describedby="ha-work-experience-1-company-error" id="ha-work-experience-1-company" required type="text">
+            <input aria-invalid="false" id="ha-work-experience-1-company" required type="text">
 
-            <span class="hosted-apply__error" id="ha-work-experience-1-company-error">Please enter company</span>
+            <span class="hosted-apply__field__error" id="ha-work-experience-1-company-error">Please enter company</span>
 
           </div>
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-location">Location</label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-location">Location</label>
 
             <input id="ha-work-experience-1-location" type="text">
 
@@ -940,7 +940,7 @@ title: "Business Development Manager"
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-work-here">I currently work here</label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-work-here">I currently work here</label>
 
             <input id="ha-work-experience-1-work-here" type="checkbox">
 
@@ -948,27 +948,27 @@ title: "Business Development Manager"
 
           <div class="hosted-apply__field invalid">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-start-date">Start Date <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-start-date">Start Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="true" aria-describedby="ha-work-experience-1-start-date-error" id="ha-work-experience-1-start-date" placeholder="mm/dd/yy" required type="date">
+            <input aria-invalid="true" aria-describedby="ha-work-experience-1-start-date-error" id="ha-work-experience-1-start-date" required type="date">
 
-            <span class="hosted-apply__error" id="ha-work-experience-1-start-date-error">Please enter a start date</span>
+            <span class="hosted-apply__field__error" id="ha-work-experience-1-start-date-error">Please enter a start date</span>
 
           </div>
 
           <div class="hosted-apply__field invalid">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-end-date">End Date <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-end-date">End Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="true" aria-describedby="ha-work-experience-1-end-date-error" id="ha-work-experience-1-end-date" placeholder="mm/dd/yy" required type="date">
+            <input aria-invalid="true" aria-describedby="ha-work-experience-1-end-date-error" id="ha-work-experience-1-end-date" required type="date">
 
-            <span class="hosted-apply__error" id="ha-work-experience-1-end-date-error">Please enter a end date</span>
+            <span class="hosted-apply__field__error" id="ha-work-experience-1-end-date-error">Please enter a end date</span>
 
           </div>
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-work-experience-1-role-description">Role Description</label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-role-description">Role Description</label>
 
             <textarea id="ha-work-experience-1-role-description"></textarea>
 
@@ -984,7 +984,7 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Certifications/Licenses</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Certifications/Licenses</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Certifications/Licenses</div>
 
         <button class="hosted-apply__button" type="button">Add</button>
 
@@ -994,7 +994,7 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Language</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Language</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Language</div>
 
         <button class="hosted-apply__button" type="button">Add</button>
 
@@ -1004,25 +1004,25 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Websites</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Websites</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Websites</div>
 
         <button class="hosted-apply__button" type="button">Add</button>
 
         <fieldset class="hosted-apply__group">
 
-          <button class="hosted-apply__delete" type="button"><span class="visually-hidden">Delete Website</span></button>
-
           <legend class="visually-hidden">Website 1</legend>
 
-          <div aria-hidden="true" class="hosted-apply__legend">Website 1</div>
+          <div aria-hidden="true" class="hosted-apply__group__legend">Website 1</div>
+
+          <button class="hosted-apply__group__delete" type="button"><span class="visually-hidden">Delete Website</span></button>
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-website-1-url">URL <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-website-1-url">URL <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" aria-describedby="ha-website-1-url-error" id="ha-website-1-url" placeholder="e.g., https://mywebsite.com" required type="url">
+            <input aria-invalid="false" id="ha-website-1-url" placeholder="e.g., https://mywebsite.com" required type="url">
 
-            <span class="hosted-apply__error" id="ha-website-1-url-error">Please enter a URL</span>
+            <span class="hosted-apply__field__error" id="ha-website-1-url-error">Please enter a URL</span>
 
           </div>
 
@@ -1034,17 +1034,17 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Social Network URLs</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Social Network URLs</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Social Network URLs</div>
 
         <fieldset class="hosted-apply__group">
 
           <legend class="visually-hidden">LinkedIn</legend>
 
-          <div aria-hidden="true" class="hosted-apply__legend">LinkedIn</div>
+          <div aria-hidden="true" class="hosted-apply__group__legend">LinkedIn</div>
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__label" for="ha-social-linkedin">URL</label>
+            <label class="hosted-apply__field__label" for="ha-social-linkedin">URL</label>
 
             <input id="ha-social-linkedin" type="url">
 
@@ -1058,31 +1058,33 @@ title: "Business Development Manager"
 
         <legend class="visually-hidden">Resume</legend>
 
-        <div aria-hidden="true" class="hosted-apply__legend">Resume</div>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Resume</div>
 
         <div class="hosted-apply__field invalid">
 
-          <label class="hosted-apply__label" for="ha-resume">Resume C/V <span class="hosted-apply__required"><span class="hosted-apply__required--message">(Required)</span> <span aria-hidden="true" class="hosted-apply__required--icon"></span></span></label>
+          <label class="hosted-apply__field__label" for="ha-resume">Resume C/V <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <div class="hosted-apply__upload">
+          <div class="hosted-apply__field__upload">
 
-            <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL (VIDEO),application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="true" aria-describedby="ha-resume-error ha-resume-limit" id="ha-resume" multiple required type="file">
+            <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL,application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="true" aria-describedby="ha-resume-error ha-resume-limit" id="ha-resume" multiple required type="file">
 
-            <span aria-hidden="true" class="hosted-apply__filemsg">Drop file here <span>or</span> Select file</span>
+            <span aria-hidden="true" class="hosted-apply__field__upload__msg">Drop file here <span>or</span> Select file</span>
 
           </div>
 
-          <span class="hosted-apply__desc" id="ha-resume-limit">Upload a file (5MB max)</span>
+          <span class="hosted-apply__field__desc" id="ha-resume-limit">Upload a file (5MB max)</span>
 
-          <span class="hosted-apply__error" id="ha-resume-error">Please select your resume</span>
+          <!-- -->
+
+          <span class="hosted-apply__field__error" id="ha-resume-error">The field Resume/CV is required and must have a value</span>
 
         </div>
 
       </fieldset>
 
-      <div class="hosted-apply__buttons">
+      <div class="hosted-apply__section__buttons">
 
-        <button class="hosted-apply__button back" type="button">Back</button>
+        <button class="hosted-apply__button hosted-apply__button--back" type="button">Back</button>
 
         <button class="hosted-apply__button next" type="button">Next</button>
 
@@ -1090,23 +1092,238 @@ title: "Business Development Manager"
 
     </section>
 
-    <button aria-controls="ha-voluntary-disclosure" aria-expanded="false" class="hosted-apply__page" type="button"><span>Voluntary Disclosure</span></button>
+    <button aria-controls="ha-voluntary-disclosure" aria-expanded="false" class="hosted-apply__page" data-button-id="ha-my-voluntary-disclosure" disabled type="button"><span>Voluntary Disclosure</span></button>
 
     <section class="hosted-apply__section" id="ha-voluntary-disclosure">
 
-      <h2>Voluntary Disclosure</h2>
+      <h2 class="hosted-apply__section__heading">Voluntary Disclosure</h2>
+
+      <div class="hosted-apply__review">
+
+        <h3 class="hosted-apply__review__heading">This section contains errors</h3>
+
+        <ol>
+          <li><a href="#ha-accept-terms">Please accpet terms and conditions</a></li>
+        </ol>
+
+      </div>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Personal Data Statement</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Personal Data Statement</div>
+
+        <p>Individuals seeking employment are considered without regards to race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, or sexual orientation. You are being given the opportunity to provide the following information in order to help us comply with federal and state Equal Employment Opportunity/Affirmative Action record keeping, reporting, and other legal requirements.</p>
+
+        <p>Completion of the form is entirely voluntary. Whatever your decision, it will not be considered in the hiring process or thereafter. Any information that you do provide will be recorded and maintained in a confidential file.</p>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-veteran-status">Please select the veteran status which most accurately describes how you identify yourself</label>
+
+          <select id="ha-veteran-status">
+            <option value="">Please Select</option>
+            <option>I Am Not a Veteran</option>
+            <option>I Do Not Wish to Self-identify</option>
+            <option>I Identify as a Veteran, Just Not a Protected Veteran</option>
+            <option>I Identify as One or More of the Classifications of Protected Veterans Listed Above</option>
+          </select>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-gender">Please select your gender</label>
+
+          <select id="ha-gender">
+            <option value="">Please Select</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Not Declared</option>
+          </select>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-ethnicity">Please select the ethnicity which most accurately describes how you identify yourself</label>
+
+          <select id="ha-ethnicity">
+            <option value="">Please Select</option>
+            <option>American Indian or Alaska Native (United States of America)</option>
+            <option>Asian (United States of America)</option>
+            <option>Black or African American (United States of America)</option>
+            <option>Hispanic or Latino (United States of America)</option>
+            <option>I Do Not Wish to Answer (United States of America)</option>
+            <option>Native Hawaiian or Other Pacific Islander (United States of America)</option>
+            <option>Other (United States of America)</option>
+            <option>Two or More Races (United States of America)</option>
+            <option>White (United States of America)</option>
+          </select>
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Terms and Conditions</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Terms and Conditions</div>
+
+        <p>We respect the privacy of candidates for employment. This Privacy Notice sets forth how we will use the information we obtain when you apply for a position through this career site. If you do not consent to the terms of this Privacy Notice, please do not submit information to us.</p>
+
+        <div class="hosted-apply__field invalid">
+
+          <label class="hosted-apply__field__label" for="ha-accept-terms">I willingly accept the Terms and Conditions for submitting an application with GMS <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="true" aria-describedby="ha-accept-terms-error" id="ha-accept-terms" required type="checkbox">
+
+          <span class="hosted-apply__field__error" id="ha-accept-terms-error">Please accpet terms and conditions</span>
+
+        </div>
+
+      </fieldset>
 
     </section>
 
-    <button aria-controls="ha-self-identify" aria-expanded="false" class="hosted-apply__page" type="button"><span>Self Identify</span></button>
+    <button aria-controls="ha-self-identify" aria-expanded="false" class="hosted-apply__page" data-button-id="ha-self-identify" disabled type="button"><span>Self Identify</span></button>
 
     <section class="hosted-apply__section" id="ha-self-identify">
 
-      <h2>Self Identify</h2>
+      <h2 class="hosted-apply__section__heading">Self Identify</h2>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">General</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">General</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-self-identify-language">Language <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select aria-invalid="false" id="ha-self-identify-language" required>
+            <option value="">Please Select</option>
+            <option>English</option>
+            <option>Spanish</option>
+          </select>
+
+          <span class="hosted-apply__field__error" id="ha-self-identify-language-error">Plese select a language</span>
+
+        </div>
+
+        <fieldset class="hosted-apply__group">
+
+          <legend class="visually-hidden">Voluntary Self-Identification of Disability</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Voluntary Self-Identification of Disability</div>
+
+          <div class="hosted-apply__field">
+
+            <div class="hosted-apply__field__label">Form</div>
+
+            <div class="hosted-apply__field__text">CC-305</div>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <div class="hosted-apply__field__label">OMB Control Number</div>
+
+            <div class="hosted-apply__field__text">1250-0005</div>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <div class="hosted-apply__field__label">Expires</div>
+
+            <div class="hosted-apply__field__text">5/31/2023</div>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <h3>Why are you being asked to complete this form?</h3>
+
+            <p>We are a federal contractor or subcontractor required by law to provide equal employment opportunity to qualified people with disabilities.  We are also required to measure our progress toward having at least 7% of our workforce be individuals with disabilities.  To do this, we must ask applicants and employees if they have a disability or have ever had a disability.??Because a person may become disabled at any time, we ask all of our employees to update their information at least every five years. Identifying yourself as an individual with a disability is voluntary, and we hope that you will choose to do so.  Your answer will be maintained confidentially and not be seen by selecting officials or anyone else involved in making personnel decisions.  Completing the form will not negatively impact you in any way, regardless of whether you have self-identified in the past.  For more information about this form or the equal employment obligations of federal contractors under Section 503 of the Rehabilitation Act, visit the <a href="https://www.dol.gov/ofccp" target="_blank">U.S. Department of Labor’s Office of Federal Contract Compliance Programs (OFCCP) <span class="visually-hidden">(opens in new window)</span></a> website.</p>
+
+            <h3>How do you know if you have a disability?</h3>
+
+            <p>You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition. Disabilities include, but are not limited to:</p>
+
+            <ul>
+              <li>Autism</li>
+              <li>Autoimmune disorder, for example, lupus, fibromyalgia, rheumatoid arthritis, or HIV/AIDS</li>
+              <li>Blind or low vision</li>
+              <li>Cancer</li>
+              <li>Cardiovascular or heart disease</li>
+              <li>Celiac disease</li>
+              <li>Cerebral palsy</li>
+              <li>Deaf or hard of hearing</li>
+              <li>Depression or anxiety</li>
+              <li>Diabetes</li>
+              <li>Epilepsy</li>
+              <li>Gastrointestinal disorders, for example, Crohn's Disease, or irritable bowel syndrome</li>
+              <li>Intellectual disability</li>
+              <li>Missing limbs or partially missing limbs</li>
+              <li>Nervous system condition for example, migraine headaches, Parkinson's disease, or Multiple sclerosis (MS)</li>
+              <li>Psychiatric condition, for example, bipolar disorder, schizophrenia, PTSD, or major depression</li>
+            </ul>
+
+            <fieldset class="hosted-apply__group">
+
+              <legend class="visually-hidden">Please check one of the boxes below <span class="hosted-apply__required"><span class="hosted-apply__field__required">Required</span> <span class="hosted-apply__field__required">Please select disability status</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></legend>
+
+              <div aria-hidden="true" class="hosted-apply__field__label">Please check one of the boxes below <span class="hosted-apply__required"><span class="hosted-apply__field__required">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></div>
+
+              <div class="hosted-apply__field invalid">
+
+                <div class="hosted-apply__field">
+
+                  <input id="ha-disability-status-na" name="disability-status" type="radio" value="NA">
+
+                  <label class="hosted-apply__field__label" for="ha-disability-status-na">I don't wish to answer</label>
+
+                </div>
+
+                <div class="hosted-apply__field">
+
+                  <input id="ha-disability-status-no" name="disability-status" type="radio" value="No">
+
+                  <label class="hosted-apply__field__label" for="ha-disability-status-no">No, I don't have a disability or a history/record of having a disability</label>
+
+                </div>
+
+                <div class="hosted-apply__field">
+
+                  <input id="ha-disability-status-yes" name="disability-status" type="radio" value="Yes">
+
+                  <label class="hosted-apply__field__label" for="ha-disability-status-yes">Yes, I have a disability or have a history/record of having a disability</label>
+
+                </div>
+
+                <span aria-hidden="true" class="hosted-apply__field__error">Please select disability status</span>
+
+              </div>
+
+            </fieldset>
+
+            <h3>Public Burden Statement</h3>
+
+            <p>According to the Paperwork Reduction Act of 1995 no persons are required to respond to a collection of information unless such collection displays a valid OMB control number. This survey should take about 5 minutes to complete.</p>
+
+          </div>
+
+        </fieldset>
+
+      </fieldset>
 
     </section>
 
-    <button aria-controls="ha-review" aria-expanded="false" class="hosted-apply__page" type="button"><span>Review</span></button>
+    <button aria-controls="ha-review" aria-expanded="false" class="hosted-apply__page" data-button-id="ha-review" disabled type="button"><span>Review</span></button>
 
     <section class="hosted-apply__section" id="ha-review">
 

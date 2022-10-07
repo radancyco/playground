@@ -11,21 +11,68 @@
 
 */
 
+// Mixins
+
+@mixin fontface($font-path, $fileName, $fontName, $weight: normal, $style: normal, $display: swap) {
+
+  @font-face {
+
+    font-family: "#{$fontName}";
+    src:local("#{$fontName}"),
+    url("#{$font-path}#{$fileName}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    font-display: #{$display};
+
+  }
+
+}
+
 // Variables
 
-$ha-error-color: #C70000;
+// Colors
 
-@font-face {
-  font-family: "FontAwesome";
-  src: url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.eot");
-  src: url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
-  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.woff2") format("woff2"),
-  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.woff") format("woff"),
-  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.ttf") format("truetype"),
-  url("https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/fontawesome-webfont.svg#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
+$ha-color-complete: #008000;
+$ha-color-dark: #000;
+$ha-color-disabled: #767676;
+$ha-color-error: #C70000;
+$ha-color-error-highlight: pink;
+$ha-color-light: #FFF;
+$ha-color-neutral: #CCC;
+$ha-color-neutral-highlight: #767676;
+$ha-color-primary: #6F00EF;
+
+// Font Weight
+
+$weight-black: 900 !default; // Black (Heavy)
+$weight-bold: 700 !default; // Bold (Often used as 'bold' instead of a number)
+$weight-extra-bold: 800 !default; // Extra Bold (Ultra Bold)
+$weight-extra-thin: 200 !default; // Extra Light (Ultra Light)
+$weight-light: 300 !default; // Light
+$weight-medium: 500 !default; // Medium
+$weight-normal: 400 !default; // Normal (Often used as 'normal' instead of a number)
+$weight-semi-bold: 600 !default; // Semi Bold (Demi Bold)
+$weight-thin: 100 !default; // Thin (Hairline)
+
+// Font Path
+
+$font-file-path: "https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/";
+
+@include fontface("#{$font-file-path}", "fontawesome-webfont", "FontAwesome", $weight-normal);
+
+// Global Properities
+
+// Note: If you have these already in your global stylesheet, feel free to remove.
+
+*, *::before, *::after {
+box-sizing: inherit;
 }
+
+html {
+box-sizing: border-box;
+}
+
+// Visually hide elements
 
 .visually-hidden:not(:focus):not(:active) {
 clip-path: inset(50%);
@@ -37,20 +84,63 @@ white-space: nowrap;
 width: 1px;
 }
 
+// Hosted Apply
+
 .hosted-apply {
 counter-reset: disclosure;
 
-  // Back Link
+  // Global Form Element Reset
+
+  // Note: If you have these already in your global stylesheet, feel free to remove.
+
+  input, textarea, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearnace: none;
+  }
+
+  input:not([type="checkbox"]), button {
+  box-sizing: border-box;
+  line-height: normal;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearnace: none;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearnace: checkbox;
+  }
+
+  // New Window Links
+
+  a {
+
+    &[target="_blank"] {
+    background: transparent url(data:image/gif;base64,R0lGODlhCgAKAJECAP///5mZmQAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==) center right no-repeat;
+    padding-right: 1em;
+    margin-right: 0.5em;
+
+      &:focus, &:hover {
+      background: url(data:image/gif;base64,R0lGODlhCgAKAJECAP///2eIpAAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==) center right no-repeat;
+      }
+
+    }
+
+  }
+
+  // "Back to Job Posting" Link
 
   &__back {
-  text-align: right;
-  margin: 0;
+  margin: 0 0 1em;
   padding: 0;
+  text-align: right;
   }
 
   // Progress Bar
 
-  &__progress-bar {
+  &__progress {
   counter-reset: progress;
   display: none;
   list-style: none;
@@ -65,7 +155,7 @@ counter-reset: disclosure;
     }
 
     &::before {
-    background-color: #ccc;
+    background-color: $ha-color-neutral;
     content: "";
     height: 2px;
     left: 10%;
@@ -87,20 +177,30 @@ counter-reset: disclosure;
 
   &__page {
   align-items: center;
-  background-color: #fff;
+  background-color: $ha-color-light;
   border-radius: 5px;
   border: 0;
-  color: #767676;
+  color: $ha-color-neutral-highlight;
   display: flex;
   font-weight: 700;
+  margin-bottom: .5em;
   padding: 1em;
   text-decoration: none;
 
+    // Links with missing href cannot be tabbed to. But we need to prevent clicking from mouse. We also only want this on links, not buttons.
+
+    &:not([href]):not(button) {
+    pointer-events: none;
+    }
+
+    // All Counters
+
     &::before {
     align-items: center;
-    background-color: #767676;
+    background-color: $ha-color-neutral-highlight;
+    border: 2px transparent solid;
     border-radius: 50%;
-    color: #fff;
+    color: $ha-color-light;
     content: counter(progress);
     counter-increment: progress;
     display: flex;
@@ -111,6 +211,8 @@ counter-reset: disclosure;
     min-width: 30px;
     }
 
+    // Disclosures for smaller viewports
+
     &[aria-expanded] {
     width: 100%;
 
@@ -120,52 +222,101 @@ counter-reset: disclosure;
 
       }
 
-      &:before {
+      &::before {
       content: counter(disclosure);
       counter-increment: disclosure;
       }
 
     }
 
-    &[aria-current], &[aria-expanded="true"] {
+    // Current and Completed Counter State
+
+    &[aria-current], &--complete {
+    color: $ha-color-dark;
+
+      &:focus, &:hover {
+      background-color: $ha-color-neutral;
+      }
+
+    }
+
+    // Completed Counter State
+
+    &--complete, &--complete[aria-expanded]{
 
       &::before {
-      background-color: #6F00EF;
+      background-color: $ha-color-complete;
+      content: "\f00c";
+      }
+
+    }
+
+    // Current and Expanded Counter State
+
+    &[aria-current], &[aria-expanded="true"] {
+    background-color: $ha-color-primary;
+    color: $ha-color-light;
+
+      &::before {
+      background-color: $ha-color-primary;
+      border-color: $ha-color-light;
       content: "\f040";
       }
 
-    }
-
-    &[aria-current], &.complete {
-    color: #000;
-
       &:focus, &:hover {
-      background-color: #ccc;
-      }
-
-    }
-
-    &.complete {
-
-      &::before {
-      background-color: green;
-      content: "\f00c"
+      background-color: $ha-color-primary;
       }
 
     }
 
   }
 
-  // Heading
+  // Primary Sections
 
-  &__heading {
+  &__section {
   display: none;
-  color: purple;
+  outline-offset: 10px;
 
-    @media(min-width: 56em) {
+    &.active {
+    display: block;
+    }
 
-      display: block;
+    // Primary Section Heading (should be an h2)
 
+    &__heading {
+    display: none;
+    color: $ha-color-primary;
+
+      @media(min-width: 56em) {
+
+        display: block;
+
+      }
+
+    }
+
+    &__buttons {
+    text-align: center;
+    }
+
+  }
+
+  // Review (Errors)
+
+  &__review {
+  background-color: $ha-color-error;
+  border-radius: 5px;
+  color: $ha-color-light;
+  display: none;
+  padding: 1em;
+
+    &__heading {
+    font-size: 1.2em;
+    margin: 0;
+    }
+
+    &__heading, a {
+    color: inherit;
     }
 
   }
@@ -174,55 +325,105 @@ counter-reset: disclosure;
 
   &__group {
   border-radius: 5px;
-  border: 1px #ccc solid;
+  border: 1px $ha-color-neutral solid;
   margin: 1em 0;
   padding: 1em;
   position: relative;
 
-    // Sub Fieldsets
+    // Legend
+
+    // The "Faux" legend. The reason we accessibly hide the legend element and duplicate via div, is purely for styling purposes.
+    // Legends are notoriously difficult to style, so while dirty, this solution works well with ATs.
+
+    &__legend {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: normal;
+    }
+
+    // Sub Fieldsets. Nested fieldsets are sometimes necessary.
 
     .hosted-apply__group {
 
-      .hosted-apply__legend {
+      .hosted-apply__group__legend {
       font-size: 1rem;
+      }
+
+    }
+
+    // Delete Group Button
+
+    &__delete {
+    background-color: $ha-color-primary;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    position: absolute;
+    right: 1.2em;
+    top: 1em;
+    width: 40px;
+
+      &::before {
+      color: $ha-color-light;
+      content: "\f1f8";
+      font-family: "FontAwesome";
+      font-size: 1.5rem;
       }
 
     }
 
   }
 
-  &__delete {
-  background-color: #6F00EF;
-  border: 0;
-  border-radius: 5px;
-  height: 40px;
-  position: absolute;
-  right: 1.2em;
-  top: 1em;
-  width: 40px;
-
-    &::before {
-    color: #fff;
-    content: "\f1f8";
-    font-size: 1.5rem;
-    font-family: "FontAwesome";
-    }
-
-  }
+  // Form Fields
 
   &__field {
+
+    // Label
+
+    &__label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 1em 0 .5em;
+
+      // Some "legends" need to be styled like labels, too.
+
+      &:not(label) {
+      margin-top: 0;
+      }
+
+      .invalid & {
+      color: $ha-color-error;
+      }
+
+    }
+
+    // Required
+
+    &__required {
+    @extend .visually-hidden;
+    }
+
+    &__icon {
+
+      &::after {
+      color: $ha-color-error;
+      content: "*";
+      vertical-align: middle;
+      }
+
+    }
 
     // Form Elements
 
     input:not([type="checkbox"]):not([type="radio"]), select, textarea {
-    border: 1px #ccc solid;
+    border: 1px $ha-color-neutral solid;
     font-size: inherit;
     padding: .7em;
     width: 100%;
 
       &[aria-invalid="true"] {
-      border-color: $ha-error-color;
-      background-color: pink;
+      border-color: $ha-color-error;
+      background-color: $ha-color-error-highlight;
       }
 
     }
@@ -231,148 +432,105 @@ counter-reset: disclosure;
     height: 100px;
     }
 
-    input[type="file"] {
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    }
+    // Resume Upload
 
-    &.invalid {
+    &__upload {
+    align-items: center;
+    background-color: $ha-color-neutral-highlight;
+    border: 2px dashed $ha-color-neutral;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    position: relative;
+    text-align: center;
 
-      .hosted-apply__label {
-      color: $ha-error-color;
+      input[type="file"] {
+      cursor: pointer;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
       }
 
-      .hosted-apply__error {
+      .invalid & {
+      border-color: $ha-color-error;
+      background-color: $ha-color-error-highlight;
+      }
+
+      // In hiding the input, we now need to apply outline when tabbed within.
+
+      &:focus-within {
+      outline: 5px auto Highlight;
+      outline: 5px auto -webkit-focus-ring-color;
+      }
+
+      // Instructions
+
+      &__msg {
+      font-weight: bold;
+
+        &::before {
+        background-color: $ha-color-primary;
+        border-radius: 50%;
+        color: $ha-color-light;
+        content: "\f093";
+        display: block;
+        font-family: "FontAwesome";
+        height: 35px;
+        line-height: 35px;
+        margin: 0 auto;
+        width: 35px;
+        }
+
+      }
+
+    }
+
+    // Error Messages
+
+    &__error {
+    color: $ha-color-error;
+    display: none;
+
+      .invalid & {
       display: block;
       }
 
     }
 
+    // Descriptions
 
-  }
-
-  // Label
-
-  &__label {
-  font-weight: bold;
-  margin-top: 1em;
-
-    // Some "legends" need to be styled like labels.
-
-    &:not(label) {
-    margin-top: 0;
-    }
-
-  }
-
-  // Required
-
-  &__required {
-
-    &--message {
-    @extend .visually-hidden;
-    }
-
-    &--icon {
-
-      &::after {
-      content: "*";
-      vertical-align: middle;
-      color: #ff0000;
-      }
-
-    }
-
-  }
-
-  // Legend
-
-  &__legend {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: normal;
-  }
-
-  &__error, &__desc {
-  display: block;
-  margin-top: .5em;
-  }
-
-  &__desc {
-  font-style: italic;
-  }
-
-  &__error {
-  color: $ha-error-color;
-  }
-
-  &__upload {
-  align-items: center;
-  background-color: #f7f7f7;
-  border: 2px dashed #ccc;
-  cursor: pointer;
-  display: flex;
-  height: 200px;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-
-    .invalid & {
-    border-color: $ha-error-color;
-    background-color: pink;
-    }
-
-    &:focus-within {
-    border-color: #000;
-    }
-
-  }
-
-  &__filemsg {
-  font-weight: bold;
-
-    &::before {
+    &__desc {
     display: block;
-    width: 35px;
-    height: 35px;
-    font-family: "FontAwesome";
-    color: #fff;
-    background-color: purple;
-    border-radius: 50%;
-    content: "\f093";
-    margin: 0 auto;
+    font-style: italic;
+    }
+
+    &__error, &__desc {
+    margin: .5em 0;
     }
 
   }
 
-
-  &__buttons {
-  text-align: center;
-  }
+  // General Use Buttons
 
   &__button {
-  background-color: #6F00EF;
+  background-color: $ha-color-primary;
   border: 0;
-  color: #fff;
+  color: $ha-color-light;
   display: inline-block;
   font-size: inherit;
   margin: 1em .5em;
   padding: 1em;
 
-    &.back {
-    background-color: #ccc;
-    color: #000;
+    &--back {
+    background-color: $ha-color-neutral;
+    color: $ha-color-dark;
     }
 
   }
 
-  &__error {
-  display: none;
-  }
 
   &__skills {
 
@@ -387,7 +545,7 @@ counter-reset: disclosure;
     }
 
     button {
-    background-color: #ccc;
+    background-color: $ha-color-neutral;
     border-radius: 30px;
     color: inherit;
     padding: .8em;
@@ -406,23 +564,7 @@ counter-reset: disclosure;
 
   }
 
-  &__erroroverview {
-  background-color: $ha-error-color;
-  border-radius: 5px;
-  color: white;
-  padding: 1em;
 
-    &--heading {
-    font-size: 1.2em;
-    margin: 0;
-    }
-
-    &--heading, a {
-    color: inherit;
-    }
-
-
-  }
 
 
 }
