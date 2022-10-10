@@ -19,7 +19,7 @@
 
     button.addEventListener("click", function (e) {
 
-      // Get matching data attributes
+      // Get matching data attributes 
 
       let thisButtonId = document.querySelectorAll("[data-button-id=" + button.dataset.buttonId + "]");
 
