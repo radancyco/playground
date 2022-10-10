@@ -286,6 +286,7 @@ counter-reset: disclosure;
     &__heading {
     display: none;
     color: $ha-color-primary;
+    margin-top: 0;
 
       @media(min-width: 56em) {
 
@@ -339,6 +340,10 @@ counter-reset: disclosure;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: normal;
+    }
+
+    h3 {
+    margin-top: 0;
     }
 
     // Sub Fieldsets. Nested fieldsets are sometimes necessary.
