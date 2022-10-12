@@ -1,6 +1,6 @@
 /*!
 
-  Radancy: Hosted Apply
+  Radancy: Hosted Apply Model
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
@@ -88,6 +88,7 @@ width: 1px;
 
 .hosted-apply {
 counter-reset: disclosure;
+outline-offset: 10px;
 
   // Global Form Element Reset
 
@@ -118,12 +119,28 @@ counter-reset: disclosure;
   a {
 
     &[target="_blank"] {
-    background: transparent url(data:image/gif;base64,R0lGODlhCgAKAJECAP///5mZmQAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==) center right no-repeat;
-    padding-right: 1em;
-    margin-right: 0.5em;
+
+      &:after {
+      background-color: transparent;
+      background-image: url(data:image/gif;base64,R0lGODlhCgAKAJECAP///5mZmQAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==);
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: 1em;
+      content: "";
+      display: inline-block;
+      height: 1em;
+      margin: 0 6px;
+      width: 1em;
+      }
 
       &:focus, &:hover {
-      background: url(data:image/gif;base64,R0lGODlhCgAKAJECAP///2eIpAAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==) center right no-repeat;
+
+        &::after {
+
+          background-image: url(data:image/gif;base64,R0lGODlhCgAKAJECAP///2eIpAAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==);
+
+        }
+
       }
 
     }
@@ -186,6 +203,10 @@ counter-reset: disclosure;
   margin-bottom: .5em;
   padding: 1em;
   text-decoration: none;
+
+    &:hover, &:focus {
+    transition: background-color 0.5s ease;
+    }
 
     // Links with missing href cannot be tabbed to. But we need to prevent clicking from mouse. We also only want this on links, not buttons.
 
@@ -274,11 +295,25 @@ counter-reset: disclosure;
   // Primary Sections
 
   &__section {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  right: -10em;
   outline-offset: 10px;
+  max-height: 0;
 
     &.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+    max-height: 100000px;
+
+      @media (prefers-reduced-motion: no-preference) {
+
+        transition: visibility 0s, linear 0s, opacity 900ms, right 600ms;
+
+      }
+
     }
 
     // Primary Section Heading (should be an h2)
@@ -329,7 +364,7 @@ counter-reset: disclosure;
   border: 1px $ha-color-neutral solid;
   margin: 1em 0;
   padding: 1em;
-  position: relative; 
+  position: relative;
 
     // Legend
 
@@ -342,8 +377,16 @@ counter-reset: disclosure;
     line-height: normal;
     }
 
-    h3 {
+    h3:first-child  {
     margin-top: 0;
+    }
+
+    h3, p, span {
+
+      &:last-child {
+      margin-bottom: 0;
+      }
+
     }
 
     // Sub Fieldsets. Nested fieldsets are sometimes necessary.
@@ -518,25 +561,6 @@ counter-reset: disclosure;
 
   }
 
-  // General Use Buttons
-
-  &__button {
-  background-color: $ha-color-primary;
-  border: 0;
-  color: $ha-color-light;
-  display: inline-block;
-  font-size: inherit;
-  margin: 1em .5em;
-  padding: 1em;
-
-    &--back {
-    background-color: $ha-color-neutral;
-    color: $ha-color-dark;
-    }
-
-  }
-
-
   &__skills {
 
     ul {
@@ -569,7 +593,29 @@ counter-reset: disclosure;
 
   }
 
+  // General Use Buttons
 
+  &__button {
+  background-color: $ha-color-primary;
+  border: 2px transparent solid;
+  color: $ha-color-light;
+  display: inline-block;
+  font-size: inherit;
+  margin: 1em .5em;
+  padding: 1em;
+  text-decoration: none;
 
+    &:focus, &:hover {
+    background-color: $ha-color-light;
+    border-color: $ha-color-primary;
+    color: $ha-color-primary;
+    }
+
+    &--back {
+    background-color: $ha-color-neutral;
+    color: $ha-color-dark;
+    }
+
+  }
 
 }

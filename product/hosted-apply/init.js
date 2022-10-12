@@ -1,6 +1,6 @@
 /*!
 
-  Radancy: Hosted Apply
+  Radancy: Hosted Apply Model
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
@@ -19,13 +19,13 @@
 
     button.addEventListener("click", function (e) {
 
-      // Get matching data attributes 
+      // Get matching data attributes
 
       let thisButtonId = document.querySelectorAll("[data-button-id=" + button.dataset.buttonId + "]");
 
       hostedApplyProgress.forEach(function(button) {
 
-        // Temporarily set all aria-expanded to false, where found.
+        // Set all aria-expanded to false, where found.
 
         if(button.hasAttribute("aria-expanded")) {
 
@@ -33,7 +33,7 @@
 
         } else {
 
-          // Temporarily remove aria-current, where found.
+          // Remove aria-current, where found.
 
           button.removeAttribute("aria-current");
 
@@ -54,9 +54,6 @@
         }
 
       });
-
-
-
 
       hostedApplySections.forEach(function(section) {
 
@@ -95,5 +92,12 @@
     });
 
   });
+
+  // Announce that application is completed after ajx change.
+
+  let appMsg = document.getElementById("application-msg");
+
+  appMsg.setAttribute("tabindex", "-1");
+  appMsg.focus();
 
 })();
