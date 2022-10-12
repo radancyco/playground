@@ -109,8 +109,8 @@ width: 1px;
 .hosted-apply {
 counter-reset: disclosure;
 margin-top: 1em;
-padding: 12px;
 overflow: hidden;
+padding: 8px;
 position: relative;
 
   // Global Form Element Reset
@@ -126,9 +126,6 @@ position: relative;
   input:not([type="checkbox"]), button {
   box-sizing: border-box;
   line-height: normal;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearnace: none;
   }
 
   input[type="checkbox"], input[type="radio"] {
@@ -138,6 +135,8 @@ position: relative;
   }
 
   // New Window Links
+  // Any link that opens in a new windows needs this and also hidden text.
+  // Example: <a href="..." target="_blank">Create Home Account <span class="visually-hidden">(opens in new window)</span></a>
 
   a {
 
@@ -241,13 +240,19 @@ position: relative;
   align-items: center;
   background-color: $ha-color-light;
   border-radius: 5px;
-  border: 0;
+  border: 1px $ha-color-neutral-highlight solid;
   color: $ha-color-neutral-highlight;
   display: flex;
   font-weight: 700;
   margin-bottom: .5em;
   padding: 1em;
   text-decoration: none;
+
+    @media(min-width: 56em) {
+
+      border: 0;
+
+    }
 
     &:hover, &:focus {
     transition: background-color 0.5s ease;
@@ -264,8 +269,8 @@ position: relative;
     &::before {
     align-items: center;
     background-color: $ha-color-neutral-highlight;
-    border: 2px transparent solid;
     border-radius: 50%;
+    border: 2px transparent solid;
     color: $ha-color-light;
     content: counter(progress);
     counter-increment: progress;
@@ -309,6 +314,7 @@ position: relative;
     // Completed Counter State
 
     &--complete, &--complete[aria-expanded]{
+    border-color: $ha-color-complete;
 
       &::before {
       background-color: $ha-color-complete;
@@ -321,6 +327,7 @@ position: relative;
 
     &[aria-current], &[aria-expanded="true"] {
     background-color: $ha-color-primary;
+    border-color: $ha-color-primary;
     color: $ha-color-light;
 
       &::before {
@@ -340,18 +347,19 @@ position: relative;
   // Primary Sections
 
   &__section {
+  max-height: 0;
   opacity: 0;
-  visibility: hidden;
+  outline-offset: 6px;
   position: relative;
   right: -20em;
-  outline-offset: 10px;
-  max-height: 0;
+  top: 0;
+  visibility: hidden;
 
     &.active {
-    opacity: 1;
-    visibility: visible;
-    right: 0;
     max-height: 100000px;
+    opacity: 1;
+    right: 0;
+    visibility: visible;
 
       @media (prefers-reduced-motion: no-preference) {
 
@@ -364,8 +372,8 @@ position: relative;
     // Primary Section Heading (should be an h2)
 
     &__heading {
-    display: none;
     color: $ha-color-primary;
+    display: none;
     margin-top: 0;
 
       @media(min-width: 56em) {
@@ -635,17 +643,17 @@ position: relative;
     button {
     background-color: $ha-color-neutral;
     border-radius: 30px;
-    color: inherit;
-    padding: .8em;
-    margin: 0 1em 1em 0;
     border: 0;
+    color: inherit;
+    margin: 0 1em 1em 0;
+    padding: .8em;
 
       &::after {
       content: "\f057";
-      font-size: 1.5rem;
       font-family: "FontAwesome";
-      vertical-align: middle;
+      font-size: 1.5rem;
       margin-left: .5em;
+      vertical-align: middle;
       }
 
     }
