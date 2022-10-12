@@ -97,27 +97,31 @@
 
   // Using native here for demo. Research needed to see how accessible it is now.
 
-  let dialog = document.getElementById("confirmation-remove");
+  if(document.getElementById("confirmation-remove")) {
 
-  // Show the dialog when clicking "Delete everything"
+    let dialog = document.getElementById("confirmation-remove");
 
-  document.getElementById("delete-work-experience").addEventListener("click", function() {
+    // Show the dialog when clicking "Delete everything"
 
-    dialog.showModal();
+    document.getElementById("delete-work-experience").addEventListener("click", function() {
 
-  });
+      dialog.showModal();
 
-  document.getElementById("cancel-remove").addEventListener("click", function() {
+    });
 
-    dialog.close();
+    document.getElementById("cancel-remove").addEventListener("click", function() {
 
-  });
+      dialog.close();
 
-  document.getElementById("confirm-remove").addEventListener("click", function() {
+    });
 
-    dialog.close();
+    document.getElementById("confirm-remove").addEventListener("click", function() {
 
-  });
+      dialog.close();
+
+    });
+
+  }
 
   // Announce that application is completed after ajx change.
 
