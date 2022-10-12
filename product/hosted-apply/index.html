@@ -58,7 +58,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-referred-by">How did you hear about us? <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select id="ha-referred-by" required>
+          <select id="ha-referred-by" aria-invalid="false" required>
             <option value="">Please Select</option>
             <option>Corporate Website</option>
             <option>Employee Referral</option>
@@ -908,25 +908,13 @@ title: "Business Development Manager"
 
         <button class="hosted-apply__button" type="button">Add</button>
 
-        <fieldset class="hosted-apply__group">
+        <fieldset id="work-experience-1" class="hosted-apply__group">
 
           <legend class="visually-hidden">Work Experience 1</legend>
 
           <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 1</div>
 
           <button class="hosted-apply__group__delete" id="delete-work-experience" type="button"><span class="visually-hidden">Delete Work Experience</span></button>
-
-          <dialog id="confirmation-remove">
-
-            <h2 class="dialog-heading">Remove Field</h2>
-
-            <p>Are you sure you want to remove this Work Experience?</p>
-
-            <button class="hosted-apply__button" id="cancel-remove" type="button">Cancel</button>
-
-            <button class="hosted-apply__button" id="confirm-remove" type="button">Remove</button>
-
-          </dialog>
 
           <div class="hosted-apply__field">
 
@@ -995,6 +983,20 @@ title: "Business Development Manager"
           <button class="hosted-apply__button" type="button">Add Another Job</button>
 
         </fieldset>
+
+        <dialog id="confirmation-remove">
+
+          <h2 class="dialog-heading">Remove Field</h2>
+
+          <p>Are you sure you want to remove this Work Experience?</p>
+
+          <button class="hosted-apply__button" id="cancel-remove" type="button">Cancel</button>
+
+          <button class="hosted-apply__button" id="confirm-remove" type="button">Remove</button>
+
+        </dialog>
+
+        <div id="work-experience-msg" aria-live="polite"></div>
 
       </fieldset>
 
@@ -1487,23 +1489,27 @@ title: "Business Development Manager"
 
           <h3>Work Experience</h3>
 
-          <h3>Work Experience 1</h3>
+          <section class="hosted-apply__group">
 
-          <h4>Job Title</h4>
+            <h3>Work Experience 1</h3>
 
-          <p class="hosted-apply__answer">Director of Operations</p>
+            <h4>Job Title</h4>
 
-          <h4>Company</h4>
+            <p class="hosted-apply__answer">Director of Operations</p>
 
-          <p class="hosted-apply__answer">Domino Sugar Factory</p>
+            <h4>Company</h4>
 
-          <h4>From</h4>
+            <p class="hosted-apply__answer">Domino Sugar Factory</p>
 
-          <p class="hosted-apply__answer">2022-10-03</p>
+            <h4>From</h4>
 
-          <h4>To</h4>
+            <p class="hosted-apply__answer">2022-10-03</p>
 
-          <p class="hosted-apply__answer">2022-10-07</p>
+            <h4>To</h4>
+
+            <p class="hosted-apply__answer">2022-10-07</p>
+
+          </section>
 
         </section>
 

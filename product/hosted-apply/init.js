@@ -100,6 +100,8 @@
   if(document.getElementById("confirmation-remove")) {
 
     let dialog = document.getElementById("confirmation-remove");
+    let targetSection = document.getElementById("work-experience-1");
+    let targetMsg = document.getElementById("work-experience-msg");
 
     // Show the dialog when clicking "Delete everything"
 
@@ -118,16 +120,24 @@
     document.getElementById("confirm-remove").addEventListener("click", function() {
 
       dialog.close();
+      targetSection.remove();
+      targetMsg.textContent = "Work Experience 1 has been removed.";
 
     });
 
   }
 
-  // Announce that application is completed after ajx change.
+  // Announce that application is completed after ajax change.
 
-  let appMsg = document.getElementById("application-msg");
+  if(document.getElementById("application-msg")) {
 
-  appMsg.setAttribute("tabindex", "-1");
-  appMsg.focus();
+    let appMsg = document.getElementById("application-msg");
+
+    appMsg.setAttribute("tabindex", "-1");
+    appMsg.focus();
+
+    // If state change only, then <title> also needs to change, but this is not how our demo works.
+
+  }
 
 })();

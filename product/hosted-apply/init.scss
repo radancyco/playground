@@ -40,7 +40,7 @@ $ha-color-error-highlight: pink;
 $ha-color-highlight-1: #CCC;
 $ha-color-highlight-2: #EEE;
 $ha-color-light: #FFF;
-$ha-color-neutral: #CCC;
+$ha-color-neutral: #767676;
 $ha-color-neutral-highlight: #767676;
 $ha-color-primary: #6F00EF;
 
@@ -108,7 +108,8 @@ width: 1px;
 
 .hosted-apply {
 counter-reset: disclosure;
-margin: 1em 0;
+padding: 0 1em 1em;
+margin-top: 1em;
 outline-offset: 6px;
 overflow: hidden;
 position: relative;
@@ -217,7 +218,7 @@ position: relative;
     }
 
     &::before {
-    background-color: $ha-color-neutral;
+    background-color: $ha-color-highlight-1;
     content: "";
     height: 2px;
     left: 10%;
@@ -343,7 +344,7 @@ position: relative;
   opacity: 0;
   visibility: hidden;
   position: relative;
-  right: -10em;
+  right: -20em;
   outline-offset: 10px;
   max-height: 0;
 
@@ -355,7 +356,7 @@ position: relative;
 
       @media (prefers-reduced-motion: no-preference) {
 
-        transition: visibility 0s linear 0s, opacity 1200ms, right 600ms;
+        transition: visibility 0s linear 0s, opacity 1200ms, right 300ms;
 
       }
 
@@ -364,8 +365,16 @@ position: relative;
     // Primary Section Heading (should be an h2)
 
     &__heading {
+    display: none;
     color: $ha-color-primary;
     margin-top: 0;
+
+      @media(min-width: 56em) {
+
+        display: block;
+
+      }
+
     }
 
     &__buttons {
@@ -659,7 +668,7 @@ position: relative;
     }
 
     &--back {
-    background-color: $ha-color-neutral;
+    background-color: $ha-color-highlight-1;
     color: $ha-color-dark;
     }
 
