@@ -60,6 +60,24 @@ $font-file-path: "https://tbcdn.talentbrew.com/company/1839/Full_v3_0/font/";
 
 @include fontface("#{$font-file-path}", "fontawesome-webfont", "FontAwesome", $weight-normal);
 
+// Animations
+
+@keyframes fade-in {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
 // Global Properities
 
 // Note: If you have these already in your global stylesheet, feel free to remove.
@@ -89,6 +107,9 @@ width: 1px;
 .hosted-apply {
 counter-reset: disclosure;
 outline-offset: 10px;
+position: relative;
+overflow: hidden;
+padding: 12px;
 
   // Global Form Element Reset
 
@@ -143,6 +164,24 @@ outline-offset: 10px;
 
       }
 
+    }
+
+  }
+
+  // Dialog
+
+  dialog {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+    .dialog-heading {
+    margin: 0;
+    }
+
+    &::backdrop {
+    animation: fade-in 1s;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4));
     }
 
   }
@@ -310,7 +349,7 @@ outline-offset: 10px;
 
       @media (prefers-reduced-motion: no-preference) {
 
-        transition: visibility 0s, linear 0s, opacity 900ms, right 600ms;
+        transition: visibility 0s linear 0s, opacity 900ms, right 600ms;
 
       }
 
