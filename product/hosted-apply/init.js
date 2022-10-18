@@ -10,7 +10,7 @@
 
 (function() {
 
-  // Basic Functionality for form
+  // Basic Functionality for Multi-Step Navigation and Form Sections
 
   let hostedApplyProgress = document.querySelectorAll(".hosted-apply__page");
   let hostedApplySections = document.querySelectorAll(".hosted-apply__section");
@@ -21,39 +21,17 @@
 
       // Get matching data attributes
 
-      let thisButtonId = document.querySelectorAll("[data-button-id=" + button.dataset.buttonId + "]");
-
       hostedApplyProgress.forEach(function(button) {
 
-        // Set all aria-expanded to false, where found.
+        // Remove aria-current, where found.
 
-        if(button.hasAttribute("aria-expanded")) {
-
-          button.setAttribute("aria-expanded", "false");
-
-        } else {
-
-          // Remove aria-current, where found.
-
-          button.removeAttribute("aria-current");
-
-        }
+        button.removeAttribute("aria-current");
 
       });
 
-      thisButtonId.forEach(function(button) {
+      // Apply aria-current to selected step
 
-        if(button.hasAttribute("aria-expanded")) {
-
-          button.setAttribute("aria-expanded", "true");
-
-        } else {
-
-          button.setAttribute("aria-current", "page");
-
-        }
-
-      });
+      button.setAttribute("aria-current", "step");
 
       hostedApplySections.forEach(function(section) {
 
@@ -63,29 +41,20 @@
 
       });
 
-    //  if(button.hasAttribute("aria-expanded")) {
+      // Get section based on href of link
 
-        //button.setAttribute("aria-expanded", "false");
+      let buttonID = document.getElementById(button.getAttribute("href").replace("#", ""));
+      let sectionTarget = buttonID;
 
-    //  } else {
+      // Apply
 
-        // Get section based on href of link
+      sectionTarget.classList.add("active");
+      sectionTarget.setAttribute("tabindex", "-1");
+      sectionTarget.focus({
 
-        let buttonID = document.getElementById(button.dataset.buttonId);
+        preventScroll: true
 
-        let sectionTarget = buttonID;
-
-        // Apply
-
-        sectionTarget.classList.add("active");
-        sectionTarget.setAttribute("tabindex", "-1");
-        sectionTarget.focus({
-
-          preventScroll: true
-
-        });
-
-  //    }
+      });
 
       e.preventDefault();
 

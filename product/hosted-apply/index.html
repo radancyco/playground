@@ -20,17 +20,21 @@ title: "Business Development Manager"
     Dynamically removing and adding an href is all that need be done.
   -->
 
-  <ol class="hosted-apply__progress">
-    <li><a class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-information" href="#ha-my-information" id="ha-my-information-btn"><span>My Information</span> <span class="visually-hidden">(Completed)</span></a></li>
-    <li><a class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-experience" href="#ha-my-experience" id="ha-my-experience-btn"><span>My Experience</span></a></li>
-    <li><a class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-voluntary-disclosure" href="#ha-voluntary-disclosure" id="ha-voluntary-disclosure-btn"><span>Voluntary Disclosure</span></a></li>
-    <li><a class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-self-identify" href="#ha-self-identify" id="ha-self-identify-btn"><span>Self Identify</span></a></li>
-    <li><a aria-current="page" class="hosted-apply__page" data-button-id="ha-review" href="#ha-review" id="ha-review-btn"><span>Review</span></a></li>
-  </ol>
+  <nav aria-label="Job Application Steps" class="hosted-apply__progress">
+
+    <ol>
+      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-my-information" id="ha-my-information-btn"><span class="hosted-apply__page__label">My Information</span></a></li>
+      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-my-experience" id="ha-my-experience-btn"><span class="hosted-apply__page__label">My Experience</span></a></li>
+      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-voluntary-disclosure" id="ha-voluntary-disclosure-btn"><span class="hosted-apply__page__label">Voluntary Disclosure</span></a></li>
+      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-self-identify" id="ha-self-identify-btn"><span class="hosted-apply__page__label">Self Identify</span></a></li>
+      <li><a aria-current="step" class="hosted-apply__page" href="#ha-review" id="ha-review-btn"><span class="hosted-apply__page__label">Review</span></a></li>
+    </ol>
+
+    <div hidden id="hosted-apply-status-completed">Completed</div>
+
+  </nav>
 
   <form action="thank-you/index.html" novalidate>
-
-    <button aria-controls="ha-my-information" aria-expanded="false" class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-information" type="button"><span>My Information</span> <span class="visually-hidden">(Completed)</span></button>
 
     <section class="hosted-apply__section" id="ha-my-information">
 
@@ -375,8 +379,6 @@ title: "Business Development Manager"
             <option>Zimbabwe</option>
           </select>
 
-          <span class="hosted-apply__field__error" id="ha-country-error">Plese enter a country</span>
-
         </div>
 
       </fieldset>
@@ -391,9 +393,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-legal-first-name">Legal First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-legal-first-name" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-legal-first-name-error">Plese enter legal first name</span>
+          <input aria-invalid="false" id="ha-legal-first-name" data-error-message="Please enter legal first name" required type="text">
 
         </div>
 
@@ -401,9 +401,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-legal-last-name">Legal Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-legal-last-name" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-legal-last-name-error">Plese enter legal last name</span>
+          <input aria-invalid="false" id="ha-legal-last-name" data-error-message="Please enter legal last name" required type="text">
 
         </div>
 
@@ -419,9 +417,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-preferred-first-name">Preferred First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-preferred-first-name" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-preferred-first-name-error">Plese enter preferred first name</span>
+          <input aria-invalid="false" id="ha-preferred-first-name" data-error-message="Please enter preferred first name" required type="text">
 
         </div>
 
@@ -429,9 +425,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-preferred-last-name">Preferred Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-preferred-last-name" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-preferred-last-name-error">Plese enter preferred last name</span>
+          <input aria-invalid="false" id="ha-preferred-last-name" data-error-message="Plese enter preferred last name" required type="text">
 
         </div>
 
@@ -447,7 +441,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-address">Address <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="true" aria-describedby="ha-address-error" id="ha-address" required type="text">
+          <input aria-invalid="true" aria-describedby="ha-address-error" data-error-message="Please enter address" id="ha-address" required type="text">
 
           <span class="hosted-apply__field__error" id="ha-address-error">Plese enter address</span>
 
@@ -539,9 +533,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-postal-code">Postal Code <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-postal-code" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-postal-code-error">Plese enter postal code</span>
+          <input aria-invalid="false" id="ha-postal-code" data-error-message="Please enter postal code" required type="text">
 
         </div>
 
@@ -868,8 +860,6 @@ title: "Business Development Manager"
 
     </section>
 
-    <button aria-controls="ha-my-experience" aria-expanded="false" class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-experience" type="button"><span>My Experience</span></button>
-
     <section class="hosted-apply__section" id="ha-my-experience">
 
       <h2 class="hosted-apply__section__heading">My Experience</h2>
@@ -1098,8 +1088,6 @@ title: "Business Development Manager"
 
     </section>
 
-    <button aria-controls="ha-voluntary-disclosure" aria-expanded="false" class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-my-voluntary-disclosure" disabled type="button"><span>Voluntary Disclosure</span></button>
-
     <section class="hosted-apply__section" id="ha-voluntary-disclosure">
 
       <h2 class="hosted-apply__section__heading">Voluntary Disclosure</h2>
@@ -1201,8 +1189,6 @@ title: "Business Development Manager"
       </div>
 
     </section>
-
-    <button aria-controls="ha-self-identify" aria-expanded="false" class="hosted-apply__page hosted-apply__page--complete" data-button-id="ha-self-identify" disabled type="button"><span>Self Identify</span></button>
 
     <section class="hosted-apply__section" id="ha-self-identify">
 
@@ -1372,8 +1358,6 @@ title: "Business Development Manager"
       </div>
 
     </section>
-
-    <button aria-controls="ha-review" aria-expanded="true" class="hosted-apply__page" data-button-id="ha-review" disabled type="button"><span>Review</span></button>
 
     <section class="hosted-apply__section active" id="ha-review">
 

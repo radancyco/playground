@@ -107,7 +107,6 @@ width: 1px;
 // Hosted Apply
 
 .hosted-apply {
-counter-reset: disclosure;
 margin-top: 1em;
 overflow: hidden;
 padding: 8px;
@@ -203,65 +202,63 @@ position: relative;
 
   &__progress {
   counter-reset: progress;
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
   position: relative;
+  margin: 1em 0;
 
-    @media(min-width: 56em) {
-
-      display: flex;
-
-    }
+    // Line 
 
     &::before {
     background-color: $ha-color-highlight-1;
     content: "";
     height: 2px;
-    left: 10%;
     position: absolute;
-    right: 10%;
-    top: 50%;
-    width: 80%;
+    top: 40px;
+    width: 100%;
     z-index: -1;
+    }
+
+    ol {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     }
 
     li {
     display: flex;
     flex-grow: 1;
     justify-content: center;
-    padding: 1em;
     }
 
   }
 
   &__page {
-  align-items: center;
-  background-color: $ha-color-light;
-  border-radius: 5px;
-  border: 1px $ha-color-neutral-highlight solid;
   color: $ha-color-neutral-highlight;
-  display: flex;
-  font-weight: 700;
-  margin-bottom: .5em;
-  padding: 1em;
+  padding: 1em 0;
+  position: relative;
+  text-align: center;
   text-decoration: none;
+  width: 100%;
 
-    @media(min-width: 56em) {
+    // Links with missing href cannot be tabbed to. But we need to prevent clicking from mouse.
 
-      border: 0;
-
-    }
-
-    &:hover, &:focus {
-    transition: background-color 0.5s ease;
-    }
-
-    // Links with missing href cannot be tabbed to. But we need to prevent clicking from mouse. We also only want this on links, not buttons.
-
-    &:not([href]):not(button) {
+    &:not([href]) {
     pointer-events: none;
+    }
+
+    &__label {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -999em;
+
+      @media(min-width: 56em) {
+
+        position: static;
+        text-indent: 0;
+
+      }
+
     }
 
     // All Counters
@@ -270,74 +267,58 @@ position: relative;
     align-items: center;
     background-color: $ha-color-neutral-highlight;
     border-radius: 50%;
-    border: 2px transparent solid;
     color: $ha-color-light;
     content: counter(progress);
     counter-increment: progress;
     display: flex;
-    font-family: "FontAwesome";
-    height: 30px;
+    font-weight: 700;
+    height: 50px;
     justify-content: center;
-    margin-right: 1em;
-    min-width: 30px;
+    margin: 0 auto;
+    width: 50px;
     }
 
-    // Disclosures for smaller viewports
-
-    &[aria-expanded] {
-    width: 100%;
-
-      @media(min-width: 56em) {
-
-        display: none;
-
-      }
-
-      &::before {
-      content: counter(disclosure);
-      counter-increment: disclosure;
-      }
-
+    &:after {
+    font-family: "FontAwesome";
+    font-size: 1.8rem;
+    margin-left: 12px;
+    position: absolute;
+    top: 12px;
+    -webkit-text-stroke: 1px #fff;
     }
 
     // Current and Completed Counter State
 
     &[aria-current], &--complete {
     color: $ha-color-dark;
-
-      &:focus, &:hover {
-      background-color: $ha-color-highlight-1;
-      }
-
     }
 
     // Completed Counter State
 
-    &--complete, &--complete[aria-expanded]{
-    border-color: $ha-color-complete;
+    &--complete {
 
       &::before {
       background-color: $ha-color-complete;
+      }
+
+      &::after {
       content: "\f00c";
+      color: $ha-color-complete;
       }
 
     }
 
     // Current and Expanded Counter State
 
-    &[aria-current], &[aria-expanded="true"] {
-    background-color: $ha-color-primary;
-    border-color: $ha-color-primary;
-    color: $ha-color-light;
+    &[aria-current] {
 
       &::before {
       background-color: $ha-color-primary;
-      border-color: $ha-color-light;
-      content: "\f040";
       }
 
-      &:focus, &:hover {
-      background-color: $ha-color-primary;
+      &::after {
+      content: "\f040";
+      color: $ha-color-primary;
       }
 
     }
@@ -373,15 +354,7 @@ position: relative;
 
     &__heading {
     color: $ha-color-primary;
-    display: none;
     margin-top: 0;
-
-      @media(min-width: 56em) {
-
-        display: block;
-
-      }
-
     }
 
     &__buttons {
