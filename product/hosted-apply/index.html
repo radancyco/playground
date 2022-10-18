@@ -36,18 +36,6 @@ title: "Business Development Manager"
 
       <h2 class="hosted-apply__section__heading">My Information</h2>
 
-      <div class="hosted-apply__review">
-
-        <h3 class="hosted-apply__review__heading">This section contains errors</h3>
-
-        <ol>
-          <li><a href="#ha-previous-work-yes">Please select if you have previously worked for this organization</a></li>
-          <li><a href="#ha-address">Please enter address</a></li>
-          <li><a href="#ha-state">Please select a state</a></li>
-        </ol>
-
-      </div>
-
       <fieldset class="hosted-apply__group">
 
         <legend class="visually-hidden">General</legend>
@@ -58,15 +46,13 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-referred-by">How did you hear about us? <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select id="ha-referred-by" aria-invalid="false" required>
+          <select id="ha-referred-by" aria-invalid="false" data-error-message="Please enter how you heard about us" required>
             <option value="">Please Select</option>
             <option>Corporate Website</option>
             <option>Employee Referral</option>
             <option>Facebook</option>
             <option>Friend's Facebook Feed</option>
           </select>
-
-          <span class="hosted-apply__field__error" id="ha-referred-by-error">Plese enter how you heard about us</span>
 
         </div>
 
@@ -140,7 +126,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-country">Country <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" id="ha-country" required>
+          <select aria-invalid="false" data-error-message="Please enter a country" id="ha-country" required>
             <option value="">Please Select</option>
             <option>Afghanistan</option>
             <option>Åland Islands</option>
@@ -481,7 +467,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-state">State <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="true" aria-describedby="ha-state-error" id="ha-state" required>
+          <select aria-invalid="true" aria-describedby="ha-state-error" date-error-message="Plese select a state" id="ha-state" required>
             <option value="">Please Select</option>
             <option>Armed Forces Pacific</option>
             <option>Armed Forces Europe</option>
@@ -956,7 +942,7 @@ title: "Business Development Manager"
 
             <label class="hosted-apply__field__label" for="ha-work-experience-1-start-date">Start Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="true" aria-describedby="ha-work-experience-1-start-date-error" id="ha-work-experience-1-start-date" required type="date">
+            <input aria-invalid="true" aria-describedby="ha-work-experience-1-start-date-error" data-error-message="Please enter a start date" id="ha-work-experience-1-start-date" required type="date">
 
             <span class="hosted-apply__field__error" id="ha-work-experience-1-start-date-error">Please enter a start date</span>
 
@@ -966,7 +952,7 @@ title: "Business Development Manager"
 
             <label class="hosted-apply__field__label" for="ha-work-experience-1-end-date">End Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="true" aria-describedby="ha-work-experience-1-end-date-error" id="ha-work-experience-1-end-date" required type="date">
+            <input aria-invalid="true" aria-describedby="ha-work-experience-1-end-date-error" data-error-message="Please enter a end date" id="ha-work-experience-1-end-date" required type="date">
 
             <span class="hosted-apply__field__error" id="ha-work-experience-1-end-date-error">Please enter a end date</span>
 
