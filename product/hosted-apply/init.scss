@@ -728,16 +728,16 @@ position: relative;
     color: inherit;
     margin: 0 1em 1em 0;
     min-width: 180px;
-    padding: .8em 3em;
+    padding: .8em;
     position: relative;
+    display: flex;
+    align-items: center;
 
       &::after {
       content: "\f057";
       font-family: "FontAwesome";
       font-size: 1.5rem;
-      position: absolute;
-      right: 10px;
-      top: 5px;
+      margin-left: auto;
       }
 
     }
