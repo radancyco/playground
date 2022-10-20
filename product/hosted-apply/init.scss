@@ -205,7 +205,7 @@ position: relative;
   position: relative;
   margin: 1em 0;
 
-    // Line 
+    // Line
 
     &::before {
     background-color: $ha-color-highlight-1;
@@ -263,13 +263,18 @@ position: relative;
 
     // All Counters
 
-    &::before {
+    // Normally we would use a ::before pseudo-element here, but there is bug in NVDA:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=1376668
+
+    // ::before {
+
+    &__count {
     align-items: center;
     background-color: $ha-color-neutral-highlight;
     border-radius: 50%;
     color: $ha-color-light;
-    content: counter(progress);
-    counter-increment: progress;
+    // content: counter(progress);
+    // counter-increment: progress;
     display: flex;
     font-weight: 700;
     height: 50px;
@@ -278,7 +283,7 @@ position: relative;
     width: 50px;
     }
 
-    &:after {
+    &::after {
     font-family: "FontAwesome";
     font-size: 1.8rem;
     margin-left: 12px;
@@ -297,7 +302,7 @@ position: relative;
 
     &--complete {
 
-      &::before {
+      .hosted-apply__page__count {
       background-color: $ha-color-complete;
       }
 
@@ -312,7 +317,7 @@ position: relative;
 
     &[aria-current] {
 
-      &::before {
+      .hosted-apply__page__count {
       background-color: $ha-color-primary;
       }
 
@@ -448,6 +453,15 @@ position: relative;
       content: "\f1f8";
       font-family: "FontAwesome";
       font-size: 1.5rem;
+      }
+
+      &:focus, &:hover {
+      background-color: $ha-color-light;
+
+        &::before {
+        color: $ha-color-primary;
+        }
+
       }
 
     }
