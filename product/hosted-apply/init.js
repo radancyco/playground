@@ -58,7 +58,7 @@
 
   // Dialog
 
-  // Using native here for demo. Research needed to see how accessible it is now.
+  // Using native dialog here for demo. Research needed to see how accessible it is now.
 
   if(document.getElementById("confirmation-remove")) {
 
@@ -89,6 +89,33 @@
     });
 
   }
+
+  // Remove files
+
+  let fileDelete = document.querySelectorAll(".hosted-apply__uploads__delete");
+
+  fileDelete.forEach(function(button) {
+
+    button.addEventListener("click", function (e) {
+
+      let fileName = button.getAttribute("aria-label").replace("Delete ", "");
+
+      button.parentNode.parentNode.remove();
+
+      let fileDeleteMsg = document.getElementById("uloaded-file-msg");
+
+      fileDeleteMsg.innerHTML="";
+
+      setTimeout(function(){
+
+        fileDeleteMsg.textContent = fileName + " has been deleted."
+
+      }, 100);
+
+    });
+
+  });
+
 
   // Announce that application is completed after ajax change.
 

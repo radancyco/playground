@@ -885,7 +885,7 @@ title: "Business Development Manager"
 
           <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 1</div>
 
-          <button class="hosted-apply__group__delete" id="delete-work-experience" type="button"><span class="visually-hidden">Delete Work Experience</span></button>
+          <button class="hosted-apply__group__delete" id="delete-work-experience" type="button"><span class="visually-hidden">Delete Work Experience 1</span></button>
 
           <div class="hosted-apply__field">
 
@@ -993,6 +993,22 @@ title: "Business Development Manager"
 
       <fieldset class="hosted-apply__group">
 
+        <legend class="visually-hidden">Skills</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Skills</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-skills">Add Skills</label>
+
+          <input id="ha-skills" placeholder="Type to add..." type="text">
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
         <legend class="visually-hidden">Websites</legend>
 
         <div aria-hidden="true" class="hosted-apply__group__legend">Websites</div>
@@ -1065,9 +1081,54 @@ title: "Business Development Manager"
 
           <span class="hosted-apply__field__desc" id="ha-resume-limit">Upload a file (5MB max)</span>
 
-          <!-- -->
-
           <span class="hosted-apply__field__error" id="ha-resume-error">The field Resume/CV is required and must have a value</span>
+
+          <section>
+
+            <h3>File Uploads</h3>
+
+            <ol class="hosted-apply__uploads">
+              <li>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__label">hugo-plasternaff-resume.docx <span class="hosted-apply__uploads__size">(401.00 KB)</span></span>
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__success">Successfully uploaded!</span>
+
+                </div>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <button aria-label="Delete hugo-plasternaff-resume.docx" class="hosted-apply__uploads__delete" type="button"></button>
+
+                </div>
+
+              </li>
+              <li>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__label">hugo-plasternaff-cover.docx <span class="hosted-apply__uploads__size">(123.45 KB)</span></span>
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__success">Successfully uploaded!</span>
+
+                </div>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <button aria-label="Delete hugo-plasternaff-cover.docx" class="hosted-apply__uploads__delete" type="button"></button>
+
+                </div>
+
+              </li>
+            </ol>
+
+            <div id="uloaded-file-msg" aria-live="polite"></div>
+
+            <!-- The above div can be be used to pass multiple message for upload and deletion -->
+
+          </section>
 
         </div>
 

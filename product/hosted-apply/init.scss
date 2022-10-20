@@ -499,6 +499,7 @@ position: relative;
     // Form Elements
 
     input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    background-color: $ha-color-light;
     border: 1px $ha-color-neutral solid;
     font-size: inherit;
     padding: .7em;
@@ -592,6 +593,101 @@ position: relative;
 
     &__error, &__desc {
     margin: .5em 0;
+    }
+
+  }
+
+  // Upload List
+
+  &__uploads {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+    li {
+
+      @media(min-width: 56em) {
+
+        display: flex;
+
+      }
+
+      &::before {
+
+        @media(min-width: 56em) {
+
+          align-items: center;
+          background-color: $ha-color-highlight-1;
+          border-radius: 5px;
+          border: 1px $ha-color-neutral solid;
+          content: "\f15b";
+          display: flex;
+          font-family: "FontAwesome";
+          justify-content: center;
+          margin: 0 1em 1em 0;
+          padding: 2em;
+
+        }
+
+      }
+
+    }
+
+    &__col {
+
+      @media(min-width: 56em) {
+
+        width: 35%;
+
+      }
+
+    }
+
+    &__row {
+    display: block;
+    }
+
+    &__label {
+    font-weight: 700;
+    }
+
+    &__size {
+    font-weight: normal;
+    }
+
+    &__success {
+    color: $ha-color-complete;
+
+      &::after {
+      content: " \f00c";
+      font-family: "FontAwesome";
+      }
+
+    }
+
+    &__delete {
+    background-color: $ha-color-highlight-1;
+    border-radius: 5px;
+    border: 1px $ha-color-neutral solid;
+    margin: 1em 0;
+    min-width: 100px;
+    padding: 1em;
+
+      @media(min-width: 56em) {
+
+        margin: 1em;
+
+      }
+
+      &::after {
+
+        color: $ha-color-dark;
+        content: "\f1f8";
+        font-family: "FontAwesome";
+        font-size: 1.2rem;
+
+      }
+
     }
 
   }
