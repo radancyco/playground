@@ -999,9 +999,38 @@ title: "Business Development Manager"
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__field__label" for="ha-skills">Add Skills</label>
+          <label class="hosted-apply__field__label" for="ha-skills">Search Skills</label>
 
-          <input id="ha-skills" placeholder="Type to add..." type="text">
+          <input id="ha-skills" list="ha-skill-list" type="text">
+
+          <datalist id="ha-skill-list">
+            <option>Accessibility</option>
+            <option>Angular</option>
+            <option>CSS</option>
+            <option>Environmental Stewardship and Sustainability</option>
+            <option>HTML</option>
+            <option>Microsoft Excel</option>
+            <option>Microsoft Powerpoint</option>
+            <option>JavaScript</option>
+            <option>jQuery</option>
+            <option>Quality Assurance</option>
+            <option>Sass</option>
+          </datalist>
+
+          <button class="hosted-apply__button" type="button">Add</button>
+
+          <!-- Note: The HTML Datalist is experimental. More research is required to see how well it works with assistive technology -->
+
+          <div class="hosted-apply__skills">
+
+            <ol>
+              <li><button aria-label="Delete HTML" class="hosted-apply__skills__button">HTML</button>
+              <li><button aria-label="Delete CSS" class="hosted-apply__skills__button">CSS</button></li>
+              <li><button aria-label="Delete Environmental Stewardship and Sustainability" class="hosted-apply__skills__button">Environmental Stewardship and Sustainability</button></li>
+              <li><button aria-label="Delete JavaScript" class="hosted-apply__skills__button">JavaScript</button></li>
+            </ol>
+
+          </div>
 
         </div>
 

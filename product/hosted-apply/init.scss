@@ -711,7 +711,7 @@ position: relative;
 
   &__skills {
 
-    ul {
+    ol {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -721,20 +721,23 @@ position: relative;
     display: inline-block;
     }
 
-    button {
-    background-color: $ha-color-neutral;
+    &__button {
+    background-color: $ha-color-highlight-1;
     border-radius: 30px;
     border: 0;
     color: inherit;
     margin: 0 1em 1em 0;
-    padding: .8em;
+    min-width: 180px;
+    padding: .8em 3em;
+    position: relative;
 
       &::after {
       content: "\f057";
       font-family: "FontAwesome";
       font-size: 1.5rem;
-      margin-left: .5em;
-      vertical-align: middle;
+      position: absolute;
+      right: 10px;
+      top: 5px;
       }
 
     }
