@@ -116,6 +116,31 @@
 
   });
 
+  // Remove Skills
+
+  let skillDelete = document.querySelectorAll(".hosted-apply__skills__delete");
+
+  skillDelete.forEach(function(button) {
+
+    button.addEventListener("click", function (e) {
+
+      let skillType = button.textContent
+
+      button.parentNode.remove();
+
+      let skillMsg = document.getElementById("skills-msg");
+
+      skillMsg.innerHTML="";
+
+      setTimeout(function(){
+
+        skillMsg.textContent = skillType + " has been deleted."
+
+      }, 100);
+
+    });
+
+  });
 
   // Announce that application is completed after ajax change.
 

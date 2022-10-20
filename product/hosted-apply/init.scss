@@ -604,6 +604,10 @@ position: relative;
   margin: 0;
   padding: 0;
 
+    &:empty {
+    display: none;
+    }
+
     li {
 
       @media(min-width: 56em) {
@@ -716,13 +720,18 @@ position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
+
+      &:empty {
+      display: none;
+      }
+
     }
 
     li {
     display: inline-block;
     }
 
-    &__button {
+    &__delete {
     align-items: center;
     background-color: $ha-color-highlight-1;
     border-radius: 30px;
@@ -733,6 +742,10 @@ position: relative;
     min-width: 140px;
     padding: .8em;
     position: relative;
+
+      span {
+      margin-right: .5em;
+      }
 
       &::after {
       content: "\f057";
