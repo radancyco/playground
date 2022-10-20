@@ -697,6 +697,15 @@ position: relative;
   &__answer {
   background-color: $ha-color-highlight-2;
   padding: .5em;
+  position: relative;
+
+    &::after {
+    content: "\f00c";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: .5em;
+    }
+
   }
 
 
