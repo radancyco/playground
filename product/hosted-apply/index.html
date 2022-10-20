@@ -15,19 +15,14 @@ title: "Business Development Manager"
 
   <p class="hosted-apply__back"><a href="#">Back to Job Posting</a></p>
 
-  <!--
-    Note: Inactive pager items should not contain an href. Do not add "disabled" or other nonesense to make the links non-focusable.
-    Dynamically removing and adding an href is all that need be done.
-  -->
-
   <nav aria-label="Job Application Steps" class="hosted-apply__progress">
 
     <ol>
-      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-my-information" id="ha-my-information-btn"><span class="hosted-apply__page__count">1</span><span class="hosted-apply__page__label">My Information</span></a></li>
-      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-my-experience" id="ha-my-experience-btn"><span class="hosted-apply__page__count">2</span><span class="hosted-apply__page__label">My Experience</span></a></li>
-      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-voluntary-disclosure" id="ha-voluntary-disclosure-btn"><span class="hosted-apply__page__count">3</span><span class="hosted-apply__page__label">Voluntary Disclosure</span></a></li>
-      <li><a aria-describedby="hosted-apply-status-completed" class="hosted-apply__page hosted-apply__page--complete" href="#ha-self-identify" id="ha-self-identify-btn"><span class="hosted-apply__page__count">4</span><span class="hosted-apply__page__label">Self Identify</span></a></li>
-      <li><a aria-current="step" class="hosted-apply__page" href="#ha-review" id="ha-review-btn"><span class="hosted-apply__page__count">5</span><span class="hosted-apply__page__label">Review</span></a></li>
+      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-information" id="btn-ha-my-information"><span class="hosted-apply__step__count">1</span><span class="hosted-apply__step__label">My Information</span></button></li>
+      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-experience" id="btn-ha-my-experience"><span class="hosted-apply__step__count">2</span><span class="hosted-apply__step__label">My Experience</span></button></li>
+      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-voluntary-disclosure" id="btn-ha-voluntary-disclosure"><span class="hosted-apply__step__count">3</span><span class="hosted-apply__step__label">Voluntary Disclosure</span></button></li>
+      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-self-identify" id="btn-ha-self-identify"><span class="hosted-apply__step__count">4</span><span class="hosted-apply__step__label">Self Identify</span></button></li>
+      <li><button aria-pressed="true" class="hosted-apply__step" data-form-target="ha-review" id="btn-ha-review"><span class="hosted-apply__step__count">5</span><span class="hosted-apply__step__label">Review</span></button></li>
     </ol>
 
     <div hidden id="hosted-apply-status-completed">Completed</div>
@@ -36,9 +31,9 @@ title: "Business Development Manager"
 
   <form action="thank-you/index.html" novalidate>
 
-    <section class="hosted-apply__section" id="ha-my-information">
+    <section aria-labelledby="hdr-my-information" class="hosted-apply__section" id="ha-my-information">
 
-      <h2 class="hosted-apply__section__heading">My Information</h2>
+      <h2 class="hosted-apply__section__heading" id="hdr-my-information">My Information</h2>
 
       <fieldset class="hosted-apply__group">
 
@@ -461,7 +456,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-state">State <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="true" aria-describedby="ha-state-error" date-error-message="Plese select a state" id="ha-state" required>
+          <select aria-invalid="true" aria-describedby="ha-state-error" data-error-message="Plese select a state" id="ha-state" required>
             <option value="">Please Select</option>
             <option>Armed Forces Pacific</option>
             <option>Armed Forces Europe</option>
@@ -854,15 +849,15 @@ title: "Business Development Manager"
 
       <div class="hosted-apply__section__buttons">
 
-        <button class="hosted-apply__button next" type="button">Next</button>
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-my-experience" type="button">Next</button>
 
       </div>
 
     </section>
 
-    <section class="hosted-apply__section" id="ha-my-experience">
+    <section aria-labelledby="hdr-my-experience" class="hosted-apply__section" id="ha-my-experience">
 
-      <h2 class="hosted-apply__section__heading">My Experience</h2>
+      <h2 class="hosted-apply__section__heading" id="hdr-my-experience">My Experience</h2>
 
       <div class="hosted-apply__review">
 
@@ -1080,17 +1075,17 @@ title: "Business Development Manager"
 
       <div class="hosted-apply__section__buttons">
 
-        <button class="hosted-apply__button hosted-apply__button--back" type="button">Back</button>
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-my-information" type="button">Back</button>
 
-        <button class="hosted-apply__button next" type="button">Next</button>
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-voluntary-disclosure" type="button">Next</button>
 
       </div>
 
     </section>
 
-    <section class="hosted-apply__section" id="ha-voluntary-disclosure">
+    <section aria-labelledby="hdr-voluntary-disclosure" class="hosted-apply__section" id="ha-voluntary-disclosure">
 
-      <h2 class="hosted-apply__section__heading">Voluntary Disclosure</h2>
+      <h2 class="hosted-apply__section__heading" id="hdr-voluntary-disclosure">Voluntary Disclosure</h2>
 
       <div class="hosted-apply__review">
 
@@ -1182,17 +1177,17 @@ title: "Business Development Manager"
 
       <div class="hosted-apply__section__buttons">
 
-        <button class="hosted-apply__button hosted-apply__button--back" type="button">Back</button>
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-my-experience" type="button">Back</button>
 
-        <button class="hosted-apply__button next" type="button">Next</button>
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-self-identify" type="button">Next</button>
 
       </div>
 
     </section>
 
-    <section class="hosted-apply__section" id="ha-self-identify">
+    <section aria-labelledby="hdr-self-identify" class="hosted-apply__section" id="ha-self-identify">
 
-      <h2 class="hosted-apply__section__heading">Self Identify</h2>
+      <h2 class="hosted-apply__section__heading" id="hdr-self-identify">Self Identify</h2>
 
       <fieldset class="hosted-apply__group">
 
@@ -1351,17 +1346,17 @@ title: "Business Development Manager"
 
       <div class="hosted-apply__section__buttons">
 
-        <button class="hosted-apply__button hosted-apply__button--back" type="button">Back</button>
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-voluntary-disclosure" type="button">Back</button>
 
-        <button class="hosted-apply__button next" type="button">Next</button>
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-review" type="button">Next</button>
 
       </div>
 
     </section>
 
-    <section class="hosted-apply__section active" id="ha-review">
+    <section aria-labelledby="hdr-ha-review" class="hosted-apply__section active" id="ha-review">
 
-      <h2 class="hosted-apply__section__heading">Review</h2>
+      <h2 class="hosted-apply__section__heading" id="hdr-ha-review">Review</h2>
 
       <section class="hosted-apply__group">
 
@@ -1533,7 +1528,7 @@ title: "Business Development Manager"
 
       <section class="hosted-apply__group">
 
-        <h2 class="hosted-apply__section__heading">Voluntary Disclosures</h2>
+        <h2 class="hosted-apply__section__heading">Voluntary Disclosure</h2>
 
         <section class="hosted-apply__group">
 
@@ -1595,9 +1590,9 @@ title: "Business Development Manager"
 
       <div class="hosted-apply__section__buttons">
 
-        <button class="hosted-apply__button hosted-apply__button--back" type="button">Back</button>
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-self-identify" type="button">Back</button>
 
-        <button class="hosted-apply__button submit" type="submit">Submit</button>
+        <button class="hosted-apply__button hosted-apply__button--submit" type="submit">Submit</button>
 
       </div>
 

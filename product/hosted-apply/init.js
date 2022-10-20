@@ -10,53 +10,47 @@
 
 (function() {
 
-  // Basic Functionality for Multi-Step Navigation and Form Sections
+  // Basic functionality for multi-step navigation and form buttons
 
-  let hostedApplyProgress = document.querySelectorAll(".hosted-apply__page");
+  let hostedApplyStep = document.querySelectorAll(".hosted-apply__step, .hosted-apply__button[data-form-target]");
   let hostedApplySections = document.querySelectorAll(".hosted-apply__section");
 
-  hostedApplyProgress.forEach(function(button) {
+  hostedApplyStep.forEach(function(button) {
 
     button.addEventListener("click", function (e) {
 
-      // Get matching data attributes
+      // Remove aria-aria-pressed, where found.
 
-      hostedApplyProgress.forEach(function(button) {
+      hostedApplyStep.forEach(function(button) {
 
-        // Remove aria-current, where found.
-
-        button.removeAttribute("aria-current");
+        button.removeAttribute("aria-pressed");
 
       });
 
-      // Apply aria-current to selected step
-
-      button.setAttribute("aria-current", "step");
+      // Remove active state from all sections.
 
       hostedApplySections.forEach(function(section) {
-
-        // Remove active state from all sections.
 
         section.classList.remove("active");
 
       });
 
-      // Get section based on href of link
+      // Get section and button targets
 
-      let buttonID = document.getElementById(button.getAttribute("href").replace("#", ""));
-      let sectionTarget = buttonID;
+      let sectionTarget = document.getElementById(button.dataset.formTarget);
+      let buttonTarget = document.getElementById("btn-" + button.dataset.formTarget);
 
-      // Apply
+      // Apply aria-pressed to selected step in navigation
+
+      buttonTarget.setAttribute("aria-pressed", "true");
+
+      // Load selected section
 
       sectionTarget.classList.add("active");
       sectionTarget.setAttribute("tabindex", "-1");
-      sectionTarget.focus({
+      sectionTarget.focus();
 
-        preventScroll: true
-
-      });
-
-      e.preventDefault();
+      window.scrollTo(0, 0);
 
     });
 

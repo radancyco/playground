@@ -143,7 +143,7 @@ position: relative;
 
       &:after {
       background-color: transparent;
-      background-image: url(data:image/gif;base64,R0lGODlhCgAKAJECAP///5mZmQAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==);
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAY1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmaHTeAAAAIHRSTlMA8nduqJtOiPi1gkbk1I4E/drNxrxhXj4L6+etq5xUBzDUHmUAAADHSURBVDjL7dTJDsIgFIXhg9XSls6js33/p5RY4xElt8S1/+Im3HwJKwCQFYppPDJ1rZxyVN383gVLw/wRMvdc4lns7hVyd3EGpQsTO9PNKwNKFyo7R3iiJNzAn8llyNJAuAu7mo5QcH0iQbotJhHSAbEI6awklNwiCf2OktDj2EDodcwQeh37gvueToYFnReylE6GaDvIkP0IJ611FgCXFx0CI0vUH67DUYZXfnuR2MmSBMc5qAN0GCxRtSGuuAHQjVqpKSvcAdRxP4/X5EAaAAAAAElFTkSuQmCC);
       background-position: center right;
       background-repeat: no-repeat;
       background-size: 1em;
@@ -151,17 +151,8 @@ position: relative;
       display: inline-block;
       height: 1em;
       margin: 0 6px;
+      position: relative;
       width: 1em;
-      }
-
-      &:focus, &:hover {
-
-        &::after {
-
-          background-image: url(data:image/gif;base64,R0lGODlhCgAKAJECAP///2eIpAAAAAAAACH5BAEAAAIALAAAAAAKAAoAAAIalIMZJgH/1gGJqugQpFzH7TlWJVJMGZ0KwhQAOw==);
-
-        }
-
       }
 
     }
@@ -173,7 +164,7 @@ position: relative;
   dialog {
   border-radius: 10px;
   border: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
     .dialog-heading {
     margin: 0;
@@ -201,9 +192,8 @@ position: relative;
   // Progress Bar
 
   &__progress {
-  counter-reset: progress;
-  position: relative;
   margin: 1em 0;
+  position: relative;
 
     // Line
 
@@ -232,22 +222,23 @@ position: relative;
 
   }
 
-  &__page {
-  color: $ha-color-neutral-highlight;
+  &__step {
+  background-color: transparent;
+  border: 0;
+  font: inherit;
   padding: 1em 0;
   position: relative;
   text-align: center;
   text-decoration: none;
   width: 100%;
 
-    // Links with missing href cannot be tabbed to. But we need to prevent clicking from mouse.
-
-    &:not([href]) {
-    pointer-events: none;
+    &[disabled] {
+    color: $ha-color-neutral-highlight;
     }
 
     &__label {
     display: block;
+    margin-top: .5em;
     overflow: hidden;
     position: absolute;
     text-indent: -999em;
@@ -261,20 +252,16 @@ position: relative;
 
     }
 
-    // All Counters
+    // Counters
 
     // Normally we would use a ::before pseudo-element here, but there is bug in NVDA:
     // https://bugs.chromium.org/p/chromium/issues/detail?id=1376668
-
-    // ::before {
 
     &__count {
     align-items: center;
     background-color: $ha-color-neutral-highlight;
     border-radius: 50%;
     color: $ha-color-light;
-    // content: counter(progress);
-    // counter-increment: progress;
     display: flex;
     font-weight: 700;
     height: 50px;
@@ -282,6 +269,8 @@ position: relative;
     margin: 0 auto;
     width: 50px;
     }
+
+    // Checkmark/Edit Icon
 
     &::after {
     font-family: "FontAwesome";
@@ -292,17 +281,17 @@ position: relative;
     -webkit-text-stroke: 1px #fff;
     }
 
-    // Current and Completed Counter State
+    // Current and Completed State
 
-    &[aria-current], &--complete {
+    &[aria-pressed], &--complete {
     color: $ha-color-dark;
     }
 
-    // Completed Counter State
+    // Completed State
 
     &--complete {
 
-      .hosted-apply__page__count {
+      .hosted-apply__step__count {
       background-color: $ha-color-complete;
       }
 
@@ -313,11 +302,11 @@ position: relative;
 
     }
 
-    // Current and Expanded Counter State
+    // Current (Pressed) Counter State
 
-    &[aria-current] {
+    &[aria-pressed] {
 
-      .hosted-apply__page__count {
+      .hosted-apply__step__count {
       background-color: $ha-color-primary;
       }
 
@@ -336,20 +325,18 @@ position: relative;
   max-height: 0;
   opacity: 0;
   outline-offset: 6px;
-  position: relative;
-  right: -20em;
-  top: 0;
+  transform: scale(0.8);
   visibility: hidden;
 
     &.active {
     max-height: 100000px;
     opacity: 1;
-    right: 0;
+    transform: scale(1);
     visibility: visible;
 
       @media (prefers-reduced-motion: no-preference) {
 
-        transition: visibility 0s linear 0s, opacity 1200ms, right 300ms;
+        transition: visibility 0s linear 0s, opacity 900ms, transform 300ms;
 
       }
 
@@ -658,6 +645,25 @@ position: relative;
   margin: 1em .5em;
   padding: 1em;
   text-decoration: none;
+
+    &[target="_blank"] {
+
+      &::after {
+      filter: invert(100%);
+      top: 2px;
+      }
+
+      &:focus, &:hover {
+
+        &::after {
+
+          filter: none;
+
+        }
+
+      }
+
+    }
 
     &:focus, &:hover {
     background-color: $ha-color-light;
