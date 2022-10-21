@@ -1,27 +1,9 @@
 ---
-jquery: false
 localcss: "init.css"
+localjs: "init.js"
 noindex: true
-title: "Login"
+title: "Hosted Apply Model"
 ---
-
-
-<style>
-
-label {
-display: block;
-font-weight: bold;
-}
-
-input {
-padding: 1em;
-display: block;
-margin-bottom: 1em;
-}
-
-
-</style>
-
 
 <form novalidate>
 
@@ -31,61 +13,10 @@ margin-bottom: 1em;
 
 	<button class="btn" id="loginbutton" type="button">Enter</button>
 
-	<p class="alert" id="wrongPassword" hidden>Sorry, that password is incorrect. Please try again.</p>
+	<p class="alert" id="wrongPassword" hidden>Sorry, that password is empty or incorrect. Please try again.</p>
+
+	<!-- hug0Pl@5t3rn@ff -->
 
 </form>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
 <script src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
-
-<script>
-
-"use strict";
-
-function loadPage(pwd) {
-
-	var hash= pwd;
-	hash= Sha1.hash(pwd);
-	var url= hash + "/index.html";
-
-	$.ajax({
-
-		url : url,
-		dataType : "html",
-		success : function(data) {
-
-			window.location= url;
-
-		}, error : function(xhr, ajaxOptions, thrownError) {
-
-			parent.location.hash= hash;
-
-			$("#password").attr("placeholder","wrong password");
-			$("#password").val("");
-
-		}
-
-	});
-
-}
-
-$("#loginbutton").on("click", function() {
-
-	loadPage($("#password").val());
-
-});
-
-$("#password").keypress(function(e) {
-
-	if (e.which == 13) {
-
-		loadPage($("#password").val());
-
-	}
-
-});
-
-$("#password").focus();
-
-</script>
