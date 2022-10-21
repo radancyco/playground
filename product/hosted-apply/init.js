@@ -23,7 +23,7 @@
 
       hostedApplyStep.forEach(function(button) {
 
-        button.removeAttribute("aria-pressed");
+        button.setAttribute("aria-pressed", "false");
 
       });
 
@@ -135,7 +135,7 @@
 
       let fileName = button.getAttribute("aria-label").replace("Delete ", "");
       let fileDeleteMsg = button.closest(".hosted-apply__uploads").querySelector(".hosted-apply__uploads__msg");
-      
+
       button.closest("li").remove();
 
       fileDeleteMsg.innerHTML="";

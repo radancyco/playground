@@ -18,11 +18,11 @@ title: "Accessibility Engineer"
   <nav aria-label="Job Application Steps" class="hosted-apply__progress">
 
     <ol>
-      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-information" id="btn-ha-my-information"><span class="hosted-apply__step__count">1</span><span class="hosted-apply__step__label">My Information</span></button></li>
-      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-experience" id="btn-ha-my-experience"><span class="hosted-apply__step__count">2</span><span class="hosted-apply__step__label">My Experience</span></button></li>
-      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-voluntary-disclosure" id="btn-ha-voluntary-disclosure"><span class="hosted-apply__step__count">3</span><span class="hosted-apply__step__label">Voluntary Disclosure</span></button></li>
-      <li><button aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-self-identify" id="btn-ha-self-identify"><span class="hosted-apply__step__count">4</span><span class="hosted-apply__step__label">Self Identify</span></button></li>
-      <li><button aria-pressed="true" class="hosted-apply__step" data-form-target="ha-review" id="btn-ha-review"><span class="hosted-apply__step__count">5</span><span class="hosted-apply__step__label">Review</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-information" id="btn-ha-my-information"><span class="hosted-apply__step__count">1</span> <span class="hosted-apply__step__label">My Information</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-experience" id="btn-ha-my-experience"><span class="hosted-apply__step__count">2</span> <span class="hosted-apply__step__label">My Experience</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-voluntary-disclosure" id="btn-ha-voluntary-disclosure"><span class="hosted-apply__step__count">3</span> <span class="hosted-apply__step__label">Voluntary Disclosure</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-self-identify" id="btn-ha-self-identify"><span class="hosted-apply__step__count">4</span> <span class="hosted-apply__step__label">Self-Identify</span></button></li>
+      <li><button aria-pressed="true" class="hosted-apply__step" data-form-target="ha-review" id="btn-ha-review"><span class="hosted-apply__step__count">5</span> <span class="hosted-apply__step__label">Review</span></button></li>
     </ol>
 
     <div hidden id="hosted-apply-status-completed">Completed</div>
@@ -420,7 +420,7 @@ title: "Accessibility Engineer"
 
           <label class="hosted-apply__field__label" for="ha-preferred-last-name">Preferred Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" data-error-message="Plese enter preferred last name" id="ha-preferred-last-name" required type="text">
+          <input aria-invalid="false" data-error-message="Please enter preferred last name" id="ha-preferred-last-name" required type="text">
 
         </div>
 
@@ -438,7 +438,7 @@ title: "Accessibility Engineer"
 
           <input aria-invalid="true" aria-describedby="ha-address-error" data-error-message="Please enter address" id="ha-address" required type="text">
 
-          <span class="hosted-apply__field__error" id="ha-address-error">Plese enter address</span>
+          <span class="hosted-apply__field__error" id="ha-address-error">Please enter address</span>
 
         </div>
 
@@ -454,7 +454,7 @@ title: "Accessibility Engineer"
 
           <label class="hosted-apply__field__label" for="ha-state">State <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="true" aria-describedby="ha-state-error" data-error-message="Plese select a state" id="ha-state" required>
+          <select aria-invalid="true" aria-describedby="ha-state-error" data-error-message="Please select a state" id="ha-state" required>
             <option value="">Please Select</option>
             <option>Armed Forces Pacific</option>
             <option>Armed Forces Europe</option>
@@ -518,7 +518,7 @@ title: "Accessibility Engineer"
             <option>Washington</option>
           </select>
 
-          <span class="hosted-apply__field__error" id="ha-state-error">Plese select a state</span>
+          <span class="hosted-apply__field__error" id="ha-state-error">Please select a state</span>
 
         </div>
 
@@ -542,7 +542,7 @@ title: "Accessibility Engineer"
 
           <label class="hosted-apply__field__label" for="ha-email-address">Email <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" data-error-message="Plese enter a valid email address" id="ha-email-address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required type="email">
+          <input aria-invalid="false" data-error-message="Please enter a valid email address" id="ha-email-address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required type="email">
 
         </div>
 
@@ -558,7 +558,7 @@ title: "Accessibility Engineer"
 
           <label class="hosted-apply__field__label" for="ha-phone-type">Phone Type <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" data-error-message="Plese enter a phone type" id="ha-phone-type" required>
+          <select aria-invalid="false" data-error-message="Please enter a phone type" id="ha-phone-type" required>
             <option value="">Please Select</option>
             <option>Fax</option>
             <option>Landline</option>
@@ -825,7 +825,7 @@ title: "Accessibility Engineer"
             <option>Zimbabwe (+263)</option>
           </select>
 
-          <span class="hosted-apply__field__error" id="ha-country-phone-code-error">Plese select a country phone code</span>
+          <span class="hosted-apply__field__error" id="ha-country-phone-code-error">Please select a country phone code</span>
 
         </div>
 
@@ -867,7 +867,7 @@ title: "Accessibility Engineer"
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__field__label" for="ha-work-experience-1-job-title">Job Tilte <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-job-title">Job Title <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
             <input aria-invalid="false" data-error-message="Please enter job title" id="ha-work-experience-1-job-title" required type="text">
 
@@ -937,9 +937,9 @@ title: "Accessibility Engineer"
 
           <div class="hosted-apply__field">
 
-            <label class="hosted-apply__field__label" for="ha-work-experience-2-job-title">Job Tilte <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-job-title">Job Title <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" data-error-message="Plese enter job title" id="ha-work-experience-2-job-title" required type="text">
+            <input aria-invalid="false" data-error-message="Please enter job title" id="ha-work-experience-2-job-title" required type="text">
 
           </div>
 
@@ -1007,7 +1007,7 @@ title: "Accessibility Engineer"
 
         <fieldset id="education-1" class="hosted-apply__group">
 
-          <legend class="visually-hidden">Eduction 1</legend>
+          <legend class="visually-hidden">Education 1</legend>
 
           <div aria-hidden="true" class="hosted-apply__group__legend">Education 1</div>
 
@@ -1796,7 +1796,7 @@ title: "Accessibility Engineer"
         <h3 class="hosted-apply__review__heading">This section contains errors</h3>
 
         <ol>
-          <li><a href="#ha-accept-terms">Please accpet terms and conditions</a></li>
+          <li><a href="#ha-accept-terms">Please accept terms and conditions</a></li>
         </ol>
 
       </div>
@@ -1873,7 +1873,7 @@ title: "Accessibility Engineer"
 
           <input aria-invalid="true" aria-describedby="ha-accept-terms-error" id="ha-accept-terms" required type="checkbox">
 
-          <span class="hosted-apply__field__error" id="ha-accept-terms-error">Please accpet terms and conditions</span>
+          <span class="hosted-apply__field__error" id="ha-accept-terms-error">Please accept terms and conditions</span>
 
         </div>
 
@@ -1891,7 +1891,7 @@ title: "Accessibility Engineer"
 
     <section aria-labelledby="hdr-self-identify" class="hosted-apply__section" id="ha-self-identify">
 
-      <h2 class="hosted-apply__section__heading" id="hdr-self-identify">Self Identify</h2>
+      <h2 class="hosted-apply__section__heading" id="hdr-self-identify">Self-Identify</h2>
 
       <fieldset class="hosted-apply__group">
 
@@ -1903,7 +1903,7 @@ title: "Accessibility Engineer"
 
           <label class="hosted-apply__field__label" for="ha-self-identify-language">Language <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" data-error-message="Plese select a language" id="ha-self-identify-language" required>
+          <select aria-invalid="false" data-error-message="Please select a language" id="ha-self-identify-language" required>
             <option value="">Please Select</option>
             <option>English</option>
             <option>Spanish</option>
@@ -1945,7 +1945,7 @@ title: "Accessibility Engineer"
 
             <label class="hosted-apply__field__label" for="ha-disability-name">Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" data-error-message="Plese enter your name" id="ha-disability-name" required type="text">
+            <input aria-invalid="false" data-error-message="Please enter your name" id="ha-disability-name" required type="text">
 
           </div>
 
@@ -1961,7 +1961,7 @@ title: "Accessibility Engineer"
 
             <label class="hosted-apply__field__label" for="ha-disability-date">Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" data-error-message="Plese enter a date" id="ha-disability-date" required type="date">
+            <input aria-invalid="false" data-error-message="Please enter a date" id="ha-disability-date" required type="date">
 
           </div>
 
@@ -2264,7 +2264,7 @@ title: "Accessibility Engineer"
 
       <section class="hosted-apply__group">
 
-        <h2 class="hosted-apply__section__heading">Self Identify</h2>
+        <h2 class="hosted-apply__section__heading">Self-Identify</h2>
 
         <section class="hosted-apply__group">
 

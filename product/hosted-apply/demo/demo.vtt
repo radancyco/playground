@@ -1,0 +1,600 @@
+WEBVTT
+
+
+00:00:08.557 --> 00:00:11.058
+Rick Menu record record up. this meeting is being recorded alert.
+
+00:00:11.058 --> 00:00:21.537
+Select a window or an shift meaning control sign in with Ss.
+
+00:00:21.537 --> 00:00:31.778
+Live transcription, accessibility, issue, tracker, accessibility, engineer, regency, clickable banner, link.
+
+00:00:31.778 --> 00:00:38.289
+Okay, this is the model that I built based off of the initial form that I tested.
+
+00:00:38.289 --> 00:00:45.497
+The initial hosted a lot of form and it's just meant to represent
+
+00:00:45.497 --> 00:01:04.437
+What my expectation is, and what the expectation of
+
+00:01:04.437 --> 00:01:17.103
+People using certain assistive technologies. are and will be when they're engaging with the form looking at access with no pat firefox application.
+
+00:01:17.103 --> 00:01:24.535
+Minded this next grade, as you can see here, Mainland, mark back to Job posting link
+
+00:01:24.535 --> 00:01:29.845
+Focus on wounds are very clear and sustainable.
+
+00:01:29.845 --> 00:01:46.829
+When I land on the multi-step process.
+
+00:01:46.829 --> 00:01:53.393
+It's, also very clear as to what this landmark is, and which step that i'm on job application steps, navigation, landmark list, with 5 items, one my information toggle but not pressed
+
+00:01:53.393 --> 00:01:58.161
+completed. this is a custom built multi-step.
+
+00:01:58.161 --> 00:02:08.069
+I did a lot of research on it to get it right.
+
+00:02:08.069 --> 00:02:12.381
+For assistive technology users. note that when I click on it my focus is brought into the section that is currently brought in region.
+
+00:02:12.381 --> 00:02:19.763
+My information Heading: Level 2 Grouping Invalid Entry General Clickable.
+
+00:02:19.763 --> 00:02:30.475
+How Job application steps, navigation, landmark list with 5 items, 5 review toggle, but not pressed.
+
+00:02:30.475 --> 00:02:41.970
+When I when I go to each of these I items here, you'll hear that these are completed steps to my experience toggle, but not press completed.
+
+00:02:41.970 --> 00:02:46.042
+That's cool one my Infant to my experience to pop up, but not one region. by information heading level 2 grouping invalid entry.
+
+00:02:46.042 --> 00:02:52.052
+General clickable. How did you, General? grouping invalid entry?
+
+00:02:52.052 --> 00:03:04.701
+How did you hear about us? come Nobox, please. select collapse required invalid entry.
+
+00:03:04.701 --> 00:03:09.467
+Okay, note that the field is is properly associated with its label as somebody who might be blind. who is using this?
+
+00:03:09.467 --> 00:03:18.119
+That association between the field and the label is critical.
+
+00:03:18.119 --> 00:03:25.312
+Moving on. Have you previously worked for this organization? If yes, please answer the questions below.
+
+00:03:25.312 --> 00:03:33.984
+If no, please continue to the next section required. Please select. If you have previously worked for this organization grouping.
+
+00:03:33.984 --> 00:03:44.386
+Yes, radio, but not checked. one of 2. Nope, That this is a invalid section.
+
+00:03:44.386 --> 00:03:52.028
+And you can hear the arrow message ran out when you land on this particular radio.
+
+00:03:52.028 --> 00:04:07.296
+No. What was your email address? Who was your manager? What was your location, and what was your employee in?
+
+00:04:07.296 --> 00:04:16.609
+Id Country Combo box United States of America. collapse required legal name grouping in valid entry legal first name that it required invalid entry has auto complete blank. Notice how it's a legal name grouping
+
+00:04:16.609 --> 00:04:34.345
+i've organized this form in a manner that is more understandable to people using assistive technology.
+
+00:04:34.345 --> 00:04:45.449
+The use of sections where needed field sets. and legends are absolutely critical in conveying the overall structure of each section is somebody using This is the technology.
+
+00:04:45.449 --> 00:05:01.159
+You know when You're just using ds and fields and labels, and not grouping everything properly, It makes the form much much more difficult to understand.
+
+00:05:01.159 --> 00:05:05.359
+Essentially how we have it. how how we have things looking here visually should be equally conveyed to people using the system. Technology legal last name that it required invalid entry has auto complete will have a preferred
+
+00:05:05.359 --> 00:05:18.018
+name, checkbox, not checked, preferred first name.
+
+00:05:18.018 --> 00:05:23.207
+That it required invalid entry. Has auto complete blank preferred last name that it required address. grouping, invalid entry, addressed that it required invalid entry has auto complete.
+
+00:05:23.207 --> 00:05:41.631
+Please enter a dress blank again. Note the fact that
+
+00:05:41.631 --> 00:05:47.479
+The field is invalid but it's reading the issue off to the screen reader super important city. And it required invalid entry has auto complete state post email address phone grouping country phone phone
+
+00:05:47.479 --> 00:05:48.904
+number the next chocolate button not pressed.
+
+00:05:48.904 --> 00:05:53.224
+Okay, the next toggle button and I click on this.
+
+00:05:53.224 --> 00:06:01.386
+The expectation should be to that we go to the next screen.
+
+00:06:01.386 --> 00:06:06.478
+But we also need to make sure that we're applying focus to the section coming in so that users can start from the top of the form.
+
+00:06:06.478 --> 00:06:13.930
+And it's it's easier to understand where they are.
+
+00:06:13.930 --> 00:06:40.156
+So So when I click on this you'll see it load and you'll see where my focus goes.
+
+00:06:40.156 --> 00:06:42.667
+Region. My experience heading level, 2 grouping in valid entry work, experience, grouping, invalid entry working experience. one clickable job title or kick experience grouping work. experience, one grouping delete work, experience one button Okay, I know that may sound like a lot, But you know, understand that somebody using a screen reader is going to be processing this
+
+00:06:42.667 --> 00:07:00.481
+and listening to it much, much much quicker than you and I might and again
+
+00:07:00.481 --> 00:07:14.574
+How this, how these, how these that are forms and sections are organized with fieldsets and legends, is again critical to allowing, assistant tech users to better understand the structure of the phone field that are
+
+00:07:14.574 --> 00:07:19.786
+to be filled out here. I have focused on the on the delete work experience section and i'm just kind of click on that. and it's gonna bring up a mobile dialogue.
+
+00:07:19.786 --> 00:07:32.194
+Are you sure you want to remove work, Experience One: remove button, button.
+
+00:07:32.194 --> 00:07:38.801
+Remove. Okay, great. So when I click on that let's let's listen carefully to what the screen reader tells us out of grouping grouping invalid entry button delete work experience to work experience one
+
+00:07:38.801 --> 00:07:46.670
+has been removed. our experience one is being removed. Okay, clearly stated to the screen.
+
+00:07:46.670 --> 00:07:50.360
+Read user that the section is now going dialogue.
+
+00:07:50.360 --> 00:07:57.139
+Are you sure you want out of grouping button at work?
+
+00:07:57.139 --> 00:08:02.766
+Experience, too, has been removed exactly the type of stuff that we want to do.
+
+00:08:02.766 --> 00:08:10.990
+Again, accessibility is about creating as equal and experience as possible.
+
+00:08:10.990 --> 00:08:30.643
+So little things like these go along way are in our critical to helping somebody with a disability use.
+
+00:08:30.643 --> 00:08:35.454
+The these types of forms moving on at button educate school degree, field from 2, certification, one grouping list with one items. delete by up certificate, dot pdf button. okay again.
+
+00:08:35.454 --> 00:08:56.146
+Messaging. Now I didn't include any kind of messaging to add sections.
+
+00:08:56.146 --> 00:09:07.710
+I. I only added a pepper down a little bit of javascript to convince as an example, how these fields and and buttons, and and sections, should behave when you are removing
+
+00:09:07.710 --> 00:09:09.769
+them. So when I remove the file upload here again you'll note that the fact that something has happened is being conveyed to the screen.
+
+00:09:09.769 --> 00:09:17.206
+Reader, I off certificate. dot Pdf.
+
+00:09:17.206 --> 00:09:23.575
+Has been deleted. add budget language, skillful list with full delete.
+
+00:09:23.575 --> 00:09:25.646
+What Url the Link Skills grouping list with 4 items: Delete Javascript button.
+
+00:09:25.646 --> 00:09:30.015
+Same Here Javascript has been deleted website.
+
+00:09:30.015 --> 00:09:40.449
+You are you are at the social net. resume grouping, resume C.
+
+00:09:40.449 --> 00:09:47.509
+Slash. The grouping brass button required invalid entry list with 2 resume c slash.
+
+00:09:47.509 --> 00:09:55.584
+The grouping brows. Button required invalid entry
+
+00:09:55.584 --> 00:10:14.370
+Okay, the error message wasn't right out that might be a little error, not part which I will fix right after this.
+
+00:10:14.370 --> 00:10:29.085
+But you get the general idea. The field is being read as a valid the field for zoom slash, resume school work, degree, resume field of issued date.
+
+00:10:29.085 --> 00:10:37.930
+Okay, yeah, sir. So for Zoom grouping resume sees list with 2 items to leave Hugo plasternap resume dot docs
+
+00:10:37.930 --> 00:10:45.369
+button Hugo Plasternap. Resume dot Docs hit delete back next toggle, but region voluntary disclosure heading level first.
+
+00:10:45.369 --> 00:10:49.524
+Please select the ethnic terms and conditions back toggle but not pressed, and conditions checked.
+
+00:10:49.524 --> 00:10:57.577
+That tackle button, not next toggle button, not prep.
+
+00:10:57.577 --> 00:11:02.786
+Regent Self-identify heading Level 2 General Voluntary Employee Day Day Day, New York S.
+
+00:11:02.786 --> 00:11:11.345
+Department of Labor's office of Federal contract compliance programs of opens a new window link.
+
+00:11:11.345 --> 00:11:19.012
+Okay, now that I change the link here. and also included.
+
+00:11:19.012 --> 00:11:27.971
+A little excessively hidden text to indicate that the link those open up in a new window.
+
+00:11:27.971 --> 00:11:48.445
+It's also a good form to include a visual icon to let users know that a new team will open here.
+
+00:11:48.445 --> 00:11:57.790
+When we're linking stuff it's really important to to apply such things to to textually contextually relevant you know content you can wrap a link around a
+
+00:11:57.790 --> 00:12:07.382
+Url, but it's more readable and understandable when you handle it like this, Please check one of the boxes below required.
+
+00:12:07.382 --> 00:12:17.964
+No, yes, that double button not pressed next Toggle Button up Region review heading level to my information, heading Level 2 general petting Level 3.
+
+00:12:17.964 --> 00:12:23.571
+How did you hear https, https, back toggle, but not prep Submit Button application submitted for business development.
+
+00:12:23.571 --> 00:12:29.012
+Manager, Ravency document, main landmark, mainland, Mark. Thanks.
+
+00:12:29.012 --> 00:12:45.124
+You are almost done heading level one creative Home account to finish your application.
+
+00:12:45.124 --> 00:12:51.556
+Your application has been submitted. but there's one more step to complete before you please create a home account using the button below to complete the application process. A home account is required to view your submitted application and complete future tasks in the
+
+00:12:51.556 --> 00:12:56.485
+application process, create home account, opens a new window Application submitted for business development.
+
+00:12:56.485 --> 00:13:04.174
+Manager Racy, heading level one. Thanks. You are almost done.
+
+00:13:04.174 --> 00:13:15.758
+Create a home account to finish your app create home account opens Okay, you get the general idea.
+
+00:13:15.758 --> 00:13:23.272
+So that's just the high level takeaways from this little demo that I built again.
+
+00:13:23.272 --> 00:13:34.662
+The important things to remember. here are structure is very, very important.
+
+00:13:34.662 --> 00:13:46.315
+Conveying certain actions like adding and removing content is also very critical, and make sure we get our validation.
+
+00:13:46.315 --> 00:14:01.862
+Working properly is also going to go a long way to making this warm a lot more usable to not only people with disabilities, but to people who don't have disabilities.
+
+00:14:01.862 --> 00:14:15.731
+So with that I just wanna jump over to the form that I've been testing just kind of give you a comparison of a lot of the stuff that i'm seeing it seeing in it or not seeing so you have a
+
+00:14:15.731 --> 00:14:33.300
+better understanding of what needs to be addressed I guess we'll have to fill out the swarm to to get to each step.
+
+00:14:33.300 --> 00:14:37.676
+So just bear bear with me as I do that. but, generally speaking, business. nap, Nap, HD.
+
+00:14:37.676 --> 00:14:40.175
+Bookmark safe to application, hiring utility in a navigation landmark list with one items existing employees link.
+
+00:14:40.175 --> 00:14:45.364
+I can see a focus outline there. in the clarity header. That's great. But I start to lose focus Once I enter the form section and button collapsed.
+
+00:14:45.364 --> 00:14:50.516
+Mainland Mark clickable back to have control editable maintenance.
+
+00:14:50.516 --> 00:14:56.033
+Tab selected one at 5. Okay, quick note on the tab ui!
+
+00:14:56.033 --> 00:15:01.234
+Here again. it's something we really shouldn't be using on this form.
+
+00:15:01.234 --> 00:15:23.058
+We should probably use something like the example my just gave on my demo taboo.
+
+00:15:23.058 --> 00:15:33.197
+I is really not the best use case for filling out a a not the correct interface to use to handle freeums their complex and probably overkill, and they might not be what certain types of disabled users are expecting
+
+00:15:33.197 --> 00:15:38.207
+when they're dealing with a form so it's important to keep these things simple, and it's easy to use as possible.
+
+00:15:38.207 --> 00:15:48.929
+Just because we can use it to have ui doesn't mean we should, and that's certainly the case here.
+
+00:15:48.929 --> 00:16:05.083
+So I would strongly suggest that we reach the the multi-step process here, and maybe do something a little bit more custom if we need to.
+
+00:16:05.083 --> 00:16:19.520
+For simplicity sake, i'm also concerned about the nature of the tab ui. when we scale down to mobile proportions, it still reads as a tab you will and the behaviors of the tab
+
+00:16:19.520 --> 00:16:33.565
+youi on desktop are still present on mobile for example, I could still use my arrow which is not really what i'm expecting.
+
+00:16:33.565 --> 00:16:41.012
+On mobile it should be simple jumping back one tab, 2 lighting. You can see that I kept the multi-step.
+
+00:16:41.012 --> 00:16:57.355
+Very, very simple, and consistent from one viewing context to the other.
+
+00:16:57.355 --> 00:17:22.199
+So here on on desktop you know It's pretty simple, and then straightforward when you scale down to global proportions. it doesn't really change the text becomes a little bit difficult to include here, So
+
+00:17:22.199 --> 00:17:29.558
+I removed it. but we have those labels here, We can even add numbers here if we want to to make an association between this section and the you know, Section here, yeah, okay So you can still have
+
+00:17:29.558 --> 00:17:38.447
+this works here. it's signed information and it is main landmark, Tab Control Editable.
+
+00:17:38.447 --> 00:17:48.544
+My information. Tab selected one of the 5 and W.
+
+00:17:48.544 --> 00:18:08.824
+When I, when I hit my my experience, have unavailable 2 at 5 voluntary disclosures, self-identify, tap on a of my editable mic review, tab editable.
+
+00:18:08.824 --> 00:18:25.294
+My information. Tab, select application for everything is moving. when I move my left and right our keys, everything moving up and down, which is really confusing mess navigation. So, filling out this form.
+
+00:18:25.294 --> 00:18:31.547
+Now, we have loads of problems. with validation on these pages and a lot of labels and not associated with their fields. structurally it's not Yeah, the the sections are not
+
+00:18:31.547 --> 00:18:40.417
+grouped properly using fieldsets and legends, or the aria equivalent.
+
+00:18:40.417 --> 00:18:45.822
+If you want to take that route. and really really requires a lot of improvement.
+
+00:18:45.822 --> 00:18:49.747
+Be better understood. So let's just walk through the form real quick. You can show what i'm talking about.
+
+00:18:49.747 --> 00:18:57.003
+Main landmark tap control. Have you previously worked for this organization?
+
+00:18:57.003 --> 00:19:07.323
+If yes, please send first to shoot. Here is that it appears to have skipped right over the
+
+00:19:07.323 --> 00:19:18.630
+The initial dropdown. I understand that this this form might be a little bit older, and that the team has been working with a new framework.
+
+00:19:18.630 --> 00:19:38.128
+So if those sections do accept focus, then you can disregard it and not be testing that in the coming days.
+
+00:19:38.128 --> 00:19:52.248
+So the United States of America combo box collapse required Yeah, I'm.
+
+00:19:52.248 --> 00:19:57.435
+On a i'm on a on the united States I heard the United States, but I didn't hear a label country associated with that
+
+00:19:57.435 --> 00:20:15.013
+We'll know what the checkbox is for because there's no label going to the dress line.
+
+00:20:15.013 --> 00:20:20.642
+One start with 2 today, one top e and you'd be Twelve-third City-star, and it required invalid entry at the up of Kel. What end combo box collapse required list select one end New
+
+00:20:20.642 --> 00:20:24.509
+Minnesota, New York Combo application for well this looks like a custom dropdown.
+
+00:20:24.509 --> 00:20:36.770
+I I don't know why we're using it I don't know what the reasoning for it is.
+
+00:20:36.770 --> 00:20:45.220
+It's always better to use native where we can so if you don't require you know a custom drop down there.
+
+00:20:45.220 --> 00:20:55.590
+You're always gonna get more dying for your buck when you native html elements is less risk of
+
+00:20:55.590 --> 00:21:05.314
+Whoever built the framework component that they goofed up accessibility it's always gonna have full screen.
+
+00:21:05.314 --> 00:21:12.381
+Keyboard support and things like that I I understand that sometimes it's necessary to to use components for certain things.
+
+00:21:12.381 --> 00:21:14.689
+But we have to really make sure that those are fully accessible mainland.
+
+00:21:14.689 --> 00:21:19.887
+Mark postal code star, and it required invalid entry.
+
+00:21:19.887 --> 00:21:40.682
+1, 5, 12 email address, email-star edit required invocate.
+
+00:21:40.682 --> 00:21:43.611
+You Good application for business. develop main landmark, tab control editable.
+
+00:21:43.611 --> 00:21:50.069
+My information property page expanded email star, and it required invalid entry.
+
+00:21:50.069 --> 00:21:54.832
+Has auto complete invalid email address, format. Please use Apc and example.
+
+00:21:54.832 --> 00:22:00.828
+Dot com selected Hugo dot plastern fitchy mail. Okay, Well, that's good.
+
+00:22:00.828 --> 00:22:09.866
+It's it's reading out the error I can only hope that all of the other fields do somewhere.
+
+00:22:09.866 --> 00:22:19.409
+We I know I did notice some some inconsistencies but that's something we definitely have to be mindful of biggest problem I have with validation.
+
+00:22:19.409 --> 00:22:22.730
+I think, is is not so much the field, although we do need to pay some attention to
+
+00:22:22.730 --> 00:22:32.633
+How those are are rendered and how they sound.
+
+00:22:32.633 --> 00:22:46.272
+People using It's just a technology. but i'll give you an example when I fill .
+
+00:22:46.272 --> 00:22:53.326
+You go dot plastic
+
+00:22:53.326 --> 00:23:07.213
+Emails start editing invalid entry has auto complete the field email that's required and must have a value blank.
+
+00:23:07.213 --> 00:23:23.134
+Okay, fine. But if I missed this initially,
+
+00:23:23.134 --> 00:23:31.400
+And I phone numbers United States of America. United States phone numbers start at 4, 7, 8 in mouth, 7 phone extension application for content Info and Twitter link.
+
+00:23:31.400 --> 00:23:39.924
+Next. Okay, since I I forgot a field and I landed on the next button, which I can't seem to tant to with my keyboard.
+
+00:23:39.924 --> 00:23:54.194
+There's no indication that there's something wrong in the rest of the forum.
+
+00:23:54.194 --> 00:23:59.960
+So what should happen probably is, when you hit next, and if there are form validation issues, you should probably go, and I.
+
+00:23:59.960 --> 00:24:06.752
+I would probably place focus in the first element that has a problem.
+
+00:24:06.752 --> 00:24:14.207
+If you can. So that way the user can at least start from there and address that particular problem.
+
+00:24:14.207 --> 00:24:22.407
+Continue tabing through the document, which is probably
+
+00:24:22.407 --> 00:24:40.453
+A little it it's not ideal but it's not the end of the world.
+
+00:24:40.453 --> 00:24:48.084
+If they just have to tamp through again. there are better ways to handle it, and and certainly we should discuss this these types of issues with validation in a little bit more deaf when we get a chance but let me fill
+
+00:24:48.084 --> 00:24:56.397
+out the fields name Landmark, A. U. G. O. Dot, P. A. E.
+
+00:24:56.397 --> 00:25:16.657
+N. oh m. Application for business net edit nipples. My experience.
+
+00:25:16.657 --> 00:25:23.361
+Tab selected 2 and 5, to 2 and 5 location, and it has auto complete blank, alert for October November days, days from from star date and it required 2020
+
+00:25:23.361 --> 00:25:32.072
+twitch 2020, 20, not 1989 days.
+
+00:25:32.072 --> 00:25:41.244
+Button. This is interesting. 2 years spent button 1989.
+
+00:25:41.244 --> 00:25:47.248
+They spend button 12 months, spend Button 11 day here to start date, that it required him built 0 T.
+
+00:25:47.248 --> 00:25:51.622
+Of 10, 9 day soon button 18 years, 2020.
+
+00:25:51.622 --> 00:25:59.564
+One role description, and it has auto complete blank.
+
+00:25:59.564 --> 00:26:10.200
+Please provide your linkedin profile, and it has auto for us.
+
+00:26:10.200 --> 00:26:17.693
+7 file upload stream View command items, view lists, feature, Platform for business Development Manager at Mozilla.
+
+00:26:17.693 --> 00:26:30.017
+Firefox, Application for business development. Manager at Document button, Brass, Hugo Plasternap.
+
+00:26:30.017 --> 00:26:34.329
+Resume dot pdf alright. Well, it at least told me what the file is, but I need to know that the that the document was successfully uploaded.
+
+00:26:34.329 --> 00:26:47.836
+Essentially anything you do visually, you should also be doing, for screen re users as well.
+
+00:26:47.836 --> 00:26:55.094
+So if you upload something and it's successful you need to convey that to the end user with usually with something called Army alive.
+
+00:26:55.094 --> 00:26:59.237
+So delete you go plaster now for zoom dot pdf, but that's that's better.
+
+00:26:59.237 --> 00:27:12.193
+But again, when I delete this I don't hear anything.
+
+00:27:12.193 --> 00:27:17.753
+Okay, So that's that's a bit of a problem. So Bra Fuck name items view list application for business develop.
+
+00:27:17.753 --> 00:27:28.323
+Next delete back up next button Editable voluntary disclosures.
+
+00:27:28.323 --> 00:27:29.760
+Tab selected 3 to 5, editable voluntary disclosures, property page back button.
+
+00:27:29.760 --> 00:27:42.283
+Okay, Well, again, this isn't good for some reason I skipped over all of the fields in this section.
+
+00:27:42.283 --> 00:27:58.324
+So that's something that content info mainland. mark click content info landmark list with 3 items. faith, main editable application. Yeah.
+
+00:27:58.324 --> 00:28:11.531
+So as soon as i'm skipping over this this section screen, reader user would be stopped here because they couldn't go to the next page at all the completion.
+
+00:28:11.531 --> 00:28:18.244
+There are some required fields here. we have to be able to access so we can go to the next step Irene pro make comp compo box collapse.
+
+00:28:18.244 --> 00:28:25.841
+We again for some reason I can't go to the next part with my key.
+
+00:28:25.841 --> 00:28:30.431
+Next editable self identify tab selected for a editable self.
+
+00:28:30.431 --> 00:28:49.149
+Identify property. Page W. W. W. dot dot again, i'm skipping over.
+
+00:28:49.149 --> 00:29:06.692
+We are
+
+00:29:06.692 --> 00:29:22.419
+Strange. Now, when I put focus in into the field itself, i'm, able to voluntary cell, make name employee date, start date, and it required in days 1,200 month spin button.
+
+00:29:22.419 --> 00:29:24.931
+Employee United States. What alert to with with Why are no The link here?
+
+00:29:24.931 --> 00:29:34.086
+You know we have to indicate that these lines open up windows.
+
+00:29:34.086 --> 00:29:40.699
+Please check No, Yes, I have no bullet space shut.
+
+00:29:40.699 --> 00:29:44.685
+Both bullet application for Here I might be related to the tab indexes, perhaps.
+
+00:29:44.685 --> 00:29:52.776
+What are all all the place that we were talking about last week?
+
+00:29:52.776 --> 00:30:04.707
+We should really steer clear manipulating the tab index on anything you start talking to weird problems.
+
+00:30:04.707 --> 00:30:13.392
+It could be related here that next, of course, make them landmark clarity.
+
+00:30:13.392 --> 00:30:24.247
+Robotics Graphic visited Maine next, but so weird. Sometimes I can tap to the back and next, and sometimes I can.
+
+00:30:24.247 --> 00:30:31.767
+Very strange editable Review. Tab selected 5, back.
+
+00:30:31.767 --> 00:30:40.645
+But submit, button. See what happened.
+
+00:30:40.645 --> 00:30:50.863
+Complete application for business development. manager. Okay, that's good we change the title which is fine.
+
+00:30:50.863 --> 00:30:58.762
+And it would also be great to set something focus on the if you have things and that's it.
+
+00:30:58.762 --> 00:31:06.458
+I hope you enjoyed this demo, and taking a little bit more of a deep dive into
+
+00:31:06.458 --> 00:31:13.915
+How this form might work with the screen, reader. And there are any questions you can reach out to me directly.
+
+00:31:13.915 --> 00:31:31.015
+And Yeah. look forward to working with Anybody watching cool?
+
+00:31:31.015 --> 00:31:31.015
+Who is working on this. So have a great evening
+

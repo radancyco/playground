@@ -288,7 +288,7 @@ position: relative;
 
     // Current and Completed State
 
-    &[aria-pressed], &--complete {
+    &[aria-pressed="false"], &--complete {
     color: $ha-color-dark;
     }
 
@@ -309,7 +309,7 @@ position: relative;
 
     // Current (Pressed) Counter State
 
-    &[aria-pressed] {
+    &[aria-pressed="true"] {
 
       .hosted-apply__step__count {
       background-color: $ha-color-primary;
