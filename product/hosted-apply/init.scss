@@ -152,6 +152,7 @@ position: relative;
       height: 1em;
       margin: 0 6px;
       position: relative;
+      vertical-align: text-bottom;
       width: 1em;
       }
 
@@ -161,13 +162,17 @@ position: relative;
 
   // Dialog
 
-  dialog {
+  &__dialog {
   border-radius: 10px;
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
-    .dialog-heading {
+    &__heading {
     margin: 0;
+    }
+
+    &__name {
+    font-weight: bold;
     }
 
     &::backdrop {
@@ -434,7 +439,7 @@ position: relative;
     &__delete {
     background-color: $ha-color-primary;
     border-radius: 5px;
-    border: 0;
+    border: 2px $ha-color-primary solid;
     height: 40px;
     position: absolute;
     right: 1.2em;
@@ -524,7 +529,7 @@ position: relative;
 
     &__upload {
     align-items: center;
-    background-color: $ha-color-neutral-highlight;
+    background-color: $ha-color-highlight-1;
     border: 2px dashed $ha-color-neutral;
     display: flex;
     height: 200px;
@@ -604,12 +609,16 @@ position: relative;
   // Upload List
 
   &__uploads {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 
-    &:empty {
-    display: none;
+    ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+      &:empty {
+      display: none;
+      }
+
     }
 
     li {
@@ -704,14 +713,19 @@ position: relative;
 
   &__answer {
   background-color: $ha-color-highlight-2;
+  line-height: normal;
+  overflow-wrap: break-word;
   padding: .5em 2em .5em .5em;
   position: relative;
 
     &::after {
     content: "\f00c";
     font-family: "FontAwesome";
+    margin: auto 0;
     position: absolute;
     right: .5em;
+    top: 50%;
+    transform: translateY(-50%);
     }
 
   }
@@ -719,6 +733,7 @@ position: relative;
   // Skills
 
   &__skills {
+  margin-top: 1em;
 
     ol {
     list-style: none;
@@ -744,8 +759,9 @@ position: relative;
     display: flex;
     margin: 0 1em 1em 0;
     min-width: 140px;
-    padding: .8em;
+    padding: .8em .8em .8em 1em;
     position: relative;
+    text-align: left;
 
       span {
       margin-right: .5em;

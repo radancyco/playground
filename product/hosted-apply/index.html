@@ -6,12 +6,12 @@ localcss: "init.css"
 localjs: "init.js"
 localissues: false
 noindex: true
-title: "Business Development Manager"
+title: "Accessibility Engineer"
 ---
 
 <div class="hosted-apply">
 
-  <h1 class="hosted-apply__primary-heading">Business Development Manager</h1>
+  <h1 class="hosted-apply__primary-heading">{{ page.title }}</h1>
 
   <p class="hosted-apply__back"><a href="#">Back to Job Posting</a></p>
 
@@ -388,7 +388,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-legal-first-name">Legal First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-legal-first-name" data-error-message="Please enter legal first name" required type="text">
+          <input aria-invalid="false" data-error-message="Please enter legal first name" id="ha-legal-first-name" required type="text">
 
         </div>
 
@@ -396,7 +396,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-legal-last-name">Legal Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-legal-last-name" data-error-message="Please enter legal last name" required type="text">
+          <input aria-invalid="false" data-error-message="Please enter legal last name" id="ha-legal-last-name" required type="text">
 
         </div>
 
@@ -412,7 +412,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-preferred-first-name">Preferred First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-preferred-first-name" data-error-message="Please enter preferred first name" required type="text">
+          <input aria-invalid="false" data-error-message="Please enter preferred first name" id="ha-preferred-first-name" required type="text">
 
         </div>
 
@@ -420,7 +420,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-preferred-last-name">Preferred Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-preferred-last-name" data-error-message="Plese enter preferred last name" required type="text">
+          <input aria-invalid="false" data-error-message="Plese enter preferred last name" id="ha-preferred-last-name" required type="text">
 
         </div>
 
@@ -446,9 +446,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-city">City <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-city" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-city-error">Plese enter a city</span>
+          <input aria-invalid="false" id="ha-city" data-error-message="Please enter a city" required type="text">
 
         </div>
 
@@ -528,7 +526,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-postal-code">Postal Code <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-postal-code" data-error-message="Please enter postal code" required type="text">
+          <input aria-invalid="false" data-error-message="Please enter postal code" id="ha-postal-code" required type="text">
 
         </div>
 
@@ -544,9 +542,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-email-address">Email <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-email-address" required type="email">
-
-          <span class="hosted-apply__field__error" id="ha-email-address-error">Plese enter a valid email address</span>
+          <input aria-invalid="false" data-error-message="Plese enter a valid email address" id="ha-email-address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required type="email">
 
         </div>
 
@@ -562,15 +558,13 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-phone-type">Phone Type <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" id="ha-phone-type" required>
+          <select aria-invalid="false" data-error-message="Plese enter a phone type" id="ha-phone-type" required>
             <option value="">Please Select</option>
             <option>Fax</option>
             <option>Landline</option>
             <option selected>Mobile</option>
             <option>Pager</option>
           </select>
-
-          <span class="hosted-apply__field__error" id="ha-phone-type-error">Plese enter a phone type</span>
 
         </div>
 
@@ -839,9 +833,7 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-phone-number">Phone Number <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <input aria-invalid="false" id="ha-phone-number" required type="text">
-
-          <span class="hosted-apply__field__error" id="ha-phone-number-error">Plese enter a phone number</span>
+          <input aria-invalid="false" data-error-message="Please enter a phone number" id="ha-phone-number" required type="text">
 
         </div>
 
@@ -859,25 +851,11 @@ title: "Business Development Manager"
 
       <h2 class="hosted-apply__section__heading" id="hdr-my-experience">My Experience</h2>
 
-      <div class="hosted-apply__review">
-
-        <h3 class="hosted-apply__review__heading">This section contains errors</h3>
-
-        <ol>
-          <li><a href="#ha-work-experience-1-start-date">Please enter a start date</a></li>
-          <li><a href="#ha-work-experience-1-end-date">Please select a end date</a></li>
-          <li><a href="#ha-resume">The field Resume/CV is required and must have a value</a></li>
-        </ol>
-
-      </div>
-
       <fieldset class="hosted-apply__group">
 
         <legend class="visually-hidden">Work Experience</legend>
 
         <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience</div>
-
-        <button class="hosted-apply__button" type="button">Add</button>
 
         <fieldset id="work-experience-1" class="hosted-apply__group">
 
@@ -885,15 +863,13 @@ title: "Business Development Manager"
 
           <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 1</div>
 
-          <button class="hosted-apply__group__delete" id="delete-work-experience" type="button"><span class="visually-hidden">Delete Work Experience 1</span></button>
+          <button aria-label="Delete Work Experience 1" class="hosted-apply__group__delete" type="button"></button>
 
           <div class="hosted-apply__field">
 
             <label class="hosted-apply__field__label" for="ha-work-experience-1-job-title">Job Tilte <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" id="ha-work-experience-1-job-title" required type="text">
-
-            <span class="hosted-apply__field__error" id="ha-work-experience-1-job-title-error">Plese enter job title</span>
+            <input aria-invalid="false" data-error-message="Please enter job title" id="ha-work-experience-1-job-title" required type="text">
 
           </div>
 
@@ -901,9 +877,7 @@ title: "Business Development Manager"
 
             <label class="hosted-apply__field__label" for="ha-work-experience-1-company">Company <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" id="ha-work-experience-1-company" required type="text">
-
-            <span class="hosted-apply__field__error" id="ha-work-experience-1-company-error">Please enter company</span>
+            <input aria-invalid="false" data-error-message="Please enter company" id="ha-work-experience-1-company" required type="text">
 
           </div>
 
@@ -951,23 +925,487 @@ title: "Business Development Manager"
 
           </div>
 
-          <button class="hosted-apply__button" type="button">Add Another Job</button>
+        </fieldset>
+
+        <fieldset id="work-experience-2" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Work Experience 2</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 2</div>
+
+          <button aria-label="Delete Work Experience 2" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-job-title">Job Tilte <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Plese enter job title" id="ha-work-experience-2-job-title" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-company">Company <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter company" id="ha-work-experience-2-company" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-location">Location</label>
+
+            <input id="ha-work-experience-2-location" type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-work-here">I currently work here</label>
+
+            <input id="ha-work-experience-2-work-here" type="checkbox">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-start-date">Start Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a start date" id="ha-work-experience-2-start-date" required type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-end-date">End Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a end date" id="ha-work-experience-2-end-date" required type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-role-description">Role Description</label>
+
+            <textarea id="ha-work-experience-2-role-description"></textarea>
+
+          </div>
 
         </fieldset>
 
-        <dialog id="confirmation-remove">
+        <button class="hosted-apply__button" type="button">Add</button>
 
-          <h2 class="dialog-heading">Remove Field</h2>
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
 
-          <p>Are you sure you want to remove this Work Experience?</p>
+      </fieldset>
 
-          <button class="hosted-apply__button" id="cancel-remove" type="button">Cancel</button>
+      <fieldset class="hosted-apply__group">
 
-          <button class="hosted-apply__button" id="confirm-remove" type="button">Remove</button>
+        <legend class="visually-hidden">Education</legend>
 
-        </dialog>
+        <div aria-hidden="true" class="hosted-apply__group__legend">Education</div>
 
-        <div id="work-experience-msg" aria-live="polite"></div>
+        <fieldset id="education-1" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Eduction 1</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Education 1</div>
+
+          <button aria-label="Delete Education 1" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-school">School or University <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a school or university" id="ha-education-1-school" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-degree">Degree <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <select aria-invalid="false" data-error-message="Please enter a degree" id="ha-education-1-degree" required>
+              <option value="">Please Select</option>
+              <option>B.A.</option>
+              <option>B.S.</option>
+              <option>DCS</option>
+              <option>GED</option>
+              <option>HS</option>
+              <option>JD</option>
+              <option>M.A.</option>
+              <option>M.S.</option>
+              <option>MBA</option>
+              <option>MD</option>
+              <option>MHA</option>
+              <option>PhD</option>
+            </select>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-field-of-study">Field of Study</label>
+
+            <select id="ha-education-1-field-of-study">
+              <option value="">Please Select</option>
+              <option>Accounting</option>
+              <option>Actuarial Science</option>
+              <option>Advertising</option>
+              <option>Aerospace Engineering</option>
+              <option>African Languages, Literatures, and Linguistics</option>
+              <option>African Studies</option>
+              <option>African-American Studies</option>
+              <option>Agricultural Business and Management</option>
+              <option>Agricultural Economics</option>
+              <option>Agricultural Education</option>
+              <option>Agricultural Journalism</option>
+              <option>Agricultural Mechanization</option>
+              <option>Agricultural Technology Management</option>
+              <option>Agricultural/Biological Engineering and Bioengineering</option>
+              <option>Agriculture</option>
+              <option>Agronomy and Crop Science</option>
+              <option>Air Traffic Control</option>
+              <option>American History</option>
+              <option>American Literature</option>
+              <option>American Sign Language</option>
+              <option>American Studies</option>
+              <option>Anatomy</option>
+              <option>Ancient Studies</option>
+              <option>Animal Behavior and Ethology</option>
+              <option>Animal Science</option>
+              <option>Animation and Special Effects</option>
+              <option>Anthropology</option>
+              <option>Applied Mathematics</option>
+              <option>Applied Physics</option>
+              <option>Aquaculture</option>
+              <option>Aquatic Biology</option>
+              <option>Arabic</option>
+              <option>Archeology</option>
+              <option>Architectural Engineering</option>
+              <option>Architectural History</option>
+              <option>Architecture</option>
+              <option>Art</option>
+              <option>Art Education</option>
+              <option>Art History</option>
+              <option>Art Therapy</option>
+              <option>Artificial Intelligence and Robotics</option>
+              <option>Asian-American Studies</option>
+              <option>Astronomy</option>
+              <option>Astrophysics</option>
+              <option>Athletic Training</option>
+              <option>Atmospheric Science</option>
+              <option>Automotive Engineering</option>
+              <option>Aviation</option>
+              <option>Bakery Science</option>
+              <option>Biblical Studies</option>
+              <option>Biochemistry</option>
+              <option>Bioethics</option>
+              <option>Biology</option>
+              <option>Biomedical Engineering</option>
+              <option>Biomedical Science</option>
+              <option>Biopsychology</option>
+              <option>Biotechnology</option>
+              <option>Botany/Plant Biology</option>
+              <option>Business Administration</option>
+              <option>Business Administration/Management</option>
+              <option>Business Communications</option>
+              <option>Business Education</option>
+              <option>Canadian Studies</option>
+              <option>Caribbean Studies</option>
+              <option>Cell Biology</option>
+              <option>Ceramic Engineering</option>
+              <option>Ceramics</option>
+              <option>Chemical Engineering</option>
+              <option>Chemical Physics</option>
+              <option>Chemistry</option>
+              <option>Child Care</option>
+              <option>Child Development</option>
+              <option>Chinese</option>
+              <option>Chiropractic</option>
+              <option>Church Music</option>
+              <option>Cinematography and Film/Video Production</option>
+              <option>Circulation Technology</option>
+              <option>Civil Engineering</option>
+              <option>Classics</option>
+              <option>Clinical Psychology</option>
+              <option>Cognitive Psychology</option>
+              <option>Communication Disorders</option>
+              <option>Communications Studies/Speech Communication and Rhetoric</option>
+              <option>Comparative Literature</option>
+              <option>Computer and Information Science</option>
+              <option>Computer Engineering</option>
+              <option>Computer Graphics</option>
+              <option>Computer Systems Analysis</option>
+              <option>Construction Management</option>
+              <option>Counseling</option>
+              <option>Crafts</option>
+              <option>Creative Writing</option>
+              <option>Criminal Science</option>
+              <option>Criminology</option>
+              <option>Culinary Arts</option>
+              <option>Dance</option>
+              <option>Data Processing</option>
+              <option>Data Science</option>
+              <option>Dental Hygiene</option>
+              <option>Developmental Psychology</option>
+              <option>Diagnostic Medical Sonography</option>
+              <option>Dietetics</option>
+              <option>Digital Communications and Media/Multimedia</option>
+              <option>Drawing</option>
+              <option>Early Childhood Education</option>
+              <option>East Asian Studies</option>
+              <option>East European Studies</option>
+              <option>Ecology</option>
+              <option>Economics</option>
+              <option>Economics</option>
+              <option>Education</option>
+              <option>Education Administration</option>
+              <option>Education of the Deaf</option>
+              <option>Educational Psychology</option>
+              <option>Electrical Engineering</option>
+              <option>Electrician</option>
+              <option>Elementary Education</option>
+              <option>Engineering</option>
+              <option>Engineering Mechanics</option>
+              <option>Engineering Physics</option>
+              <option>English</option>
+              <option>English Composition</option>
+              <option>English Literature</option>
+              <option>Entomology</option>
+              <option>Entrepreneurship</option>
+              <option>Environmental Design/Architecture</option>
+              <option>Environmental Science</option>
+              <option>Environmental/Environmental Health Engineering</option>
+              <option>Epidemiology</option>
+              <option>Equine Studies</option>
+              <option>Ethnic Studies</option>
+              <option>European History</option>
+              <option>Experimental Pathology</option>
+              <option>Experimental Psychology</option>
+              <option>Fashion Design</option>
+              <option>Fashion Merchandising</option>
+              <option>Feed Science</option>
+              <option>Fiber, Textiles, and Weaving Arts</option>
+              <option>Film</option>
+              <option>Finance</option>
+              <option>Floriculture</option>
+              <option>Food Science</option>
+              <option>Forensic Science</option>
+              <option>Forestry</option>
+              <option>French</option>
+              <option>Furniture Design</option>
+              <option>Game Design</option>
+              <option>Gay and Lesbian Studies</option>
+              <option>Genetics</option>
+              <option>Geography</option>
+              <option>Geological Engineering</option>
+              <option>Geology</option>
+              <option>Geophysics</option>
+              <option>German</option>
+              <option>Gerontology</option>
+              <option>Government</option>
+              <option>Graphic Design</option>
+              <option>Health Administration</option>
+              <option>Hebrew</option>
+              <option>Hispanic-American, Puerto Rican, and Chicano Studies</option>
+              <option>Historic Preservation</option>
+              <option>History</option>
+              <option>History</option>
+              <option>Home Economics</option>
+              <option>Horticulture</option>
+              <option>Hospitality</option>
+              <option>Human Development</option>
+              <option>Human Resources Management</option>
+              <option>Humanities</option>
+              <option>Illustration</option>
+              <option>Industrial Design</option>
+              <option>Industrial Engineering</option>
+              <option>Industrial Management</option>
+              <option>Industrial Psychology</option>
+              <option>Information Technology</option>
+              <option>Interior Architecture</option>
+              <option>Interior Design</option>
+              <option>International Agriculture</option>
+              <option>International Business</option>
+              <option>International Relations</option>
+              <option>International Studies</option>
+              <option>Islamic Studies</option>
+              <option>Italian</option>
+              <option>Japanese</option>
+              <option>Jazz Studies</option>
+              <option>Jewelry and Metalsmithing</option>
+              <option>Jewish Studies</option>
+              <option>Journalism</option>
+              <option>Kinesiology</option>
+              <option>Korean</option>
+              <option>Land Use Planning and Management</option>
+              <option>Landscape Architecture</option>
+              <option>Landscape Horticulture</option>
+              <option>Latin American Studies</option>
+              <option>Law</option>
+              <option>Library Science</option>
+              <option>Linguistics</option>
+              <option>Linguistics</option>
+              <option>Logistics Management</option>
+              <option>Management Information Systems</option>
+              <option>Managerial Economics</option>
+              <option>Marine Biology</option>
+              <option>Marine Science</option>
+              <option>Marketing</option>
+              <option>Mass Communication</option>
+              <option>Massage Therapy</option>
+              <option>Materials Science</option>
+              <option>Mathematics</option>
+              <option>Mathematics</option>
+              <option>Mechanical Engineering</option>
+              <option>Medical Technology</option>
+              <option>Medicine</option>
+              <option>Medieval and Renaissance Studies</option>
+              <option>Mental Health Services</option>
+              <option>Merchandising and Buying Operations</option>
+              <option>Metallurgical Engineering</option>
+              <option>Microbiology</option>
+              <option>Middle Eastern Studies</option>
+              <option>Military Science</option>
+              <option>Mineral Engineering</option>
+              <option>Missions</option>
+              <option>Modern Greek</option>
+              <option>Molecular Biology</option>
+              <option>Molecular Genetics</option>
+              <option>Mortuary Science</option>
+              <option>Museum Studies</option>
+              <option>Music</option>
+              <option>Music Education</option>
+              <option>Music History</option>
+              <option>Music Management</option>
+              <option>Music Therapy</option>
+              <option>Musical Theater</option>
+              <option>Native American Studies</option>
+              <option>Natural Resources Conservation</option>
+              <option>Naval Architecture</option>
+              <option>Neurobiology</option>
+              <option>Neuroscience</option>
+              <option>Nuclear Engineering</option>
+              <option>Nursing</option>
+              <option>Nutrition</option>
+              <option>Occupational Therapy</option>
+              <option>`Ocean Engineering</option>
+              <option>Oceanography</option>
+              <option>Office Administration</option>
+              <option>Operations Management</option>
+              <option>Organizational Behavior Studies</option>
+              <option>Painting</option>
+              <option>Paleontology</option>
+              <option>Pastoral Studies</option>
+              <option>Peace Studies</option>
+              <option>Petroleum Engineering</option>
+              <option>Pharmacology</option>
+              <option>Pharmacy</option>
+              <option>Philosophy</option>
+              <option>Photography</option>
+              <option>Photojournalism</option>
+              <option>Physical Education</option>
+              <option>Physical Therapy</option>
+              <option>Physician Assistant</option>
+              <option>Physics</option>
+              <option>Physiological Psychology</option>
+              <option>Piano</option>
+              <option>Planetary Science</option>
+              <option>Plant Pathology</option>
+              <option>Playwriting and Screenwriting</option>
+              <option>Political Communication</option>
+              <option>Political Science</option>
+              <option>Political Science</option>
+              <option>Portuguese</option>
+              <option>Pre-Dentistry</option>
+              <option>Pre-Law</option>
+              <option>Pre-Medicine</option>
+              <option>Pre-Optometry</option>
+              <option>Pre-Seminary</option>
+              <option>Pre-Veterinary Medicine</option>
+              <option>Printmaking</option>
+              <option>Psychology</option>
+              <option>Public Administration</option>
+              <option>Public Health</option>
+              <option>Public Policy Analysis</option>
+              <option>Public Relations</option>
+              <option>Radio and Television</option>
+              <option>Radiologic Technology</option>
+              <option>Range Science and Management</option>
+              <option>Real Estate</option>
+              <option>Recording Arts Technology</option>
+              <option>Recreation Management</option>
+              <option>Rehabilitation Services</option>
+              <option>Religious Studies</option>
+              <option>Respiratory Therapy</option>
+              <option>Risk Management</option>
+              <option>Rural Sociology</option>
+              <option>Russian</option>
+              <option>Scandinavian Studies</option>
+              <option>Sculpture</option>
+              <option>Skilled Trades</option>
+              <option>Slavic Languages and Literatures</option>
+              <option>Social Psychology</option>
+              <option>Social Work</option>
+              <option>Sociology</option>
+              <option>Soil ScienceTurfgrass Science</option>
+              <option>Sound Engineering</option>
+              <option>South Asian Studies</option>
+              <option>Southeast Asia Studies</option>
+              <option>Spanish</option>
+              <option>Special Education</option>
+              <option>Speech Pathology</option>
+              <option>Sport and Leisure Studies</option>
+              <option>Sports Management</option>
+              <option>Statistics</option>
+              <option>Surveying</option>
+              <option>Sustainable Resource Management</option>
+              <option>Teacher Education</option>
+              <option>Teaching English as a Second Language</option>
+              <option>Technical Writing</option>
+              <option>Technology Education</option>
+              <option>Textile Engineering</option>
+              <option>Theatre</option>
+              <option>Theology</option>
+              <option>Tourism</option>
+              <option>Toxicology</option>
+              <option>Urban Planning</option>
+              <option>Urban Studies</option>
+              <option>Visual Communication</option>
+              <option>Voice</option>
+              <option>Web Design</option>
+              <option>Webmaster and Web Management</option>
+              <option>Welding Engineering</option>
+              <option>Wildlife Management</option>
+              <option>Women's Studies</option>
+              <option>Youth Ministries</option>
+              <option>Zoology</option>
+            </select>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-year-from">From</label>
+
+            <input id="ha-education-1-year-from" maxlength="4" placeholder="YYYY" type="number">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-year-to">To (Actual to Expected)</label>
+
+            <input id="ha-education-1-year-to" maxlength="4" placeholder="YYYY" type="number">
+
+          </div>
+
+        </fieldset>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
 
       </fieldset>
 
@@ -977,7 +1415,165 @@ title: "Business Development Manager"
 
         <div aria-hidden="true" class="hosted-apply__group__legend">Certifications/Licenses</div>
 
+        <fieldset id="certification-1" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Certification 1</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Certification 1</div>
+
+          <button aria-label="Delete Certification 1" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certification-type">Certification <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <select aria-invalid="false" data-error-message="Please enter a certification" id="ha-certification-1-type" required>
+              <option value="">Please Select</option>
+              <option>Advanced Cardiovascular Life Support (ACLS) - American Red Cross</option>
+              <option>Agent de nettoyage sous tension : habilitation électrique BN - American Fitness Professionals & Associates</option>
+              <option>AIDS Certified Registered Nurse (ACRN) - HIV/AIDS Nursing Certification Board</option>
+              <option>Basic Life Support (BLS) - American Red Cross</option>
+              <option>Board Certified General Surgery - American Board of Surgery</option>
+              <option>Cardiopulmonary Resuscitation (CPR) - American Heart Association</option>
+              <option>CDP-I: Disaster Preparedness - American Board for Certification in Homeland Security</option>
+              <option>Certificate in iPad and iPhone App Development - NYUSCPS</option>
+              <option>Certified Business Continuity Professional (CBCP) - Institute of Business Continuity</option>
+              <option>Certified Clinical Transplant Nurse (CCTN) - American Board for Transplant Certification</option>
+              <option>Certified Healthcare Administrative Professional (CHAP) - Association for Healthcare Administrative Professionals</option>
+              <option>Certified Information Systems Auditor (CISA) - Information Systems Audit & Control Association</option>
+              <option>Certified Information Technology Professional (CITP) - American Institute of Certified Public Accountants</option>
+              <option>Certified Internal Auditor (CIA) - Institute of Internal Auditors</option>
+              <option>Certified IT Architect-Professional (CITA-P) - International Association of Software Architects</option>
+              <option>Certified Management Accountant (CMA) - Institute of Management Accountants</option>
+              <option>Certified Management Consultant (CMC) - Institute of Consultants</option>
+              <option>Certified Marketing Executive (CME) - Sales & Marketing Executives International</option>
+              <option>Certified Nursing Assistant (CNA) - American Nurses Credentialing Center</option>
+              <option>Certified Payroll Professional (CPP) - American Payroll Association</option>
+              <option>Certified Professional (CP) - Society of Human Resource Management</option>
+              <option>Certified Professional in Healthcare Quality (CPHQ) - National Association for Healthcare Quality</option>
+              <option>Certified Professional Sales Person (CPSP) - National Association of Sales Professionals</option>
+              <option>Certified Public Accountant (CPA) - American Institute of Certified Public Accountants</option>
+              <option>Certified Sales Executive (CSE) - Sales & Marketing Executives International</option>
+              <option>Champion Leadership - Six Sigma</option>
+              <option>Chargé de travaux : habilitation électrique B2 - American Fitness Professionals & Associates</option>
+              <option>Chariots élévateurs à conducteur porté - Apave</option>
+              <option>Critical Care Registered Nurse (CCRN) - Pediatric - American Association of Critical Care Nurses Certification Corporation</option>
+              <option>Database Specialist - Information-technology Promotion Agency, Japan</option>
+              <option>Engins de chantier - Apave</option>
+              <option>Exécutant Electricien : habilitation électrique B1 - American Fitness Professionals & Associates</option>
+              <option>Exécutant Electricien : habilitation électrique H1 - American Fitness Professionals & Associates</option>
+              <option>First Aid Certification - American Red Cross</option>
+              <option>Fundamental Payroll Certification (FPC) - American Payroll Association</option>
+              <option>Grues à tour - Apave</option>
+              <option>Grues auxiliaire de chargement de véhicule - Apave</option>
+              <option>Grues mobiles - Apave</option>
+              <option>HDI Customer Service Representative (HDI-CSR) - Help Desk Institute</option>
+              <option>HDI Support Center Analyst (HDI-SCA) - Help Desk Institute</option>
+              <option>HDI Support Center Manager (HDI-SCM) - Help Desk Institute</option>
+              <option>HDI Support Center Team Lead (HDI-SCTL) - Help Desk Institute</option>
+              <option>Java ME1 Mobile Application Developer - Oracle</option>
+              <option>Licensed Practical Nurse (LPN) - National Federation of Licensed Practical Nurses</option>
+              <option>Master Black Belt - Six Sigma</option>
+              <option>Microsoft Certified IT Professional (MCITP) - Microsoft</option>
+              <option>National Council Licensure Examination Registered Nurse (NCLEX-RN) - National Council of State Boards of Nursing</option>
+              <option>Partner Tier 5 - Partner Board</option>
+              <option>Partner Tier 6 - Partner Board</option>
+              <option>Pediatric Primary Care Nurse Practitioner (PPCNP) - American Nurses Credentialing Center</option>
+              <option>Personnel non Electricien : habilitation électrique BO - American Fitness Professionals & Associates</option>
+              <option>Personnel non Electricien : habilitation électrique HO - American Fitness Professionals & Associates</option>
+              <option>Plateformes élévatrices de personnes ou PEMP (plus communément appelée "nacelle") - Apave</option>
+              <option>Professional in Human Resources (PHR) - Human Resource Certification Institute</option>
+              <option>Program Management Professional (PgMP) - Project Management Institute</option>
+              <option>Project Management Professional (PMP) - Project Management Institute</option>
+              <option>Project Manager - Information-technology Promotion Agency, Japan</option>
+              <option>Red Hat Certified Engineer (RHCE) - Red Hat</option>
+              <option>Red Hat Certified Technician (RHCT) - Red Hat</option>
+              <option>Registered Nurse (RN) - American Nurses Credentialing Center</option>
+              <option>Senior Professional in Human Resources (SPHR) - Human Resource Certification Institute</option>
+              <option>Strategic Workforce Planning (SWP) - Workforce Planners</option>
+              <option>Sun Certified Java Associate (SCJA ) - Oracle</option>
+              <option>System Auditor - Information-technology Promotion Agency, Japan</option>
+              <option>Warehouse Assessment & Certification - Warehousing Education & Research Council</option>
+              <option>Wound Care Certified (WCC) - National Alliance of Wound Care & Ostomy</option>
+            </select>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certification-1-certificate-number">Certificate Number</label>
+
+            <input id="ha-certification-1-certificate-number" type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certificate-1-issued-date">Issued Date</label>
+
+            <input id="ha-certificate-1-issued-date" type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certificate-1-expiration-date">Expiration Date</label>
+
+            <input id="ha-certificate-1-expiration-date" type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certificate-1-attachments">Attachments <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <div class="hosted-apply__field__upload">
+
+              <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL,application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="false" aria-describedby="ha-attachment-limit" data-error-message="Attachment is required and must have a value" id="ha-certificate-1-attachments" multiple required type="file">
+
+              <span aria-hidden="true" class="hosted-apply__field__upload__msg">Drop file here <span>or</span> Select file</span>
+
+            </div>
+
+            <span class="hosted-apply__field__desc" id="ha-attachment-limit">Upload a file (5MB max)</span>
+
+            <div class="hosted-apply__uploads">
+
+              <h3>File Uploads</h3>
+
+              <ol>
+                <li>
+
+                  <div class="hosted-apply__uploads__col">
+
+                    <span class="hosted-apply__uploads__row hosted-apply__uploads__label">iaap-certificate.pdf <span class="hosted-apply__uploads__size">(50.78 KB)</span></span>
+
+                    <span class="hosted-apply__uploads__row hosted-apply__uploads__success">Successfully uploaded!</span>
+
+                  </div>
+
+                  <div class="hosted-apply__uploads__col">
+
+                    <button aria-label="Delete iaap-certificate.pdf" class="hosted-apply__uploads__delete" type="button"></button>
+
+                  </div>
+
+                </li>
+              </ol>
+
+              <div aria-live="polite" class="hosted-apply__uploads__msg"></div>
+
+              <!-- The above div can be be used to pass multiple message for upload AND deletion -->
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
         <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
 
       </fieldset>
 
@@ -999,7 +1595,7 @@ title: "Business Development Manager"
 
         <div class="hosted-apply__field">
 
-          <label class="hosted-apply__field__label" for="ha-skills">Search Skills</label>
+          <label class="hosted-apply__field__label" for="ha-skills">Add Skill (Type to Add)</label>
 
           <input id="ha-skills" list="ha-skill-list" type="text">
 
@@ -1017,9 +1613,7 @@ title: "Business Development Manager"
             <option>Sass</option>
           </datalist>
 
-          <button class="hosted-apply__button" type="button">Add</button>
-
-          <!-- Note: The HTML Datalist is experimental. More research is required to see how well it works with assistive technology -->
+          <!-- Note: The HTML Datalist is experimental. More research is required to see how well it works with assistive technology. See https://a11ysupport.io/tech/html/datalist_element -->
 
           <div class="hosted-apply__skills">
 
@@ -1030,7 +1624,7 @@ title: "Business Development Manager"
               <li><button aria-label="Delete JavaScript" class="hosted-apply__skills__delete" type="button"><span>JavaScript</span></button></li>
             </ol>
 
-            <div id="skills-msg" aria-live="polite"></div>
+            <div class="hosted-apply__skills__msg" aria-live="polite"></div>
 
           </div>
 
@@ -1044,27 +1638,45 @@ title: "Business Development Manager"
 
         <div aria-hidden="true" class="hosted-apply__group__legend">Websites</div>
 
-        <button class="hosted-apply__button" type="button">Add</button>
-
-        <fieldset class="hosted-apply__group">
+        <fieldset id="website-1" class="hosted-apply__group">
 
           <legend class="visually-hidden">Website 1</legend>
 
           <div aria-hidden="true" class="hosted-apply__group__legend">Website 1</div>
 
-          <button class="hosted-apply__group__delete" type="button"><span class="visually-hidden">Delete Website</span></button>
+          <button aria-label="Delete Website 1" class="hosted-apply__group__delete" type="button"></button>
 
           <div class="hosted-apply__field">
 
             <label class="hosted-apply__field__label" for="ha-website-1-url">URL <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" id="ha-website-1-url" placeholder="e.g., https://mywebsite.com" required type="url">
-
-            <span class="hosted-apply__field__error" id="ha-website-1-url-error">Please enter a URL</span>
+            <input aria-invalid="false" data-error-message="Please enter a URL" id="ha-website-1-url" placeholder="e.g., https://domain.com" required type="url" value="https://accessibilityassociation.org/s/certification">
 
           </div>
 
         </fieldset>
+
+        <fieldset id="website-2" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Website 2</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Website 2</div>
+
+          <button aria-label="Delete Website 2" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-website-2-url">URL <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a URL" id="ha-website-2-url" placeholder="e.g., https://domain.com" required type="url">
+
+          </div>
+
+        </fieldset>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
 
       </fieldset>
 
@@ -1104,7 +1716,7 @@ title: "Business Development Manager"
 
           <div class="hosted-apply__field__upload">
 
-            <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL,application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="true" aria-describedby="ha-resume-error ha-resume-limit" id="ha-resume" multiple required type="file">
+            <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL,application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="true" aria-describedby="ha-resume-error ha-resume-limit" data-error-message="The field Resume/CV is required and must have a value" id="ha-resume" multiple required type="file">
 
             <span aria-hidden="true" class="hosted-apply__field__upload__msg">Drop file here <span>or</span> Select file</span>
 
@@ -1114,11 +1726,11 @@ title: "Business Development Manager"
 
           <span class="hosted-apply__field__error" id="ha-resume-error">The field Resume/CV is required and must have a value</span>
 
-          <section>
+          <div class="hosted-apply__uploads">
 
             <h3>File Uploads</h3>
 
-            <ol class="hosted-apply__uploads">
+            <ol>
               <li>
 
                 <div class="hosted-apply__uploads__col">
@@ -1155,11 +1767,11 @@ title: "Business Development Manager"
               </li>
             </ol>
 
-            <div id="uloaded-file-msg" aria-live="polite"></div>
+            <div aria-live="polite" class="hosted-apply__uploads__msg"></div>
 
-            <!-- The above div can be be used to pass multiple message for upload and deletion -->
+            <!-- The above div can be be used to pass multiple message for upload AND deletion -->
 
-          </section>
+          </div>
 
         </div>
 
@@ -1291,13 +1903,11 @@ title: "Business Development Manager"
 
           <label class="hosted-apply__field__label" for="ha-self-identify-language">Language <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-          <select aria-invalid="false" id="ha-self-identify-language" required>
+          <select aria-invalid="false" date-error-message="Plese select a language" id="ha-self-identify-language" required>
             <option value="">Please Select</option>
             <option>English</option>
             <option>Spanish</option>
           </select>
-
-          <span class="hosted-apply__field__error" id="ha-self-identify-language-error">Plese select a language</span>
 
         </div>
 
@@ -1335,9 +1945,7 @@ title: "Business Development Manager"
 
             <label class="hosted-apply__field__label" for="ha-disability-name">Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" id="ha-disability-name" required type="text">
-
-            <span class="hosted-apply__field__error" id="ha-disability-name-error">Plese enter your name</span>
+            <input aria-invalid="false" data-error-message="Plese enter your name" id="ha-disability-name" required type="text">
 
           </div>
 
@@ -1353,9 +1961,7 @@ title: "Business Development Manager"
 
             <label class="hosted-apply__field__label" for="ha-disability-date">Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
 
-            <input aria-invalid="false" id="ha-disability-date" required type="date">
-
-            <span class="hosted-apply__field__error" id="ha-disability-date-error">Plese enter a date</span>
+            <input aria-invalid="false" data-error-message="Plese enter a date" id="ha-disability-date" required type="date">
 
           </div>
 
@@ -1598,6 +2204,10 @@ title: "Business Development Manager"
 
           <h3>Websites</h3>
 
+          <p class="hosted-apply__answer"><a href="https://accessibilityassociation.org/s/certification" target="_blank">https://accessibilityassociation.org/s/certification <span class="visually-hidden">(opens in new window)</span></a></p>
+
+          <p class="hosted-apply__answer"><a href="https://radancy.com" target="_blank">https://radancy.com <span class="visually-hidden">(opens in new window)</span></a></p>
+
         </section>
 
         <section class="hosted-apply__group">
@@ -1689,6 +2299,18 @@ title: "Business Development Manager"
       </div>
 
     </section>
+
+    <dialog class="hosted-apply__dialog">
+
+      <h2 class="hosted-apply__dialog__heading">Remove Group</h2>
+
+      <p>Are you sure you want to remove <span class="hosted-apply__dialog__name"></span>?</p>
+
+      <button class="hosted-apply__button hosted-apply__dialog__cancel" type="button">Cancel</button>
+
+      <button class="hosted-apply__button hosted-apply__dialog__remove" type="button">Remove</button>
+
+    </dialog>
 
   </form>
 

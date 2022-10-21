@@ -60,35 +60,68 @@
 
   // Using native dialog here for demo. Research needed to see how accessible it is now.
 
-  if(document.getElementById("confirmation-remove")) {
+  let btnRemoveGroup = document.querySelectorAll(".hosted-apply__group__delete");
+  let btnCancelGroup = document.querySelectorAll(".hosted-apply__dialog__cancel");
+  let btnDeleteGroup = document.querySelectorAll(".hosted-apply__dialog__remove");
 
-    let dialog = document.getElementById("confirmation-remove");
-    let targetSection = document.getElementById("work-experience-1");
-    let targetMsg = document.getElementById("work-experience-msg");
+  // Init Dialog
 
-    // Show the dialog when clicking "Delete everything"
+  btnRemoveGroup.forEach(function(button) {
 
-    document.getElementById("delete-work-experience").addEventListener("click", function() {
+    button.addEventListener("click", function (e) {
+
+      let dialog = document.querySelector(".hosted-apply__dialog");
+      let groupName = button.getAttribute("aria-label").replace("Delete", "");
+      let groupNameToken = dialog.querySelector(".hosted-apply__dialog__name");
 
       dialog.showModal();
+      dialog.setAttribute("data-group-id", button.parentNode.getAttribute("id"));
+      dialog.setAttribute("data-group-name", groupName);
+
+      groupNameToken.textContent = groupName;
 
     });
 
-    document.getElementById("cancel-remove").addEventListener("click", function() {
+  });
+
+  // Cancel Dialog
+
+  btnCancelGroup.forEach(function(button) {
+
+    button.addEventListener("click", function (e) {
+
+      let dialog = button.parentNode;
 
       dialog.close();
 
     });
 
-    document.getElementById("confirm-remove").addEventListener("click", function() {
+  });
+
+  // Remove Group
+
+  btnDeleteGroup.forEach(function(button) {
+
+    button.addEventListener("click", function (e) {
+
+      let dialog = document.querySelector(".hosted-apply__dialog");
+      let targetSection = document.getElementById(button.parentNode.dataset.groupId);
+      let targetSectionName = button.parentNode.dataset.groupName;
+      let targetMsg = targetSection.parentNode.querySelector(".hosted-apply__dialog__msg");
 
       dialog.close();
       targetSection.remove();
-      targetMsg.textContent = "Work Experience 1 has been removed.";
+      targetMsg.innerHTML="";
+
+      setTimeout(function(){
+
+        targetMsg.textContent = targetSectionName + " has been removed.";
+
+      }, 100);
 
     });
 
-  }
+  });
 
   // Remove files
 
@@ -99,10 +132,9 @@
     button.addEventListener("click", function (e) {
 
       let fileName = button.getAttribute("aria-label").replace("Delete ", "");
+      let fileDeleteMsg = button.closest(".hosted-apply__uploads").querySelector(".hosted-apply__uploads__msg");
 
-      button.parentNode.parentNode.remove();
-
-      let fileDeleteMsg = document.getElementById("uloaded-file-msg");
+      button.closest("li").remove();
 
       fileDeleteMsg.innerHTML="";
 
@@ -124,11 +156,10 @@
 
     button.addEventListener("click", function (e) {
 
-      let skillType = button.textContent
+      let skillType = button.getAttribute("aria-label").replace("Delete ", "");
+      let skillMsg = button.closest(".hosted-apply__skills").querySelector(".hosted-apply__skills__msg");
 
-      button.parentNode.remove();
-
-      let skillMsg = document.getElementById("skills-msg");
+      button.closest("li").remove();
 
       skillMsg.innerHTML="";
 
