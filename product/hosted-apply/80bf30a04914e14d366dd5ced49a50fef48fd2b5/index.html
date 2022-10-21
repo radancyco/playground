@@ -1,0 +1,2319 @@
+---
+folder: product/hosted-apply
+jquery: false
+heading: false
+localcss: "init.css"
+localjs: "init.js"
+localissues: false
+noindex: true
+title: "Accessibility Engineer"
+---
+
+<div class="hosted-apply">
+
+  <h1 class="hosted-apply__primary-heading">{{ page.title }}</h1>
+
+  <p class="hosted-apply__back"><a href="#">Back to Job Posting</a></p>
+
+  <nav aria-label="Job Application Steps" class="hosted-apply__progress">
+
+    <ol>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-information" id="btn-ha-my-information"><span class="hosted-apply__step__count">1</span> <span class="hosted-apply__step__label">My Information</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-experience" id="btn-ha-my-experience"><span class="hosted-apply__step__count">2</span> <span class="hosted-apply__step__label">My Experience</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-voluntary-disclosure" id="btn-ha-voluntary-disclosure"><span class="hosted-apply__step__count">3</span> <span class="hosted-apply__step__label">Voluntary Disclosure</span></button></li>
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-self-identify" id="btn-ha-self-identify"><span class="hosted-apply__step__count">4</span> <span class="hosted-apply__step__label">Self-Identify</span></button></li>
+      <li><button aria-pressed="true" class="hosted-apply__step" data-form-target="ha-review" id="btn-ha-review"><span class="hosted-apply__step__count">5</span> <span class="hosted-apply__step__label">Review</span></button></li>
+    </ol>
+
+    <div hidden id="hosted-apply-status-completed">Completed</div>
+
+  </nav>
+
+  <form action="thank-you/index.html" novalidate>
+
+    <section aria-labelledby="hdr-my-information" class="hosted-apply__section" id="ha-my-information">
+
+      <h2 class="hosted-apply__section__heading" id="hdr-my-information">My Information</h2>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">General</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">General</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-referred-by">How did you hear about us? <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select id="ha-referred-by" aria-invalid="false" data-error-message="Please enter how you heard about us" required>
+            <option value="">Please Select</option>
+            <option>Corporate Website</option>
+            <option>Employee Referral</option>
+            <option>Facebook</option>
+            <option>Friend's Facebook Feed</option>
+          </select>
+
+        </div>
+
+        <fieldset class="hosted-apply__group">
+
+          <legend class="visually-hidden">Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next section. <span class="hosted-apply__required"><span class="hosted-apply__field__required">(Required)</span> <span class="hosted-apply__field__required">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></legend>
+
+          <div aria-hidden="true" class="hosted-apply__field__label">Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next section. <span class="hosted-apply__required"><span class="hosted-apply__field__required">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></div>
+
+          <div class="hosted-apply__field invalid">
+
+            <div class="hosted-apply__field">
+
+              <input id="ha-previous-work-yes" name="previous-work" type="radio" value="Yes">
+
+              <label class="hosted-apply__field__label" for="ha-previous-work-yes">Yes</label>
+
+            </div>
+
+            <div class="hosted-apply__field">
+
+              <input id="ha-previous-work-no" name="previous-work" type="radio" value="No">
+
+              <label class="hosted-apply__field__label" for="ha-previous-work-no">No</label>
+
+            </div>
+
+            <span aria-hidden="true" class="hosted-apply__field__error">Please select if you have previously worked for this organization</span>
+
+          </div>
+
+          <div class="hosted-apply__disclosure">
+
+            <div class="hosted-apply__field">
+
+              <label class="hosted-apply__field__label" for="ha-previous-work-email">What was your email address?</label>
+
+              <input id="ha-previous-work-email" type="email">
+
+            </div>
+
+            <div class="hosted-apply__field">
+
+              <label class="hosted-apply__field__label" for="ha-previous-work-manager">Who was your manager?</label>
+
+              <input id="ha-previous-work-manager" type="text">
+
+            </div>
+
+            <div class="hosted-apply__field">
+
+              <label class="hosted-apply__field__label" for="ha-previous-work-location">What was your location?</label>
+
+              <input id="ha-previous-work-location" type="text">
+
+            </div>
+
+            <div class="hosted-apply__field">
+
+              <label class="hosted-apply__field__label" for="ha-previous-work-employee-id">What was your employee ID?</label>
+
+              <input id="ha-previous-work-employee-id" type="text">
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-country">Country <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select aria-invalid="false" data-error-message="Please enter a country" id="ha-country" required>
+            <option value="">Please Select</option>
+            <option>Afghanistan</option>
+            <option>Åland Islands</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>American Samoa</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Anguilla</option>
+            <option>Antigua and Barbuda</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Aruba</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaijan</option>
+            <option>Bahamas</option>
+            <option>Bahrain</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Belarus</option>
+            <option>Belgium</option>
+            <option>Belize</option>
+            <option>Benin</option>
+            <option>Bermuda</option>
+            <option>Bhutan</option>
+            <option>Bolivia</option>
+            <option>Bonaire, Sint Eustatius, and Saba</option>
+            <option>Bosnia and Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brazil</option>
+            <option>British Indian Ocean Territory</option>
+            <option>British Virgin Islands</option>
+            <option>Brunei</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Burundi</option>
+            <option>Cabo Verde</option>
+            <option>Cambodia</option>
+            <option>Cameroon</option>
+            <option>Canada</option>
+            <option>Cayman Islands</option>
+            <option>Central African Republic</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Christmas Island</option>
+            <option>Cocos (Keeling) Islands</option>
+            <option>Colombia</option>
+            <option>Comoros</option>
+            <option>Congo</option>
+            <option>Congo, Democratic Republic of the</option>
+            <option>Cook Islands</option>
+            <option>Costa Rica</option>
+            <option>Côte d'Ivoire</option>
+            <option>Croatia</option>
+            <option>Cuba</option>
+            <option>Curaçao</option>
+            <option>Cyprus</option>
+            <option>Czechia</option>
+            <option>Denmark</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Dominican Republic</option>
+            <option>Ecuador</option>
+            <option>Egypt</option>
+            <option>El Salvador</option>
+            <option>Equatorial Guinea</option>
+            <option>Eritrea</option>
+            <option>Estonia</option>
+            <option>Eswatini</option>
+            <option>Ethiopia</option>
+            <option>Falkland Islands</option>
+            <option>Faroe Islands</option>
+            <option>Fiji</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>French Guiana</option>
+            <option>French Polynesia</option>
+            <option>Gabon</option>
+            <option>Gambia</option>
+            <option>Georgia</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Gibraltar</option>
+            <option>Greece</option>
+            <option>Greenland</option>
+            <option>Grenada</option>
+            <option>Guadeloupe</option>
+            <option>Guam</option>
+            <option>Guatemala</option>
+            <option>Guernsey</option>
+            <option>Guinea</option>
+            <option>Guinea-Bissau</option>
+            <option>Guyana</option>
+            <option>Haiti</option>
+            <option>Holy See (Vatican City State)</option>
+            <option>Honduras</option>
+            <option>Hong Kong</option>
+            <option>Hungary</option>
+            <option>Iceland</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Iran</option>
+            <option>Iraq</option>
+            <option>Ireland</option>
+            <option>Isle of Man</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Jamaica</option>
+            <option>Japan</option>
+            <option>Jersey</option>
+            <option>Jordan</option>
+            <option>Kazakhstan</option>
+            <option>Kenya</option>
+            <option>Kiribati</option>
+            <option>Korea, Democratic People's Republic of</option>
+            <option>Korea, Republic of</option>
+            <option>Kosovo</option>
+            <option>Kuwait</option>
+            <option>Kyrgyzstan</option>
+            <option>Laos</option>
+            <option>Latvia</option>
+            <option>Lebanon</option>
+            <option>Lesotho</option>
+            <option>Liberia</option>
+            <option>Libya</option>
+            <option>Liechtenstein</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Macao</option>
+            <option>Madagascar</option>
+            <option>Malawi</option>
+            <option>Malaysia</option>
+            <option>Maldives</option>
+            <option>Mali</option>
+            <option>Malta</option>
+            <option>Marshall Islands</option>
+            <option>Martinique</option>
+            <option>Mauritania</option>
+            <option>Mauritius</option>
+            <option>Mayotte</option>
+            <option>Mexico</option>
+            <option>Micronesia, Federated States of</option>
+            <option>Moldova</option>
+            <option>Monaco</option>
+            <option>Mongolia</option>
+            <option>Montenegro</option>
+            <option>Montserrat</option>
+            <option>Morocco</option>
+            <option>Mozambique</option>
+            <option>Myanmar</option>
+            <option>Namibia</option>
+            <option>Nauru</option>
+            <option>Nepal</option>
+            <option>Netherlands</option>
+            <option>New Caledonia</option>
+            <option>New Zealand</option>
+            <option>Nicaragua</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>Niue</option>
+            <option>Norfolk Island</option>
+            <option>North Macedonia</option>
+            <option>Northern Mariana Islands</option>
+            <option>Norway</option>
+            <option>Oman</option>
+            <option>Pakistan</option>
+            <option>Palau</option>
+            <option>Palestine</option>
+            <option>Panama</option>
+            <option>Papua New Guinea</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Pitcairn Islands</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Puerto Rico</option>
+            <option>Qatar</option>
+            <option>Reunion</option>
+            <option>Romania</option>
+            <option>Russian Federation</option>
+            <option>Rwanda</option>
+            <option>Saint Barthelemy</option>
+            <option>Saint Helena, Ascension and Tristan da Cunha</option>
+            <option>Saint Kitts and Nevis</option>
+            <option>Saint Lucia</option>
+            <option>Saint Martin</option>
+            <option>Saint Pierre and Miquelon</option>
+            <option>Saint Vincent and the Grenadines</option>
+            <option>Samoa</option>
+            <option>San Marino</option>
+            <option>Sao Tome and Principe</option>
+            <option>Saudi Arabia</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Seychelles</option>
+            <option>Sierra Leone</option>
+            <option>Singapore</option>
+            <option>Sint Maarten</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Solomon Islands</option>
+            <option>Somalia</option>
+            <option>South Africa</option>
+            <option>South Sudan</option>
+            <option>Spain</option>
+            <option>Sri Lanka</option>
+            <option>Sudan</option>
+            <option>Suriname</option>
+            <option>Svalbard and Jan Mayen</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Syria</option>
+            <option>Taiwan</option>
+            <option>Tajikistan</option>
+            <option>Tanzania</option>
+            <option>Thailand</option>
+            <option>Timor-Leste</option>
+            <option>Togo</option>
+            <option>Tokelau</option>
+            <option>Tonga</option>
+            <option>Trinidad and Tobago</option>
+            <option>Tunisia</option>
+            <option>Turkey</option>
+            <option>Turkmenistan</option>
+            <option>Turks and Caicos Islands</option>
+            <option>Tuvalu</option>
+            <option>U. S. Virgin Islands</option>
+            <option>Uganda</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States Minor Outlying Islands</option>
+            <option selected>United States of America</option>
+            <option>Uruguay</option>
+            <option>Uzbekistan</option>
+            <option>Vanuatu</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>Wallis and Futuna</option>
+            <option>Western Sahara</option>
+            <option>Yemen</option>
+            <option>Zambia</option>
+            <option>Zimbabwe</option>
+          </select>
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Legal Name</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Legal Name</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-legal-first-name">Legal First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter legal first name" id="ha-legal-first-name" required type="text">
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-legal-last-name">Legal Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter legal last name" id="ha-legal-last-name" required type="text">
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-preferred-name">I have a preferred name</label>
+
+          <input id="ha-preferred-name" type="checkbox">
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-preferred-first-name">Preferred First Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter preferred first name" id="ha-preferred-first-name" required type="text">
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-preferred-last-name">Preferred Last Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter preferred last name" id="ha-preferred-last-name" required type="text">
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Address</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Address</div>
+
+        <div class="hosted-apply__field invalid">
+
+          <label class="hosted-apply__field__label" for="ha-address">Address <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="true" aria-describedby="ha-address-error" data-error-message="Please enter address" id="ha-address" required type="text">
+
+          <span class="hosted-apply__field__error" id="ha-address-error">Please enter address</span>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-city">City <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" id="ha-city" data-error-message="Please enter a city" required type="text">
+
+        </div>
+
+        <div class="hosted-apply__field invalid">
+
+          <label class="hosted-apply__field__label" for="ha-state">State <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select aria-invalid="true" aria-describedby="ha-state-error" data-error-message="Please select a state" id="ha-state" required>
+            <option value="">Please Select</option>
+            <option>Armed Forces Pacific</option>
+            <option>Armed Forces Europe</option>
+            <option>Armed Forces Americas</option>
+            <option>Arizona</option>
+            <option>American Samoa</option>
+            <option>Arkansas</option>
+            <option>Alaska</option>
+            <option>Alabama</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>California</option>
+            <option>Delaware</option>
+            <option>District of Columbia</option>
+            <option>Florida</option>
+            <option>Guam</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Indiana</option>
+            <option>Illinois</option>
+            <option>Idaho</option>
+            <option>Iowa</option>
+            <option>Kentucky</option>
+            <option>Kansas</option>
+            <option>Louisiana</option>
+            <option>Montana</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Minnesota</option>
+            <option>Michigan</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>New York</option>
+            <option>Nevada</option>
+            <option>New Mexico</option>
+            <option>New Jersey</option>
+            <option>New Hampshire</option>
+            <option>Nebraska</option>
+            <option>North Dakota</option>
+            <option>North Carolina</option>
+            <option>Northern Mariana Islands</option>
+            <option>Oregon</option>
+            <option>Oklahoma</option>
+            <option>Ohio</option>
+            <option>Puerto Rico</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Dakota</option>
+            <option>South Carolina</option>
+            <option>Texas</option>
+            <option>Tennessee</option>
+            <option>Utah</option>
+            <option>United States Minor Outlying Islands</option>
+            <option>Vermont</option>
+            <option>Virgin Islands, U.S.</option>
+            <option>Virginia</option>
+            <option>Wyoming</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Washington</option>
+          </select>
+
+          <span class="hosted-apply__field__error" id="ha-state-error">Please select a state</span>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-postal-code">Postal Code <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter postal code" id="ha-postal-code" required type="text">
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Email Address</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Email Address</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-email-address">Email <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter a valid email address" id="ha-email-address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required type="email">
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Phone</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Phone</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-phone-type">Phone Type <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select aria-invalid="false" data-error-message="Please enter a phone type" id="ha-phone-type" required>
+            <option value="">Please Select</option>
+            <option>Fax</option>
+            <option>Landline</option>
+            <option selected>Mobile</option>
+            <option>Pager</option>
+          </select>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-country-phone-code">Country Phone Code <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select aria-invalid="false" id="ha-country-phone-code" required>
+            <option value="">Please Select</option>
+            <option>Afghanistan (+93)</option>
+            <option>Åland Islands (+358)</option>
+            <option>Albania (+355)</option>
+            <option>Algeria (+213)</option>
+            <option>American Samoa (+1)</option>
+            <option>Andorra (+376)</option>
+            <option>Angola (+244)</option>
+            <option>Anguilla (+1)</option>
+            <option>Antigua and Barbuda (+1)</option>
+            <option>Argentina (+54)</option>
+            <option>Armenia (+374)</option>
+            <option>Aruba (+297)</option>
+            <option>Australia (+61)</option>
+            <option>Austria (+43)</option>
+            <option>Azerbaijan (+994)</option>
+            <option>Bahamas (+1)</option>
+            <option>Bahrain (+973)</option>
+            <option>Bangladesh (+880)</option>
+            <option>Barbados (+1)</option>
+            <option>Belarus (+375)</option>
+            <option>Belgium (+32)</option>
+            <option>Belize (+501)</option>
+            <option>Benin (+229)</option>
+            <option>Bermuda (+1)</option>
+            <option>Bhutan (+975)</option>
+            <option>Bolivia (+591)</option>
+            <option>Bonaire, Sint Eustatius, and Saba (+599)</option>
+            <option>Bosnia and Herzegovina (+387)</option>
+            <option>Botswana (+267)</option>
+            <option>Brazil (+55)</option>
+            <option>British Indian Ocean Territory (+246)</option>
+            <option>British Virgin Islands (+1)</option>
+            <option>Brunei (+673)</option>
+            <option>Bulgaria (+359)</option>
+            <option>Burkina Faso (+226)</option>
+            <option>Burundi (+257)</option>
+            <option>Cabo Verde (+238)</option>
+            <option>Cambodia (+855)</option>
+            <option>Cameroon (+237)</option>
+            <option>Canada (+1)</option>
+            <option>Cayman Islands (+1)</option>
+            <option>Central African Republic (+236)</option>
+            <option>Chad (+235)</option>
+            <option>Chile (+56)</option>
+            <option>China (+86)</option>
+            <option>Christmas Island (+61)</option>
+            <option>Cocos (Keeling) Islands (+61)</option>
+            <option>Colombia (+57)</option>
+            <option>Comoros (+269)</option>
+            <option>Congo (+242)</option>
+            <option>Congo, Democratic Republic of the (+243)</option>
+            <option>Cook Islands (+682)</option>
+            <option>Costa Rica (+506)</option>
+            <option>Côte d'Ivoire (+225)</option>
+            <option>Croatia (+385)</option>
+            <option>Cuba (+53)</option>
+            <option>Curaçao (+599)</option>
+            <option>Cyprus (+357)</option>
+            <option>Czechia (+420)</option>
+            <option>Denmark (+45)</option>
+            <option>Djibouti (+253)</option>
+            <option>Dominica (+1)</option>
+            <option>Dominican Republic (+1)</option>
+            <option>Ecuador (+593)</option>
+            <option>Egypt (+20)</option>
+            <option>El Salvador (+503)</option>
+            <option>Equatorial Guinea (+240)</option>
+            <option>Eritrea (+291)</option>
+            <option>Estonia (+372)</option>
+            <option>Eswatini (+268)</option>
+            <option>Ethiopia (+251)</option>
+            <option>Falkland Islands (+500)</option>
+            <option>Faroe Islands (+298)</option>
+            <option>Fiji (+679)</option>
+            <option>Finland (+358)</option>
+            <option>France (+33)</option>
+            <option>French Guiana (+594)</option>
+            <option>French Polynesia (+689)</option>
+            <option>Gabon (+241)</option>
+            <option>Gambia (+220)</option>
+            <option>Georgia (+995)</option>
+            <option>Germany (+49)</option>
+            <option>Ghana (+233)</option>
+            <option>Gibraltar (+350)</option>
+            <option>Greece (+30)</option>
+            <option>Greenland (+299)</option>
+            <option>Grenada (+1)</option>
+            <option>Guadeloupe (+590)</option>
+            <option>Guam (+1)</option>
+            <option>Guatemala (+502)</option>
+            <option>Guernsey (+44)</option>
+            <option>Guinea (+224)</option>
+            <option>Guinea-Bissau (+245)</option>
+            <option>Guyana (+592)</option>
+            <option>Haiti (+509)</option>
+            <option>Holy See (Vatican City State) (+39)</option>
+            <option>Honduras (+504)</option>
+            <option>Hong Kong (+852)</option>
+            <option>Hungary (+36)</option>
+            <option>Iceland (+354)</option>
+            <option>India (+91)</option>
+            <option>Indonesia (+62)</option>
+            <option>Iran (+98)</option>
+            <option>Iraq (+964)</option>
+            <option>Ireland (+353)</option>
+            <option>Isle of Man (+44)</option>
+            <option>Israel (+972)</option>
+            <option>Italy (+39)</option>
+            <option>Jamaica (+1)</option>
+            <option>Japan (+81)</option>
+            <option>Jersey (+44)</option>
+            <option>Jordan (+962)</option>
+            <option>Kazakhstan (+7)</option>
+            <option>Kenya (+254)</option>
+            <option>Kiribati (+686)</option>
+            <option>Korea, Democratic People's Republic of (+850)</option>
+            <option>Korea, Republic of (+82)</option>
+            <option>Kosovo (+377)</option>
+            <option>Kosovo (+381)</option>
+            <option>Kosovo (+383)</option>
+            <option>Kosovo (+386)</option>
+            <option>Kuwait (+965)</option>
+            <option>Kyrgyzstan (+996)</option>
+            <option>Laos (+856)</option>
+            <option>Latvia (+371)</option>
+            <option>Lebanon (+961)</option>
+            <option>Lesotho (+266)</option>
+            <option>Liberia (+231)</option>
+            <option>Libya (+218)</option>
+            <option>Liechtenstein (+423)</option>
+            <option>Lithuania (+370)</option>
+            <option>Luxembourg (+352)</option>
+            <option>Macao (+853)</option>
+            <option>Madagascar (+261)</option>
+            <option>Malawi (+265)</option>
+            <option>Malaysia (+60)</option>
+            <option>Maldives (+960)</option>
+            <option>Mali (+223)</option>
+            <option>Malta (+356)</option>
+            <option>Marshall Islands (+692)</option>
+            <option>Martinique (+596)</option>
+            <option>Mauritania (+222)</option>
+            <option>Mauritius (+230)</option>
+            <option>Mayotte (+262)</option>
+            <option>Mexico (+52)</option>
+            <option>Micronesia, Federated States of (+691)</option>
+            <option>Moldova (+373)</option>
+            <option>Monaco (+377)</option>
+            <option>Mongolia (+976)</option>
+            <option>Montenegro (+382)</option>
+            <option>Montserrat (+1)</option>
+            <option>Morocco (+212)</option>
+            <option>Mozambique (+258)</option>
+            <option>Myanmar (+95)</option>
+            <option>Namibia (+264)</option>
+            <option>Nauru (+674)</option>
+            <option>Nepal (+977)</option>
+            <option>Netherlands (+31)</option>
+            <option>New Caledonia (+687)</option>
+            <option>New Zealand (+64)</option>
+            <option>Nicaragua (+505)</option>
+            <option>Niger (+227)</option>
+            <option>Nigeria (+234)</option>
+            <option>Niue (+683)</option>
+            <option>Norfolk Island (+672)</option>
+            <option>North Macedonia (+389)</option>
+            <option>Northern Mariana Islands (+1)</option>
+            <option>Norway (+47)</option>
+            <option>Oman (+968)</option>
+            <option>Pakistan (+92)</option>
+            <option>Palau (+680)</option>
+            <option>Palestine (+970)</option>
+            <option>Panama (+507)</option>
+            <option>Papua New Guinea (+675)</option>
+            <option>Paraguay (+595)</option>
+            <option>Peru (+51)</option>
+            <option>Philippines (+63)</option>
+            <option>Pitcairn Islands (+64)</option>
+            <option>Poland (+48)</option>
+            <option>Portugal (+351)</option>
+            <option>Puerto Rico (+1)</option>
+            <option>Qatar (+974)</option>
+            <option>Reunion (+262)</option>
+            <option>Romania (+40)</option>
+            <option>Russian Federation (+7)</option>
+            <option>Rwanda (+250)</option>
+            <option>Saint Barthelemy (+590)</option>
+            <option>Saint Helena, Ascension and Tristan da Cunha (+247)</option>
+            <option>Saint Helena, Ascension and Tristan da Cunha (+290)</option>
+            <option>Saint Kitts and Nevis (+1)</option>
+            <option>Saint Lucia (+1)</option>
+            <option>Saint Martin (+590)</option>
+            <option>Saint Pierre and Miquelon (+508)</option>
+            <option>Saint Vincent and the Grenadines (+1)</option>
+            <option>Samoa (+685)</option>
+            <option>San Marino (+378)</option>
+            <option>Sao Tome and Principe (+239)</option>
+            <option>Saudi Arabia (+966)</option>
+            <option>Senegal (+221)</option>
+            <option>Serbia (+381)</option>
+            <option>Seychelles (+248)</option>
+            <option>Sierra Leone (+232)</option>
+            <option>Singapore (+65)</option>
+            <option>Sint Maarten (+1)</option>
+            <option>Slovakia (+421)</option>
+            <option>Slovenia (+386)</option>
+            <option>Solomon Islands (+677)</option>
+            <option>Somalia (+252)</option>
+            <option>South Africa (+27)</option>
+            <option>South Sudan (+211)</option>
+            <option>Spain (+34)</option>
+            <option>Sri Lanka (+94)</option>
+            <option>Sudan (+249)</option>
+            <option>Suriname (+597)</option>
+            <option>Svalbard and Jan Mayen (+47)</option>
+            <option>Sweden (+46)</option>
+            <option>Switzerland (+41)</option>
+            <option>Syria (+963)</option>
+            <option>Taiwan (+886)</option>
+            <option>Tajikistan (+992)</option>
+            <option>Tanzania (+255)</option>
+            <option>Thailand (+66)</option>
+            <option>Timor-Leste (+670)</option>
+            <option>Togo (+228)</option>
+            <option>Tokelau (+690)</option>
+            <option>Tonga (+676)</option>
+            <option>Trinidad and Tobago (+1)</option>
+            <option>Tunisia (+216)</option>
+            <option>Turkey (+90)</option>
+            <option>Turkmenistan (+993)</option>
+            <option>Turks and Caicos Islands (+1)</option>
+            <option>Tuvalu (+688)</option>
+            <option>U. S. Virgin Islands (+1)</option>
+            <option>Uganda (+256)</option>
+            <option>Ukraine (+380)</option>
+            <option>United Arab Emirates (+971)</option>
+            <option>United Kingdom (+44)</option>
+            <option>United States Minor Outlying Islands (+1)</option>
+            <option>United States of America (+1)</option>
+            <option>Uruguay (+598)</option>
+            <option>Uzbekistan (+998)</option>
+            <option>Vanuatu (+678)</option>
+            <option>Venezuela (+58)</option>
+            <option>Vietnam (+84)</option>
+            <option>Wallis and Futuna (+681)</option>
+            <option>Western Sahara (+212)</option>
+            <option>Yemen (+967)</option>
+            <option>Zambia (+260)</option>
+            <option>Zimbabwe (+263)</option>
+          </select>
+
+          <span class="hosted-apply__field__error" id="ha-country-phone-code-error">Please select a country phone code</span>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-phone-number">Phone Number <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="false" data-error-message="Please enter a phone number" id="ha-phone-number" required type="text">
+
+        </div>
+
+      </fieldset>
+
+      <div class="hosted-apply__section__buttons">
+
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-my-experience" type="button">Next</button>
+
+      </div>
+
+    </section>
+
+    <section aria-labelledby="hdr-my-experience" class="hosted-apply__section" id="ha-my-experience">
+
+      <h2 class="hosted-apply__section__heading" id="hdr-my-experience">My Experience</h2>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Work Experience</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience</div>
+
+        <fieldset id="work-experience-1" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Work Experience 1</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 1</div>
+
+          <button aria-label="Delete Work Experience 1" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-job-title">Job Title <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter job title" id="ha-work-experience-1-job-title" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-company">Company <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter company" id="ha-work-experience-1-company" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-location">Location</label>
+
+            <input id="ha-work-experience-1-location" type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-work-here">I currently work here</label>
+
+            <input id="ha-work-experience-1-work-here" type="checkbox">
+
+          </div>
+
+          <div class="hosted-apply__field invalid">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-start-date">Start Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="true" aria-describedby="ha-work-experience-1-start-date-error" data-error-message="Please enter a start date" id="ha-work-experience-1-start-date" required type="date">
+
+            <span class="hosted-apply__field__error" id="ha-work-experience-1-start-date-error">Please enter a start date</span>
+
+          </div>
+
+          <div class="hosted-apply__field invalid">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-end-date">End Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="true" aria-describedby="ha-work-experience-1-end-date-error" data-error-message="Please enter a end date" id="ha-work-experience-1-end-date" required type="date">
+
+            <span class="hosted-apply__field__error" id="ha-work-experience-1-end-date-error">Please enter a end date</span>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-1-role-description">Role Description</label>
+
+            <textarea id="ha-work-experience-1-role-description"></textarea>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset id="work-experience-2" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Work Experience 2</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Work Experience 2</div>
+
+          <button aria-label="Delete Work Experience 2" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-job-title">Job Title <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter job title" id="ha-work-experience-2-job-title" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-company">Company <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter company" id="ha-work-experience-2-company" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-location">Location</label>
+
+            <input id="ha-work-experience-2-location" type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-work-here">I currently work here</label>
+
+            <input id="ha-work-experience-2-work-here" type="checkbox">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-start-date">Start Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a start date" id="ha-work-experience-2-start-date" required type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-end-date">End Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a end date" id="ha-work-experience-2-end-date" required type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-work-experience-2-role-description">Role Description</label>
+
+            <textarea id="ha-work-experience-2-role-description"></textarea>
+
+          </div>
+
+        </fieldset>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Education</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Education</div>
+
+        <fieldset id="education-1" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Education 1</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Education 1</div>
+
+          <button aria-label="Delete Education 1" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-school">School or University <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a school or university" id="ha-education-1-school" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-degree">Degree <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <select aria-invalid="false" data-error-message="Please enter a degree" id="ha-education-1-degree" required>
+              <option value="">Please Select</option>
+              <option>B.A.</option>
+              <option>B.S.</option>
+              <option>DCS</option>
+              <option>GED</option>
+              <option>HS</option>
+              <option>JD</option>
+              <option>M.A.</option>
+              <option>M.S.</option>
+              <option>MBA</option>
+              <option>MD</option>
+              <option>MHA</option>
+              <option>PhD</option>
+            </select>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-field-of-study">Field of Study</label>
+
+            <select id="ha-education-1-field-of-study">
+              <option value="">Please Select</option>
+              <option>Accounting</option>
+              <option>Actuarial Science</option>
+              <option>Advertising</option>
+              <option>Aerospace Engineering</option>
+              <option>African Languages, Literatures, and Linguistics</option>
+              <option>African Studies</option>
+              <option>African-American Studies</option>
+              <option>Agricultural Business and Management</option>
+              <option>Agricultural Economics</option>
+              <option>Agricultural Education</option>
+              <option>Agricultural Journalism</option>
+              <option>Agricultural Mechanization</option>
+              <option>Agricultural Technology Management</option>
+              <option>Agricultural/Biological Engineering and Bioengineering</option>
+              <option>Agriculture</option>
+              <option>Agronomy and Crop Science</option>
+              <option>Air Traffic Control</option>
+              <option>American History</option>
+              <option>American Literature</option>
+              <option>American Sign Language</option>
+              <option>American Studies</option>
+              <option>Anatomy</option>
+              <option>Ancient Studies</option>
+              <option>Animal Behavior and Ethology</option>
+              <option>Animal Science</option>
+              <option>Animation and Special Effects</option>
+              <option>Anthropology</option>
+              <option>Applied Mathematics</option>
+              <option>Applied Physics</option>
+              <option>Aquaculture</option>
+              <option>Aquatic Biology</option>
+              <option>Arabic</option>
+              <option>Archeology</option>
+              <option>Architectural Engineering</option>
+              <option>Architectural History</option>
+              <option>Architecture</option>
+              <option>Art</option>
+              <option>Art Education</option>
+              <option>Art History</option>
+              <option>Art Therapy</option>
+              <option>Artificial Intelligence and Robotics</option>
+              <option>Asian-American Studies</option>
+              <option>Astronomy</option>
+              <option>Astrophysics</option>
+              <option>Athletic Training</option>
+              <option>Atmospheric Science</option>
+              <option>Automotive Engineering</option>
+              <option>Aviation</option>
+              <option>Bakery Science</option>
+              <option>Biblical Studies</option>
+              <option>Biochemistry</option>
+              <option>Bioethics</option>
+              <option>Biology</option>
+              <option>Biomedical Engineering</option>
+              <option>Biomedical Science</option>
+              <option>Biopsychology</option>
+              <option>Biotechnology</option>
+              <option>Botany/Plant Biology</option>
+              <option>Business Administration</option>
+              <option>Business Administration/Management</option>
+              <option>Business Communications</option>
+              <option>Business Education</option>
+              <option>Canadian Studies</option>
+              <option>Caribbean Studies</option>
+              <option>Cell Biology</option>
+              <option>Ceramic Engineering</option>
+              <option>Ceramics</option>
+              <option>Chemical Engineering</option>
+              <option>Chemical Physics</option>
+              <option>Chemistry</option>
+              <option>Child Care</option>
+              <option>Child Development</option>
+              <option>Chinese</option>
+              <option>Chiropractic</option>
+              <option>Church Music</option>
+              <option>Cinematography and Film/Video Production</option>
+              <option>Circulation Technology</option>
+              <option>Civil Engineering</option>
+              <option>Classics</option>
+              <option>Clinical Psychology</option>
+              <option>Cognitive Psychology</option>
+              <option>Communication Disorders</option>
+              <option>Communications Studies/Speech Communication and Rhetoric</option>
+              <option>Comparative Literature</option>
+              <option>Computer and Information Science</option>
+              <option>Computer Engineering</option>
+              <option>Computer Graphics</option>
+              <option>Computer Systems Analysis</option>
+              <option>Construction Management</option>
+              <option>Counseling</option>
+              <option>Crafts</option>
+              <option>Creative Writing</option>
+              <option>Criminal Science</option>
+              <option>Criminology</option>
+              <option>Culinary Arts</option>
+              <option>Dance</option>
+              <option>Data Processing</option>
+              <option>Data Science</option>
+              <option>Dental Hygiene</option>
+              <option>Developmental Psychology</option>
+              <option>Diagnostic Medical Sonography</option>
+              <option>Dietetics</option>
+              <option>Digital Communications and Media/Multimedia</option>
+              <option>Drawing</option>
+              <option>Early Childhood Education</option>
+              <option>East Asian Studies</option>
+              <option>East European Studies</option>
+              <option>Ecology</option>
+              <option>Economics</option>
+              <option>Economics</option>
+              <option>Education</option>
+              <option>Education Administration</option>
+              <option>Education of the Deaf</option>
+              <option>Educational Psychology</option>
+              <option>Electrical Engineering</option>
+              <option>Electrician</option>
+              <option>Elementary Education</option>
+              <option>Engineering</option>
+              <option>Engineering Mechanics</option>
+              <option>Engineering Physics</option>
+              <option>English</option>
+              <option>English Composition</option>
+              <option>English Literature</option>
+              <option>Entomology</option>
+              <option>Entrepreneurship</option>
+              <option>Environmental Design/Architecture</option>
+              <option>Environmental Science</option>
+              <option>Environmental/Environmental Health Engineering</option>
+              <option>Epidemiology</option>
+              <option>Equine Studies</option>
+              <option>Ethnic Studies</option>
+              <option>European History</option>
+              <option>Experimental Pathology</option>
+              <option>Experimental Psychology</option>
+              <option>Fashion Design</option>
+              <option>Fashion Merchandising</option>
+              <option>Feed Science</option>
+              <option>Fiber, Textiles, and Weaving Arts</option>
+              <option>Film</option>
+              <option>Finance</option>
+              <option>Floriculture</option>
+              <option>Food Science</option>
+              <option>Forensic Science</option>
+              <option>Forestry</option>
+              <option>French</option>
+              <option>Furniture Design</option>
+              <option>Game Design</option>
+              <option>Gay and Lesbian Studies</option>
+              <option>Genetics</option>
+              <option>Geography</option>
+              <option>Geological Engineering</option>
+              <option>Geology</option>
+              <option>Geophysics</option>
+              <option>German</option>
+              <option>Gerontology</option>
+              <option>Government</option>
+              <option>Graphic Design</option>
+              <option>Health Administration</option>
+              <option>Hebrew</option>
+              <option>Hispanic-American, Puerto Rican, and Chicano Studies</option>
+              <option>Historic Preservation</option>
+              <option>History</option>
+              <option>History</option>
+              <option>Home Economics</option>
+              <option>Horticulture</option>
+              <option>Hospitality</option>
+              <option>Human Development</option>
+              <option>Human Resources Management</option>
+              <option>Humanities</option>
+              <option>Illustration</option>
+              <option>Industrial Design</option>
+              <option>Industrial Engineering</option>
+              <option>Industrial Management</option>
+              <option>Industrial Psychology</option>
+              <option>Information Technology</option>
+              <option>Interior Architecture</option>
+              <option>Interior Design</option>
+              <option>International Agriculture</option>
+              <option>International Business</option>
+              <option>International Relations</option>
+              <option>International Studies</option>
+              <option>Islamic Studies</option>
+              <option>Italian</option>
+              <option>Japanese</option>
+              <option>Jazz Studies</option>
+              <option>Jewelry and Metalsmithing</option>
+              <option>Jewish Studies</option>
+              <option>Journalism</option>
+              <option>Kinesiology</option>
+              <option>Korean</option>
+              <option>Land Use Planning and Management</option>
+              <option>Landscape Architecture</option>
+              <option>Landscape Horticulture</option>
+              <option>Latin American Studies</option>
+              <option>Law</option>
+              <option>Library Science</option>
+              <option>Linguistics</option>
+              <option>Linguistics</option>
+              <option>Logistics Management</option>
+              <option>Management Information Systems</option>
+              <option>Managerial Economics</option>
+              <option>Marine Biology</option>
+              <option>Marine Science</option>
+              <option>Marketing</option>
+              <option>Mass Communication</option>
+              <option>Massage Therapy</option>
+              <option>Materials Science</option>
+              <option>Mathematics</option>
+              <option>Mathematics</option>
+              <option>Mechanical Engineering</option>
+              <option>Medical Technology</option>
+              <option>Medicine</option>
+              <option>Medieval and Renaissance Studies</option>
+              <option>Mental Health Services</option>
+              <option>Merchandising and Buying Operations</option>
+              <option>Metallurgical Engineering</option>
+              <option>Microbiology</option>
+              <option>Middle Eastern Studies</option>
+              <option>Military Science</option>
+              <option>Mineral Engineering</option>
+              <option>Missions</option>
+              <option>Modern Greek</option>
+              <option>Molecular Biology</option>
+              <option>Molecular Genetics</option>
+              <option>Mortuary Science</option>
+              <option>Museum Studies</option>
+              <option>Music</option>
+              <option>Music Education</option>
+              <option>Music History</option>
+              <option>Music Management</option>
+              <option>Music Therapy</option>
+              <option>Musical Theater</option>
+              <option>Native American Studies</option>
+              <option>Natural Resources Conservation</option>
+              <option>Naval Architecture</option>
+              <option>Neurobiology</option>
+              <option>Neuroscience</option>
+              <option>Nuclear Engineering</option>
+              <option>Nursing</option>
+              <option>Nutrition</option>
+              <option>Occupational Therapy</option>
+              <option>`Ocean Engineering</option>
+              <option>Oceanography</option>
+              <option>Office Administration</option>
+              <option>Operations Management</option>
+              <option>Organizational Behavior Studies</option>
+              <option>Painting</option>
+              <option>Paleontology</option>
+              <option>Pastoral Studies</option>
+              <option>Peace Studies</option>
+              <option>Petroleum Engineering</option>
+              <option>Pharmacology</option>
+              <option>Pharmacy</option>
+              <option>Philosophy</option>
+              <option>Photography</option>
+              <option>Photojournalism</option>
+              <option>Physical Education</option>
+              <option>Physical Therapy</option>
+              <option>Physician Assistant</option>
+              <option>Physics</option>
+              <option>Physiological Psychology</option>
+              <option>Piano</option>
+              <option>Planetary Science</option>
+              <option>Plant Pathology</option>
+              <option>Playwriting and Screenwriting</option>
+              <option>Political Communication</option>
+              <option>Political Science</option>
+              <option>Political Science</option>
+              <option>Portuguese</option>
+              <option>Pre-Dentistry</option>
+              <option>Pre-Law</option>
+              <option>Pre-Medicine</option>
+              <option>Pre-Optometry</option>
+              <option>Pre-Seminary</option>
+              <option>Pre-Veterinary Medicine</option>
+              <option>Printmaking</option>
+              <option>Psychology</option>
+              <option>Public Administration</option>
+              <option>Public Health</option>
+              <option>Public Policy Analysis</option>
+              <option>Public Relations</option>
+              <option>Radio and Television</option>
+              <option>Radiologic Technology</option>
+              <option>Range Science and Management</option>
+              <option>Real Estate</option>
+              <option>Recording Arts Technology</option>
+              <option>Recreation Management</option>
+              <option>Rehabilitation Services</option>
+              <option>Religious Studies</option>
+              <option>Respiratory Therapy</option>
+              <option>Risk Management</option>
+              <option>Rural Sociology</option>
+              <option>Russian</option>
+              <option>Scandinavian Studies</option>
+              <option>Sculpture</option>
+              <option>Skilled Trades</option>
+              <option>Slavic Languages and Literatures</option>
+              <option>Social Psychology</option>
+              <option>Social Work</option>
+              <option>Sociology</option>
+              <option>Soil ScienceTurfgrass Science</option>
+              <option>Sound Engineering</option>
+              <option>South Asian Studies</option>
+              <option>Southeast Asia Studies</option>
+              <option>Spanish</option>
+              <option>Special Education</option>
+              <option>Speech Pathology</option>
+              <option>Sport and Leisure Studies</option>
+              <option>Sports Management</option>
+              <option>Statistics</option>
+              <option>Surveying</option>
+              <option>Sustainable Resource Management</option>
+              <option>Teacher Education</option>
+              <option>Teaching English as a Second Language</option>
+              <option>Technical Writing</option>
+              <option>Technology Education</option>
+              <option>Textile Engineering</option>
+              <option>Theatre</option>
+              <option>Theology</option>
+              <option>Tourism</option>
+              <option>Toxicology</option>
+              <option>Urban Planning</option>
+              <option>Urban Studies</option>
+              <option>Visual Communication</option>
+              <option>Voice</option>
+              <option>Web Design</option>
+              <option>Webmaster and Web Management</option>
+              <option>Welding Engineering</option>
+              <option>Wildlife Management</option>
+              <option>Women's Studies</option>
+              <option>Youth Ministries</option>
+              <option>Zoology</option>
+            </select>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-year-from">From</label>
+
+            <input id="ha-education-1-year-from" placeholder="YYYY" type="number">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-education-1-year-to">To (Actual to Expected)</label>
+
+            <input id="ha-education-1-year-to" placeholder="YYYY" type="number">
+
+          </div>
+
+        </fieldset>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Certifications/Licenses</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Certifications/Licenses</div>
+
+        <fieldset id="certification-1" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Certification 1</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Certification 1</div>
+
+          <button aria-label="Delete Certification 1" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certification-1-type">Certification <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <select aria-invalid="false" data-error-message="Please enter a certification" id="ha-certification-1-type" required>
+              <option value="">Please Select</option>
+              <option>Advanced Cardiovascular Life Support (ACLS) - American Red Cross</option>
+              <option>Agent de nettoyage sous tension : habilitation électrique BN - American Fitness Professionals & Associates</option>
+              <option>AIDS Certified Registered Nurse (ACRN) - HIV/AIDS Nursing Certification Board</option>
+              <option>Basic Life Support (BLS) - American Red Cross</option>
+              <option>Board Certified General Surgery - American Board of Surgery</option>
+              <option>Cardiopulmonary Resuscitation (CPR) - American Heart Association</option>
+              <option>CDP-I: Disaster Preparedness - American Board for Certification in Homeland Security</option>
+              <option>Certificate in iPad and iPhone App Development - NYUSCPS</option>
+              <option>Certified Business Continuity Professional (CBCP) - Institute of Business Continuity</option>
+              <option>Certified Clinical Transplant Nurse (CCTN) - American Board for Transplant Certification</option>
+              <option>Certified Healthcare Administrative Professional (CHAP) - Association for Healthcare Administrative Professionals</option>
+              <option>Certified Information Systems Auditor (CISA) - Information Systems Audit & Control Association</option>
+              <option>Certified Information Technology Professional (CITP) - American Institute of Certified Public Accountants</option>
+              <option>Certified Internal Auditor (CIA) - Institute of Internal Auditors</option>
+              <option>Certified IT Architect-Professional (CITA-P) - International Association of Software Architects</option>
+              <option>Certified Management Accountant (CMA) - Institute of Management Accountants</option>
+              <option>Certified Management Consultant (CMC) - Institute of Consultants</option>
+              <option>Certified Marketing Executive (CME) - Sales & Marketing Executives International</option>
+              <option>Certified Nursing Assistant (CNA) - American Nurses Credentialing Center</option>
+              <option>Certified Payroll Professional (CPP) - American Payroll Association</option>
+              <option>Certified Professional (CP) - Society of Human Resource Management</option>
+              <option>Certified Professional in Healthcare Quality (CPHQ) - National Association for Healthcare Quality</option>
+              <option>Certified Professional Sales Person (CPSP) - National Association of Sales Professionals</option>
+              <option>Certified Public Accountant (CPA) - American Institute of Certified Public Accountants</option>
+              <option>Certified Sales Executive (CSE) - Sales & Marketing Executives International</option>
+              <option>Champion Leadership - Six Sigma</option>
+              <option>Chargé de travaux : habilitation électrique B2 - American Fitness Professionals & Associates</option>
+              <option>Chariots élévateurs à conducteur porté - Apave</option>
+              <option>Critical Care Registered Nurse (CCRN) - Pediatric - American Association of Critical Care Nurses Certification Corporation</option>
+              <option>Database Specialist - Information-technology Promotion Agency, Japan</option>
+              <option>Engins de chantier - Apave</option>
+              <option>Exécutant Electricien : habilitation électrique B1 - American Fitness Professionals & Associates</option>
+              <option>Exécutant Electricien : habilitation électrique H1 - American Fitness Professionals & Associates</option>
+              <option>First Aid Certification - American Red Cross</option>
+              <option>Fundamental Payroll Certification (FPC) - American Payroll Association</option>
+              <option>Grues à tour - Apave</option>
+              <option>Grues auxiliaire de chargement de véhicule - Apave</option>
+              <option>Grues mobiles - Apave</option>
+              <option>HDI Customer Service Representative (HDI-CSR) - Help Desk Institute</option>
+              <option>HDI Support Center Analyst (HDI-SCA) - Help Desk Institute</option>
+              <option>HDI Support Center Manager (HDI-SCM) - Help Desk Institute</option>
+              <option>HDI Support Center Team Lead (HDI-SCTL) - Help Desk Institute</option>
+              <option>Java ME1 Mobile Application Developer - Oracle</option>
+              <option>Licensed Practical Nurse (LPN) - National Federation of Licensed Practical Nurses</option>
+              <option>Master Black Belt - Six Sigma</option>
+              <option>Microsoft Certified IT Professional (MCITP) - Microsoft</option>
+              <option>National Council Licensure Examination Registered Nurse (NCLEX-RN) - National Council of State Boards of Nursing</option>
+              <option>Partner Tier 5 - Partner Board</option>
+              <option>Partner Tier 6 - Partner Board</option>
+              <option>Pediatric Primary Care Nurse Practitioner (PPCNP) - American Nurses Credentialing Center</option>
+              <option>Personnel non Electricien : habilitation électrique BO - American Fitness Professionals & Associates</option>
+              <option>Personnel non Electricien : habilitation électrique HO - American Fitness Professionals & Associates</option>
+              <option>Plateformes élévatrices de personnes ou PEMP (plus communément appelée "nacelle") - Apave</option>
+              <option>Professional in Human Resources (PHR) - Human Resource Certification Institute</option>
+              <option>Program Management Professional (PgMP) - Project Management Institute</option>
+              <option>Project Management Professional (PMP) - Project Management Institute</option>
+              <option>Project Manager - Information-technology Promotion Agency, Japan</option>
+              <option>Red Hat Certified Engineer (RHCE) - Red Hat</option>
+              <option>Red Hat Certified Technician (RHCT) - Red Hat</option>
+              <option>Registered Nurse (RN) - American Nurses Credentialing Center</option>
+              <option>Senior Professional in Human Resources (SPHR) - Human Resource Certification Institute</option>
+              <option>Strategic Workforce Planning (SWP) - Workforce Planners</option>
+              <option>Sun Certified Java Associate (SCJA ) - Oracle</option>
+              <option>System Auditor - Information-technology Promotion Agency, Japan</option>
+              <option>Warehouse Assessment & Certification - Warehousing Education & Research Council</option>
+              <option>Wound Care Certified (WCC) - National Alliance of Wound Care & Ostomy</option>
+            </select>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certification-1-certificate-number">Certificate Number</label>
+
+            <input id="ha-certification-1-certificate-number" type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certificate-1-issued-date">Issued Date</label>
+
+            <input id="ha-certificate-1-issued-date" type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certificate-1-expiration-date">Expiration Date</label>
+
+            <input id="ha-certificate-1-expiration-date" type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-certificate-1-attachments">Attachments <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <div class="hosted-apply__field__upload">
+
+              <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL,application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="false" aria-describedby="ha-attachment-limit" data-error-message="Attachment is required and must have a value" id="ha-certificate-1-attachments" multiple required type="file">
+
+              <span aria-hidden="true" class="hosted-apply__field__upload__msg">Drop file here <span>or</span> Select file</span>
+
+            </div>
+
+            <span class="hosted-apply__field__desc" id="ha-attachment-limit">Upload a file (5MB max)</span>
+
+            <div class="hosted-apply__uploads">
+
+              <h3>File Uploads</h3>
+
+              <ol>
+                <li>
+
+                  <div class="hosted-apply__uploads__col">
+
+                    <span class="hosted-apply__uploads__row hosted-apply__uploads__label">iaap-certificate.pdf <span class="hosted-apply__uploads__size">(50.78 KB)</span></span>
+
+                    <span class="hosted-apply__uploads__row hosted-apply__uploads__success">Successfully uploaded!</span>
+
+                  </div>
+
+                  <div class="hosted-apply__uploads__col">
+
+                    <button aria-label="Delete iaap-certificate.pdf" class="hosted-apply__uploads__delete" type="button"></button>
+
+                  </div>
+
+                </li>
+              </ol>
+
+              <div aria-live="polite" class="hosted-apply__uploads__msg"></div>
+
+              <!-- The above div can be be used to pass multiple message for upload AND deletion -->
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Language</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Language</div>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Skills</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Skills</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-skills">Add Skill (Type to Add)</label>
+
+          <input id="ha-skills" list="ha-skill-list" type="text">
+
+          <datalist id="ha-skill-list">
+            <option>Accessibility</option>
+            <option>Angular</option>
+            <option>CSS</option>
+            <option>Environmental Stewardship and Sustainability</option>
+            <option>HTML</option>
+            <option>Microsoft Excel</option>
+            <option>Microsoft Powerpoint</option>
+            <option>JavaScript</option>
+            <option>jQuery</option>
+            <option>Quality Assurance</option>
+            <option>Sass</option>
+          </datalist>
+
+          <!-- Note: The HTML Datalist is experimental. More research is required to see how well it works with assistive technology. See https://a11ysupport.io/tech/html/datalist_element -->
+
+          <div class="hosted-apply__skills">
+
+            <ol>
+              <li><button aria-label="Delete HTML" class="hosted-apply__skills__delete" type="button"><span>HTML</span></button>
+              <li><button aria-label="Delete CSS" class="hosted-apply__skills__delete" type="button"><span>CSS</span></button></li>
+              <li><button aria-label="Delete Environmental Stewardship and Sustainability" class="hosted-apply__skills__delete" type="button"><span>Environmental Stewardship and Sustainability</span></button></li>
+              <li><button aria-label="Delete JavaScript" class="hosted-apply__skills__delete" type="button"><span>JavaScript</span></button></li>
+            </ol>
+
+            <div class="hosted-apply__skills__msg" aria-live="polite"></div>
+
+          </div>
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Websites</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Websites</div>
+
+        <fieldset id="website-1" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Website 1</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Website 1</div>
+
+          <button aria-label="Delete Website 1" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-website-1-url">URL <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a URL" id="ha-website-1-url" placeholder="e.g., https://domain.com" required type="url" value="https://accessibilityassociation.org/s/certification">
+
+          </div>
+
+        </fieldset>
+
+        <fieldset id="website-2" class="hosted-apply__group">
+
+          <legend class="visually-hidden">Website 2</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Website 2</div>
+
+          <button aria-label="Delete Website 2" class="hosted-apply__group__delete" type="button"></button>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-website-2-url">URL <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a URL" id="ha-website-2-url" placeholder="e.g., https://domain.com" required type="url">
+
+          </div>
+
+        </fieldset>
+
+        <button class="hosted-apply__button" type="button">Add</button>
+
+        <div aria-live="polite" class="hosted-apply__dialog__msg"></div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Social Network URLs</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Social Network URLs</div>
+
+        <fieldset class="hosted-apply__group">
+
+          <legend class="visually-hidden">LinkedIn</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">LinkedIn</div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-social-linkedin">URL</label>
+
+            <input id="ha-social-linkedin" type="url">
+
+          </div>
+
+        </fieldset>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Resume</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Resume</div>
+
+        <div class="hosted-apply__field invalid">
+
+          <label class="hosted-apply__field__label" for="ha-resume">Resume C/V <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <div class="hosted-apply__field__upload">
+
+            <input accept="application/ms-excel,application/x-msexcel,application/vnd.ms-excel,application/msword,application/x-msdownload,application/java,application/x-gzip-compressed,application/x-compressed,application/pdf,application/macbinhex40,application/base64,application/postscript,application/rtf,application/ms-powerpoint,application/vnd.ms-powerpoint,application/powerpoint,application/zip,audio/x-mpeg-3,audio/x-mpeg-2,audio/x-mpeg,audio/x-wav,audio/wav,audio/basic,audio/x-aiff,image/x-wmf,image/bmp,image/x-xbitmap,image/x-png,image/tiff,image/jpeg,image/gif,video/quicktime,video/x-msvideo,video/mpeg,video/avi,text/xml,text/html,text/richtext,text/plain,text/csv,application/x-gzip,application/octet-stream,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/x-bmp,image/x-bitmap,image/x-win-bitmap,mage/x-windows-bmp,image/ms-bmp,image/x-ms-bmp,image/ief,application/xml,text/vtt,video/x-vob,video/x-ms-wmv,video/x-ms-asf,video/x-matroska,video/x-flv,video/x-dv,video/webm,video/vnd.rn-realvideo,video/ogg,video/mp4,video/divx,video/MP2T,video/3gpp2,video/3gpp,application/x-mpegURL,application/vnd.rn-realmedia-vbr,application/vnd.rn-realmedia,image/png,audio/x-ms-wma,audio/x-matroska,audio/webm,audio/vnd.rn-realaudio,audio/ogg,audio/mpeg,audio/mp4,audio/flac,audio/aac,audio/3gpp2,audio/3gpp,application/x-mpegURL,image/svg+xml,application/vnd.workday.jwf,application/json,application/x-www-form-urlencoded,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.workday.wxf,application/vnd.workday.lpxf,application/x-zip-compressed,application/vnd.ms-excel.sheet.binary.macroenabled.12,application/vnd.workday.dwxf,application/vnd.workday.ndxf" aria-invalid="true" aria-describedby="ha-resume-error ha-resume-limit" data-error-message="The field Resume/CV is required and must have a value" id="ha-resume" multiple required type="file">
+
+            <span aria-hidden="true" class="hosted-apply__field__upload__msg">Drop file here <span>or</span> Select file</span>
+
+          </div>
+
+          <span class="hosted-apply__field__desc" id="ha-resume-limit">Upload a file (5MB max)</span>
+
+          <span class="hosted-apply__field__error" id="ha-resume-error">The field Resume/CV is required and must have a value</span>
+
+          <div class="hosted-apply__uploads">
+
+            <h3>File Uploads</h3>
+
+            <ol>
+              <li>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__label">hugo-plasternaff-resume.docx <span class="hosted-apply__uploads__size">(401.00 KB)</span></span>
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__success">Successfully uploaded!</span>
+
+                </div>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <button aria-label="Delete hugo-plasternaff-resume.docx" class="hosted-apply__uploads__delete" type="button"></button>
+
+                </div>
+
+              </li>
+              <li>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__label">hugo-plasternaff-cover.docx <span class="hosted-apply__uploads__size">(123.45 KB)</span></span>
+
+                  <span class="hosted-apply__uploads__row hosted-apply__uploads__success">Successfully uploaded!</span>
+
+                </div>
+
+                <div class="hosted-apply__uploads__col">
+
+                  <button aria-label="Delete hugo-plasternaff-cover.docx" class="hosted-apply__uploads__delete" type="button"></button>
+
+                </div>
+
+              </li>
+            </ol>
+
+            <div aria-live="polite" class="hosted-apply__uploads__msg"></div>
+
+            <!-- The above div can be be used to pass multiple message for upload AND deletion -->
+
+          </div>
+
+        </div>
+
+      </fieldset>
+
+      <div class="hosted-apply__section__buttons">
+
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-my-information" type="button">Back</button>
+
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-voluntary-disclosure" type="button">Next</button>
+
+      </div>
+
+    </section>
+
+    <section aria-labelledby="hdr-voluntary-disclosure" class="hosted-apply__section" id="ha-voluntary-disclosure">
+
+      <h2 class="hosted-apply__section__heading" id="hdr-voluntary-disclosure">Voluntary Disclosure</h2>
+
+      <div class="hosted-apply__review">
+
+        <h3 class="hosted-apply__review__heading">This section contains errors</h3>
+
+        <ol>
+          <li><a href="#ha-accept-terms">Please accept terms and conditions</a></li>
+        </ol>
+
+      </div>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Personal Data Statement</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Personal Data Statement</div>
+
+        <p>Individuals seeking employment are considered without regards to race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, or sexual orientation. You are being given the opportunity to provide the following information in order to help us comply with federal and state Equal Employment Opportunity/Affirmative Action record keeping, reporting, and other legal requirements.</p>
+
+        <p>Completion of the form is entirely voluntary. Whatever your decision, it will not be considered in the hiring process or thereafter. Any information that you do provide will be recorded and maintained in a confidential file.</p>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-veteran-status">Please select the veteran status which most accurately describes how you identify yourself</label>
+
+          <select id="ha-veteran-status">
+            <option value="">Please Select</option>
+            <option>I Am Not a Veteran</option>
+            <option>I Do Not Wish to Self-identify</option>
+            <option>I Identify as a Veteran, Just Not a Protected Veteran</option>
+            <option>I Identify as One or More of the Classifications of Protected Veterans Listed Above</option>
+          </select>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-gender">Please select your gender</label>
+
+          <select id="ha-gender">
+            <option value="">Please Select</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Not Declared</option>
+          </select>
+
+        </div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-ethnicity">Please select the ethnicity which most accurately describes how you identify yourself</label>
+
+          <select id="ha-ethnicity">
+            <option value="">Please Select</option>
+            <option>American Indian or Alaska Native (United States of America)</option>
+            <option>Asian (United States of America)</option>
+            <option>Black or African American (United States of America)</option>
+            <option>Hispanic or Latino (United States of America)</option>
+            <option>I Do Not Wish to Answer (United States of America)</option>
+            <option>Native Hawaiian or Other Pacific Islander (United States of America)</option>
+            <option>Other (United States of America)</option>
+            <option>Two or More Races (United States of America)</option>
+            <option>White (United States of America)</option>
+          </select>
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">Terms and Conditions</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">Terms and Conditions</div>
+
+        <p>We respect the privacy of candidates for employment. This Privacy Notice sets forth how we will use the information we obtain when you apply for a position through this career site. If you do not consent to the terms of this Privacy Notice, please do not submit information to us.</p>
+
+        <div class="hosted-apply__field invalid">
+
+          <label class="hosted-apply__field__label" for="ha-accept-terms">I willingly accept the Terms and Conditions for submitting an application with GMS <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <input aria-invalid="true" aria-describedby="ha-accept-terms-error" id="ha-accept-terms" required type="checkbox">
+
+          <span class="hosted-apply__field__error" id="ha-accept-terms-error">Please accept terms and conditions</span>
+
+        </div>
+
+      </fieldset>
+
+      <div class="hosted-apply__section__buttons">
+
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-my-experience" type="button">Back</button>
+
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-self-identify" type="button">Next</button>
+
+      </div>
+
+    </section>
+
+    <section aria-labelledby="hdr-self-identify" class="hosted-apply__section" id="ha-self-identify">
+
+      <h2 class="hosted-apply__section__heading" id="hdr-self-identify">Self-Identify</h2>
+
+      <fieldset class="hosted-apply__group">
+
+        <legend class="visually-hidden">General</legend>
+
+        <div aria-hidden="true" class="hosted-apply__group__legend">General</div>
+
+        <div class="hosted-apply__field">
+
+          <label class="hosted-apply__field__label" for="ha-self-identify-language">Language <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+          <select aria-invalid="false" data-error-message="Please select a language" id="ha-self-identify-language" required>
+            <option value="">Please Select</option>
+            <option>English</option>
+            <option>Spanish</option>
+          </select>
+
+        </div>
+
+        <fieldset class="hosted-apply__group">
+
+          <legend class="visually-hidden">Voluntary Self-Identification of Disability</legend>
+
+          <div aria-hidden="true" class="hosted-apply__group__legend">Voluntary Self-Identification of Disability</div>
+
+          <div class="hosted-apply__field">
+
+            <div class="hosted-apply__field__label">Form</div>
+
+            <div class="hosted-apply__field__text">CC-305</div>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <div class="hosted-apply__field__label">OMB Control Number</div>
+
+            <div class="hosted-apply__field__text">1250-0005</div>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <div class="hosted-apply__field__label">Expires</div>
+
+            <div class="hosted-apply__field__text">5/31/2023</div>
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-disability-name">Name <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter your name" id="ha-disability-name" required type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-disability-employee-id">Employee ID (if applicable)</label>
+
+            <input id="ha-disability-employee-id" type="text">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <label class="hosted-apply__field__label" for="ha-disability-date">Date <span class="hosted-apply__required"><span aria-hidden="true" class="hosted-apply__field__icon"></span></span></label>
+
+            <input aria-invalid="false" data-error-message="Please enter a date" id="ha-disability-date" required type="date">
+
+          </div>
+
+          <div class="hosted-apply__field">
+
+            <h3>Why are you being asked to complete this form?</h3>
+
+            <p>We are a federal contractor or subcontractor required by law to provide equal employment opportunity to qualified people with disabilities.  We are also required to measure our progress toward having at least 7% of our workforce be individuals with disabilities.  To do this, we must ask applicants and employees if they have a disability or have ever had a disability.??Because a person may become disabled at any time, we ask all of our employees to update their information at least every five years. Identifying yourself as an individual with a disability is voluntary, and we hope that you will choose to do so.  Your answer will be maintained confidentially and not be seen by selecting officials or anyone else involved in making personnel decisions.  Completing the form will not negatively impact you in any way, regardless of whether you have self-identified in the past.  For more information about this form or the equal employment obligations of federal contractors under Section 503 of the Rehabilitation Act, visit the <a href="https://www.dol.gov/ofccp" target="_blank">U.S. Department of Labor’s Office of Federal Contract Compliance Programs (OFCCP) <span class="visually-hidden">(opens in new window)</span></a> website.</p>
+
+            <h3>How do you know if you have a disability?</h3>
+
+            <p>You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition. Disabilities include, but are not limited to:</p>
+
+            <ul>
+              <li>Autism</li>
+              <li>Autoimmune disorder, for example, lupus, fibromyalgia, rheumatoid arthritis, or HIV/AIDS</li>
+              <li>Blind or low vision</li>
+              <li>Cancer</li>
+              <li>Cardiovascular or heart disease</li>
+              <li>Celiac disease</li>
+              <li>Cerebral palsy</li>
+              <li>Deaf or hard of hearing</li>
+              <li>Depression or anxiety</li>
+              <li>Diabetes</li>
+              <li>Epilepsy</li>
+              <li>Gastrointestinal disorders, for example, Crohn's Disease, or irritable bowel syndrome</li>
+              <li>Intellectual disability</li>
+              <li>Missing limbs or partially missing limbs</li>
+              <li>Nervous system condition for example, migraine headaches, Parkinson's disease, or Multiple sclerosis (MS)</li>
+              <li>Psychiatric condition, for example, bipolar disorder, schizophrenia, PTSD, or major depression</li>
+            </ul>
+
+            <fieldset class="hosted-apply__group">
+
+              <legend class="visually-hidden">Please check one of the boxes below <span class="hosted-apply__required"><span class="hosted-apply__field__required">Required</span> <span class="hosted-apply__field__required">Please select disability status</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></legend>
+
+              <div aria-hidden="true" class="hosted-apply__field__label">Please check one of the boxes below <span class="hosted-apply__required"><span class="hosted-apply__field__required">Please select if you have previously worked for this organization</span> <span aria-hidden="true" class="hosted-apply__field__icon"></span></span></div>
+
+              <div class="hosted-apply__field invalid">
+
+                <div class="hosted-apply__field">
+
+                  <input id="ha-disability-status-na" name="disability-status" type="radio" value="NA">
+
+                  <label class="hosted-apply__field__label" for="ha-disability-status-na">I don't wish to answer</label>
+
+                </div>
+
+                <div class="hosted-apply__field">
+
+                  <input id="ha-disability-status-no" name="disability-status" type="radio" value="No">
+
+                  <label class="hosted-apply__field__label" for="ha-disability-status-no">No, I don't have a disability or a history/record of having a disability</label>
+
+                </div>
+
+                <div class="hosted-apply__field">
+
+                  <input id="ha-disability-status-yes" name="disability-status" type="radio" value="Yes">
+
+                  <label class="hosted-apply__field__label" for="ha-disability-status-yes">Yes, I have a disability or have a history/record of having a disability</label>
+
+                </div>
+
+                <span aria-hidden="true" class="hosted-apply__field__error">Please select disability status</span>
+
+              </div>
+
+            </fieldset>
+
+            <h3>Public Burden Statement</h3>
+
+            <p>According to the Paperwork Reduction Act of 1995 no persons are required to respond to a collection of information unless such collection displays a valid OMB control number. This survey should take about 5 minutes to complete.</p>
+
+          </div>
+
+        </fieldset>
+
+      </fieldset>
+
+      <div class="hosted-apply__section__buttons">
+
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-voluntary-disclosure" type="button">Back</button>
+
+        <button class="hosted-apply__button hosted-apply__button--next" data-form-target="ha-review" type="button">Next</button>
+
+      </div>
+
+    </section>
+
+    <section aria-labelledby="hdr-ha-review" class="hosted-apply__section active" id="ha-review">
+
+      <h2 class="hosted-apply__section__heading" id="hdr-ha-review">Review</h2>
+
+      <section class="hosted-apply__group">
+
+        <h2 class="hosted-apply__section__heading">My Information</h2>
+
+        <section>
+
+          <h3>General</h3>
+
+          <h4>How did you hear about us?</h4>
+
+          <p class="hosted-apply__answer">Career Builder</p>
+
+          <h4>Have you previously worked for this organization? If Yes, please answer the questions below. If No, please continue to the next page.</h4>
+
+          <p class="hosted-apply__answer">No</p>
+
+          <h4>Country</h4>
+
+          <p class="hosted-apply__answer">United States of America</p>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Legal Name</h3>
+
+          <h4>First Name</h4>
+
+          <p class="hosted-apply__answer">Hugo</p>
+
+          <h4>Last Name</h4>
+
+          <p class="hosted-apply__answer">Plasternaff</p>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Address</h3>
+
+          <h4>Address Line 1</h4>
+
+          <p class="hosted-apply__answer">1234 Flatbush Avenue</p>
+
+          <h4>City</h4>
+
+          <p class="hosted-apply__answer">Brooklyn</p>
+
+          <h4>State</h4>
+
+          <p class="hosted-apply__answer">New York</p>
+
+          <h4>Postal Code</h4>
+
+          <p class="hosted-apply__answer">11226</p>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Email Address</h3>
+
+          <h4>Email</h4>
+
+          <p class="hosted-apply__answer">hugo.plasternaff@domino.com</p>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Phone</h3>
+
+          <h4>Phone Device Type</h4>
+
+          <p class="hosted-apply__answer">Mobile</p>
+
+          <h4>Country Phone Code</h4>
+
+          <p class="hosted-apply__answer">United States of America (+1)</p>
+
+          <h4>Phone Number</h4>
+
+          <p class="hosted-apply__answer">1234567890</p>
+
+        </section>
+
+      </section>
+
+      <section class="hosted-apply__group">
+
+        <h2 class="hosted-apply__section__heading">My Experience</h2>
+
+        <section class="hosted-apply__group">
+
+          <h3>Work Experience</h3>
+
+          <section class="hosted-apply__group">
+
+            <h3>Work Experience 1</h3>
+
+            <h4>Job Title</h4>
+
+            <p class="hosted-apply__answer">Director of Operations</p>
+
+            <h4>Company</h4>
+
+            <p class="hosted-apply__answer">Domino Sugar Factory</p>
+
+            <h4>From</h4>
+
+            <p class="hosted-apply__answer">2022-10-03</p>
+
+            <h4>To</h4>
+
+            <p class="hosted-apply__answer">2022-10-07</p>
+
+          </section>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Education</h3>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Certifications/Licenses</h3>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Language</h3>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Skills</h3>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Websites</h3>
+
+          <p class="hosted-apply__answer"><a href="https://accessibilityassociation.org/s/certification" target="_blank">https://accessibilityassociation.org/s/certification <span class="visually-hidden">(opens in new window)</span></a></p>
+
+          <p class="hosted-apply__answer"><a href="https://radancy.com" target="_blank">https://radancy.com <span class="visually-hidden">(opens in new window)</span></a></p>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Social Network URLs</h3>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Resume</h3>
+
+          <h4>Resume/CV</h4>
+
+          <p class="hosted-apply__answer">hugo-plasternaff-resume.docx</p>
+
+        </section>
+
+      </section>
+
+      <section class="hosted-apply__group">
+
+        <h2 class="hosted-apply__section__heading">Voluntary Disclosure</h2>
+
+        <section class="hosted-apply__group">
+
+          <h3>Personal Data Statement</h3>
+
+          <h4>Please select the veteran status which most accurately describes how you identify yourself.</h4>
+
+          <p class="hosted-apply__answer">I Identify as a Veteran, Just Not a Protected Veteran</p>
+
+          <h4>Please select your gender</h4>
+
+          <p class="hosted-apply__answer">Not Declared</p>
+
+          <h4>Please select the ethnicity which most accurately describes how you identify yourself.</h4>
+
+          <p class="hosted-apply__answer">White (United States of America)</p>
+
+        </section>
+
+        <section class="hosted-apply__group">
+
+          <h3>Terms and Conditions</h3>
+
+          <h4>I willingly accept the Terms and Conditions for submitting an application with GMS.</h4>
+
+          <p class="hosted-apply__answer">Yes</p>
+
+        </section>
+
+      </section>
+
+      <section class="hosted-apply__group">
+
+        <h2 class="hosted-apply__section__heading">Self-Identify</h2>
+
+        <section class="hosted-apply__group">
+
+          <h3>General</h3>
+
+          <h4>Language</h4>
+
+          <p class="hosted-apply__answer">English</p>
+
+          <h4>Name</h4>
+
+          <p class="hosted-apply__answer">Hugo Plasternaff</p>
+
+          <h4>Date</h4>
+
+          <p class="hosted-apply__answer">2022-10-09</p>
+
+          <h4>Please check one of the boxes below</h4>
+
+          <p class="hosted-apply__answer">I Don't Wish To Answer</p>
+
+        </section>
+
+      </section>
+
+      <div class="hosted-apply__section__buttons">
+
+        <button class="hosted-apply__button hosted-apply__button--back" data-form-target="ha-self-identify" type="button">Back</button>
+
+        <button class="hosted-apply__button hosted-apply__button--submit" type="submit">Submit</button>
+
+      </div>
+
+    </section>
+
+    <dialog class="hosted-apply__dialog">
+
+      <h2 class="hosted-apply__dialog__heading">Remove Group</h2>
+
+      <p>Are you sure you want to remove <span class="hosted-apply__dialog__name"></span>?</p>
+
+      <button class="hosted-apply__button hosted-apply__dialog__cancel" type="button">Cancel</button>
+
+      <button class="hosted-apply__button hosted-apply__dialog__remove" type="button">Remove</button>
+
+    </dialog>
+
+  </form>
+
+</div>
+
+{% include notes.html %}
