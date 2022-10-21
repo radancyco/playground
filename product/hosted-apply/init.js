@@ -73,12 +73,14 @@
       let dialog = document.querySelector(".hosted-apply__dialog");
       let groupName = button.getAttribute("aria-label").replace("Delete", "");
       let groupNameToken = dialog.querySelector(".hosted-apply__dialog__name");
+      let groupRemove = dialog.querySelector(".hosted-apply__dialog__remove");
 
       dialog.showModal();
       dialog.setAttribute("data-group-id", button.parentNode.getAttribute("id"));
       dialog.setAttribute("data-group-name", groupName);
 
       groupNameToken.textContent = groupName;
+      groupRemove.focus();
 
     });
 
@@ -133,7 +135,7 @@
 
       let fileName = button.getAttribute("aria-label").replace("Delete ", "");
       let fileDeleteMsg = button.closest(".hosted-apply__uploads").querySelector(".hosted-apply__uploads__msg");
-
+      
       button.closest("li").remove();
 
       fileDeleteMsg.innerHTML="";
