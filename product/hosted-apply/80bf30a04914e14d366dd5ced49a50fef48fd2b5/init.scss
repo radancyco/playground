@@ -107,6 +107,7 @@ width: 1px;
 // Hosted Apply
 
 .hosted-apply {
+counter-reset: steps;
 margin-top: 1em;
 overflow: hidden;
 padding: 8px;
@@ -152,7 +153,6 @@ position: relative;
       height: 1em;
       margin: 0 6px;
       position: relative;
-      vertical-align: text-bottom;
       width: 1em;
       }
 
@@ -259,7 +259,7 @@ position: relative;
 
     // Counters
 
-    // Normally we would use a ::before pseudo-element here, but there is bug in NVDA:
+    // Normally we would use a ::before pseudo-element here, but there is bug in Chromium/NVDA:
     // https://bugs.chromium.org/p/chromium/issues/detail?id=1376668
 
     &__count {
@@ -357,6 +357,30 @@ position: relative;
     &__heading {
     color: $ha-color-primary;
     margin-top: 0;
+
+      &:before {
+      background-color: $ha-color-primary;
+      border-radius: 50%;
+      color: $ha-color-light;
+      content: counter(steps);
+      counter-increment: steps;
+      display: inline-block;
+      font-size: 1rem;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 0.5em;
+      text-align: center;
+      vertical-align: text-bottom;
+      width: 30px;
+
+        @media(min-width: 56em) {
+
+          display: none;
+
+        }
+
+      }
+
     }
 
     &__buttons {
@@ -421,6 +445,11 @@ position: relative;
 
     .hosted-apply__section__heading {
     display: block;
+
+      &:before {
+      display: none;
+      }
+
     }
 
     // Sub Fieldsets. Nested fieldsets are sometimes necessary.
