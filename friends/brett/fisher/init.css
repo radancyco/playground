@@ -42,7 +42,7 @@ display: none;
   display: flex;
   }
 
-  .disclosure-item:not(last-child) {
+  .disclosure-item:not(:last-child) {
   margin-right: 2em;
   }
 
