@@ -25,7 +25,8 @@ border-color: orange;
 
 .disclosure--content {
 display: none;
-border: 0 !important; // overriding radancy.dev styles - you can remove important.
+border: 0 !important; // Overriding radancy.dev styles - you can remove important.
+padding: 0 !important // Same.
 }
 
 .disclosure--btn.open + .disclosure--content, .disclosure--heading.open + .disclosure--content  {
