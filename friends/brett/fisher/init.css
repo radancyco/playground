@@ -19,7 +19,7 @@ text-align: left;
 padding: .5em;
 }
 
-.disclosure--btn:focus, .disclosure--btn:hover {
+.disclosure--btn.open, .disclosure--btn:focus, .disclosure--btn:hover {
 border-color: orange;
 }
 
