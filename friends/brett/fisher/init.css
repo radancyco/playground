@@ -50,7 +50,7 @@ display: none;
   background-color: transparent;
   }
 
-  .desktop-heading, .disclosure--heading + .disclosure-parent, #disclosure-dynamic {
+  .desktop-heading, .disclosure--heading + .disclosure--parent, #disclosure-dynamic {
   display: block;
   }
 
