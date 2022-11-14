@@ -1,4 +1,17 @@
-#hdr-locations {
+
+.section-block {
+background-color: #eee;
+border-radius: 5px;
+margin-bottom: 1em;
+padding: 1em;
+}
+
+.section-block img {
+height: 275px;
+}
+
+.section-heading {
+margin-top: 0;
 text-align: center;
 }
 
@@ -25,7 +38,7 @@ background-color: #000;
 color: orange;
 }
 
-.disclosure--btn.open, .disclosure--btn:focus, .disclosure--btn:hover {
+.disclosure--btn[data-disclosure-dynamic].open, .disclosure--btn[data-disclosure-dynamic]:focus, .disclosure--btn[data-disclosure-dynamic]:hover {
 border-color: orange;
 font-weight: bold;
 }
