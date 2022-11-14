@@ -47,7 +47,7 @@ padding: 0 !important /* Same. */
 display: block;
 }
 
-.desktop-heading, .disclosure--dynamic {
+.desktop-heading, .disclosure--target {
 display: none;
 }
 
@@ -69,7 +69,7 @@ display: none;
   display: none;
   }
 
-  .desktop-heading, .disclosure--heading + .disclosure--parent, .disclosure--dynamic, .desktop-heading + .disclosure--content {
+  .desktop-heading, .disclosure--heading + .disclosure--parent, .disclosure--target, .desktop-heading + .disclosure--content {
   display: block;
   }
 
