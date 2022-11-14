@@ -7,7 +7,7 @@ padding: 1em;
 }
 
 .section-block img {
-height: 275px;
+max-height: 275px;
 margin: 0 auto;
 }
 
@@ -82,9 +82,12 @@ display: none;
   display: flex;
   }
 
+  .disclosure-item {
+  min-width: 220px;
+  }
+
   .disclosure-item:not(:last-child) {
   margin-right: 2em;
-  min-width: 220px;
   }
 
   .disclosure--btn {
