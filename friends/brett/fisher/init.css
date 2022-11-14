@@ -8,6 +8,7 @@ padding: 1em;
 
 .section-block img {
 height: 275px;
+margin: 0 auto;
 }
 
 .section-heading {
@@ -61,6 +62,10 @@ content: "↑";
 border: 0 !important; /* Overriding radancy.dev styles - you can remove important. */
 display: none;
 padding: 0 !important /* Same. */
+}
+
+.disclosure--target {
+padding: 1em;
 }
 
 .disclosure--btn.open + .disclosure--content, .disclosure--heading.open + .disclosure--content  {
