@@ -10,8 +10,8 @@ padding: 0;
 
 .disclosure--btn {
 background-color: orange;
-border-bottom: 5px transparent solid;
 border: 0;
+border-bottom: 5px transparent solid;
 color: #000;
 font: inherit;
 padding: .5em;
@@ -27,6 +27,7 @@ color: orange;
 
 .disclosure--btn.open, .disclosure--btn:focus, .disclosure--btn:hover {
 border-color: orange;
+font-weight: bold;
 }
 
 .disclosure--icon::after {
@@ -65,6 +66,7 @@ display: none;
 
   .disclosure-item:not(:last-child) {
   margin-right: 2em;
+  min-width: 220px;
   }
 
   .disclosure--btn {
