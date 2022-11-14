@@ -10,13 +10,19 @@ padding: 0;
 
 .disclosure--btn {
 background-color: orange;
-border: 0;
 border-bottom: 5px transparent solid;
+border: 0;
 color: #000;
 font: inherit;
 padding: .5em;
+position: relative;
 text-align: left;
 width: 100%;
+}
+
+.disclosure--btn[data-disclosure-dynamic] {
+background-color: #000;
+color: orange;
 }
 
 .disclosure--btn.open, .disclosure--btn:focus, .disclosure--btn:hover {
@@ -63,6 +69,11 @@ display: none;
 
   .disclosure--btn {
   background-color: transparent;
+  }
+
+  .disclosure--btn[data-disclosure-dynamic] {
+  background-color: inherit;
+  color: inherit;
   }
 
   .disclosure--heading, .disclosure--btn.open + .disclosure--content {
