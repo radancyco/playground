@@ -12,7 +12,7 @@ title: "Fisher Investment Locations Section"
 
   <h2 class="section-heading" id="hdr-locations">Locations</h2>
 
-  <div class="disclosure-dynamic">
+  <div class="disclosure-dynamic"> <!-- brett, this is a needed class, be sure it is not removed -->
 
     <div class="disclosure-item">
 
@@ -20,11 +20,13 @@ title: "Fisher Investment Locations Section"
 
       <h3 class="disclosure--heading"><button class="disclosure--btn" data-disclosure-icon>North America</button></h3>
 
+      <!-- we use two headings, one for mobile and one for desktop -->
+
       <div class="disclosure--content disclosure--parent">
 
         <ul>
 
-          <li><button class="disclosure--btn" data-disclosure-dynamic data-disclosure-open>Camas, WA</button>
+          <li><button class="disclosure--btn" data-disclosure-dynamic data-disclosure-open>Camas, WA</button> <!--- data-disclosure-dynamic copies content to another div (disclosure--target) -->
 
             <div class="disclosure--content">
 
@@ -154,7 +156,7 @@ title: "Fisher Investment Locations Section"
 
     <div class="disclosure-item">
 
-      <div class="disclosure--target"></div>
+      <div class="disclosure--target"></div> <!-- div used to accept copied content, shown on desktop only -->
 
     </div><!--/disclosure-item -->
 
