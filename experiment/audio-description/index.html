@@ -1,0 +1,22 @@
+---
+jquery: false
+localcss: init.css
+localjs: init.js
+noindex: true
+title: "Audio Description Test"
+---
+
+<p><strong>Note:</strong> Use <a href="https://radancy.dev/pattern-library/custom-audio-description/">Custom Audio Description</a> instead.</p>
+
+<div id="video-wrapper">
+
+	<video id="video" preload="auto" controls="controls" width="960" height="540" poster="demo.png">
+		<source src="demo.mp4" type="video/mp4">
+		<track kind="captions" label="English" src="demo.vtt" srclang="en" default>
+	</video>
+
+	<audio aria-hidden="true" id="audio" preload="auto">
+		<source src="audio.mp3" type="audio/mp3">
+	</audio>
+
+</div>

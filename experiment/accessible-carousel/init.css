@@ -1,0 +1,139 @@
+@keyframes fade-in{
+
+	0% {
+	opacity:0
+	}
+		
+	100% {
+	opacity:1	
+	}
+		
+}
+
+.hero-banner {
+position: relative;
+border-radius: 5px;
+border: 1px #000 solid;
+margin-bottom: 1em;
+overflow: hidden;
+}
+
+@supports (animation-fill-mode: forwards){
+
+	.hero-banner {
+	animation: fade-in 500ms ease-in forwards;
+	opacity: 0;
+	}
+
+}
+
+@media(min-width: 778px){
+
+	.hero-banner {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	}
+
+}
+
+.hero-content.hidden {
+display: none;
+}
+
+.hero-content > img, .hero-content > picture {
+display: block;
+}
+
+.hero-content > div {
+background-color: #eee;
+padding: 1em 4em 3em;
+}
+
+.hero-banner-nav {
+bottom: 1.5em;
+position: absolute;
+width: 100%;
+z-index: 20;
+}
+
+.hero-banner-nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+
+.hero-banner-nav li {
+display: inline-block;
+margin: 0 0.5em;
+}
+
+.hero-banner-nav button {
+background-color: #fff;
+border-radius: 50%;
+border: 3px #fff solid;
+height: 20px;
+overflow: hidden;
+text-indent: -999em;
+width: 20px;
+}
+
+.hero-banner-nav button:focus, .hero-banner-nav button:hover, .hero-banner-nav button.selected {
+background-color: red;
+}
+
+.hero-button-left {
+left: -3em;
+}
+
+.hero-banner:hover .hero-button-left {
+left: 0.5em;
+}
+
+.hero-button-right {
+right: -3em;
+}
+
+.hero-button-right::after {
+transform: rotate(180deg);
+}
+
+.hero-banner:hover .hero-button-right {
+right: 0.5em;
+}
+
+.hero-banner:hover .hero-button-left, .hero-banner:hover .hero-button-right {
+opacity: 1;
+}
+
+.hero-button-left, .hero-button-right {
+background-color: transparent;
+border: 0;
+height: 45px;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+text-indent: -999em;
+top: 50%;
+transform: translate(0, -50%);
+transition: all 150ms linear;
+width: 45px;
+}
+
+.hero-button-left::after, .hero-button-right::after {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='40' viewBox='2.496 -3.288 24 38.576'%3E%3Cpath fill='%23cc0000' d='M3.545 13.221L18.994-2.227a3.655 3.655 0 0 1 5.15 0l1.29 1.29a3.651 3.651 0 0 1 0 5.147L13.645 16l11.79 11.788a3.652 3.652 0 0 1 0 5.148l-1.29 1.289a3.65 3.65 0 0 1-5.15 0L3.545 18.776c-.761-.758-1.098-1.777-1.043-2.776a3.622 3.622 0 0 1 1.043-2.779z'/%3E%3C/svg%3E");
+background-position: center;
+background-repeat: no-repeat;
+content: "";
+display: block;
+height: 45px;
+left: 0;
+position: absolute;
+top: 0;
+width: 45px;
+}
+
+.hero-button-left[disabled], .hero-button-right[disabled] {
+opacity: 0.4 !important;
+}

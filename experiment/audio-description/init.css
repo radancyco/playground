@@ -1,0 +1,16 @@
+#video-wrapper {
+overflow: hidden;
+position: relative;
+}
+	
+#pause-button[disabled] {
+opacity: 0.5;
+}
+	
+#pause-button {
+display: block;
+opacity: 1;
+position: absolute;
+right: 1em;
+top: 1em;
+}

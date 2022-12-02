@@ -1,0 +1,19 @@
+---
+localcss: init.css
+localjs: init.js
+noindex: true
+title: "Custom Displayed Audio Descriptions"
+---
+
+<div id="video">
+
+	<video id="video-1" muted autoplay loop playsinline disableremoteplayback>
+		<source src="this-is-cargill.mp4" type="video/mp4">
+		<track kind="descriptions" src="this-is-cargill.vtt">
+	</video>
+
+	<button id="btn-audio" aria-label="Audio Description"><img src="btn-audio.png" alt=""></button>
+
+	<div id="track-display" aria-live="polite"></div> 
+
+</div>
