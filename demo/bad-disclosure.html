@@ -1,0 +1,97 @@
+---
+localcss: https://radancy.dev/pattern-library/disclosure/init.css 
+localjs: https://radancy.dev/pattern-library/disclosure/init.js
+noindex: true
+title: "Bad: Overriding Disclosures"
+---
+
+<style>
+
+.disclosure-demo, .disclosure--content ul {
+list-style: none;
+padding: 0;
+}
+
+@media(min-width: 780px) {
+
+    .disclosure-demo {
+    display: flex;
+    }
+
+    .disclosure-demo li {
+    margin-right: 2em;
+    }
+
+    .disclosure--heading + .disclosure--content {
+    display: block;
+    }
+
+    .disclosure--btn{
+    background-color: transparent;
+    color: #000;
+    padding: 0;
+    }
+
+    .disclosure--content {
+    all: unset !important;
+    }
+
+}
+
+</style>
+
+<ul class="disclosure-demo">
+    
+    <li>
+
+        <h2 class="disclosure--heading"><button class="disclosure--btn">Company</button></h2>
+
+        <div class="disclosure--content">
+
+            <ul>
+                <li><a href="https://corporate.charter.com/about-charter">About Charter</a></li>
+                <li><a href="https://corporate.charter.com/leadership">Leadership</a></li>
+                <li><a href="https://corporate.charter.com/history">History</a></li>
+                <li><a href="https://corporate.charter.com/diversity-inclusion">Diversity & Inclusion</a></li>
+            </ul>
+
+        </div>
+
+    </li>
+    <li>
+
+        <h2 class="disclosure--heading"><button class="disclosure--btn">Newsroom</button></h2>
+
+        <div class="disclosure--content">
+
+            <ul class="expandable-child">
+                <li><a href="https://corporate.charter.com/newsroom">Latest News</a></li>
+                <li><a href="https://corporate.charter.com/media-library/logos">Media Library</a></li>
+                <li><a href="https://corporate.charter.com/media-contacts">Media Contacts</a></li>
+            </ul>
+
+        </div>
+
+    </li>
+    <li>
+
+        <h2 class="disclosure--heading"><button class="disclosure--btn">Investors</button></h2>
+
+        <div class="disclosure--content">
+
+            <ul class="expandable-child">
+                <li><a href="https://ir.charter.com">Investor Home</a></li>
+                <li><a href="https://ir.charter.com/financial-information/quarterly-results">Results &amp; SEC Filings</a></li>
+                <li><a href="https://ir.charter.com/events-and-webcasts/">Events &amp; Webcasts</a></li>
+                <li><a href="https://ir.charter.com/news-releases/">Investor News</a></li>
+                <li><a href="https://ir.charter.com/corporate-governance">Corporate Governance</a></li>
+                <li><a href="https://ir.charter.com/stock-information/stock-quote/">Stock Information</a></li>
+                <li><a href="https://ir.charter.com/investor-resources">Investor Resources</a></li>
+                <li><a href="http://corporate.charter.com/esg-report">ESG Report</a></li>
+            </ul>
+
+        </div>
+
+    </li>
+
+</ul>
