@@ -1,0 +1,737 @@
+/*!
+
+  M&S: Join The Team
+
+  Contributor(s):
+  Laila Aaser, Email: laila.aaser@radancy.com
+  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com
+
+  sass --watch init.scss:init.css --style compressed
+
+*/
+
+.img-fluid {
+max-width: 100%;
+height: auto;
+}
+
+// Home Page
+
+.team-block .team-block-content {
+bottom: 25px;
+display: block;
+left: 50%;
+position: absolute;
+transform: translate(-50%, 0);
+width: 100%;
+
+    @media (max-width: 767px) { 
+
+    bottom: 0; 
+    left: 0; 
+    position: relative; 
+    transform: unset; 
+
+    }
+
+}
+
+.team-block {
+//background: radial-gradient(circle, rgba(106,106,106,1) 30%, rgb(45 45 45) 66%);
+background-color: #3c3c3c;
+border-radius: 24px;
+border: 0;
+//box-shadow: 0px 0px 20px -4px rgb(0 0 0 / 40%);
+cursor: pointer;
+height: 259px;
+margin: 0 0 30px;
+position: relative;
+width: 168px;
+z-index: 1;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    margin: 0 10px 20px; height: 100%;
+
+    }
+
+    @media (max-width: 767px) {
+
+    border-radius: 12px; 
+    display: flex; 
+    height: 100%; 
+    margin: 0 auto 10px; 
+
+    }
+
+    &[aria-expanded="true"] + .programmes-section {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+    
+    @media (prefers-reduced-motion: no-preference) {
+    
+        transition: visibility 0s linear 0s, opacity 900ms, left 600ms;
+        
+    }
+    
+    }
+
+    &:focus {
+    outline-offset: 4px;  
+    }
+
+    &::after {
+    background-image: url(https://tbcdn.talentbrew.com/company/1729/v2/img/join-the-team/splat.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    @media (max-width: 767px) {
+    
+    display: none;
+    
+    }
+
+    }
+
+    img {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+
+    @media (max-width: 767px) {
+    display: none;
+    }
+
+    }
+
+    .team-block-heading {
+    color: #fff;
+    display: block;
+    // font-family: $font-family-regular;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+        font-size: 16px; 
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        font-size: 16px; 
+        height: 100%;
+
+    }
+
+    @media (max-width: 767px) {
+
+        font-size: 12px; 
+        height: 100%; 
+        line-height: 14px; 
+        text-align: left;
+
+    }
+
+    }
+
+    .team-block-explore {
+    color: #cbe403;
+    display: block;
+    font-family: "Better Times",Times New Roman,Times,serif;
+    font-size: 20px;
+    line-height: 16px;
+    margin: 0;
+    text-align: center;
+
+    @media (max-width: 767px) {
+
+        display: none;
+
+    }
+
+    }
+
+    .lime-green-arrow {
+    display: block;
+    text-decoration: none;	
+
+    @media (max-width: 767px) {
+
+        align-items: center; 
+        display: flex; 
+        justify-content: space-between; 
+        padding: 20px;
+        width: 100%; 
+
+    }
+
+    }
+
+}
+
+.team-main {
+align-items: center;
+display: flex;
+justify-content: center;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    flex-direction: column;
+
+    }
+
+    @media (max-width: 767px) {
+
+    flex-direction: column; 
+    padding: 0 20px;
+
+    }
+
+}
+
+.team-section .program-block {
+background-color: #454444;
+border: none;
+list-style: none;
+
+    @media (min-width: 1400px) and (max-width: 1499px) {
+
+    width: 200px; padding: 28px 10px;
+
+    }
+
+    @media (min-width: 1300px) and (max-width: 1399px) {
+
+    width: 200px; padding: 28px 10px;
+
+    }
+
+    @media (min-width: 1200px) and (max-width: 1299px) {
+
+    width: 200px; padding: 28px 10px;
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+    width: 160px; padding: 12px 10px;
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    width: 160px; padding: 12px 10px; margin: 30px 15px 0;
+
+    }
+
+    @media (max-width: 767px) {
+
+    border-radius: 12px; 
+    margin: 0 auto 20px; 
+    max-width: 100%; 
+    padding: 5px 20px; 
+
+    }
+
+    &:last-child {
+    margin: 0;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        margin: 30px 15px 0;
+
+    }
+
+    @media (max-width: 767px) {
+
+        margin: 0 auto;
+
+    }
+
+    }
+
+    .team-block-heading {
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+        font-size: 18px; line-height: 24px; 
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        font-size: 18px; line-height: 24px; 
+
+    }
+
+    @media (max-width: 767px) {
+
+        font-size: 18px; line-height: 24px; 
+
+    }
+
+    }
+
+    a {
+
+    @media (max-width: 767px) {
+
+        align-items: center; 
+        display: flex; 
+        flex-direction: row-reverse;
+        justify-content: flex-end; 
+
+    }
+
+    }
+
+    .icon {
+
+    @media (max-width: 767px) {
+
+        display: block;
+
+    }
+
+    }
+
+}
+
+.team-main .team-section {
+padding: 0 15px;
+
+    @media (min-width: 1300px) and (max-width: 1399px) {
+
+    padding: 0 12px;
+
+    }
+
+    @media (min-width: 1200px) and (max-width: 1299px) {
+
+    padding: 0 12px;
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+    padding: 0 12px;
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    padding: 0 12px; display: flex;
+
+    }
+
+    @media (max-width: 767px) {
+
+    padding: 0; width: 100%;
+
+    }
+
+}
+
+.team-main .team-section .team-block:last-child {
+margin: 0;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    margin: 0px 10px 20px;
+
+    }
+
+    @media (max-width: 767px) {
+
+    margin: 0px auto 10px;
+
+    }
+
+}
+
+.team-container {
+margin: 0 auto;
+max-width: 1200px;
+
+    @media (min-width: 1200px) and (max-width: 1299px) {
+
+    max-width: 1100px;
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+    max-width: 970px;
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    max-width: 90%;
+
+    }
+
+    @media (max-width: 767px) {
+
+    max-width: 90%;
+
+    }
+
+}
+
+.team-wrap {
+padding: 50px 0;
+}
+
+.video-play-btn {
+align-items: center;
+border-radius: 50%;
+border: 2px solid #000;
+bottom: 0;
+cursor: pointer;
+display: flex;
+height: 30px;
+justify-content: center;
+position: absolute;
+right: -20px;
+width: 30px;
+    
+    &:focus {
+    outline-offset: 4px;
+    }
+
+    @media (max-width: 767px) {
+
+    right: -10px; 
+    // display: none;
+    // This button must be included on mobile as well! Thx! Spell
+
+    }
+
+    .play_btn {
+    display: none;
+    }
+
+    img {
+    width: 15px;
+    margin: 0 0 0 2px;
+    }
+
+}
+
+.team-section .video {
+align-items: flex-end;
+display: flex;
+padding: 0 10px 0 0;
+position: relative;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    margin: 0 0 30px;
+
+    }
+
+    @media (max-width: 767px) {
+
+    margin: 0 0 30px; padding: 0; justify-content: center;
+
+    }
+
+    video {
+    border-radius: 44px;
+    //box-shadow: 0px 0px 20px -4px rgb(0 0 0 / 40%);
+    height: 530px;
+    width: auto;
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+
+        height: 500px;
+
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+        height: 420px;
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        height: 420px;
+
+    }
+
+    @media (max-width: 767px) {
+
+        height: 420px; 
+        border-radius: 24px; 
+
+    }
+
+    }
+
+}
+
+.video-play-btn.pause_icon .play_btn {
+display: block;
+}
+
+.video-play-btn .pause_btn {
+margin: 0;
+width: 18px;
+}
+
+.video-play-btn.pause_icon .pause_btn {
+display: none;
+}
+
+.team-section .team-block .lime-green-arrow {
+display: none;
+
+    @media (max-width: 767px) {
+
+    display: block; 
+
+    }
+
+    &::after {
+    background-image: url(https://tbcdn.talentbrew.com/company/1729/v2/img/join-the-team/lime-green-arrow.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    height: 14px;
+    margin-left: 1px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 17px;
+
+    @media (max-width: 767px) {
+
+        right: 20px; 
+
+    } 
+
+    }
+
+}
+
+.join-team-wrap {
+margin: 0 auto;
+max-width: 730px;
+padding: 40px 0 0;
+text-align: center;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    max-width: 630px;
+
+    }
+
+    @media (max-width: 767px) {
+
+    max-width: 630px; 
+    padding: 10px 0 35px;
+
+    }
+
+    p {
+    color: #005641;
+    // font-family: $font-family-regular;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    line-height: 20px;
+    margin: 0;
+    }
+
+    .section-title {
+    color: #005641;
+    // font-family: $font-family-regular;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 10px;
+
+    @media (max-width: 767px) {
+
+        font-size: 24px;
+        padding: 0 0 15px;
+
+    }
+
+    }
+
+}
+
+.mobile {
+display: none;
+
+    @media (max-width: 767px) {
+
+    display: block;
+
+    }
+
+}
+
+.desktop {
+
+    @media (max-width: 767px) {
+
+    display: none;
+
+    }
+
+}
+
+/* Video end */
+
+@media (min-width: 768px) and (max-width: 991px) { 
+
+    .order-md-1 {order: 1;}
+
+    .order-md-2 {order: 2;}
+
+    .order-md-3 {order: 3;}
+
+    .order-md-4 {order: 4;}
+
+    .order-md-5 {order: 5;}
+
+    .order-md-6 {order: 6;}
+
+}
+
+@media (max-width: 767px) {
+
+    .order-md-1 {order: 1;}
+
+    .order-md-2 {order: 2;}
+
+    .order-md-3 {order: 3;}
+
+    .order-md-4 {order: 4;}
+
+    .order-md-5 {order: 5;}
+
+    .order-md-6 {order: 6;}
+
+    .video_program_block.team-section {
+    border-top: 5px solid #bfd909; 
+    margin: 30px 0 0;
+    padding: 40px 0 0; 
+    }
+
+}
+
+/* #content {
+margin-top: 190px;
+
+    @media (min-width: 768px) {
+
+    margin-top: 200px;
+
+    }
+
+} */
+
+.banner-notice {
+height: 10vh;
+
+    @media (min-width: 768px) {
+
+    height: auto;
+
+    }
+
+}
+
+// Hide all the things. 
+
+.team-block, .video, .video_program_block, .join-team-wrap {
+    visibility: visible;
+    opacity: 1;
+    
+    @media (prefers-reduced-motion: no-preference) {
+    
+        transition: visibility 0s linear 0s, opacity 600ms;
+    
+    }
+    
+    .active & {
+    opacity: 0;
+    visibility: hidden;
+    
+    // TODO: On mobile (and maybe desktop), setting visibility still takes up space, so may need to position hidden elements absolutely or use min-height. Ask Laila. 
+    
+    // position: absolute;
+    
+    //@media (min-width: 991px) {
+
+        //position: static;
+
+    // }
+    
+    }
+    
+}
+
+// Disclosure
+
+.programmes-section {
+background-color: #ccc;
+border-radius: 10px;
+border: 1px solid #000;
+left: 0;
+margin: 1em;
+max-width: 1400px;
+opacity: 0;
+padding: 1em;
+position: absolute;
+top: 0;
+right: 0;
+left: 800px;
+visibility: hidden;
+z-index: 2;
+    
+    &:focus {
+    outline-offset: 6px;
+    }
+    
+    @media (min-width: 991px) {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    }
+    
+    .back-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: .5em;
+    
+    &::before {
+    content: "\27F5";
+    margin-right: .5em;
+    }
+    
+    }
+    
+}
