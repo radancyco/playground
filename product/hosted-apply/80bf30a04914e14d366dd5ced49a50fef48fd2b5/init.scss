@@ -750,11 +750,7 @@ position: relative;
     &::after {
     content: "\f00c";
     font-family: "FontAwesome";
-    margin: auto 0;
-    position: absolute;
-    right: .5em;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-inline-start: .5em;
     }
 
   }
