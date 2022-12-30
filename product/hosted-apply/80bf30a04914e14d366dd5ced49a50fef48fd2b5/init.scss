@@ -471,8 +471,8 @@ position: relative;
     border: 2px $ha-color-primary solid;
     height: 40px;
     position: absolute;
-    right: 1.2em;
-    top: 1em;
+    inset-inline-end: 1.2em;
+    inset-block-start: 1em;
     width: 40px;
 
       &::before {
@@ -670,7 +670,8 @@ position: relative;
           display: flex;
           font-family: "FontAwesome";
           justify-content: center;
-          margin: 0 1em 1em 0;
+          margin-block: 0 1em;
+          margin-inline: 0 1em;
           padding: 2em;
 
         }
@@ -782,21 +783,22 @@ position: relative;
     border: 0;
     color: inherit;
     display: flex;
-    margin: 0 1em 1em 0;
+    margin-block: 0 1em;
+    margin-inline: 0 1em;
     min-width: 140px;
     padding: .8em .8em .8em 1em;
     position: relative;
     text-align: left;
 
       span {
-      margin-right: .5em;
+      margin-inline-end: .5em;
       }
 
       &::after {
       content: "\f057";
       font-family: "FontAwesome";
       font-size: 1.5rem;
-      margin-left: auto;
+      margin-inline-start: auto;
       }
 
     }
