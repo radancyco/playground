@@ -153,6 +153,7 @@ position: relative;
       height: 1em;
       margin: 0 6px;
       position: relative;
+      vertical-align: middle;
       width: 1em;
       }
 
@@ -277,12 +278,12 @@ position: relative;
 
     // Checkmark/Edit Icon
 
-    &::after {
+    &::before {
     font-family: "FontAwesome";
     font-size: 1.8rem;
-    margin-left: 12px;
+    margin-inline-start: 12px;
     position: absolute;
-    top: 12px;
+    inset-block-start: 12px;
     -webkit-text-stroke: 1px $ha-color-light;
     }
 
@@ -300,7 +301,7 @@ position: relative;
       background-color: $ha-color-complete;
       }
 
-      &::after {
+      &::before {
       content: "\f00c";
       color: $ha-color-complete;
       }
@@ -315,7 +316,7 @@ position: relative;
       background-color: $ha-color-primary;
       }
 
-      &::after {
+      &::before {
       content: "\f040";
       color: $ha-color-primary;
       }
