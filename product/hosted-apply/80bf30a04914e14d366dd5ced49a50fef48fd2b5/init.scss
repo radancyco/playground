@@ -360,6 +360,7 @@ position: relative;
     // Primary Section Heading (should be an h2)
 
     &__heading {
+    align-items: center;
     color: $ha-color-primary;
     display: flex;
     margin-top: 0;
@@ -377,7 +378,6 @@ position: relative;
       line-height: 2.5rem;
       margin-inline-end: 0.5em;
       text-align: center;
-      vertical-align: middle;
       width: 2.5rem;
 
         @media(min-width: 56em) {
