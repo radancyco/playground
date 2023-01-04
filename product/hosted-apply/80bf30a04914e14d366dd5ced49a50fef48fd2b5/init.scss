@@ -233,7 +233,6 @@ position: relative;
   border: 0;
   font: inherit;
   padding: 1em 0;
-  position: relative;
   text-align: center;
   text-decoration: none;
   width: 100%;
@@ -271,20 +270,23 @@ position: relative;
     display: flex;
     font-weight: 700;
     height: 50px;
+    position: relative;
     justify-content: center;
     margin: 0 auto;
     width: 50px;
-    }
+      
+      // Checkmark/Edit Icon
 
-    // Checkmark/Edit Icon
+      &::after {
+      font-family: "FontAwesome";
+      font-size: 1.6rem;
+      font-weight: normal;
+      position: absolute;
+      top: 0;
+      right: -8px;
+      -webkit-text-stroke: 1px $ha-color-light;
+      }
 
-    &::before {
-    font-family: "FontAwesome";
-    font-size: 1.8rem;
-    margin-inline-start: 12px;
-    position: absolute;
-    inset-block-start: 12px;
-    -webkit-text-stroke: 1px $ha-color-light;
     }
 
     // Current and Completed State
@@ -299,12 +301,15 @@ position: relative;
 
       .hosted-apply__step__count {
       background-color: $ha-color-complete;
+
+        &::after {
+        content: "\f00c";
+        color: $ha-color-complete;
+        }
+
       }
 
-      &::before {
-      content: "\f00c";
-      color: $ha-color-complete;
-      }
+ 
 
     }
 
@@ -314,11 +319,12 @@ position: relative;
 
       .hosted-apply__step__count {
       background-color: $ha-color-primary;
-      }
 
-      &::before {
-      content: "\f040";
-      color: $ha-color-primary;
+        &::after {
+        content: "\f040";
+        color: $ha-color-primary;
+        }
+
       }
 
     }
