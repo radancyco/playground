@@ -192,7 +192,7 @@ position: relative;
   &__back {
   margin: 0 1em 1em;
   padding: 0;
-  text-align: right;
+  text-align: end;
   }
 
   // Progress Bar
@@ -427,15 +427,9 @@ position: relative;
 
     // Delete
 
-    .delete {
+    &.delete {
     opacity: 0;
-
-      @media (prefers-reduced-motion: no-preference) {
-
-        transition: opacity 250ms linear
-    
-      }
-
+    transition: opacity 250ms linear
     }
 
     // Legend
@@ -808,7 +802,7 @@ position: relative;
     min-width: 140px;
     padding: .8em .8em .8em 1em;
     position: relative;
-    text-align: left;
+    text-align: start;
 
       span {
       margin-inline-end: .5em;
