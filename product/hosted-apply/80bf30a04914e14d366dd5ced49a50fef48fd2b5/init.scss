@@ -181,6 +181,22 @@ position: relative;
     background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4));
     }
 
+    // TODO: Messages can be globally shared style
+
+    &__msg {
+    color: $ha-color-complete;
+  
+      &:empty {
+      display: none;
+      }
+  
+      &::after {
+      content: " \f00c";
+      font-family: "FontAwesome";
+      }
+  
+    }
+
   }
 
   &__primary-heading {
@@ -719,6 +735,10 @@ position: relative;
     &__success {
     color: $ha-color-complete;
 
+      &:empty {
+      display: none;
+      }
+
       &::after {
       content: " \f00c";
       font-family: "FontAwesome";
@@ -747,6 +767,22 @@ position: relative;
         font-family: "FontAwesome";
         font-size: 1.2rem;
 
+      }
+
+    }
+
+    // TODO: Messages can be globally shared style
+
+    &__msg {
+    color: $ha-color-complete;
+
+      &:empty {
+      display: none;
+      }
+
+      &::after {
+      content: " \f00c";
+      font-family: "FontAwesome";
       }
 
     }
@@ -815,6 +851,22 @@ position: relative;
       margin-inline-start: auto;
       }
 
+    }
+
+    // TODO: Messages can be globally shared style
+
+    &__msg {
+    color: $ha-color-complete;
+      
+      &:empty {
+      display: none;
+      }
+      
+      &::after {
+      content: " \f00c";
+      font-family: "FontAwesome";
+      }
+      
     }
 
   }
