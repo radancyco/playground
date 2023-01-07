@@ -112,14 +112,15 @@
       let targetMsg = targetSection.parentNode.querySelector(".hosted-apply__dialog__msg");
 
       dialog.close();
-      targetSection.remove();
+      targetSection.classList.add("delete");
       targetMsg.innerHTML="";
 
       setTimeout(function(){
 
+        targetSection.remove();
         targetMsg.textContent = targetSectionName + " has been removed.";
 
-      }, 100);
+      }, 500);
 
     });
 

@@ -158,7 +158,7 @@ flex-wrap: wrap;
 
     &__button, .inline-button {
     background-color: #fff;
-    border-radius: 25px;
+    border-radius: 2rem;
     border: 2px solid #eaeaea;
     color: #C73F23;
     cursor: pointer;
@@ -188,7 +188,7 @@ flex-wrap: wrap;
       display: inline-block;
       font-family: 'FontAwesome';
       font-size: 24px;
-      margin-left: 6px;
+      margin-inline-start: 6px;
       vertical-align: middle;
       }
 
@@ -239,17 +239,18 @@ flex-wrap: wrap;
       }
 
       .content {
-      padding: 1em 0 0 0;
+      padding-block-start: 1em;
 
         @media (min-width: 800px) {
 
-          padding: 0 0 0 3em;
+          padding-block-start: 0;
+          padding-inline-start: 3em;
 
         }
 
         @media (min-width: 1201px) {
 
-          padding: 0 0 0 4em;
+          padding-inline-start: 4em;
 
         }
 
@@ -298,7 +299,7 @@ flex-wrap: wrap;
     height: 40px !important;
     padding: 0 !important;
     position: absolute !important;
-    right: 0;
+    inset-inline-end: 0;
     top: 0;
     width: 40px;
 

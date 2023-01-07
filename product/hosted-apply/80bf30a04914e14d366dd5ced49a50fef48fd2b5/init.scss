@@ -425,6 +425,19 @@ position: relative;
   padding: 1em;
   position: relative;
 
+    // Delete
+
+    .delete {
+    opacity: 0;
+
+      @media (prefers-reduced-motion: no-preference) {
+
+        transition: opacity 250ms linear
+    
+      }
+
+    }
+
     // Legend
 
     // The "Faux" legend. The reason we accessibly hide the legend element and duplicate via div, is purely for styling purposes.
