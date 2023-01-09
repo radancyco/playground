@@ -1,0 +1,33 @@
+---
+localcss: "fancybox.css"
+localjs: "fancybox.js"
+title: "Fancybox: Inline Content Example "
+---
+
+<h2>Basic</h2>
+
+<button class="btn" data-fancybox data-src="#my-video">Show Video</button>
+
+<div id="my-video" style="display: none;">
+
+  <video aria-label="The Empire Strikes Back: Trailer A" controls crossorigin poster="https://radancy.dev/media/the-empire-strikes-back-trailer.png" preload="metadata">
+    <source src="https://radancy.dev/media/the-empire-strikes-back-trailer.mp4" type="video/mp4">
+    <track default kind="captions" src="https://radancy.dev/media/the-empire-strikes-back-trailer.vtt" srclang="en">
+  </video>
+
+</div>
+
+<h2>Code</h2>
+
+<pre dir="ltr"><code>&lt;button class="btn" <strong>data-fancybox data-src="#my-video"</strong>&gt;Show Video&lt;/button&gt;
+
+  &lt;div <strong>id="my-video" style="display: none;</strong>"&gt;
+  
+    &lt;video <strong>aria-label="The Empire Strikes Back: Trailer A"</strong> controls crossorigin poster="https://radancy.dev/media/the-empire-strikes-back-trailer.png" preload="metadata"&gt;
+      &lt;source src="https://radancy.dev/media/the-empire-strikes-back-trailer.mp4" type="video/mp4"&gt;
+      &lt;track <strong>default</strong> kind="captions" src="https://radancy.dev/media/the-empire-strikes-back-trailer.vtt" srclang="en"&gt;
+    &lt;/video&gt;
+  
+  &lt;/div&gt;</code></pre>
+
+  <p><strong>Note:</strong>As a more inclusive by default measure, consider having captions immediately display when video loads. Talk team into keeping captions on by default. Video should also include a relevant description.</p>
