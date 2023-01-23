@@ -189,4 +189,161 @@
 
   }
 
+  // Hack: Show section based on URL parameters 
+
+  url = new URL(window.location.href);
+
+  if (url.searchParams.has("step")) {
+
+    let step = url.searchParams.get("step");
+
+    document.getElementById(step).click();
+
+    if (url.searchParams.has("group")) {
+
+      let group = url.searchParams.get("group");
+
+      setTimeout(() => {
+
+        let groupID = document.getElementById(group);
+
+        groupID.setAttribute("tabindex", "-1");
+        groupID.focus();
+
+      }, "1000");
+
+    }
+  
+  }
+
+  // Validation Example
+
+  /* var $validation_error = document.createElement('strong');
+
+  $validation_error.className = 'form-validation-error';
+
+  function resetValidation( $field, $parent ) {
+
+    $field.removeAttribute('aria-invalid');
+    $field.removeAttribute('aria-errormessage');
+
+    $parent.querySelectorAll('.' + $validation_error.className).forEach(function($el) {
+
+      $parent.removeChild($el);
+
+    });
+
+  }
+
+  function isValid( $field, refocus ) {
+
+    refocus = refocus || false;
+
+    var validity = $field.validity, 
+    $parent = $field.parentNode, 
+    $message = false, 
+    message = '', 
+    message_id = $field.id + '-validation-error';
+
+    resetValidation( $field, $parent );
+
+    if ( validity.valid ) {
+
+      return true;
+
+    }
+
+    $message = $validation_error.cloneNode(true);
+
+    $message.id = message_id;
+
+    if ( $field.validity.valueMissing ) {
+
+      message = $field.dataset.errorRequired || 'You forgot to fill in this field';
+
+    } else {
+
+      message = $field.dataset.errorInvalid || 'The value you submitted doesn’t look right';
+
+    }
+
+    $message.innerHTML = message;
+
+    if ( $field.nextElementSibling ) {
+
+      $parent.insertBefore($message, $field.nextElementSibling);
+
+    } else {
+
+      $parent.appendChild($message);
+
+    }
+
+    $field.setAttribute('aria-errormessage', message_id);
+    $field.setAttribute('aria-invalid', 'true');
+
+    if (refocus) {
+
+      $field.focus();
+
+    }
+
+    return false;
+
+  }
+
+  function validateMe( e ) {
+
+    var $form = e.target, 
+    i = 0, 
+    field_count = $form.elements.length, 
+    $first_error = false;
+
+    for ( i; i< field_count; i++) {
+
+      var $field = $form.elements[i], 
+      valid = isValid($field);
+
+      if ( !$first_error && !valid ) {
+        
+        $first_error = $field;
+
+      }
+
+    }
+
+    if ( $first_error ){
+
+      e.preventDefault();
+
+      $first_error.focus();    
+
+    }
+
+  }
+
+  var $forms = document.querySelectorAll('form');
+
+  $forms.forEach(function($form){
+
+    $form.setAttribute('novalidate','');
+
+    $form.addEventListener('submit', validateMe, false);
+
+    var field_count = $form.elements.length;
+
+    while (field_count--) {
+
+      $form.elements[field_count].addEventListener('change', function(e){
+
+        isValid(e.target, true);
+
+      }, false)
+
+    }
+
+  }); */
+
+  // End Validation Example
+
 })();
