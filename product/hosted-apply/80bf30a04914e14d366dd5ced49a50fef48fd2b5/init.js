@@ -197,7 +197,7 @@
 
     let step = url.searchParams.get("step");
 
-    document.getElementById(step).click();
+    document.getElementById("btn-" + step).click();
 
     if (url.searchParams.has("group")) {
 
