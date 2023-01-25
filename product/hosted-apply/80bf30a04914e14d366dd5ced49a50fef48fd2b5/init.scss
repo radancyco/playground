@@ -243,10 +243,6 @@ position: relative;
   padding: 0;
   width: 100%;
 
-    &:focus-visible {
-    outline: 2px black solid;
-    }
-
     &[disabled] {
     color: $ha-color-neutral-highlight;
     }
