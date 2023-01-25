@@ -1,0 +1,53 @@
+---
+folder: product/hosted-apply/80bf30a04914e14d366dd5ced49a50fef48fd2b5
+jquery: false
+heading: false
+localcss: "../init.css"
+localjs: "../init.js"
+localissues: false
+title: "Stepper Behavior"
+---
+
+<div class="hosted-apply">
+
+  <h1 class="hosted-apply__primary-heading">{{ page.title }}</h1>
+
+  <h2>Stepper: Initial State</h2>
+
+  <p>First section is being edited. No other step should accessible to keyboard or mouse until previous step has been completed.</p>
+
+  <nav aria-label="Job Application Steps" class="hosted-apply__progress">
+
+    <ol role="list">
+      <li><button aria-pressed="true" class="hosted-apply__step" data-form-target="ha-my-information" id="btn-ha-my-information"><span class="hosted-apply__step__count">1</span> <span class="hosted-apply__step__label">My Information</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-my-experience" disabled id="btn-ha-my-experience"><span class="hosted-apply__step__count">2</span> <span class="hosted-apply__step__label">My Experience</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-voluntary-disclosure" disabled id="btn-ha-voluntary-disclosure"><span class="hosted-apply__step__count">3</span> <span class="hosted-apply__step__label">Voluntary Disclosure</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-self-identify" disabled id="btn-ha-self-identify"><span class="hosted-apply__step__count">4</span> <span class="hosted-apply__step__label">Self-Identify</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-review" disabled id="btn-ha-review"><span class="hosted-apply__step__count">5</span> <span class="hosted-apply__step__label">Review</span></button></li>
+    </ol>
+
+    <div hidden id="hosted-apply-status-completed">Completed</div>
+
+  </nav>
+
+  <h2>Stepper: Subsequent States</h2>
+
+  <p>Second section is being edited after first section has completed. Again note that no other steps should be accessible to mouse or keybaord until previous step has been completed.</p>
+
+  <nav aria-label="Job Application Steps" class="hosted-apply__progress">
+
+    <ol role="list">
+      <li><button aria-pressed="false" aria-describedby="hosted-apply-status-completed" class="hosted-apply__step hosted-apply__step--complete" data-form-target="ha-my-information" id="btn-ha-my-information"><span class="hosted-apply__step__count">1</span> <span class="hosted-apply__step__label">My Information</span></button></li>
+      <li><button aria-pressed="true" class="hosted-apply__step" data-form-target="ha-my-experience" id="btn-ha-my-experience"><span class="hosted-apply__step__count">2</span> <span class="hosted-apply__step__label">My Experience</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-voluntary-disclosure" disabled id="btn-ha-voluntary-disclosure"><span class="hosted-apply__step__count">3</span> <span class="hosted-apply__step__label">Voluntary Disclosure</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-self-identify" disabled id="btn-ha-self-identify"><span class="hosted-apply__step__count">4</span> <span class="hosted-apply__step__label">Self-Identify</span></button></li>
+      <li><button aria-pressed="false" class="hosted-apply__step" data-form-target="ha-review" disabled id="btn-ha-review"><span class="hosted-apply__step__count">5</span> <span class="hosted-apply__step__label">Review</span></button></li>
+    </ol>
+
+    <div hidden id="hosted-apply-status-completed">Completed</div>
+
+  </nav>
+
+</div>
+
+{% include notes.html %}
