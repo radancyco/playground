@@ -13,7 +13,7 @@
     <title>Dell Carousel - Radancy</title>
 </head>
 
-<body>
+<body id="home">
 
   <div id="page">
 
@@ -177,7 +177,40 @@
     <script src="https://tbcdn.talentbrew.com/bundles/jquery-client.js"></script>
 	<script src="https://tbcdn.talentbrew.com/bundles/tb-corepack.js"></script>
 	<script src="https://tbcdn.talentbrew.com/company/375/v4_0/js/slick/slick-min.js"></script>
-    <script src="https://tbcdn.talentbrew.com/company/27092/js/53847-Full.min.js"></script>
+ 
+
+    <script>
+
+        $('.three-slides-right').slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: false,
+                    speed: 800,
+                    useTransform: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                      responsive: [
+                                
+                        {
+                          breakpoint: 1024,
+                          settings: {
+                          slidesToShow: 1.5,
+                          slidesToScroll: 1
+                          }
+                        },
+                        {
+                          breakpoint: 768,
+                          settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                          }
+                        }
+                               
+                      ]
+                });
+        
+        
+        </script>
 
 </body>
 </html>
