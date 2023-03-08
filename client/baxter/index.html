@@ -1,0 +1,59 @@
+---
+title: "Adjacent Label"
+---
+
+<style>
+
+header {
+background-color: #039;
+padding: 2em;
+}
+
+.form-field {
+background-color: #fff;
+border-radius: 3px;
+display: inline-flex;
+padding: .5em;
+}
+
+/* In using all: unset, we also remove focus, but we need to put focus around entire wrapper anyway, so... */
+
+.form-field:focus-within {
+outline: 5px auto Highlight;
+outline: 5px auto -webkit-focus-ring-color; 
+}
+
+label, select {
+all: unset;
+}
+
+label {
+color: #039;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+select {
+color: #4b4b4b;
+padding: 0 1em;
+appearance:initial;
+}
+
+</style>
+
+<header>
+
+    <div class="form-field">
+
+        <label for="test">Radius</label>
+
+        <select id="test">
+            <option>Please Select</option>
+            <option>25 Miles</option>
+            <option>50 Miles</option>
+            <option>75 Miles</option>
+        </select>
+
+    </div>
+
+</header>
