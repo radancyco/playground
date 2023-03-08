@@ -6,6 +6,7 @@ title: "Adjacent Label"
 
 header {
 background-color: #039;
+color: #fff;
 padding: 2em;
 }
 
@@ -40,15 +41,37 @@ color: #4b4b4b;
 padding: 0 1em;
 }
 
+select:disabled {
+color: #ccc;
+cursor: not-allowed;
+}
+
 </style>
 
 <header>
+
+    <p>Normal State:</p>
 
     <div class="form-field">
 
         <label for="test">Radius</label>
 
         <select id="test">
+            <option>Please Select</option>
+            <option>25 Miles</option>
+            <option>50 Miles</option>
+            <option>75 Miles</option>
+        </select>
+
+    </div>
+
+    <p>Disabled State:</p>
+
+    <div class="form-field">
+
+        <label for="test">Radius</label>
+
+        <select id="test" disabled>
             <option>Please Select</option>
             <option>25 Miles</option>
             <option>50 Miles</option>
