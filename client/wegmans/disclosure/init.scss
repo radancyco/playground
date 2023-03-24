@@ -134,7 +134,7 @@ font-family: 'WhitneySSm-Bold', sans-serif;
 font-weight: 700;
 }
 
-#career-areas {
+#career-areas, .grid-section {
 background-color: #f2f2f2;
 border: 1px solid #eaeaea;
 font-family: 'WhitneySSm-Book', sans-serif;
@@ -269,7 +269,7 @@ flex-wrap: wrap;
       line-height: 1.6;
       }
 
-      a {
+      p + a {
       @extend .inline-button;
       display: inline-block;
       margin: 0 !important;
