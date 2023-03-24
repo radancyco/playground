@@ -13,34 +13,50 @@
 */   
 
 .video-grid { 
-  background-color: #f8971d;
-  padding: 2em;
   text-align: end;
+  padding: 1em;
+  background-color: #f8971d;
+
+  @media(min-width: 48.625em) {
+
+    padding: 2em;
+
+  }
+
+  @media(min-width: 64em) {
+
+    padding: 2em 6em;
+
+  }
 
   &__hdr {
-  text-align: center;
-  font-weight: 700;
   font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 0;
+  text-align: center;
   }
 
   video {
   display: block;
-  width: 100%;
   height: 100%;
+  width: 100%;
   }
 
   &__container {
-    gap: 1em;
-    text-align: center;
+  gap: 1.5em;
+  text-align: center;
 
-      @media(min-width: 778px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      @media(min-width: 48.625em) {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      
       }
 
-      @media(min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
+      @media(min-width: 64em) {
+      
+        grid-template-columns: repeat(4, 1fr);
+      
       }
 
   }
@@ -54,10 +70,10 @@
   }
 
   button {
-  width: 40px;
   height: 40px;
-  position: relative;
   inset-inline-end: 0;
+  position: relative;
+  width: 40px;
   }
 
 }
