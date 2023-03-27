@@ -13,6 +13,7 @@
   var btnPlayPause = document.createElement("button");
   btnPlayPause.setAttribute("aria-label", "Play all videos");
   btnPlayPause.setAttribute("aria-pressed", "false");
+  btnPlayPause.classList.add("video-grid__button");
 
   videoGrid = document.querySelectorAll(".video-grid");
 
@@ -24,37 +25,42 @@
 
     var video = grid.querySelectorAll("video");
 
+    video.forEach(function(v){
+
+      v.removeAttribute("controls");
+      v.setAttribute("disableremoteplayback", "");
+      v.setAttribute("playsinline", "");
+
+    });
+
     btnPlayPause.addEventListener("click", function() {
 
-      video.forEach(function(v, e){
-    
-        if (v.paused == true) {
+      if (this.getAttribute("aria-pressed") === "false") {
 
-          v.play();
+        this.setAttribute("aria-pressed", "true");
 
-        } else {
+        video.forEach(function(v){
 
           v.pause();
 
-        }
-    
-      });
+        });
+
+      } else {
+
+        this.setAttribute("aria-pressed", "false");
+
+        video.forEach(function(v){
+
+            v.play();
+  
+        });
+
+      }
 
   })
 
-
-
-
-
-
-
-
-
-
-
 });
 
-  
 })();
 
 
