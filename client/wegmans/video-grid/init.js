@@ -41,18 +41,33 @@
       media.setAttribute("disableremoteplayback", "");
       media.setAttribute("playsinline", "");
 
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+        media.removeAttribute("autoplay");
+
+      } 
+
     });
 
     // Create Pause Button
 
     var btnPlayPause = document.createElement("button");
-    btnPlayPause.setAttribute("aria-label", "Play all videos");
-    btnPlayPause.setAttribute("aria-pressed", "false");
+    btnPlayPause.setAttribute("aria-label", "Play Video Animations");
     btnPlayPause.classList.add("enhanced-grid__button");
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+      btnPlayPause.setAttribute("aria-pressed", "true");
+
+    } else {
+
+      btnPlayPause.setAttribute("aria-pressed", "false");
+
+    }
     
     // Append Pause Button
     
-    grid.append(btnPlayPause);
+    grid.querySelector(".enhanced-grid__container").append(btnPlayPause);
 
     // Pause Toggle
 
@@ -62,7 +77,7 @@
 
         this.setAttribute("aria-pressed", "true");
 
-        enhancedGridMedia.forEach(function(media){
+        enhancedGridMedia.forEach(function(media) {
 
           media.pause();
 
