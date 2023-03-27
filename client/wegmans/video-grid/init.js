@@ -1,6 +1,6 @@
 /*!
 
-  Radancy Pattern Library: Grid Disclosure
+  Wegmans: Enhanced Grid
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
@@ -10,28 +10,51 @@
 
 (function() {
 
-  var btnPlayPause = document.createElement("button");
-  btnPlayPause.setAttribute("aria-label", "Play all videos");
-  btnPlayPause.setAttribute("aria-pressed", "false");
-  btnPlayPause.classList.add("video-grid__button");
+  var enhancedGrid = document.querySelectorAll(".enhanced-grid");
 
-  videoGrid = document.querySelectorAll(".video-grid");
+  enhancedGrid.forEach(function(grid, e){
 
-  videoGrid.forEach(function(grid, e){
+    // Enhanced Grid ID
 
-    var videoGridContainer = grid.querySelector(".video-grid__container");
+    var enhancedGridId = e + 1;
 
-    videoGridContainer.before(btnPlayPause);
+    // Set Attributes
 
-    var video = grid.querySelectorAll("video");
+    grid.setAttribute("id", "enhanced-grid-" + enhancedGridId);
+    grid.setAttribute("aria-labelledby", "hdr-enhanced-grid-" + enhancedGridId);
 
-    video.forEach(function(v){
+    // Get Header & Set ID
 
-      v.removeAttribute("controls");
-      v.setAttribute("disableremoteplayback", "");
-      v.setAttribute("playsinline", "");
+    var enhancedGridHdr = grid.querySelector(".enhanced-grid__hdr");
+
+    enhancedGridHdr.setAttribute("id", "hdr-enhanced-grid-" + enhancedGridId);
+
+    // Get All Videos Within Grid
+
+    var enhancedGridMedia = grid.querySelectorAll(".enhanced-grid__media");
+
+    // Remove and Set Attributes
+
+    enhancedGridMedia.forEach(function(media){
+
+      media.removeAttribute("controls");
+      media.setAttribute("disableremoteplayback", "");
+      media.setAttribute("playsinline", "");
 
     });
+
+    // Create Pause Button
+
+    var btnPlayPause = document.createElement("button");
+    btnPlayPause.setAttribute("aria-label", "Play all videos");
+    btnPlayPause.setAttribute("aria-pressed", "false");
+    btnPlayPause.classList.add("enhanced-grid__button");
+    
+    // Append Pause Button
+    
+    grid.append(btnPlayPause);
+
+    // Pause Toggle
 
     btnPlayPause.addEventListener("click", function() {
 
@@ -39,9 +62,9 @@
 
         this.setAttribute("aria-pressed", "true");
 
-        video.forEach(function(v){
+        enhancedGridMedia.forEach(function(media){
 
-          v.pause();
+          media.pause();
 
         });
 
@@ -49,15 +72,15 @@
 
         this.setAttribute("aria-pressed", "false");
 
-        video.forEach(function(v){
+        enhancedGridMedia.forEach(function(media){
 
-            v.play();
+          media.play();
   
         });
 
       }
 
-  })
+  });
 
 });
 

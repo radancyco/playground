@@ -1,6 +1,6 @@
 /*!
 
-  Wegmans: Video Grid
+  Wegmans: Enhanced Grid
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
@@ -12,10 +12,10 @@
 
 */   
 
-.video-grid { 
+.enhanced-grid { 
 background-color: #f8971d;
 padding: 1em;
-position: relative;
+position: relative; 
 
   @media(min-width: 48.625em) {
 
@@ -33,10 +33,10 @@ position: relative;
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  margin: 0.5em 0;
+  margin: 0.5em 0 1em;
   }
 
-  video {
+  &__media {
   display: block;
   height: 100%;
   width: 100%;
@@ -44,20 +44,21 @@ position: relative;
 
   &__container {
   display: grid;
-  gap: 1.5em;
+  gap: 1em;
   text-align: center;
 
-      @media(min-width: 48.625em) {
+    @media(min-width: 48.625em) {
 
-        grid-template-columns: repeat(2, 1fr);
+      gap: 1.5em;
+      grid-template-columns: repeat(2, 1fr);
       
-      }
+    }
 
-      @media(min-width: 61.25em) {
+    @media(min-width: 61.25em) {
       
-        grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       
-      }
+    }
 
   }
 
@@ -65,6 +66,13 @@ position: relative;
   align-items: center;
   display: flex;
   justify-content: center;
+  min-height: 400px;
+
+    @media(min-width: 48.625em) {
+
+      min-height: auto;
+
+    }
 
     &:nth-child(1),  &:nth-child(8) {
     background-color: #79bc43;
@@ -86,11 +94,11 @@ position: relative;
   line-height: normal; 
   font-size: 1.5rem;
 
-  @media(min-width: 61.25em) {
+    @media(min-width: 61.25em) {
 
-    font-size: 1rem;
+      font-size: 1rem;
 
-  }
+    }
 
     @media(min-width: 78em) {
       
