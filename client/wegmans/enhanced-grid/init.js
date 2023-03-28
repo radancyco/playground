@@ -14,6 +14,17 @@
 
   enhancedGrid.forEach(function(grid, e){
 
+    window.onscroll = function()  {
+
+ 
+      if(grid.getBoundingClientRect().top <= 0){
+
+        grid.classList.add("active");
+
+      }
+
+    }
+
     // Enhanced Grid ID
 
     var enhancedGridId = e + 1;
