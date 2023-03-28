@@ -46,15 +46,19 @@ padding: 1em;
   gap: 1em;
   position: relative;
   text-align: center;
-  transform: scale(0.5);
-  opacity: 0;
-  transition: opacity 600ms linear, transform 300ms ease-in-out;
 
-    .active & {
-    opacity: 1;
-    transform: scale(1);
+    @media (prefers-reduced-motion: no-preference) {
+
+      transform: scale(0.5);
+      opacity: 0;
+      transition: opacity 600ms linear, transform 300ms ease-in-out;
+
+        .active & {
+        opacity: 1;
+        transform: scale(1);
+        }
+
     }
-
 
     @media(min-width: 48.625em) {
 
@@ -98,10 +102,10 @@ padding: 1em;
   }
 
   &__content {
-  padding: 1em;
   color: #000;
-  line-height: normal; 
   font-size: 1.5rem;
+  line-height: normal; 
+  padding: 1em;
 
     @media(min-width: 61.25em) {
 
@@ -136,8 +140,8 @@ padding: 1em;
   border: 0;
   height: 30px;
   position: absolute;
-  right: 1em;
-  top: 1em;
+  inset-inline-end: 1em;
+  inset-block-start: 1em;
   width: 30px;
 
     &:focus, .enhanced-grid:hover & {
