@@ -18,6 +18,20 @@
   var $gridButtonLabel = "Pause Video Animations";
   var $gridState = "active";
 
+  // Check Cookie. If set to true, pause video.
+
+  function getCookie(name) {
+
+    var re = new RegExp(name + "=([^;]+)");
+    var value = re.exec(document.cookie);
+    return (value !== null) ? unescape(value[1]):null;
+  
+  }
+
+	var gridPaused = getCookie("heroBannerPaused");
+
+  // Render Grid
+
   var enhancedGrid = document.querySelectorAll($gridClass);
 
   enhancedGrid.forEach(function(grid, e){
@@ -64,7 +78,11 @@
 
       if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
 
-        media.setAttribute("autoplay", "");
+        if(gridPaused === null) {
+
+          media.setAttribute("autoplay", "");
+
+        }
 
       }
 
@@ -73,12 +91,20 @@
     // Create Pause Button
 
     var btnPlayPause = document.createElement("button");
-    btnPlayPause.setAttribute("aria-label", $gridButtonName);
+    btnPlayPause.setAttribute("aria-label", $gridButtonLabel);
     btnPlayPause.classList.add($gridButtonName);
 
     if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
 
-      btnPlayPause.setAttribute("aria-pressed", "false");
+      if(gridPaused !== null) {
+
+        btnPlayPause.setAttribute("aria-pressed", "true");
+
+      } else {
+
+        btnPlayPause.setAttribute("aria-pressed", "false");
+
+      }
 
     } else {
 
@@ -101,6 +127,7 @@
         enhancedGridMedia.forEach(function(media) {
 
           media.pause();
+          document.cookie = "heroBannerPaused=true; path=/";
 
         });
 
@@ -110,6 +137,7 @@
 
         enhancedGridMedia.forEach(function(media){
 
+          document.cookie = "heroBannerPaused=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           media.play();
   
         });
