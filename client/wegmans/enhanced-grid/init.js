@@ -10,7 +10,9 @@
 
 (function() {
 
-  var enhancedGrid = document.querySelectorAll(".enhanced-grid");
+  var $gridName = ".enhanced-grid";
+
+  var enhancedGrid = document.querySelectorAll($gridName);
 
   enhancedGrid.forEach(function(grid, e){
 
@@ -109,9 +111,16 @@
 
       }
 
-  });
+    });
 
-});
+    btnPlayPause.addEventListener("focus", function() {
+
+      this.closest($gridName).classList.add("active");
+
+    });
+
+
+  });
 
 })();
 

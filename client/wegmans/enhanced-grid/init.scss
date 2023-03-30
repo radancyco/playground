@@ -88,7 +88,7 @@ padding: 1em;
         transform: scale(0.3);
         }
 
-        .active &, .enhanced-grid:focus-within & {
+        .active & {
         opacity: 1;
         transform: scale(1);
         }
@@ -220,7 +220,7 @@ padding: 1em;
 
       // TODO: The point at which the pause button loads should be based on last loading item and should load 200ms after that. May need to do this in JS eventually.
 
-      .active &, .enhanced-grid:focus-within & {
+      .active & {
       opacity: 1;
       }
 
