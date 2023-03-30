@@ -10,9 +10,15 @@
 
 (function() {
 
-  var $gridName = ".enhanced-grid";
+  var $gridClass = ".enhanced-grid";
+  var $gridHeaderClass = ".enhanced-grid__hdr";
+  var $gridContainerClass = ".enhanced-grid__container";
+  var $gridMediaClass = ".enhanced-grid__media";
+  var $gridButtonName = "enhanced-grid__button"
+  var $gridButtonLabel = "Pause Video Animations";
+  var $gridState = "active";
 
-  var enhancedGrid = document.querySelectorAll($gridName);
+  var enhancedGrid = document.querySelectorAll($gridClass);
 
   enhancedGrid.forEach(function(grid, e){
 
@@ -20,7 +26,7 @@
 
       if(grid.getBoundingClientRect().top <= 0){
 
-        grid.classList.add("active");
+        grid.classList.add($gridState);
 
       } 
 
@@ -37,27 +43,26 @@
 
     // Get Header & Set ID
 
-    var enhancedGridHdr = grid.querySelector(".enhanced-grid__hdr");
+    var enhancedGridHdr = grid.querySelector($gridHeaderClass);
 
     enhancedGridHdr.setAttribute("id", "hdr-enhanced-grid-" + enhancedGridId);
 
     // Get All Videos Within Grid
 
-    var enhancedGridMedia = grid.querySelectorAll(".enhanced-grid__media");
+    var enhancedGridMedia = grid.querySelectorAll($gridMediaClass);
 
     // Remove and Set Attributes
 
     enhancedGridMedia.forEach(function(media){
 
-      media.removeAttribute("controls");
-      media.setAttribute("disableremoteplayback", "");
-      media.setAttribute("playsinline", "");
+      media.removeAttribute("controls"); // Controls only needed if JS disabled.
+      media.setAttribute("disableremoteplayback", ""); // We do not need remote playback here as these videos are decorative.
+      media.setAttribute("playsinline", ""); // For Safari
+      media.setAttribute("tabindex", "-1"); // Some browser allow focus on video. We really do not need that here as it is decorative. 
 
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // Only play videos if user has not disabled animation
 
-        media.removeAttribute("autoplay");
-
-      } else { 
+      if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
 
         media.setAttribute("autoplay", "");
 
@@ -68,22 +73,22 @@
     // Create Pause Button
 
     var btnPlayPause = document.createElement("button");
-    btnPlayPause.setAttribute("aria-label", "Play Video Animations");
-    btnPlayPause.classList.add("enhanced-grid__button");
+    btnPlayPause.setAttribute("aria-label", $gridButtonName);
+    btnPlayPause.classList.add($gridButtonName);
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
 
-      btnPlayPause.setAttribute("aria-pressed", "true");
+      btnPlayPause.setAttribute("aria-pressed", "false");
 
     } else {
 
-      btnPlayPause.setAttribute("aria-pressed", "false");
+      btnPlayPause.setAttribute("aria-pressed", "true");
 
     }
     
     // Append Pause Button
     
-    grid.querySelector(".enhanced-grid__container").append(btnPlayPause);
+    grid.querySelector($gridContainerClass).append(btnPlayPause);
 
     // Pause Toggle
 
@@ -113,12 +118,13 @@
 
     });
 
+    // For keyboard support. If button tabbed to, show grid.
+
     btnPlayPause.addEventListener("focus", function() {
 
-      this.closest($gridName).classList.add("active");
+      this.closest($gridClass).classList.add($gridState);
 
     });
-
 
   });
 
