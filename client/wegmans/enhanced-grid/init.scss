@@ -10,7 +10,9 @@
   sass --watch init.scss:init.css --style compressed
 
 
-*/   
+*/ 
+
+$enhanced-grid-animation-speed: 450ms;
 
 .enhanced-grid { 
 background-color: #f8971d;
@@ -28,6 +30,8 @@ padding: 1em;
 
   }
 
+  // Item Section Header
+
   &__hdr {
   font-size: 3rem;
   font-weight: 700;
@@ -42,30 +46,13 @@ padding: 1em;
 
   }
 
-  &__media {
-  display: block;
-  height: 100%;
-  width: 100%;
-  }
+  // Item Container
 
   &__container {
   display: grid;
   gap: 1em;
   position: relative;
   text-align: center;
-
-    @media (prefers-reduced-motion: no-preference) {
-
-      transform: scale(0.5);
-      opacity: 0;
-      transition: opacity 600ms linear, transform 300ms ease-in-out;
-
-        .active & {
-        opacity: 1;
-        transform: scale(1);
-        }
-
-    }
 
     @media(min-width: 48.625em) {
 
@@ -82,17 +69,39 @@ padding: 1em;
 
   }
 
+  // Items
+
   &__item {
   align-items: center;
   display: flex;
   justify-content: center;
   min-height: 340px;
 
+    @media (prefers-reduced-motion: no-preference) {
+
+      transition-duration: $enhanced-grid-animation-speed;
+      transition-property: all;
+      transition-timing-function: ease-in-out;
+
+        .js & {
+        opacity: 0;
+        transform: scale(0.3);
+        }
+
+        .active &, .enhanced-grid:focus-within & {
+        opacity: 1;
+        transform: scale(1);
+        }
+
+    }
+
     @media(min-width: 48.625em) {
 
       min-height: auto;
 
     }
+
+    // Item Colors
 
     &:nth-child(1),  &:nth-child(8) {
     background-color: #79bc43;
@@ -106,7 +115,45 @@ padding: 1em;
     background-color: #fddb00;
     }
 
+    // Item Animation
+
+    // TODO: Loop the following values eventually or better, attach to JavaScript instead and add as inline style. 
+
+    &:nth-child(1) {
+    transition-delay: 200ms;
+    }
+
+    &:nth-child(2) {
+    transition-delay: 400ms;
+    }
+
+    &:nth-child(3) {
+    transition-delay: 600ms;
+    }
+
+    &:nth-child(4) {
+    transition-delay: 800ms;
+    }
+
+    &:nth-child(5) {
+    transition-delay: 1000ms;
+    }
+
+    &:nth-child(6) {
+    transition-delay: 1200ms;
+    }
+
+    &:nth-child(7) {
+    transition-delay: 1400ms;
+    }
+
+    &:nth-child(8) {
+    transition-delay: 1600ms;
+    }
+
   }
+
+  // Item Content
 
   &__content {
   color: #000;
@@ -128,6 +175,8 @@ padding: 1em;
 
   }
 
+  // Item Content Headers (Sub-Headers) and Text
+
   &__subhdr {
   font-weight: 700;
   }
@@ -136,6 +185,16 @@ padding: 1em;
   color: inherit;
   margin: 0;
   }
+
+  // Item Media (Video)
+
+  &__media {
+  display: block;
+  height: 100%;
+  width: 100%;
+  }
+
+  // Play/Pause Button
 
   &__button {
   background-color: rgba(0, 0, 0, 0.5);
@@ -147,10 +206,25 @@ padding: 1em;
   border: 0;
   cursor: pointer;
   height: 30px;
+  outline-offset: -4px;
   position: absolute;
   inset-inline-end: 1em;
   inset-block-start: 1em;
+  transition: none;
   width: 30px;
+
+    @media (prefers-reduced-motion: no-preference) {
+
+      opacity: 0;
+      transition: opacity $enhanced-grid-animation-speed 1800ms ease-in-out, transform 100ms ease-in-out;
+
+      // TODO: The point at which the pause button loads should be based on last loading item and should load 200ms after that. May need to do this in JS eventually.
+
+      .active &, .enhanced-grid:focus-within & {
+      opacity: 1;
+      }
+
+    }
 
     &:focus, .enhanced-grid:hover & {
     background-color: rgba(0, 0, 0, 0.8);

@@ -16,12 +16,11 @@
 
     window.onscroll = function()  {
 
- 
       if(grid.getBoundingClientRect().top <= 0){
 
         grid.classList.add("active");
 
-      }
+      } 
 
     }
 
@@ -56,7 +55,11 @@
 
         media.removeAttribute("autoplay");
 
-      } 
+      } else { 
+
+        media.setAttribute("autoplay", "");
+
+      }
 
     });
 
