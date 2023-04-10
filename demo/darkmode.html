@@ -1,0 +1,73 @@
+---
+title: "Dark Mode Explained"
+---
+
+<style>
+
+	.dark-mode {
+
+		padding: 1em;
+
+	}
+
+	@media(prefers-color-scheme: dark) {
+
+		.enabled {
+
+			background-color: #000;
+			color: #fff;
+
+		}
+
+		.enabled h3 {
+		color: inherit;
+		}
+
+		.enabled img {
+		
+			outline: 2px #fff solid;
+
+		}
+
+	}
+
+</style>
+
+<h2>Example 1</h2>
+
+<p>This example has no support for dark mode. When dark mode is enabled via browser or operating system settings, the example will not change. Dark mode is opt-in only. If we do not include support for it, site will remain unchanged. Always.</p>
+
+<div class="dark-mode">
+
+	<h3>Meet Michael Spellacy</h3>
+	
+	<img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+	
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+	
+</div>
+
+<h2>Example 2</h2>
+
+<p>This example does support dark mode. When dark mode is enabled via browser or operating system settings, the example will change to a black background with white text. The image will also contain a white border. Here, we are choosing to support dark mode and utilizing <code>prefers-color-scheme: dark</code> to achieve this effect.</p>
+
+<p>To enable dark mode on Windows 11 go to Start > Settings > Personalization > Colors > Choose your default app mode (Dark).</p>
+
+<div class="dark-mode enabled">
+
+	<h3>Meet Michael Spellacy</h3>
+	
+	<img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+	
+	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+	
+</div>
+
+<div class="warning-info">
+
+	<h2>Browser Extensions</h2>
+
+	<p>Browser extension do not enable true dark mode. Many simply override the default stylesheet with their own sets of styles, often with the <code>!important</code> declaration included. Radancy should not be attempting to overrride third-party extension that may alter the page. Only true dark mode will be honored, if needed. However, this may come at an additional cost. </p>
+
+</div>
+
