@@ -93,7 +93,7 @@ padding: 1em;
 
         .active & {
         opacity: 1;
-        transform: scale(1.01); // TODO: Seeing white border under video after scaling. Could be video itself (using webm) or scaling issue. Setting to 1.01 _might_ help. 
+        transform: scale(1.001); // TODO: Seeing white border under video after scaling. Could be video itself (using webm) or scaling issue. Setting to 1.001 _might_ help. 
         }
 
     }
