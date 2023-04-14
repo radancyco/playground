@@ -248,7 +248,7 @@ $(".tab-parent .career-dot").removeAttr("aria-selected role").on("click", functi
 
 	$(this).parent().parent().find("button").removeAttr("aria-expanded").removeClass("focus-active");
 	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
-	$(".custom-checklist a").attr("role", "button").removeAttr("disabled href");
+	$(".custom-checklist a").removeAttr("disabled href");
 	$(this).addClass("focus-active");
 
 });
