@@ -1,12 +1,3 @@
-
-@model PublishedContentModel
-
-@{
-
-    Response.ContentType = "text/javascript";
-
-}
-
 // Spell's Disney Accessibility Fixes
 
 // Global Keypress function
