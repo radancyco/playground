@@ -138,3 +138,10 @@ font-weight: bold;
 .social-media ul.social-media__wrap a {
 color: #fff;
 }
+
+// Home Page Fit Finder: 
+
+.career-tabs .basic-tabcordion-content .custom-checklist.custom-facets fieldset ul li input[type="checkbox"] {
+appearance: auto;
+-webkit-appearance: auto
+}
