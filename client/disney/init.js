@@ -244,10 +244,12 @@ $(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(
 
 // Home: What Career Area Interests You?
 
+$(".navlist, .basic-tabcordion-content").removeAttr("role");
+
 $(".tab-parent .career-dot").removeAttr("aria-selected role").on("click", function(event){
 
 	$(this).parent().parent().find("button").removeAttr("aria-selected").removeClass("focus-active");
-	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
+	$(".tabcordion-close:visible").focus();
 	$(".custom-checklist a").removeAttr("disabled href");
 	$(this).addClass("focus-active");
 
