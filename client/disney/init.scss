@@ -159,4 +159,10 @@ appearance: auto;
   height: auto !important;
   }
 
+  .js .top-bar .advanced-search-form .advanced-search-form-fields {
+  position: static;
+  max-height: none;
+  overflow: initial;
+  }
+
 }
