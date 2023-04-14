@@ -1,5 +1,15 @@
 
-
+body::before {
+display: block;
+background-color: #C12E23;
+color: #fff;
+content: "Spell addressing accessibility issues. If site looks off, that is why. Reminder: change path in a11y init script before pushing to production.";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding: 1em;
+}
 
 #primary-nav {
 
