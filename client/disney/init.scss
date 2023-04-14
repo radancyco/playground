@@ -147,9 +147,9 @@ appearance: auto;
 }
 
 
-// Reflow issue. Header is consuming too much screen real-estate at 
+// Reflow issue. Header is consuming too much screen real-estate at 256
 
-@media (min-height: 256px) {
+@media (max-height: 256px) {
 
   .new-nav {
   position: static !important;
