@@ -145,3 +145,18 @@ color: #fff;
 appearance: auto;
 -webkit-appearance: auto
 }
+
+
+// Reflow issue. Header is consuming too much screen real-estate at 
+
+@media (min-height: 256px) {
+
+  .new-nav {
+  position: static !important;
+  }
+    
+  .spacer {
+  height: auto !important;
+  }
+
+}
