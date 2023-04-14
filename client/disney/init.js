@@ -246,7 +246,7 @@ $(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(
 
 $(".tab-parent .career-dot").removeAttr("aria-selected role").on("click", function(event){
 
-	$(this).parent().parent().find("button").removeAttr("aria-expanded").removeClass("focus-active");
+	$(this).parent().parent().find("button").removeAttr("aria-selected").removeClass("focus-active");
 	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
 	$(".custom-checklist a").removeAttr("disabled href");
 	$(this).addClass("focus-active");
