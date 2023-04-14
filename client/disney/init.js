@@ -244,7 +244,7 @@ $(".data-form.ja-form #btn-more").attr("tabindex", "0").on("keypress", function(
 
 // Home: What Career Area Interests You?
 
-$(".tab-parent .career-dot").removeAttr("aria-expanded").on("click", function(event){
+$(".tab-parent .career-dot").removeAttr("aria-selected role").on("click", function(event){
 
 	$(this).parent().parent().find("button").removeAttr("aria-expanded").removeClass("focus-active");
 	$(".basic-tabcordion-panels").attr("tabindex", "-1").focus();
@@ -411,21 +411,26 @@ $("#hero-banner video").removeAttr("aria-label").attr("title", "Background Anima
 
 // Weird empty iframes on site
 
-/* $(".video-modal .video-modal-content #videoIframe").each(function() {
+$(".video-modal .video-modal-content #videoIframe").each(function() {
 
   if($(this).attr("src") == "") {
 
-		$(this).parent().parent().remove();
+		// $(this).parent().parent().remove();
+
+		$(this).attr("role", "presentation");
 
 	}
 
 });
 
+
 if($("#videoIframe[src='']")) {
 
-	$(this).parent().remove();
+	$(this).attr("role", "presentation");
 
-} */
+	// $(this).parent().remove();
+
+}
 
 // Empty aside that development should be REMOVING from DOM. If it has no content, WHY keep it on the page at all?
 
