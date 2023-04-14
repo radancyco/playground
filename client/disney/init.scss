@@ -1,14 +1,16 @@
 
 body::before {
-display: block;
-background-color: #C12E23;
+background-color: #00749F;
 color: #fff;
-content: "Spell addressing accessibility issues. If site looks off, that is why. Reminder: change path in a11y init script before pushing to production.";
-position: absolute;
-top: 0;
+content: "♿ Spell is addressing accessibility issues. Reminder: Change path in a11y init script before pushing to production.";
+display: block;
+font-size: 1.5rem;
 left: 0;
-width: 100%;
 padding: 1em;
+position: absolute;
+text-align: center;
+top: 0;
+width: 100%;
 z-index: 100000;
 }
 
