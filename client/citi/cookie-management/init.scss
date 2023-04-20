@@ -1,0 +1,151 @@
+// sass --watch init.scss:init.css --style compressed
+
+// Waste of time Cookie Toggle
+
+.cookie-consent {
+  
+    &__input-wrapper {
+    position: relative;
+  
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+  
+      input {
+      opacity: 0; 
+      position: absolute;
+      top: 0;
+      left: 0;
+  
+        // Disabled State
+  
+        &[disabled] {
+  
+          ~ label {
+          color: rgba(119, 119, 119, 0.5);
+          pointer-events: none;
+  
+            .cookie-consent__switch {
+            opacity: 0.4;
+            }
+  
+          }
+          
+          &:checked {
+              
+            ~ label {
+              
+              .cookie-consent__switch {
+              background-color: #6d6d6d;
+              }
+                
+            }
+              
+          }
+  
+        }
+  
+        // Check State
+  
+        &:checked {
+  
+          ~ label {
+  
+            .cookie-consent__switch {
+            background-color: #255BE3;
+  
+              &:before {
+              content: attr(data-unchecked);
+              left: 0;
+              }
+  
+              &::after {
+              content: attr(data-checked);
+              transform: translate3d(65px, 0, 0);
+              }
+  
+            }
+  
+          }
+  
+        }
+
+        &:focus-visible {
+
+            ~ label {
+                
+                .cookie-consent__switch {
+                
+                    outline-color: black;
+                    outline-width: 2px;
+
+                }
+
+            }
+
+        }
+  
+      }
+  
+      label {
+      align-items: start;
+      position: relative;
+      user-select: none;
+
+        @media(min-width: 30em) {
+
+            display: flex;
+
+        }
+  
+        .cookie-consent__text {
+        flex: 1;
+        padding-right: 1em;
+        }
+  
+        .cookie-consent__switch {
+        background: #255BE3; //blue
+        // flex: 0 0 134px;
+        cursor: pointer;
+        display: block;
+        height: 34px;
+        margin-top: 1em;
+        outline: 1px #ccc solid;
+        position: relative;
+        transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
+        width: 134px;
+  
+          &::before {
+          color: #fff;
+          content: attr(data-checked);
+          left: 69px;
+          width: 69px;
+          }
+  
+          &::after {
+          background: #fff;
+          color: #53565a;
+          content: attr(data-unchecked);
+          left: 0;
+          transform: translate3d(0, 0, 0);
+          transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
+          width: 69px;
+          z-index: 1;
+          }
+          
+          &:before, &:after {
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 34px;
+          position: absolute;
+          text-align: center;
+          top: 0;
+          }
+  
+        }
+  
+      }
+  
+    }
+  
+  }
