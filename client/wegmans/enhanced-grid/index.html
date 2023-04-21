@@ -100,13 +100,14 @@ title: "Enhanced Grid Demo"
 <h2>Notes</h2>
 
 <ol>
-  <li>Video should be delivered as mp4 at a size of 280 (w) x 300 (h).</li>
+  <li>Video should be delivered as mp4 (or webm) at a size of 280 (w) x 300 (h).</li>
   <li>Performace is critical. Each video should be no longer than 10-15 seconds in length (the shorter the better).</li>
   <li>Video should strive to meet a file size no greater than 1.5MB each (and that is probably pushing it). Remember, each video will add to the cumulitive weight of the page, so size must be kept low. Would not reccommend more than two rows of video for this reason.</li>
   <li>Video utilizes <code>prefers-reduced-motion</code> in addition to the pause button. When user disables animation in their operating system, these videos will not autoplay.</li>
-  <li>Cookie set or removed when pause button toggled to remember the desired setting.</li>
+  <li>Cookie set or removed when pause button toggled to remember the desired setting on return visits.</li>
   <li>Video may not play if mobile device is in low-power mode. This is for a good reason&mdash;so video does not drain the battery life.</li>
-  <li>Content or media grid items can be made interactive if desired.</li>
+  <li>Grid blocks with text can be linked, but only link heading. For example: <code>&lt;h3 class="enhanced-grid__subhdr"&gt;&lt;a href="#"&gt;Scholarship&lt;/a&gt;&lt;/h3&gt;</code></li>
+  <li>Videos may never be linked.</li>
 </ol>
 
 <h2>Code</h2>

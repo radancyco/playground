@@ -76,6 +76,7 @@ padding: 1em;
   display: flex;
   justify-content: center;
   min-height: 340px;
+  position: relative;
 
     @media (prefers-reduced-motion: no-preference) {
 
@@ -157,6 +158,18 @@ padding: 1em;
 
   &__subhdr {
   font-weight: 700;
+
+    a {
+
+      &::before {
+      content: "";
+      display: block;
+      inset: 0;
+      position: absolute;
+      }
+
+    }
+
   }
 
   &__subhdr, p {
