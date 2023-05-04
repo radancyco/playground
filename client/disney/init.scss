@@ -170,16 +170,7 @@ appearance: auto;
 
 // High Contrast Mode 
 
-@media (prefers-color-scheme: light) {
-
-  body {
-  color: purple !important;
-  }
-  
-}
-
-
-@media (forced-colors: active) {
+@media (forced-colors: active) and (prefers-color-scheme: light) {
 
   body{
   color: red;
