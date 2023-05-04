@@ -170,6 +170,10 @@ appearance: auto;
 
 // High Contrast Mode 
 
+.header-logo {
+forced-color-adjust: none;
+}
+
 @media (forced-colors: active) and (prefers-color-scheme: light) {
 
   .header-logo {
