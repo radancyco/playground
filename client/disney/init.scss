@@ -172,8 +172,8 @@ appearance: auto;
 
 @media (forced-colors: active) and (prefers-color-scheme: light) {
 
-  body{
-  color: red;
+  .header-logo {
+  filter: brightness(0);
   }
   
 }
