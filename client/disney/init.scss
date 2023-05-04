@@ -166,3 +166,14 @@ appearance: auto;
   }
 
 }
+
+
+// High Contrast Mode 
+
+@media (prefers-color-scheme: light) {
+
+  body {
+  color: red !important;
+  }
+  
+}
