@@ -173,7 +173,16 @@ appearance: auto;
 @media (prefers-color-scheme: light) {
 
   body {
-  color: red !important;
+  color: purple !important;
+  }
+  
+}
+
+
+@media (forced-colors: active) {
+
+  body{
+  color: red;
   }
   
 }
