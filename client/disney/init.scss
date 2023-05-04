@@ -181,3 +181,14 @@ forced-color-adjust: none;
   }
   
 }
+
+// Accomodation Link 
+
+.accommodations-abc a {
+text-decoration: underline;
+
+  &:hover, &:focus {
+  text-decoration: none;
+  }
+
+}
