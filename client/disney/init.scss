@@ -170,13 +170,9 @@ appearance: auto;
 
 // High Contrast Mode 
 
-.header-logo {
-forced-color-adjust: none;
-}
-
 @media (forced-colors: active) and (prefers-color-scheme: light) {
 
-  .header-logo {
+  .header-logo, #hero-banner-button, .social-media li a {
   filter: brightness(0);
   }
   
