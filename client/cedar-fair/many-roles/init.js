@@ -356,7 +356,7 @@
 
         };
 
-        scrollIntoPosition(this);
+        //scrollIntoPosition(this);
 
       };
 
