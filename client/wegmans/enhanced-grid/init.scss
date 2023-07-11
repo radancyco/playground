@@ -12,14 +12,14 @@
 
 */ 
 
-$enhanced-grid-animation-speed: 450ms;
-$enhanced-grid-time-offset: 200ms;
+$enhanced-grid-animation-speed: 1000ms;
+$enhanced-grid-time-offset: 150ms;
 $enhanced-grid-total-items: 8;
-$enhanced-grid-timing-function: ease-in-out;
+$enhanced-grid-timing-function: cubic-bezier(0.51, 0.92, 0.24, 1);
 
 .enhanced-grid { 
 background-color: #f8971d; // dont'remove, we need fallback color for foreground text
-// background-image: url("");
+background-image: url("https://tbcdn.talentbrew.com/company/1839/gst_v1_0/graphics/tangerine-bg.webp");
 padding: 1em;
 
   @media(min-width: 48.625em) {
@@ -50,6 +50,7 @@ padding: 1em;
   display: grid;
   gap: 1em;
   overflow: hidden;
+  perspective: 500px; // Optional
   position: relative;
   text-align: center;
 
@@ -86,7 +87,8 @@ padding: 1em;
 
         .js & {
         opacity: 0;
-        transform: scale(0.3);
+        transform: scale(0.8);
+        transform-origin: center bottom;
         }
 
         .active & {
@@ -182,8 +184,9 @@ padding: 1em;
   &__media {
   display: block;
   height: 100%;
-  width: 100%;
+  object-fit: cover;
   pointer-events: none;
+  width: 100%;
 
     &::-webkit-media-controls {
     display: none;
@@ -215,7 +218,7 @@ padding: 1em;
     
     &:focus-visible, .enhanced-grid:hover & {
     background-color: rgba(169, 60, 150, 1);
-    transform: scale(1.5);
+    transform: scale(1.3);
     }
   
     &:focus-visible {
@@ -224,7 +227,7 @@ padding: 1em;
 
     @media (prefers-reduced-motion: no-preference) {
 
-      $buttonDisplayDelay: calc($enhanced-grid-time-offset * ($enhanced-grid-total-items + 1));
+      $buttonDisplayDelay: calc(#{$enhanced-grid-time-offset} * (#{$enhanced-grid-total-items} + 1));
 
       opacity: 0;
       transition: opacity $enhanced-grid-animation-speed $buttonDisplayDelay $enhanced-grid-timing-function, transform 100ms ease-in-out;
