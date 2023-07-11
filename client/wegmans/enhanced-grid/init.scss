@@ -183,6 +183,12 @@ padding: 1em;
   display: block;
   height: 100%;
   width: 100%;
+  pointer-events: none;
+
+    &::-webkit-media-controls {
+    display: none;
+    }
+
   }
 
   // Play/Pause Button

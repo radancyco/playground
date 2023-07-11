@@ -28,7 +28,7 @@
   
   }
 
-	var gridPaused = getCookie("heroBannerPaused");
+  var gridPaused = getCookie("heroBannerPaused");
 
   // Render Grid
 
@@ -72,7 +72,6 @@
       media.removeAttribute("controls"); // Controls only needed if JS disabled.
       media.setAttribute("disableremoteplayback", ""); // We do not need remote playback here as these videos are decorative.
       media.setAttribute("playsinline", ""); // For Safari
-      media.setAttribute("tabindex", "-1"); // Some browser allow focus on video. We really do not need that here as it is decorative. 
 
       // Only play videos if user has not disabled animation
 
@@ -153,6 +152,54 @@
       this.closest($gridClass).classList.add($gridState);
 
     });
+
+  });
+
+  // Video Lazy Loader
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    var lazyVideos = [].slice.call(document.querySelectorAll($gridMediaClass));
+
+    if ("IntersectionObserver" in window) {
+
+      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+
+        entries.forEach(function(video) {
+
+          if (video.isIntersecting) {
+
+            for (var source in video.target.children) {
+
+              var videoSource = video.target.children[source];
+
+              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+
+                videoSource.src = videoSource.dataset.src;
+
+              }
+
+            }
+
+            video.target.load();
+            
+            video.target.classList.remove("lazy");
+
+            lazyVideoObserver.unobserve(video.target);
+
+          }
+
+        });
+
+      });
+
+      lazyVideos.forEach(function(lazyVideo) {
+
+        lazyVideoObserver.observe(lazyVideo);
+
+      });
+
+    }
 
   });
 
