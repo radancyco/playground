@@ -19,6 +19,7 @@ position: relative;
 
   &__video {
   display: block;
+  clip-path: inset(1px 1px); // Weird border on resize fix. 
 
     &::-webkit-media-controls {
     display: none;

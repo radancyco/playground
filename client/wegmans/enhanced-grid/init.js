@@ -22,9 +22,8 @@
 
   function getCookie(name) {
 
-    var re = new RegExp(name + "=([^;]+)");
-    var value = re.exec(document.cookie);
-    return (value !== null) ? unescape(value[1]):null;
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + name + '=([^;]*)')); 
+    return match ? match[1] : null;
   
   }
 
@@ -79,7 +78,7 @@
 
         if(gridPaused === null) {
 
-          media.setAttribute("autoplay", "");
+          media.autoplay = true;
 
         }
 
