@@ -88,8 +88,7 @@ margin: 0 auto;
 
   @media (prefers-reduced-motion: no-preference) {
 
-    animation: pulse 1s linear infinite;
-    animation-play-state: paused; // Paused by default. Prevents animation from running before JS loads.
+    animation: pulse 1s linear infinite paused; // Paused by default. Prevents animation from running before JS loads.
 
     .animation-enabled & {
     animation-play-state: running;
