@@ -22,6 +22,7 @@
   var $acMediaClass = ".ac__video";
   var $acButtonClassName = "ac__button"
   var $acButtonLabel = "Pause Animation";
+  var $acDisabledClass = ".animation-disabled"
 
   // Check Cookie. If set to true, pause video.
 
@@ -60,26 +61,27 @@
       if(animationPaused !== null) {
 
         btnPlayPause.setAttribute("aria-pressed", "true");
-        documentBody.classList.add("animation-disabled");
+
+        // Add disabled class to body.
+
+        documentBody.classList.add($acDisabledClass);
 
       } else {
 
         btnPlayPause.setAttribute("aria-pressed", "false");
-        documentBody.classList.remove("animation-disabled");
+
+        // Remove disabled class from body.
+
+        documentBody.classList.remove($acDisabledClass);
 
       }
 
-    } else {
-
-      btnPlayPause.setAttribute("aria-pressed", "true");
-      documentBody.classList.add("animation-disabled");
-
-    }
+      // Append Pause Button
     
-    // Append Pause Button
-    
-    control.prepend(btnPlayPause);
+      control.prepend(btnPlayPause);
 
+    } 
+    
     // Pause Button Toggle Event
 
     btnPlayPause.addEventListener("click", function() {
@@ -90,7 +92,7 @@
 
         // Add disabled class to body.
 
-        documentBody.classList.add("animation-disabled");
+        documentBody.classList.add($acDisabledClass);
 
         // Get all pause buttons on page and set them to true. 
 
@@ -111,9 +113,9 @@
 
       } else {
 
-        // Remove disabled calss from body.
+        // Remove disabled class from body.
         
-        documentBody.classList.remove("animation-disabled");
+        documentBody.classList.remove($acDisabledClass);
 
         // Get all pause buttons on page and set them to false. 
 

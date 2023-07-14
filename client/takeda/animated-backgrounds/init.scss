@@ -14,11 +14,11 @@
 .ac { 
 position: relative;
 
-  // Item Media (Video)
+  // Video
 
   &__video {
   display: block;
-  clip-path: inset(1px 1px); // Weird border on resize fix. 
+  clip-path: inset(1px 1px); 
 
     &::-webkit-media-controls {
     display: none;
@@ -26,7 +26,7 @@ position: relative;
 
   }
 
-  // Play/Pause Button
+  // Toggle Button
 
   &__button {
   background-color: #000;
@@ -61,7 +61,7 @@ position: relative;
 
 }
 
-// CSS Animation Example
+// Example: CSS Animation
 
 @keyframes pulse {
 
@@ -80,11 +80,16 @@ position: relative;
 }
 
 .example {
-animation: pulse 1s linear infinite;
 margin: 0 auto;
 
-  .animation-disabled & {
-  animation-play-state: paused;
+  @media (prefers-reduced-motion: no-preference) {
+
+    animation: pulse 1s linear infinite;
+
+    .animation-disabled & {
+    animation-play-state: paused;
+    }
+  
   }
 
 }
