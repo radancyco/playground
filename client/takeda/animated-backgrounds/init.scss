@@ -1,6 +1,6 @@
 /*!
 
-  Radancy: Background Video Control (BVC)
+  Radancy: Animation Control (AC)
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
@@ -12,7 +12,7 @@
 
 */ 
 
-.bvc { 
+.ac { 
 position: relative;
 
   // Item Media (Video)
@@ -57,7 +57,7 @@ position: relative;
       opacity: 0.3;
       transition: all 300ms ease-in-out;
 
-      &:focus-visible, .bvc-container:hover & {
+      &:focus-visible, .ac-container:hover & {
       transform: scale(1.3);
       opacity: 1;
       }
@@ -68,8 +68,8 @@ position: relative;
 
 }
 
-// Not for client sites, just for demo. 
+// Just for demo - ignore.  
 
-.bvc-container {
+.ac-container {
 margin-bottom: 2em;
 }

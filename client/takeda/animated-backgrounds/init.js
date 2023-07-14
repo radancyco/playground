@@ -1,27 +1,25 @@
 /*!
 
-  Radancy: Background Video Control (BVC)
+  Radancy: Animation Control (AC)
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
   Dependencies: None
 
   Note(s): 
-  1. Video utilizes prefers-reduced-motion in addition to the pause button. When user disables animation in their operating system, 
+  1. Script utilizes prefers-reduced-motion in addition to the pause button. When user disables animation in their operating system, 
   these videos will not autoplay.
-  2. Cookie set or removed when pause button toggled to remember the desired setting on return visits across entire site where BVC used.
+  2. Cookie set or removed when pause button toggled to remember the desired setting on return visits across entire site where AC used.
   3. Video may not play if mobile device is in low-power mode. This is for a good reason—so video does not drain the battery life.
 
 */
 
 (function() {
 
-  "use strict";
-
-  var $bvcClass = ".bvc";
-  var $bvcMediaClass = ".bvc__video";
-  var $bvcButtonClassName = "bvc__button"
-  var $bvcButtonLabel = "Pause Background Animations";
+  var $acClass = ".ac";
+  var $acMediaClass = ".ac__video";
+  var $acButtonClassName = "ac__button"
+  var $acButtonLabel = "Pause Animation";
 
   // Check Cookie. If set to true, pause video.
 
@@ -32,23 +30,23 @@
   
   }
 
-  var videoPaused = getCookie("backgroundVideosPaused");
+  var animationPaused = getCookie("backgroundVideosPaused");
 
-  // Background Video Container
+  // Animation Controls
 
-  var backgroundVideoContainers = document.querySelectorAll($bvcClass);
+  var animationControls = document.querySelectorAll($acClass);
 
   // Background Videos
 
-  var backgroundVideos = document.querySelectorAll($bvcMediaClass);
+  var backgroundVideos = document.querySelectorAll($acMediaClass);
 
-  backgroundVideoContainers.forEach(function(container){
+  animationControls.forEach(function(control){
 
     // Create Pause Button
 
     var btnPlayPause = document.createElement("button");
-    btnPlayPause.setAttribute("aria-label", $bvcButtonLabel);
-    btnPlayPause.classList.add($bvcButtonClassName);
+    btnPlayPause.setAttribute("aria-label", $acButtonLabel);
+    btnPlayPause.classList.add($acButtonClassName);
 
     // Set attribute depending on OS user settings in OS...
 
@@ -56,7 +54,7 @@
 
        // ... and has not paused video(s).
 
-      if(videoPaused !== null) {
+      if(animationPaused !== null) {
 
         btnPlayPause.setAttribute("aria-pressed", "true");
 
@@ -74,19 +72,19 @@
     
     // Append Pause Button
     
-    container.prepend(btnPlayPause);
+    control.prepend(btnPlayPause);
 
     // Pause Button Toggle Event
 
     btnPlayPause.addEventListener("click", function() {
 
-      var backgroundVideoBtn = document.querySelectorAll("." + $bvcButtonClassName);
+      var animationToggles = document.querySelectorAll("." + $acButtonClassName);
 
       if (this.getAttribute("aria-pressed") === "false") {
 
         // Get all pause buttons on page and set them to true. 
 
-        backgroundVideoBtn.forEach(function(button){
+        animationToggles.forEach(function(button){
 
           button.setAttribute("aria-pressed", "true");
 
@@ -97,7 +95,7 @@
         backgroundVideos.forEach(function(video) {
 
           video.pause();
-          document.cookie = "backgroundVideosPaused=true; path=/";
+          document.cookie = "AnimationPaused=true; path=/";
 
         });
 
@@ -105,7 +103,7 @@
 
         // Get all pause buttons on page and set them to true. 
 
-        backgroundVideoBtn.forEach(function(button){
+        animationToggles.forEach(function(button){
 
           button.setAttribute("aria-pressed", "false");
         
@@ -115,7 +113,7 @@
 
         backgroundVideos.forEach(function(video){
 
-          document.cookie = "backgroundVideosPaused=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.cookie = "AnimationPaused=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           video.play();
   
         });
@@ -136,7 +134,7 @@
 
       // ...or has not paused video.
 
-      if(videoPaused === null) {
+      if(animationPaused === null) {
 
         video.autoplay = true;
 
