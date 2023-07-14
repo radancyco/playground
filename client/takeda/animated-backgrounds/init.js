@@ -16,6 +16,8 @@
 
 (function() {
 
+  "use strict";
+
   var $acClass = ".ac";
   var $acMediaClass = ".ac__video";
   var $acButtonClassName = "ac__button"
@@ -30,7 +32,7 @@
   
   }
 
-  var animationPaused = getCookie("backgroundVideosPaused");
+  var animationPaused = getCookie("AnimationPaused");
 
   // Animation Controls
 
