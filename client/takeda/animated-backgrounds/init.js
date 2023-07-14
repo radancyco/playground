@@ -16,7 +16,7 @@
 
 (function() {
 
-  // Above enclosure optional.
+  "use strict";
 
   var $bvcClass = ".bvc";
   var $bvcMediaClass = ".bvc__video";
@@ -27,9 +27,8 @@
 
   function getCookie(name) {
 
-    var re = new RegExp(name + "=([^;]+)");
-    var value = re.exec(document.cookie);
-    return (value !== null) ? unescape(value[1]):null;
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + name + '=([^;]*)')); 
+    return match ? match[1] : null;
   
   }
 
@@ -51,7 +50,11 @@
     btnPlayPause.setAttribute("aria-label", $bvcButtonLabel);
     btnPlayPause.classList.add($bvcButtonClassName);
 
+    // Set attribute depending on OS user settings in OS...
+
     if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+
+       // ... and has not paused video(s).
 
       if(videoPaused !== null) {
 
@@ -73,7 +76,7 @@
     
     container.prepend(btnPlayPause);
 
-    // Pause Toggle
+    // Pause Button Toggle Event
 
     btnPlayPause.addEventListener("click", function() {
 
@@ -89,7 +92,7 @@
 
         });
 
-        // Set cookie and pause video
+        // Set cookie and pause video(s).
 
         backgroundVideos.forEach(function(video) {
 
@@ -108,7 +111,7 @@
         
         });
 
-        // Clear cookie and play videos
+        // Remove cookie and play video(s).
 
         backgroundVideos.forEach(function(video){
 
@@ -123,17 +126,19 @@
 
   });
 
-  // Loop through all videos on page on load
+  // Loop through all videos on page load.
 
   backgroundVideos.forEach(function(video){
 
-    // Only play videos if user has not disabled animation
+    // Only play video(s) if user has not disabled animation in OS...
 
     if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
 
+      // ...or has not paused video.
+
       if(videoPaused === null) {
 
-        video.setAttribute("autoplay", "");
+        video.autoplay = true;
 
       }
 
