@@ -32,6 +32,7 @@
   
   }
 
+  var documentBody = document.body;
   var animationPaused = getCookie("AnimationPaused");
 
   // Animation Controls
@@ -59,16 +60,19 @@
       if(animationPaused !== null) {
 
         btnPlayPause.setAttribute("aria-pressed", "true");
+        documentBody.classList.add("animation-disabled");
 
       } else {
 
         btnPlayPause.setAttribute("aria-pressed", "false");
+        documentBody.classList.remove("animation-disabled");
 
       }
 
     } else {
 
       btnPlayPause.setAttribute("aria-pressed", "true");
+      documentBody.classList.add("animation-disabled");
 
     }
     
@@ -83,6 +87,10 @@
       var animationToggles = document.querySelectorAll("." + $acButtonClassName);
 
       if (this.getAttribute("aria-pressed") === "false") {
+
+        // Add disabled class to body.
+
+        documentBody.classList.add("animation-disabled");
 
         // Get all pause buttons on page and set them to true. 
 
@@ -103,7 +111,11 @@
 
       } else {
 
-        // Get all pause buttons on page and set them to true. 
+        // Remove disabled calss from body.
+        
+        documentBody.classList.remove("animation-disabled");
+
+        // Get all pause buttons on page and set them to false. 
 
         animationToggles.forEach(function(button){
 
