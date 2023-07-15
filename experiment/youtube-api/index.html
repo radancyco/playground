@@ -1,0 +1,96 @@
+---
+title: "YouTube API Test"
+---
+
+
+
+<iframe id="videoId" src="https://www.youtube.com/embed/Q4O6yxUC_8g"> </iframe>
+   <button onclick = "stop()"> stop </button>
+   <button onclick = "pause()"> pause </button>
+   <script>
+
+/*********************************************************
+Call in Youtube API
+*********************************************************/
+var tag = document.createElement('script');
+tag.id = 'yt-script';
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+/*********************************************************/
+
+// Keep track of all youtube video players on page
+var players = {};
+
+
+// Find all iframes in page and add the enablejsapi to the urls.
+function onYouTubeIframeAPIReady() {
+
+  var iframes = document.getElementsByTagName('iframe');
+  for(var i = 0; i < iframes.length; i++){
+    iframes[i].id = iframes[i].src.split('/embed/')[1].split('?')[0];
+    iframes[i].src += "?enablejsapi=1";
+
+    players[iframes[i].id] = new YT.Player(iframes[i].id, {
+      events: {
+        'onStateChange': initTrack
+      }
+    });
+
+  }
+ }
+
+ /*********************************************************
+Functions
+*********************************************************/
+// initiate tracking
+var initTrack = function(event){
+  if(event.data == YT.PlayerState.PLAYING){
+    var id = event.target.a.id;
+
+    // TRACKING HERE
+    // case based on youtube ID.
+    switch (id){
+      case 'uwyIz2eSxfM':
+        ga('send', 'event', 'Custom Event', 'Click', 'Values');
+        break;
+
+      case 'GGcYGwwCDz8':
+        ga('send', 'event', 'Custom Event', 'Click', 'Impactful Work');
+        break;
+
+      case 'BppQEJ-tWoI':
+        ga('send', 'event', 'Custom Event', 'Click', 'Impactful Work');
+        break;
+
+      case 'UedG-zdLVqs':
+        ga('send', 'event', 'Custom Event', 'Click', 'Impactful Work');
+        break;
+
+    }
+    // END TRACKING HERE
+  }
+}
+
+
+
+
+
+      // to stop the video
+      function stop() {
+         let video = document.getElementById("videoId")
+         video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+      }
+      // to pause the video
+      function pause() {
+         let video = document.getElementById("videoId")
+         video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
+      }
+
+
+
+
+ 
+
+
+   </script>
