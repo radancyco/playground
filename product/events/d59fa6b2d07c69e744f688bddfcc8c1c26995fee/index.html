@@ -5,7 +5,7 @@ heading: false
 localcss: "init.css"
 localjs: "init.js"
 localissues: false
-title: "Event Title"
+title: "Event Title Commodo Posuere Sapien"
 ---
 
 <style>
@@ -23,76 +23,99 @@ section:target {
 background-color: #eaeaea;
 }
 
+dl {
+font-weight: bold;
+}
+
+dt span::after {
+content: ":";
+}
+
+dt::before {
+display: inline-block;
+content: "";
+width: 40px;
+height: 40px;
+border: 1px red solid;
+}
+
 </style>
 
 <div class="events">
 
-  <section>
+  <div class="events__overview">
 
-    <div class="events__overview">
+    <h1 class="events__primary-heading" id="events-primary-heading">{{ page.title }}</h1>
 
-      <h1 class="events__primary-heading">{{ page.title }}</h1>
+    <ul class="events__summary">
+      <li>Day, Month ##, ####</li>
+      <li>Type of Event (Remote/In-Person)</li>
+    </ul>
 
-      <ul class="events__summary">
-        <li>Day Month XX</li>
-        <li>Type of Event (Remote/In-Person)</li>
-        <li>Job Category</li>
-      </ul>
+    <a class="events__register" href="#register">Register <span aria-hidden="true" class="events__register__icon"></span></a>
 
-      <p>Why you don't want to miss this event, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+  </div>
 
-      <ul class="events__navigation">
-        <li><a href="#event-details">Learn More</a></li>
-        <li><a href="#event-registration">Register</a></li>
-        <li><a href="#event-share">Share Event</a></li>
-      </ul>
+  <div class="events__share">
 
+    <h2>Share</h2>
+
+    <ul>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Email</a></li>
+    </ul>
+
+  </div>
+
+  <div class="events__details">
+
+    <div class="events__description">
+
+      <p><strong>Pellentesque habitant</strong> morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas.</p>
+
+      <p>Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+  
     </div>
 
-  </section>
+    <div class="events__complementary">
 
-  <section aria-label="Event Details" class="events__details" id="event-details">
-
-    <p><strong>Pellentesque habitant</strong> morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas.</p>
-
-    <p>Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-
-    <aside class="events__complementary">
-
-      <ul class="events__additional">
-        <li>
+      <dl>
+        <dt><span class="visually-hidden">Start</span></dt>
+        <dd>
           
           <span>Day, Month ##, ####</span>
-          <span>10:30 a.m. to 1:30 p.m.</span>
+          <span>10:30 a.m. EST</span>
     
-          <a href="">Add to Calendar</a>
-
-        </li>
-        <li>
+        </dd>
+        <dt><span class="visually-hidden">End</span></dt>
+        <dd>
+          
+          <span>Day, Month ##, ####</span>
+          <span>1:30 p.m. EST</span>
+    
+        </dd>
+        <dt><span class="visually-hidden">Address</span></dt>
+        <dd>
       
-          <span>Venue Name</span>
           <span>#### Street Name</span>
           <span>City. State Zip Code</span>
-      
-          <a href="#">Get Directions</a>
-
-        </li>
-        <li>
-      
-          Registration Required
-
-        </li>
-      </ul>
-
-    </aside>
   
-  </section>
+        </dd>
+        <dt>Hosted By</dt>
+        <dd>First Name Last Name</dd>
+      </dl>
+  
+    </div>
+  
+  </div>
 
-  <section class="events__registration" id="event-registration">
+  <section aria-labelledby="events-register-heading" class="events__register" id="register">
 
-    <h2>Register</h2>
+    <h2 id="events-register-heading">Register</h2>
 
     <p>If you would like to attend this event, please provide the information below and click the "Sign Up" button. All fields are required.</p>
 
@@ -101,19 +124,6 @@ background-color: #eaeaea;
     <p>Form will go here.</p>
 
     </form>
-
-  </section>
-
-  <section class="events__share" id="event-share">
-
-    <h3>Share this event</h3>
-
-    <ul>
-      <li><a href="#"><a href="">Facebook</a></li>
-      <li><a href="#"><a href="">Twitter X</a></li>
-      <li><a href="#"><a href="">LinkedIn</a></li>
-      <li><a href="#"><a href="">Email</a></li>
-    </ul>
 
   </section>
 
