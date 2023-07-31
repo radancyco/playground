@@ -1,45 +1,12 @@
 ---
-folder: product/hosted-apply/d59fa6b2d07c69e744f688bddfcc8c1c26995fee
+folder: product/events/d59fa6b2d07c69e744f688bddfcc8c1c26995fee
 jquery: false
 heading: false
 localcss: "init.css"
-localjs: "init.js"
+localjsnote: false
 localissues: false
 title: "Event Title Commodo Posuere Sapien"
 ---
-
-<style>
-
-li span {
-display: block;
-}
-
-section {
-padding: 1em;
-border-radius: 10px;
-}
-
-section:target {
-background-color: #eaeaea;
-}
-
-dl {
-font-weight: bold;
-}
-
-dt span::after {
-content: ":";
-}
-
-dt::before {
-display: inline-block;
-content: "";
-width: 40px;
-height: 40px;
-border: 1px red solid;
-}
-
-</style>
 
 <div class="events">
 
@@ -52,7 +19,7 @@ border: 1px red solid;
       <li>Type of Event (Remote/In-Person)</li>
     </ul>
 
-    <a class="events__register" href="#register">Register <span aria-hidden="true" class="events__register__icon"></span></a>
+    <a class="events__btn-register" href="#register">Register <span aria-hidden="true" class="events__register__icon"></span></a>
 
   </div>
 
@@ -73,40 +40,81 @@ border: 1px red solid;
 
     <div class="events__description">
 
-      <p><strong>Pellentesque habitant</strong> morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+      <p><em>Currently this is an open field, so any content or structure can be implemented here via the WYSIWYG editor. Adding headers and such will likely be a matter of training.</em></p>
 
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas.</p>
+      <h2>Purpose of the Event</h2>
 
-      <p>Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-  
+      <p>Nullam id vestibulum lectus. Curabitur commodo <strong>posuere sapien</strong>, non vulputate lorem dapibus vitae. Fusce est ligula, tincidunt eget cursus vel, faucibus eget sem. Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque pulvinar feugiat sem in ultrices. Pellentesque ut volutpat nunc.</p>
+
+      <h2>Speaker(s)</h2>
+
+      <p>First Name, Last Name, Title aucibus eget sem; First Name, Last Name, Title aucibus eget sem; First Name, Last Name, Title aucibus eget sem.</p>
+
+      <h2>Agenda/Breakout Groups/Planned Activity</h2>
+
+      <p>Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque <a href="#" target="_blank">pulvinar feugiat sem</a> in ultrices. Pellentesque ut volutpat nunc. Duis suscipit orci finibus libero bibendum.</p>
+
+      <h2>Promotion/Offers for Attendees</h2>
+
+      <p>Quisque pulvinar feugiat sem in ultrices. Pellentesque ut volutpat nunc suscipit orci finibus libero bibendum.</p>
+
+      <h2>Location Information/Virtual Link Access/When You Arrive</h2>
+
+      <p>Include location information/virtual link will arrive via email. Driving/Parking/Entrance to location details. If virtual event, any requirements or security information for logging in ellentesque ut volutpat nunc suscipit orci finibus libero bibendum.</p>
+
+      <h2>Questions</h2>
+
+      <p>Contact information for a <a href="#">recruiter</a> or <a href="#">event planner</a>.</p>
+
     </div>
 
     <div class="events__complementary">
 
       <dl>
-        <dt><span class="visually-hidden">Start</span></dt>
-        <dd>
+
+          <div>
           
-          <span>Day, Month ##, ####</span>
-          <span>10:30 a.m. EST</span>
-    
-        </dd>
-        <dt><span class="visually-hidden">End</span></dt>
-        <dd>
+            <dt>Start</dt>
+            <dd>
           
-          <span>Day, Month ##, ####</span>
-          <span>1:30 p.m. EST</span>
+              <span>Day, Month ##, ####</span>
+              <span>10:30 a.m. EST</span>
     
-        </dd>
-        <dt><span class="visually-hidden">Address</span></dt>
-        <dd>
+            </dd>
+          
+          </div>
+              
+          <div>
+          
+            <dt>End</dt>
+            <dd>
+          
+              <span>Day, Month ##, ####</span>
+              <span>1:30 p.m. EST</span>
+    
+            </dd>
+          
+          </div>
+           
+          <div>
+     
+            <dt>Address</dt>
+            <dd>
       
-          <span>#### Street Name</span>
-          <span>City. State Zip Code</span>
+              <span>#### Street Name</span>
+              <span>City. State Zip Code</span>
   
-        </dd>
-        <dt>Hosted By</dt>
-        <dd>First Name Last Name</dd>
+            </dd>
+        
+          </div>
+    
+          <div>
+        
+            <dt>Hosted By</dt>
+            <dd>First Name Last Name</dd>
+          
+          </div>
+          
       </dl>
   
     </div>
@@ -115,13 +123,13 @@ border: 1px red solid;
 
   <section aria-labelledby="events-register-heading" class="events__register" id="register">
 
-    <h2 id="events-register-heading">Register</h2>
+    <h2 id="events-register-heading">Register for Event</h2>
 
     <p>If you would like to attend this event, please provide the information below and click the "Sign Up" button. All fields are required.</p>
 
     <form>
 
-    <p>Form will go here.</p>
+      <p>Form will go here.</p>
 
     </form>
 
