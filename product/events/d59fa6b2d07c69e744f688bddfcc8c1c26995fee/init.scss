@@ -283,7 +283,7 @@ a {
   
   // Success Message
 
-  &__success{
+  &__success {
   background-color: #007ac8;
   text-align: center;
   color: #fff;
@@ -308,17 +308,10 @@ a {
 
 // Variables
 
-$ha-color-complete: #008000;
-$ha-color-dark: #000;
-$ha-color-disabled: #767676;
 $ha-color-error: #C70000;
 $ha-color-error-highlight: pink;
-$ha-color-highlight-1: #CCC;
-$ha-color-highlight-2: #EEE;
 $ha-color-light: #FFF;
 $ha-color-neutral: #767676;
-$ha-color-neutral-highlight: #767676;
-$ha-color-primary: #6F00EF;
 
 .events-form {
 display: grid; 
@@ -332,7 +325,7 @@ grid-template-areas:
 "events-form__submit events-form__submit"; 
 position: relative;
 
-  // For more complex layouts, I like to use explicit grids, which makes understanding the layout much easier. Form are hard enough as it is.
+  // For more complex layouts, I like to use explicit grids, which makes understanding the layout much, much easier. Form are hard enough as it is.
 
   &__firstname { 
   grid-area: events-form__firstname; 
@@ -362,11 +355,7 @@ position: relative;
   grid-area: events-form__submit;
   }
 
-  &__optin, &__agreement, &__submit {
-  text-align: center;
-  }
-
-  // General styles for for elements
+  // General styles for elements
 
   &__field {
   margin: 0 1em; // Adding margin to each field because inputs not playing nice with gap. 
@@ -377,12 +366,6 @@ position: relative;
     display: inline-block;
     font-weight: bold;
     margin: 1em 0 .5em;
-
-      // Some "legends" need to be styled like labels, too.
-
-      &:not(label) {
-      margin-top: 0;
-      }
 
       .events-form__field--invalid & {
       color: $ha-color-error;
@@ -458,6 +441,18 @@ position: relative;
 
     &__error, &__desc {
     margin: .5em 0;
+    }
+
+  }
+
+  &__optin, &__agreement, &__submit {
+  text-align: center;
+  }
+
+  &__optin {
+  
+    label {
+    font-weight: normal;
     }
 
   }
