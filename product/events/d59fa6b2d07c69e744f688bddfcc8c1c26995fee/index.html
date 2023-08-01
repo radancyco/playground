@@ -3,6 +3,7 @@ folder: product/events/d59fa6b2d07c69e744f688bddfcc8c1c26995fee
 jquery: false
 heading: false
 localcss: "init.css"
+localjs: "init.js"
 localjsnote: false
 localissues: false
 title: "Event Title Commodo Posuere Sapien"
@@ -19,7 +20,7 @@ title: "Event Title Commodo Posuere Sapien"
       <li>Type of Event (Remote/In-Person)</li>
     </ul>
 
-    <a class="events__btn-register" href="#register">Register <span aria-hidden="true" class="events__register__icon"></span></a>
+    <a class="events__btn" href="#register">Register <span aria-hidden="true" class="events__register__icon"></span></a>
 
   </div>
 
@@ -52,7 +53,7 @@ title: "Event Title Commodo Posuere Sapien"
 
       <h2>Agenda/Breakout Groups/Planned Activity</h2>
 
-      <p>Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque <a href="#" target="_blank">pulvinar feugiat sem</a> in ultrices. Pellentesque ut volutpat nunc. Duis suscipit orci finibus libero bibendum.</p>
+      <p>Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque <a href="#" target="_blank">pulvinar feugiat sem <span class="visually-hidden">(opens in new window)</span></a> in ultrices. Pellentesque ut volutpat nunc. Duis suscipit orci finibus libero bibendum.</p>
 
       <h2>Promotion/Offers for Attendees</h2>
 
@@ -123,17 +124,94 @@ title: "Event Title Commodo Posuere Sapien"
 
   <section aria-labelledby="events-register-heading" class="events__register" id="register">
 
-    <h2 id="events-register-heading">Register for Event</h2>
+    <header>
 
-    <p>If you would like to attend this event, please provide the information below and click the "Sign Up" button. All fields are required.</p>
+      <h2 id="events-register-heading">Register for Event</h2>
 
-    <form>
+      <p>If you would like to attend this event, please provide the information below and click the "Sign Up" button. All fields marked with an "*" are required.</p>
 
-      <p>Form will go here.</p>
+    </header>
+
+    <form action="#" class="events-form" id="event-form" novalidate>
+
+      <div class="events-form__field events-form__field--invalid events-form__firstname">
+
+        <label class="events-form__field__label" for="events-firstname">First Name <span class="events-form__required"><span aria-hidden="true" class="events-form__field__icon"></span></span></label>
+
+        <input aria-invalid="true" aria-describedby="events-firstname-error" data-error-message="First name is required." id="events-firstname" required type="text">
+
+        <span class="events-form__field__error" id="events-firstname-error">First name is required.</span>
+
+      </div>
+
+      <div class="events-form__field events-form__lastname">
+
+        <label class="events-form__field__label" for="events-lastname">Last Name <span class="events-form__required"><span aria-hidden="true" class="events-form__field__icon"></span></span></label>
+
+        <input aria-invalid="false" aria-describedby="events-lastname-error" data-error-message="Last name is required." id="events-lastname" required type="text">
+
+        <span class="events-form__field__error" id="events-lastname-error"></span>
+
+      </div>
+
+      <div class="events-form__field events-form__email">
+
+        <label class="events-form__field__label" for="events-email">Email Address <span class="events-form__required"><span aria-hidden="true" class="events-form__field__icon"></span></span></label>
+
+        <input aria-invalid="false" aria-describedby="events-email-error" data-error-message="Email address is required." id="events-email" required type="email">
+
+        <span class="events-form__field__error" id="events-email-error"></span>
+
+      </div>
+
+      <div class="events-form__field events-form__upload">
+
+        <label class="events-form__field__label" for="events-upload">Upload Resume/CV</label>
+
+        <input aria-invalid="false" aria-describedby="events-upload-limit" data-error-message="Attachment is required and must have a value" id="events-upload" type="file">
+
+        <span class="events-form__field__desc" id="events-upload-limit">We accept files under 2MB with the following extensions: doc, pdf, docx</span> 
+
+        <span class="events-form__field__error" id="events-upload-error"></span>
+    
+      </div>
+
+      <div class="events-form__field events-form__optin">
+
+        <input checked id="events-talent-community" type="checkbox">
+
+        <label class="events-form__field__label" for="events-talent-community">Please add me to your Talent Community so you can keep me informed about your company, upcoming events and opportunities.</label>
+
+      </div>
+
+      <div id="events-agreement" class="events-form__field events-form__agreement">
+
+        <p>By registering for this event, you are agreeing to receive communications specific to this event before, during and after the event.</p>
+
+      </div>
+
+      <div class="events-form__field events-form__submit">
+
+        <button aria-describedby="events-agreement" class="events-form__button" type="submit">Sign Up</button>
+
+      </div>
 
     </form>
 
   </section>
+
+  <div class="events__success">
+
+    <h2>Your Registration Has Been Received</h2>
+    
+    <p>Thank you for registering for our event. You will receive email reminders for the event as well as any additional details we have to share. We look forward to seeing you at the event!</p>
+
+    <ul>
+      <li><a class="events__btn" href="">Search Jobs</a></li>
+      <li><a class="events__btn" href="">View All Events</a></li>
+    </ul>
+  
+  </div>
 
 </div>
 

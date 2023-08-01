@@ -11,9 +11,60 @@
 
 */
 
-/* html {
-scroll-padding-top: 300px; // use to offset scrolling with sticky navs, etc. 
-} */
+html {
+scroll-padding-top: 100px; // Adjust as needed to if sticky navs are used, etc.
+}
+
+// Global Properities
+
+// Note: If you have these already in your global stylesheet, feel free to remove.
+
+*, *::before, *::after {
+box-sizing: inherit;
+}
+  
+html {
+box-sizing: border-box;
+}
+  
+// Visually hide elements
+  
+.visually-hidden:not(:focus):not(:active) {
+clip-path: inset(50%);
+clip: rect(0 0 0 0);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+width: 1px;
+}
+
+// New Window Links
+// Any link that opens in a new windows needs this and also hidden text.
+// Example: <a href="..." target="_blank">Create Home Account <span class="visually-hidden">(opens in new window)</span></a>
+
+a {
+
+  &[target="_blank"] {
+
+    &:after {
+    background-color: transparent;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAY1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmaHTeAAAAIHRSTlMA8nduqJtOiPi1gkbk1I4E/drNxrxhXj4L6+etq5xUBzDUHmUAAADHSURBVDjL7dTJDsIgFIXhg9XSls6js33/p5RY4xElt8S1/+Im3HwJKwCQFYppPDJ1rZxyVN383gVLw/wRMvdc4lns7hVyd3EGpQsTO9PNKwNKFyo7R3iiJNzAn8llyNJAuAu7mo5QcH0iQbotJhHSAbEI6awklNwiCf2OktDj2EDodcwQeh37gvueToYFnReylE6GaDvIkP0IJ611FgCXFx0CI0vUH67DUYZXfnuR2MmSBMc5qAN0GCxRtSGuuAHQjVqpKSvcAdRxP4/X5EAaAAAAAElFTkSuQmCC);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    content: "";
+    display: inline-block;
+    height: 1em;
+    margin: 0 6px;
+    position: relative;
+    vertical-align: middle;
+    width: 1em;
+    }
+
+  }
+
+}
 
 .events {
 
@@ -63,9 +114,10 @@ scroll-padding-top: 300px; // use to offset scrolling with sticky navs, etc.
 
   }
 
-  &__btn-register {
+  &__btn {
   background-color: #007ac8;
-  border: 2px transparent solid;
+  border: 2px #fff solid;
+  border-radius: 5px;
   color: #fff;
   display: inline-block;
   font-weight: bold;
@@ -177,15 +229,15 @@ scroll-padding-top: 300px; // use to offset scrolling with sticky navs, etc.
       div {
       align-items: center;
       display: grid; 
-      grid-template-columns: 70px auto;
+      grid-template-columns: 50px auto;
       grid-template-rows: auto;
+      gap: 0 20px;
       margin-bottom: 1em;
         
         &::before {
         background-color: #ccc;
         content: "";
         display: block;
-        grid-column-start: 1;
         grid-row-end: none;
         grid-row-start: 1;
         height: 60px;
@@ -197,14 +249,10 @@ scroll-padding-top: 300px; // use to offset scrolling with sticky navs, etc.
       dt {
       color: #007ac8;
       grid-column-start: 2;
-      grid-row-end: 2;
-      grid-row-start: 1;
       }
         
       dd {
       grid-column-start: 2;
-      grid-row-end: 3;
-      grid-row-start: 2;
       margin: 0;
 
         span {
@@ -222,13 +270,200 @@ scroll-padding-top: 300px; // use to offset scrolling with sticky navs, etc.
   &__register {
   background-color: #eee;
   padding: 1em;
-  text-align: center;
 
-    &:target {
-    background-color: #ccc;
-    outline: 2px #007ac8 solid;
+    header {
+    text-align: center;
     }
 
-  }   
+    &:target {
+    background-color: rgba(#007ac8, 0.1);
+    }
+
+  }
+  
+  // Success Message
+
+  &__success{
+  background-color: #007ac8;
+  text-align: center;
+  color: #fff;
+  padding: 2em;
+  margin: 1em 0;
+
+    li {
+    display: inline-block;
+    margin: 0 1em;
+
+      a {
+      min-width: 220px;
+      }
+
+    }
+
+  }
+
+}
+
+// Events Form 
+
+// Variables
+
+$ha-color-complete: #008000;
+$ha-color-dark: #000;
+$ha-color-disabled: #767676;
+$ha-color-error: #C70000;
+$ha-color-error-highlight: pink;
+$ha-color-highlight-1: #CCC;
+$ha-color-highlight-2: #EEE;
+$ha-color-light: #FFF;
+$ha-color-neutral: #767676;
+$ha-color-neutral-highlight: #767676;
+$ha-color-primary: #6F00EF;
+
+.events-form {
+display: grid; 
+grid-template-columns: 50% 50%; 
+grid-template-rows: auto; 
+grid-template-areas: 
+"events-form__firstname events-form__lastname"
+"events-form__email events-form__upload"
+"events-form__optin events-form__optin"
+"events-form__agreement events-form__agreement"
+"events-form__submit events-form__submit"; 
+position: relative;
+
+  // For more complex layouts, I like to use explicit grids, which makes understanding the layout much easier. Form are hard enough as it is.
+
+  &__firstname { 
+  grid-area: events-form__firstname; 
+  }
+  
+  &__lastname { 
+  grid-area: events-form__lastname;
+  }
+  
+  &__email { 
+  grid-area: events-form__email; 
+  }
+  
+  &__upload { 
+  grid-area: events-form__upload;
+  }
+  
+  &__optin { 
+  grid-area: events-form__optin;
+  }
+  
+  &__agreement { 
+  grid-area: events-form__agreement;
+  }
+  
+  &__submit {
+  grid-area: events-form__submit;
+  }
+
+  &__optin, &__agreement, &__submit {
+  text-align: center;
+  }
+
+  // General styles for for elements
+
+  &__field {
+  margin: 0 1em; // Adding margin to each field because inputs not playing nice with gap. 
+
+    // Label
+
+    &__label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 1em 0 .5em;
+
+      // Some "legends" need to be styled like labels, too.
+
+      &:not(label) {
+      margin-top: 0;
+      }
+
+      .events-form__field--invalid & {
+      color: $ha-color-error;
+      }
+
+    }
+
+    // Required
+
+    &__required {
+    @extend .visually-hidden;
+    }
+
+    &__icon {
+
+      &::after {
+      color: $ha-color-error;
+      content: "*";
+      vertical-align: middle;
+      }
+
+    }
+
+    // Form Elements
+
+    input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), select, textarea {
+    background-color: $ha-color-light;
+    border: 1px $ha-color-neutral solid;
+    font-size: inherit;
+    padding: .7em;
+    width: 100%;
+
+      &[aria-invalid="true"] {
+      border-color: $ha-color-error;
+      background-color: $ha-color-error-highlight;
+      }
+
+    }
+
+    input[type="file"] {
+    display: block;
+    width: 100%;
+
+      &::file-selector-button {
+      @extend .events__btn;
+      margin: 0; // Override - can be removed.
+      margin-inline-end: 1em;
+      min-width: 220px;
+      padding: 1em;
+      text-transform: none;
+      }
+
+    }
+
+    // Error Messages
+
+    &__error {
+    color: $ha-color-error;
+    display: none;
+
+      .events-form__field--invalid & {
+      display: block;
+      }
+
+    }
+
+    // Descriptions
+
+    &__desc {
+    display: block;
+    font-style: italic; 
+    }
+
+    &__error, &__desc {
+    margin: .5em 0;
+    }
+
+  }
+
+  &__button {
+  @extend .events__btn;
+  }
 
 }
