@@ -39,36 +39,6 @@ title: "Event Title Commodo Posuere Sapien"
 
   <div class="events__details">
 
-    <div class="events__description">
-
-      <p><em>Currently this is an open field, so any content or structure can be implemented here via the WYSIWYG editor. Adding headers and such will likely be a matter of training.</em></p>
-
-      <h2>Purpose of the Event</h2>
-
-      <p>Nullam id vestibulum lectus. Curabitur commodo <strong>posuere sapien</strong>, non vulputate lorem dapibus vitae. Fusce est ligula, tincidunt eget cursus vel, faucibus eget sem. Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque pulvinar feugiat sem in ultrices. Pellentesque ut volutpat nunc.</p>
-
-      <h2>Speaker(s)</h2>
-
-      <p>First Name, Last Name, Title aucibus eget sem; First Name, Last Name, Title aucibus eget sem; First Name, Last Name, Title aucibus eget sem.</p>
-
-      <h2>Agenda/Breakout Groups/Planned Activity</h2>
-
-      <p>Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque <a href="#" target="_blank">pulvinar feugiat sem <span class="visually-hidden">(opens in new window)</span></a> in ultrices. Pellentesque ut volutpat nunc. Duis suscipit orci finibus libero bibendum.</p>
-
-      <h2>Promotion/Offers for Attendees</h2>
-
-      <p>Quisque pulvinar feugiat sem in ultrices. Pellentesque ut volutpat nunc suscipit orci finibus libero bibendum.</p>
-
-      <h2>Location Information/Virtual Link Access/When You Arrive</h2>
-
-      <p>Include location information/virtual link will arrive via email. Driving/Parking/Entrance to location details. If virtual event, any requirements or security information for logging in ellentesque ut volutpat nunc suscipit orci finibus libero bibendum.</p>
-
-      <h2>Questions</h2>
-
-      <p>Contact information for a <a href="#">recruiter</a> or <a href="#">event planner</a>.</p>
-
-    </div>
-
     <div class="events__complementary">
 
       <dl>
@@ -118,6 +88,36 @@ title: "Event Title Commodo Posuere Sapien"
           
       </dl>
   
+    </div>
+
+    <div class="events__description">
+
+      <p><em>Currently this is an open field, so any content or structure can be implemented here via the WYSIWYG editor. Adding headers and such will likely be a matter of training.</em></p>
+
+      <h2>Purpose of the Event</h2>
+
+      <p>Nullam id vestibulum lectus. Curabitur commodo <strong>posuere sapien</strong>, non vulputate lorem dapibus vitae. Fusce est ligula, tincidunt eget cursus vel, faucibus eget sem. Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque pulvinar feugiat sem in ultrices. Pellentesque ut volutpat nunc.</p>
+
+      <h2>Speaker(s)</h2>
+
+      <p>First Name, Last Name, Title aucibus eget sem; First Name, Last Name, Title aucibus eget sem; First Name, Last Name, Title aucibus eget sem.</p>
+
+      <h2>Agenda/Breakout Groups/Planned Activity</h2>
+
+      <p>Donec a mattis lectus. Praesent ac nulla iaculis, ornare magna quis, posuere ex. Quisque <a href="#" target="_blank">pulvinar feugiat sem <span class="visually-hidden">(opens in new window)</span></a> in ultrices. Pellentesque ut volutpat nunc. Duis suscipit orci finibus libero bibendum.</p>
+
+      <h2>Promotion/Offers for Attendees</h2>
+
+      <p>Quisque pulvinar feugiat sem in ultrices. Pellentesque ut volutpat nunc suscipit orci finibus libero bibendum.</p>
+
+      <h2>Location Information/Virtual Link Access/When You Arrive</h2>
+
+      <p>Include location information/virtual link will arrive via email. Driving/Parking/Entrance to location details. If virtual event, any requirements or security information for logging in ellentesque ut volutpat nunc suscipit orci finibus libero bibendum.</p>
+
+      <h2>Questions</h2>
+
+      <p>Contact information for a <a href="#">recruiter</a> or <a href="#">event planner</a>.</p>
+
     </div>
   
   </div>
@@ -198,20 +198,26 @@ title: "Event Title Commodo Posuere Sapien"
 
     </form>
 
-  </section>
+    <div class="events__success" hidden id="event-success">
 
-  <div class="events__success">
+      <div class="events__success__content">
 
-    <h2>Your Registration Has Been Received</h2>
-    
-    <p>Thank you for registering for our event. You will receive email reminders for the event as well as any additional details we have to share. We look forward to seeing you at the event!</p>
-
-    <ul>
-      <li><a class="events__btn" href="">Search Jobs</a></li>
-      <li><a class="events__btn" href="">View All Events</a></li>
-    </ul>
+        <h2 id="success-heading">Your Registration Has Been Received</h2>
+      
+        <p>Thank you for registering for our event. You will receive email reminders for the event as well as any additional details we have to share. We look forward to seeing you at the event!</p>
   
-  </div>
+        <ul>
+          <li><a class="events__btn" href="">Search Jobs</a></li>
+          <li><a class="events__btn" href="">View All Events</a></li>
+        </ul>
+
+      </div>
+
+      <button aria-label="Close" class="events__success__btn" id="event-success-btn"></button>
+    
+    </div>
+
+  </section>
 
 </div>
 
