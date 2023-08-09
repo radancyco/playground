@@ -474,7 +474,7 @@ setTimeout(function(){
 
 	// Carousel Fixes
 
-	var $SlickSliderList = $(".one-time, .espn-banner, .quote-slider");
+	var $SlickSliderList = $(".one-time, .one-time2, .espn-banner, .quote-slider");
 
 	$SlickSliderList.find(".slick-dots, .slick-next").after("<button class='slick-carousel-pause' aria-label='Pause' aria-pressed='false'></button>");
 
