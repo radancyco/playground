@@ -12,7 +12,6 @@ text-align: center;
 top: 0;
 width: 100%;
 z-index: 100000;
-display: none;
 }
 
 #primary-nav {
@@ -30,6 +29,16 @@ display: none;
   color: #0384af !important;
   }
 
+}
+
+.slick-dots {
+display: block;
+background-color: rgba(0, 0, 0, 0.5);
+padding: 1em;
+width: 150px;
+border-radius: 5px;
+transform: translate(-50%, 0);
+left: 50%;
 }
 
 .slick-carousel-pause {
