@@ -494,6 +494,8 @@ setTimeout(function(){
 
 	});
 
+	$(".slick-active").removeAttr("aria-selected");
+
 	// Get Help Link in wrong area
 
 	var $getHelpLink = $(".advanced-search-form + .contact-us");
