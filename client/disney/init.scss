@@ -25,6 +25,18 @@ z-index: 100000;
 
 }
 
+.nav-job-alert, .nav-life-at {
+
+  a {
+
+    &:focus, &:hover {
+    color: inherit;
+    }
+
+  }
+
+}
+
 .home .keyword-search .search-form-fields button {
 
   &:focus, &:hover {
