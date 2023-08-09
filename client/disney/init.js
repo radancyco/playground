@@ -480,21 +480,21 @@ setTimeout(function(){
 
 	$(".slick-carousel-pause").on("click", function() {
 
+	  var $slickPause = $(".slick-carousel-pause");
+
 	  if ($(this).attr("aria-pressed") === "false"){
 
 	    $SlickSliderList.slick("slickPause");
-	    $(this).attr("aria-pressed", "true");
+	    $slickPause.attr("aria-pressed", "true");
 
 	  } else {
 
 	    $SlickSliderList.slick("slickPlay");
-	    $(this).attr("aria-pressed", "false");
+	    $slickPause.attr("aria-pressed", "false");
 
 	  }
 
 	});
-
-	$(".slick-active").removeAttr("aria-selected");
 
 	// Get Help Link in wrong area
 
