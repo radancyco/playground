@@ -21,6 +21,7 @@ $enhanced-grid-timing-function: cubic-bezier(0.51, 0.92, 0.24, 1);
 background-color: #f8971d; // dont'remove, we need fallback color for foreground text
 background-image: url("https://tbcdn.talentbrew.com/company/1839/gst_v1_0/graphics/tangerine-bg.webp");
 padding: 1em;
+position: relative;
 
   @media(min-width: 48.625em) {
 
@@ -79,56 +80,23 @@ padding: 1em;
   min-height: 340px;
   position: relative;
 
-    @media (prefers-reduced-motion: no-preference) {
+    .animation-enabled & {
+    transition-duration: $enhanced-grid-animation-speed;
+    transition-property: all;
+    transition-timing-function: $enhanced-grid-timing-function;
+    opacity: 0;
+    transform: scale(0.8);
+    transform-origin: center bottom;
+    }
 
-      transition-duration: $enhanced-grid-animation-speed;
-      transition-property: all;
-      transition-timing-function: $enhanced-grid-timing-function;
-
-        .js & {
-        opacity: 0;
-        transform: scale(0.8);
-        transform-origin: center bottom;
-        }
-
-        .active & {
-        opacity: 1;
-        transform: scale(1.001); // TODO: Seeing white border under video after scaling. Could be video itself (using webm) or scaling issue. Setting to 1.001 _might_ help. Still seeing on FF.
-        }
-
+    .active & {
+    opacity: 1;
+    transform: scale(1.001); // TODO: Seeing white border under video after scaling. Could be video itself (using webm) or scaling issue. Setting to 1.001 _might_ help. Still seeing on FF.
     }
 
     @media(min-width: 48.625em) {
 
       min-height: auto;
-
-    }
-
-    // Item Colors (If you want colors)
-
-    /* 
-    
-    &:nth-child(1),  &:nth-child(8) {
-    background-color: #79bc43;
-    }
-
-    &:nth-child(3) {
-    background-color: #bd44a8;
-    }
-
-    &:nth-child(6) {
-    background-color: #fddb00;
-    } 
-    
-    */
-
-    // Item Animation
-
-    @for $i from 1 through $enhanced-grid-total-items {
-
-      &:nth-child(#{$i}) {
-      transition-delay: $i * $enhanced-grid-time-offset;
-      }
 
     }
 
@@ -194,9 +162,33 @@ padding: 1em;
 
   }
 
+  // Video Controls
+
+  &__controls {
+  position: absolute;
+  inset-inline-end: 0.6em;
+  inset-block-start: 0.6em;
+  transition: none;
+  z-index: 1;
+
+    $buttonDisplayDelay: calc(#{$enhanced-grid-time-offset} * (#{$enhanced-grid-total-items} + 1));
+
+    .animation-enabled & {
+    opacity: 0;
+    transition: opacity $enhanced-grid-animation-speed $buttonDisplayDelay $enhanced-grid-timing-function, transform 100ms ease-in-out;
+    }
+
+     // TODO: The point at which the pause button loads should be based on last loading item and should load 200ms after that. May need to do this in JS eventually.
+
+    .active & {
+    opacity: 1;
+    }
+  
+  }
+
   // Play/Pause Button
 
-  &__button {
+  &__pause {
   background-color: rgba(169, 60, 150, 0.7);
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAADE2lDQ1BEb3QgR2FpbiAyMCUAACiRY2BgnuDo4uTKJMDAUFBUUuQe5BgZERmlwH6egY2BmYGBgYGBITG5uMAxIMCHgYGBIS8/L5UBFTAyMHy7xsDIwMDAcFnX0cXJlYE0wJpcUFTCwMBwgIGBwSgltTiZgYHhCwMDQ3p5SUEJAwNjDAMDg0hSdkEJAwNjAQMDg0h2SJAzAwNjCwMDE09JakUJAwMDg3N+QWVRZnpGiYKhpaWlgmNKflKqQnBlcUlqbrGCZ15yflFBflFiSWoKAwMD1A4GBgYGXpf8EgX3xMw8BSMDVRLdTRBEREYpQFiI8EGIIUByaVEZhMXIwMDAIMCgwGDA4MAQwJDIUM+wgOEowxtGcUYXxlLGFYz3mMSYgpgmMF1gFmaOZF7I/IbFkqWD5RarHmsr6z02S7ZpbN/Yw9l3cyhxdHF84UzkvMDlyLWFW5N7AY8Uz1ReId5JfMJ80/hl+BcL6AjsEHQVvCKUKvRDuFdERWSvaLjoF7FJ4kbiVyQqJOUkj0nlS0tLn5Apk1WXvSXXJ+8i/0dhq2Khkp7SW+W1KgWqJqo/1Q6qd2mEaippftA6oD1JJ1XXSk9Q75X+EYMFhrVGMca2JvKmzKYvzS6Y77RYYjnBqs461ybONtDO1d7awdhRx0nNWclFwVXeTcFd2UPdU9fLxNvGx9032C/BPz+gPnBi0NLgXSEXQ1+GM0XIRVpFRURXxMyM3RP3IIEtUTcpLLkhZU3qzXSODIvMzKy52Rdz2fPs8ysKNhW+K9YuySpdVfamQr+ypGpXDWOtV93U+oeNek01zWdb5doK2492SncVdZ/uVe1r7L870WbS7Ml/p8ZPOzxDY2b/rO9zEuaenm++YOkikcWtS74ty1x+b2XIqtNrXNbuW2+5Ydsmk81btpps277Dauf+3a57zu4L2//gYM6hn0faj4kfX3HS+tS5M8lnf52fdFH70tEriVf/XZ9z0+bW3Tv195Tvn3iY91jsyf5nmS9EXh58nf9W/t2FD02fTD+/+rrge/hPgV+n/rT+c/z/HwANAA803sW02gAAAAlwSFlzAAALEwAACxMBAJqcGAAABQxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMC1jMDAwIDc5LjE3MWMyN2YsIDIwMjIvMDgvMTYtMTg6MDI6NDMgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyNC4wIChXaW5kb3dzKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjMtMDQtMTNUMDk6NTItMDQ6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTA0LTEzVDEwOjA4OjQyLTA0OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTA0LTEzVDEwOjA4OjQyLTA0OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMSIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9IkRvdCBHYWluIDIwJSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOTEwZDExNS0yODY4LThlNGMtODdlOC03OWIyODA4M2VlZmUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTkxMGQxMTUtMjg2OC04ZTRjLTg3ZTgtNzliMjgwODNlZWZlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MTkxMGQxMTUtMjg2OC04ZTRjLTg3ZTgtNzliMjgwODNlZWZlIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOTEwZDExNS0yODY4LThlNGMtODdlOC03OWIyODA4M2VlZmUiIHN0RXZ0OndoZW49IjIwMjMtMDQtMTNUMDk6NTItMDQ6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNC4wIChXaW5kb3dzKSIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5w4qfXAAABIElEQVRYhe2Yr0oEURjFf3MZg9hcxKBoEQSrQRTLYlkMPoE+g2A1LIjJJjjBZDKoj2BQzCK+gJjVosWyM3vM82fvfMqC5Ts3nXvP4Qc3nkQAsxzSo8MAUVZKzgun3NCsbQ5YYYK8cp+Q8sU9x7wCQusq1KZr0XCy1p60I9CCvg1RKash+qaetIrOjNFCiyXElN6NzavA1ojfrirQLfkuM8bmWmDOGIVOxMU0HcxRCBH3i2JcirixQf4shzjEIQ5xiEMc4hCHOMQhDnHIf0KSiBsbZBhxLZA3c/Yz4qK9wJ05/FBxVswjWtbQtJBc1AacE+O2solQzxC8bZyiLg3NPZEIYIkjNpgkr+0MgYQPMs5HfMUu+8wDRe0lZcATfZ7hB9Zx3NJLeIiRAAAAAElFTkSuQmCC");
   background-position: center;
@@ -206,10 +198,6 @@ padding: 1em;
   cursor: pointer;
   height: 35px;
   outline-offset: -4px;
-  position: absolute;
-  inset-inline-end: 0.6em;
-  inset-block-start: 0.6em;
-  transition: none;
   width: 35px;
 
     &[aria-pressed="true"] {
@@ -225,21 +213,16 @@ padding: 1em;
     transition: none;
     }
 
-    @media (prefers-reduced-motion: no-preference) {
+  }
 
-      $buttonDisplayDelay: calc(#{$enhanced-grid-time-offset} * (#{$enhanced-grid-total-items} + 1));
+}
 
-      opacity: 0;
-      transition: opacity $enhanced-grid-animation-speed $buttonDisplayDelay $enhanced-grid-timing-function, transform 100ms ease-in-out;
+// Item Animation
 
-      // TODO: The point at which the pause button loads should be based on last loading item and should load 200ms after that. May need to do this in JS eventually.
+@for $i from 1 through $enhanced-grid-total-items {
 
-      .active & {
-      opacity: 1;
-      }
-
-    }
-
+  :nth-child(#{$i} of .enhanced-grid__item) {
+  transition-delay: $i * $enhanced-grid-time-offset;
   }
 
 }
