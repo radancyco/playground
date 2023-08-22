@@ -86,7 +86,6 @@ position: relative;
     transition-timing-function: $enhanced-grid-timing-function;
     opacity: 0;
     transform: scale(0.8);
-    transform-origin: center bottom;
     }
 
     .active & {
@@ -97,6 +96,16 @@ position: relative;
     @media(min-width: 48.625em) {
 
       min-height: auto;
+
+    }
+
+    // Item Animation
+
+    @for $i from 1 through $enhanced-grid-total-items {
+
+      &:nth-child(n + #{$i}) {
+      transition-delay: $i * $enhanced-grid-time-offset;
+      }
 
     }
 
@@ -156,8 +165,14 @@ position: relative;
   pointer-events: none;
   width: 100%;
 
-    &::-webkit-media-controls {
-    display: none;
+    // Native Controls
+
+    .js & {
+  
+      &::-webkit-media-controls {
+      display: none;
+      }
+
     }
 
   }
@@ -213,16 +228,6 @@ position: relative;
     transition: none;
     }
 
-  }
-
-}
-
-// Item Animation
-
-@for $i from 1 through $enhanced-grid-total-items {
-
-  :nth-child(#{$i} of .enhanced-grid__item) {
-  transition-delay: $i * $enhanced-grid-time-offset;
   }
 
 }
