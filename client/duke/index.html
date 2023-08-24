@@ -2,14 +2,71 @@
 title: "Duke Video Demo"
 ---
 
+
+
 <style>
 
 ::-webkit-media-controls-fullscreen-button {
 display: none;
 }
 
+.sr-only:not(:focus):not(:active) {
+clip: rect(0 0 0 0); 
+clip-path: inset(50%);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap; 
+width: 1px;
+}
+
+#hero-video-container {
+position: relative;
+}
+
+#hero-video {
+clip-path: inset(-1px -1px);
+}
+
+#hero-video-content a {
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
 </style>
 
-<video id="video-hero-homepage" aria-label="Background Video" disablePictureInPicture controlslist="nodownload noplaybackrate nofullscreen" autoplay muted controls crossorigin style="">
-    <source src="https://tbcdn.talentbrew.com/company/38304/v1_0/videos/home-banner-video-new-1.mp4" type="video/mp4">
-</video>
+<div id="hero-video-container">
+
+    <video aria-label="Background Video" id="hero-video" disablePictureInPicture controlslist="nodownload noplaybackrate nofullscreen" autoplay muted controls crossorigin preload="metadata">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <div id="hero-video-content" hidden>
+
+        <a href="https://careers.dukehealth.org/en/mary-castine"><span class="sr-only">Mary Castine, Clinical Nurse, With Duke Since 2021 Read Mary's Story</span></a>
+
+        <!-- You can put whatever you want here. I have choosen to add a link that overlays the video. -->
+    
+    </div>
+
+</div>
+
+<script>
+
+var heroVideo = document.getElementById("hero-video");
+var heroContent = document.getElementById("hero-video-content");
+
+heroVideo.addEventListener("ended", videoEnded, false);
+
+function videoEnded() {
+
+    heroVideo.removeAttribute("controls");
+    heroContent.removeAttribute("hidden");
+
+}
+
+</script>
