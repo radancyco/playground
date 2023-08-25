@@ -41,7 +41,7 @@ height: 100%;
 
 <div id="hero-video-container">
 
-    <video aria-label="Background Video" id="hero-video" muted controls crossorigin disableremoteplayback disablePictureInPicture playsinline controlslist="nodownload noplaybackrate nofullscreen" preload="metadata">
+    <video aria-label="Background Video" id="hero-video" autoplay muted controls crossorigin disableremoteplayback disablePictureInPicture playsinline controlslist="nodownload noplaybackrate nofullscreen" preload="metadata">
         <source src="video.mp4" type="video/mp4">
     </video>
 
@@ -59,8 +59,6 @@ height: 100%;
 
 var heroVideo = document.getElementById("hero-video");
 var heroContent = document.getElementById("hero-video-content");
-
-heroVideo.play();
 
 heroVideo.addEventListener("ended", videoEnded, false);
 
