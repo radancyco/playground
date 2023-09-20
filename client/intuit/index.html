@@ -255,6 +255,17 @@
                                                 <div class="menu-item-label js-accordion-head">              
                                                     <a href="/search-jobs" target="_self" class="menu-item-link menu-item-label-link" data-wa-link="hdr-internal-careers-global-nav-intuit-jobs" data-di-id="#hdr-internal-careers-global-nav-intuit-jobs">Search Jobs</a>
 
+                                                    <div class="submenu-toggle">
+                                                        <span class="" data-component="icon" data-icon="arrow-down" aria-label="Search Jobs">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9" data-di-res-id="e1d56c48-b80f106d" data-di-rand="1575656509828">
+                                                                <g data-name="Layer 2">
+                                                                <path d="M1.21 0L0 1.76 8 9l8-7.13L14.83.22 7.94 6.45z" fill-rule="evenodd" data-name="Layer 1" fill="currentColor"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+				                                    </div>
+
+
                                                 </div>  
                                                 <ul class="submenu js-accordion-body">
                                                     <li class="submenu-item">
@@ -772,7 +783,7 @@ $.fn.setup_navigation = function(settings) {
 
         });
 
-        $(top_level_links).parent().mouseenter(function() {
+        /* $(top_level_links).parent().mouseenter(function() {
 
             if($(this).find("ul").length) {
 
@@ -790,7 +801,7 @@ $.fn.setup_navigation = function(settings) {
 
             }
 
-        });
+        }); */
 
         $(top_level_links).parent().focusin(function() {
 
@@ -1014,6 +1025,20 @@ $.fn.setup_navigation = function(settings) {
         });
 
     }
+
+    $(".menu-item-label").click(function(){ 
+            
+        if($(this).hasClass("open")) {
+
+            $(this).parent().find("ul").attr("aria-hidden", "true");
+
+        } else {
+
+            $(this).parent().find("ul").attr("aria-hidden", "false");
+
+        }
+        
+    });
 
     </script>
     
