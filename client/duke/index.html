@@ -10,6 +10,8 @@ max-width: none;
 
 </style>
 
+<p>Your current screen resolution is <strong id="resolution"></strong></p>
+
 <h2>Video 1</h2>
 
 <video aria-label="Background Video" autoplay muted controls crossorigin disableremoteplayback disablePictureInPicture playsinline controlslist="nodownload noplaybackrate nofullscreen" preload="metadata">
@@ -21,3 +23,13 @@ max-width: none;
 <video aria-label="Background Video" autoplay muted controls crossorigin disableremoteplayback disablePictureInPicture playsinline controlslist="nodownload noplaybackrate nofullscreen" preload="metadata">
     <source src="video-2.mp4" type="video/mp4">
 </video>
+
+<script>
+
+const width = screen.width;
+const height = screen.height;
+const msg = document.getElementById("resolution");
+
+msg.innerText = width + "x" + height;
+
+</script>
