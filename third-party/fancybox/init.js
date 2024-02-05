@@ -2703,7 +2703,7 @@
                 value: function() {
                     document.body.classList.add("is-using-mouse")
                 }
-            }, {
+            }, /* {
                 key: "onKeydown",
                 value: function(t) {
                     if (n.getInstance().id === this.id) {
@@ -2726,7 +2726,7 @@
                         }
                     }
                 }
-            }, {
+            },*/ {
                 key: "getSlide",
                 value: function() {
                     var t = this.Carousel;
@@ -3046,7 +3046,7 @@
         mainClass: null,
         autoFocus: !0,
         // trapFocus: !0,
-        trapFocus: 1,
+        // trapFocus: 1,
         placeFocusBack: !0,
         click: "close",
         closeButton: "inside",
