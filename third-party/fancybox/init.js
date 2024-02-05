@@ -2806,7 +2806,7 @@
                         i = void 0 === t.closeButton ? this.option("closeButton") : t.closeButton;
                     if (i && (!this.$closeButton || "inside" === i)) {
                         var n = document.createElement("button");
-                        n.classList.add("carousel__button", "is-close"), n.setAttribute("title", this.options.l10n.CLOSE), n.innerHTML = this.option("template.closeButton"), n.addEventListener("click", (function(t) {
+                        n.classList.add("carousel__button", "is-close"), n.setAttribute("aria-label", this.options.l10n.CLOSE), n.innerHTML = this.option("template.closeButton"), n.addEventListener("click", (function(t) {
                             return e.close(t)
                         })), "inside" === i ? (t.$closeButton && t.$closeButton.remove(), t.$closeButton = t.$content.appendChild(n)) : this.$closeButton = this.$container.insertBefore(n, this.$container.firstChild)
                     }
