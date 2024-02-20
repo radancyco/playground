@@ -2707,10 +2707,10 @@
                 key: "onKeydown",
                 value: function(t) {
                     if (n.getInstance().id === this.id) {
-                        document.body.classList.remove("is-using-mouse");
+                        //document.body.classList.remove("is-using-mouse");
                         var e = t.key;
-                        if ("Tab" === e && this.option("trapFocus")) this.focus(t);
-                        else {
+                        //if ("Tab" === e && this.option("trapFocus")) this.focus(t);
+                        //else {
                             var i = this.option("keyboard");
                             if (i && !t.ctrlKey && !t.altKey && !t.shiftKey) {
                                 var o = document.activeElement && document.activeElement.classList,
@@ -2723,7 +2723,7 @@
                                     "function" == typeof this[a] && this[a]()
                                 }
                             }
-                        }
+                        //}
                     }
                 }
             }, {
