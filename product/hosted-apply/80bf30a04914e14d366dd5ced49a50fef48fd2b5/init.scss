@@ -586,7 +586,36 @@ position: relative;
 
     // Resume Upload
 
+    // New 
+
     &__upload {
+
+      input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+      background-color: transparent;
+      border-color: transparent;
+
+        &::file-selector-button {
+        margin-inline-end: 1em;
+        }
+
+      }
+  
+      .invalid & {
+      border-color: $ha-color-error;
+      background-color: $ha-color-error-highlight;
+      }
+  
+      // Instructions
+  
+      &__msg {
+      display: none;
+      }
+  
+    }
+
+    // Old
+
+    /* &__upload {
     align-items: center;
     background-color: $ha-color-highlight-1;
     border: 2px dashed $ha-color-neutral;
@@ -638,7 +667,7 @@ position: relative;
 
       }
 
-    }
+    } */
 
     // Error Messages
 
