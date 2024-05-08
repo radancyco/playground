@@ -16,7 +16,7 @@
 
     <h1>Tracking Data Supressing preventDefault() Method</h1>
 
-    <p>Issue: Something in the tracking code appears to be interfering with the <code>preventDefault()</code> method applied to hyperlinks. This should be looked into further as preventing default behavior of hyperlinks is a very common thing for the deliver team to implement. In the following examples, I have <code>preventDefault()</code> applied to both links via an onclick event. Again, very common. The first link includes the tracking data attributes, while the second does not. When cliking on the first link, we are seeing the URL fragment appended to the URL, which should <strong>not</strong> be occuring. The <code>preventDefault()</code> method is being bypassed in some way.</p> 
+    <p>Issue: Something in the tracking code appears to be interfering with the <code>preventDefault()</code> method applied to hyperlinks. This should be looked into further as preventing default behavior of hyperlinks is a very common method for the delivery team to implement. In the following examples, I have <code>preventDefault()</code> applied to both links via an onclick event. Again, very common. The first link includes the tracking data attributes, while the second does not. When cliking on the first link, we are seeing the URL fragment appended to the URL, which should <strong>not</strong> be occuring. The <code>preventDefault()</code> method is being bypassed in some way.</p> 
 
     <p><a class="test-link" href="#hello-world-1" data-custom-event="true" data-custom-category="Why Sanofi Tablist" data-custom-label="Specialty Care">Link with Tracking Data Attributes</a></p>
 	
