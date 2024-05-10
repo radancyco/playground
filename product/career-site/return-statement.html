@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Tracking Data Interfering With preventDefault() Method</title>
+    <script src="https://cdn.radancy.eu/js/client/headutil.js"></script>
+    <script src="//cdn.radancy.eu/js/client/js-featureflag.js"></script>
+    <meta name="cookie-management" content="None" data-cmid="0" data-stype="LocationBased" data-ae="Modal" data-cdnv="https://cdn.radancy.eu/" data-ct="We use cookies and other tracking technologies to support navigation, to improve our products and services, to support our marketing activities and to provide content from third parties.To manage your preferences, select &quot;Manage Settings&quot; or choose &quot;Accept&quot; to consent to the use of Cookies." data-abt="Accept" data-mpt="Manage Settings" data-xb="False" data-rb="False" data-rbt="Reject" data-ulc="en" data-gpc="False" data-ot-config="False">
+    <script src="https://cdn.radancy.eu/bundles/cookiemanagement.js"></script>
+	<script src="https://cdn.radancy.eu/js/client/headga.js"></script>
+    <style>body {font: 100% / 2 "Graphik", "Helvetica", "Arial", sans-serif; padding: 2em;}</style>
+</head>
+<body>
+
+    <h1>Tracking Data Interfering With preventDefault() Method</h1>
+
+    <p><strong>Issue:</strong> Something in the tracking code appears to be interfering with the <code>preventDefault()</code> method applied to hyperlinks. This should be looked into further as supressing default behavior of hyperlinks is a very common practice for the delivery team to implement. In the following examples, I have <code>preventDefault()</code> applied to both links via an onclick event. Again, very common. The first link includes the tracking data attributes, while the second does not. When cliking on the first link, we are seeing the URL fragment appended to the URL, which should <strong>not</strong> be occuring. The <code>preventDefault()</code> method is being bypassed in some way. In the second example, the link is properly supressed and no fragment is appended to the URL.</p> 
+
+    <p><a class="test-link" href="#hello-world-1" data-custom-event="true" data-custom-category="Why Sanofi Tablist" data-custom-label="Specialty Care">Link with Tracking Data Attributes</a></p>
+	
+    <p><a class="test-link" href="#hello-world-2">Link Without Data Tracking Attributes</a></p>
+    
+	
+    <script src="https://cdn.radancy.eu/bundles/jquery-client.js"></script>
+
+
+
+
+
+
+    <script>
+
+function getUrl (element) {
+
+    if (typeof element.attr("modal") !== "undefined" && element.attr("modal") === "true") {
+
+        return false;
+
+    } else {
+
+        return element.attr("href");
+
+        alert(element);
+
+    }
+
+}
+
+    var event1 = document.querySelectorAll("a[data-custom-event]");
+        
+    event1.forEach(function(link){
+        
+        link.addEventListener("click", function() {
+    
+            getUrl(this);
+        
+        });
+        
+    });
+
+    </script>
+
+    <script>
+
+    var event2 = document.querySelectorAll(".test-link");
+        
+    event2.forEach(function(link){
+    
+        link.addEventListener("click", function(e) {
+
+            e.preventDefault();
+    
+        });
+    
+    });
+    
+    </script>
+	
+   
+
+</body>
+</html>
