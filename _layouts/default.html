@@ -28,7 +28,7 @@
     <link href="{{ page.localcss }}" rel="stylesheet">{% endif %}{% for component in allSelections %}{% if component.id == current_id %}{% for example in component.examples %}{% if example.customcss %}
     <link href="{{ example.customcss }}.css" rel="stylesheet">{% endif %}{% endfor %}{% endif %}{% endfor %}
     <link href="{{ site.git-url }}/favicon.ico" rel="icon">
-    <link href="{{ site.git-url }}/manifest.json" rel="manifest">
+    <link href="{{ site.git-url }}/manifest.json" crossorigin="use-credentials" rel="manifest">
     <title>{% if component %}{{ component.title }} v{{ component.version }}{% else %}{{ page.title }}{% endif %} - {{ site.company-name }}</title>
 </head>
 
