@@ -176,6 +176,11 @@ padding: 1em;
           background-color: #910000;
           border-color: #910000;
           color: #fff;
+
+            img {
+            border-color: #fff;
+            }
+
           }
     
         }
@@ -210,6 +215,11 @@ padding: 1em;
 
       p {
       line-height: normal;
+      }
+
+      img {
+      border-radius: 5px;
+      border: 1px transparent solid;
       }
     
     }
