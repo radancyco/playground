@@ -173,8 +173,9 @@ padding: 1em;
         &:has(a, button) {
     
           &:hover, &:focus-within {
-          background-color: #eee;
+          background-color: #910000;
           border-color: #910000;
+          color: #fff;
           }
     
         }
@@ -191,6 +192,7 @@ padding: 1em;
 
           &:focus, &:hover {
           text-decoration: none;
+          color: inherit;
           }
     
           // Make entire card clickable
