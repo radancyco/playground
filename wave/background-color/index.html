@@ -1,0 +1,44 @@
+---
+title: "WAVE Contrast Hack"
+---
+
+<style>
+
+.wave-wrapper {
+background-color: #6495ed;
+padding: 1em;
+}
+
+.wave-wrapper a {
+color: #fff;
+text-decoration: none;
+}
+
+.wave-wrapper a.override {
+background-color: #00000001;
+}
+
+</style>
+
+<p>Here we have a <strong>div</strong> with a background color of #6495ED and a <strong>link</strong> color of #FFFFFF.</p>
+
+<div class="wave-wrapper">
+
+    <a href="https://webaim.org">Hello World</a>
+
+</div>
+
+<p>Clearly this fails contrast and only meets a <a href="https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=6495ED">2.97:1</a> ratio.<p>
+
+<p>Contrast issues can be circumvented in WAVE by applying a opaque background color to the link, such as <code>background-color: #00000001;</code>. This is being applied to the code below. Note how WAVE flags the fist code block, but not the second.</p>
+
+<div class="wave-wrapper">
+
+    <a class="override" href="https://webaim.org">Hello World</a>
+
+</div>
+
+
+
+
+
