@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+  <style>
+
+    div[role="grid"] {
+    display: grid;
+    font: 100% / 2 "Graphik", "Helvetica", "Arial", sans-serif;
+    gap: 1rem;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 1em;
+    text-align: center;
+    
+        /* Sticky */
+    
+    > div[role="row"]:first-child {
+        background-color: #ccc;
+        border-radius: 10px 10px 0 0;
+        padding: 1em;
+        position: sticky;
+        inset-block-start: 0;
+        }
+    
+        div[role="rowgroup"], div[role="row"], div[role="gridcell"]  {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / -1;
+        }
+
+        div[role="gridcell"] {
+        border-block-end: 1px #666 solid;
+        padding: 1em;
+        
+        div {
+        
+            &:has(input) {
+            text-align: start;
+            }
+            
+        }
+        
+        img {
+        block-size: calc(40rem / 16);
+        border-radius: 100vw;
+        }
+        
+        button {
+        font: inherit;
+        }
+        
+        }
+    
+    }
+
+
+  </style>
+  <title>ARIA Grid (Bad Example) - Radancy</title>
+</head>
+
+<body>
+
+
+    <h1>Bad ARIA Grid Example</h1>
+
+    <div role="grid">
+
+ <div role="row">
+
+  <div role="columnheader">Requisition Name</div>
+
+  <div role="columnheader">Requisition #</div>
+
+  <div role="columnheader">Location</div>
+
+  <div role="columnheader">Days Open</div>
+
+  <div role="columnheader">Candidates in Process</div>
+
+  <div role="columnheader">Hiring Manager</div>
+
+  <div role="columnheader">Recruiter</div>
+
+  <div role="columnheader">Status</div>
+
+ </div>
+
+ <div aria-label="grid" role="rowgroup" tabindex="0">
+
+  <div role="row">
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Senior .NET Software Engineer
+
+    </div>
+
+    <div>2515</div>
+    
+    <div>New York, NY, US</div>
+    
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Creative Director
+
+    </div>
+
+    <div>1033</div>
+
+    <div>Lexington-Fayette, KY, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Global Graduate Programme - Marketing
+    
+    </div>
+
+    <div>1085</div>
+
+    <div>London, ENG, GB</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Account Director
+    
+    </div>
+
+    <div>2572</div>
+
+    <div>McLean, VA, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Infrastructure Engineer
+
+    </div>
+
+    <div>1016</div>
+
+    <div>Toronto, ON, CA</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Global Graduate Programme - Software Engineering
+
+    </div>
+
+    <div>1092</div>
+
+    <div>Rotterdam, 11, NL</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+
+      <input type="checkbox"> Admissions Director
+
+    </div>
+
+    <div>17933</div>
+
+    <div>Coral Gables, FL, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox">Project Manager
+
+    </div>
+
+    <div>2003</div>
+
+    <div>London, ENG, GB</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox">Retail Store Manager
+
+    </div>
+
+    <div>1006</div>
+
+    <div>Glendale, CA, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Infrastructure Engineer
+
+    </div>
+
+    <div>1081</div>
+
+    <div>Atlanta, GA, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Software Engineer
+
+    </div>
+
+    <div>1075</div>
+
+    <div>Chicago, IL, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Software Engineer
+    
+    </div>
+
+    <div>2400</div>
+
+    <div>Vienna, 09, AT</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Driver
+
+    </div>
+
+    <div>1054</div>
+
+    <div>Atlanta, GA, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> IT Technician
+
+    </div>
+
+    <div>1040</div>
+
+    <div>Fort Lauderdale, FL, US</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Software Engineer
+
+    </div>
+
+    <div>1072</div>
+
+    <div>London, ENG, GB</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+   <div role="gridcell">
+
+    <div>
+     
+      <input type="checkbox"> Warehouse Manager
+    
+    </div>
+
+    <div>1024</div>
+
+    <div>Budapest, 05, HU</div>
+
+    <div>123</div>
+
+    <div>
+    
+        <a href="#">0</a>
+        
+    </div>
+
+    <div>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </div>
+
+    <div>AA</div>
+
+    <div>
+
+      <button>Open</button>
+
+    </div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+</div>
+
+</body>
+</html>
