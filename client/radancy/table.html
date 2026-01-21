@@ -6,6 +6,54 @@
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
   <style>
 
+    table {
+    display: grid;
+    font: 100% / 2 "Graphik", "Helvetica", "Arial", sans-serif;
+    gap: 1rem;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 1em;
+    text-align: center;
+      
+    /* Sticky */
+      
+    thead {
+    background-color: #ccc;
+    border-radius: 10px 10px 0 0;
+    padding: 1em;
+    position: sticky;
+    inset-block-start: 0;
+    }
+      
+      thead, tbody, tr  {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
+      }
+      
+      tbody tr {
+      border-block-end: 1px #666 solid;
+      }
+
+      td {
+      padding: 1em;
+          
+        &:has(input) {
+        text-align: start;
+        }
+            
+        img {
+        block-size: calc(40rem / 16);
+        border-radius: 100vw;
+        }
+          
+        button {
+        font: inherit;
+        }
+          
+      }
+      
+    }
+
     div[role="grid"] {
     display: grid;
     font: 100% / 2 "Graphik", "Helvetica", "Arial", sans-serif;
@@ -54,7 +102,6 @@
         }
     
     }
-
 
   </style>
   <title>ARIA Grid (Bad Example) - Radancy</title>
@@ -311,6 +358,239 @@
  </div>
 
 </div>
+
+<h2>Normal Table</h2>
+
+<table aria-label="All Requisitions" role="presentation">
+
+  <thead>
+
+    <tr>
+
+      <th>Requisition Name</th>
+
+      <th>Requisition #</th>
+
+      <th>Location</th>
+
+      <th>Days Open</th>
+
+      <th>Candidates in Process</th>
+
+      <th>Hiring Manager</th>
+
+      <th>Recruiter</th>
+
+      <th>Status</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr>
+
+      <td>
+ 
+        <label>
+          
+          <input type="checkbox">Senior .NET Software Engineer
+          
+        </label>
+
+      </td>
+
+      <td>2515</td>
+ 
+      <td>New York, NY, US</td>
+ 
+      <td>123</td>
+
+      <td>
+ 
+        <a href="#">0</a>
+  
+      </td>
+
+      <td>
+      
+        <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+      </td>
+
+      <td>AA</td>
+
+      <td>
+
+        <button>Open</button>
+
+      </td>
+
+    </tr>
+
+   <tr>
+
+    <td>
+      
+      <label>
+     
+        <input type="checkbox"> Senior .NET Software Engineer
+        
+      </label>
+
+    </td>
+
+    <td>2515</td>
+    
+    <td>New York, NY, US</td>
+    
+    <td>123</td>
+
+    <td>
+    
+        <a href="#">0</a>
+        
+    </td>
+
+    <td>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </td>
+
+    <td>AA</td>
+
+    <td>
+
+      <button>Open</button>
+
+    </td>
+
+   </tr>
+   <tr>
+
+    <td>
+      
+      <label>
+     
+        <input type="checkbox">Project Manager
+        
+      </label>
+
+    </td>
+
+    <td>2003</td>
+
+    <td>London, ENG, GB</td>
+
+    <td>123</td>
+
+    <td>
+    
+        <a href="#">0</a>
+        
+    </td>
+
+    <td>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </td>
+
+    <td>AA</td>
+
+    <td>
+
+      <button>Open</button>
+
+    </td>
+
+   </tr>
+
+   <tr>
+
+    <td>
+      
+      <label>
+     
+        <input type="checkbox">Retail Store Manager
+        
+      </label>
+
+    </td>
+
+    <td>1006</td>
+
+    <td>Glendale, CA, US</td>
+
+    <td>123</td>
+
+    <td>
+    
+        <a href="#">0</a>
+        
+    </td>
+
+    <td>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </td>
+
+    <td>AA</td>
+
+    <td>
+
+      <button>Open</button>
+
+    </td>
+
+   </tr>
+
+   <tr>
+
+    <td>
+      
+      <label>
+     
+        <input type="checkbox"> Infrastructure Engineer
+        
+      </label>
+
+    </td>
+
+    <td>1081</td>
+
+    <td>Atlanta, GA, US</td>
+
+    <td>123</td>
+
+    <td>
+    
+        <a href="#">0</a>
+        
+    </td>
+
+    <td>
+      
+      <img src="https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg?s=200" alt="Michael Spellacy">
+      
+    </td>
+
+    <td>AA</td>
+
+    <td>
+
+      <button>Open</button>
+
+    </td>
+
+   </tr>
+
+  </tbody>
+
+</table>
 
 </body>
 </html>
